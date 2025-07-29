@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prossime Marce CSI</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Prossime Marce CSI Bergamo</h1>
+  <table id="marce-table">
+    <thead>
+      <tr>
+        <th>Data</th>
+        <th>Località</th>
+        <th>Nome</th>
+        <th>Distanze (km)</th>
+        <th>Organizzatore</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Le righe verranno popolate via JS -->
+    </tbody>
+  </table>
+
+  <script>
+    async function caricaMarce() {
+      try {
+        const res = await fetch('marce.json');
+        const dati = await res.json();
+        const tbody = document.querySelector('#marce-table tbody');
+
+        dati.forEach(marcia => {
+          const tr = document.createElement('tr');
+          tr.innerHTML = `
+            <td>${marcia.data}</td>
+            <td>${marcia.localita}</td>
+            <td>${marcia.nome}</td>
+            <td>${marcia.distanze}</td>
+            <td>${marcia.organizzatore}</td>
+          `;
+          tbody.appendChild(tr);
+        });
+      } catch (err) {
+        console.error("Errore nel caricamento dei dati:", err);
+      }
+    }
+
+    caricaMarce();
+  </script>
+</body>
+</html>
