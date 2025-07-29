@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Prossime Marce CSI</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="cs/style.css" />
 </head>
 
 <body>
@@ -27,7 +27,7 @@
   <script>
     async function caricaMarce() {
       try {
-        const res = await fetch('marce.json');
+        const res = await fetch('json/marce.json');
         const dati = await res.json();
         const tbody = document.querySelector('#marce-table tbody');
 
