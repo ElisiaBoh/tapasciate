@@ -1,29 +1,38 @@
 import requests
 from bs4 import BeautifulSoup
 import json
+import re
 
-url = "https://www.csibergamo.it/avvisi/prossime-marce.html"
-response = requests.get(url)
-response.raise_for_status()
+URL = "https://www.csibergamo.it/avvisi/prossime-marce.html"
+resp = requests.get(URL)
+resp.raise_for_status()
+soup = BeautifulSoup(resp.text, "html.parser")
 
-soup = BeautifulSoup(response.text, 'html.parser')
-table = soup.find('table')
-rows = table.find_all('tr')
+lista = soup.find("ul", class_="latestnews-items")
+if not lista:
+    print("❗️ List not found")
+    events = []
+else:
+    items = lista.find_all("li", recursive=False)
+    events = []
+    for li in items:
+        text = li.get_text(separator=" ", strip=True)
 
-marce = []
-for row in rows[1:]:
-    cells = row.find_all('td')
-    if len(cells) >= 4:
-        marcia = {
-            "data": cells[0].get_text(strip=True),
-            "località": cells[1].get_text(strip=True),
-            "denominazione": cells[2].get_text(strip=True),
-            "organizzazione": cells[3].get_text(strip=True),
-        }
-        marce.append(marcia)
+        # Regex to read: e.g. "07 Settembre Domenica NON COMPETITIVE Gaverina Terme"
+        match = re.match(r"^(\d{2}\s+\w+\s+\w+)\s+(NON COMPETITIVE|COMPETITIVE)?\s*(.*)$", text)
+        if match:
+            info = match.group(1)
+            categoria = match.group(2) or ""
+            localita = match.group(3).strip()
+            events.append({
+                "info": info,
+                "categoria": categoria,
+                "localita": localita
+            })
+        else:
+            print(f"⚠️ Row not recognized: {text}")
 
-# Salva i dati in un file JSON
 with open("marce.json", "w", encoding="utf-8") as f:
-    json.dump(marce, f, ensure_ascii=False, indent=2)
+    json.dump(events, f, ensure_ascii=False, indent=2)
 
-print(f"{len(marce)} marce salvate in marce.json ✅")
+print(f"✅ Saved {len(events)} events")
