@@ -1,9 +1,9 @@
-name: Aggiorna marce
+name: Update events
 
 on:
   schedule:
-    - cron: '0 6 * * 1'  # ogni lunedì alle 6:00 UTC (8:00 italiane)
-  workflow_dispatch:     # permette anche l'esecuzione manuale
+    - cron: '0 4 * * 3'  # every Wednesday at 6 CEST (4:00 UTC)
+  workflow_dispatch:     # also manual execution is allowed
   push:
     paths:
       - scraper.py
