@@ -32,4 +32,4 @@ jobs:
           git config user.email github-actions@github.com
           git add marce.json
           git commit -m "Aggiorna marce.json" || echo "Nessuna modifica"
-          git push https://ElisiaBoh:${{ secrets.GH_PAT }}@github.com/ElisiaBoh/tapasciate.git HEAD:main
+          git push https://x-access-token:${{ secrets.GH_PAT }}@github.com/ElisiaBoh/tapasciate.git HEAD:main
