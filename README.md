@@ -41,28 +41,19 @@ The project consists of:
 
 To test the scraper locally:
 
-Make sure you have Python 3.11+ installed.
-Install dependencies:
-pip install requests beautifulsoup4
-Run the script:
-python scraper.py
+1. Make sure you have Python 3.11+ installed.
+2. Install dependencies:
+`pip install requests beautifulsoup4`
+3. Run the script:
+   `python scraper.py`
+
 The file marce.json will be created or updated in the root directory.
 
 ## 🚀 GitHub Actions
 
 The project includes a GitHub Actions workflow that:
 
-Runs on a weekly schedule
-Can be manually triggered
-Commits and pushes updates to marce.json
-🔐 GitHub Token Setup
-To enable the GitHub Action to push changes:
+- Runs on a weekly schedule
+- Can be manually triggered
+- Commits and pushes updates to marce.json
 
-Create a Personal Access Token (PAT) from your GitHub account with repo scope.
-Add it to your repository secrets as GH_PAT.
-Update the workflow file to use the token:
-with:
-  token: ${{ secrets.GH_PAT }}
-And ensure the push step uses this format:
-
-git push https://x-access-token:${{ secrets.GH_PAT }}@github.com/ElisiaBoh/tapasciate.git HEAD:main
