@@ -19,9 +19,9 @@
         data.forEach(evento => {
           const li = document.createElement('li');
           li.innerHTML = `
-            <strong>${evento.info}</strong><br>
-            <em>${evento.categoria}</em><br>
-            ${evento.localita}
+            <strong>${evento.title}</strong><br>
+            <em>${evento.date}</em><br>
+            ${evento.location}
           `;
           ul.appendChild(li);
         });

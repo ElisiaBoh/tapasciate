@@ -1,52 +1,170 @@
 [
   {
-    "info": "03 Agosto Domenica",
-    "categoria": "NON COMPETITIVE",
-    "localita": "Spinone al Lago"
+    "date": "03 Agosto Domenica",
+    "title": "NON COMPETITIVE",
+    "location": "Spinone al Lago",
+    "source": "CSI"
   },
   {
-    "info": "10 Agosto Domenica",
-    "categoria": "NON COMPETITIVE",
-    "localita": "Ubiale Clanezzo"
+    "date": "10 Agosto Domenica",
+    "title": "NON COMPETITIVE",
+    "location": "Ubiale Clanezzo",
+    "source": "CSI"
   },
   {
-    "info": "10 Agosto Domenica",
-    "categoria": "NON COMPETITIVE",
-    "localita": "Peghera-Taleggio"
+    "date": "10 Agosto Domenica",
+    "title": "NON COMPETITIVE",
+    "location": "Peghera-Taleggio",
+    "source": "CSI"
   },
   {
-    "info": "15 Agosto Venerdì",
-    "categoria": "NON COMPETITIVE",
-    "localita": "Berbenno"
+    "date": "15 Agosto Venerdì",
+    "title": "NON COMPETITIVE",
+    "location": "Berbenno",
+    "source": "CSI"
   },
   {
-    "info": "16 Agosto Sabato",
-    "categoria": "NON COMPETITIVE",
-    "localita": "Mezzoldo"
+    "date": "16 Agosto Sabato",
+    "title": "NON COMPETITIVE",
+    "location": "Mezzoldo",
+    "source": "CSI"
   },
   {
-    "info": "31 Agosto Domenica",
-    "categoria": "NON COMPETITIVE",
-    "localita": "Trescore Balneario"
+    "date": "31 Agosto Domenica",
+    "title": "NON COMPETITIVE",
+    "location": "Trescore Balneario",
+    "source": "CSI"
   },
   {
-    "info": "31 Agosto Domenica",
-    "categoria": "NON COMPETITIVE",
-    "localita": "Osio Sopra"
+    "date": "31 Agosto Domenica",
+    "title": "NON COMPETITIVE",
+    "location": "Osio Sopra",
+    "source": "CSI"
   },
   {
-    "info": "07 Settembre Domenica",
-    "categoria": "NON COMPETITIVE",
-    "localita": "Almenno San Bartolomeo"
+    "date": "07 Settembre Domenica",
+    "title": "NON COMPETITIVE",
+    "location": "Almenno San Bartolomeo",
+    "source": "CSI"
   },
   {
-    "info": "07 Settembre Domenica",
-    "categoria": "NON COMPETITIVE",
-    "localita": "Chiuduno"
+    "date": "07 Settembre Domenica",
+    "title": "NON COMPETITIVE",
+    "location": "Chiuduno",
+    "source": "CSI"
   },
   {
-    "info": "07 Settembre Domenica",
-    "categoria": "NON COMPETITIVE",
-    "localita": "Gaverina Terme"
+    "date": "07 Settembre Domenica",
+    "title": "NON COMPETITIVE",
+    "location": "Gaverina Terme",
+    "source": "CSI"
+  },
+  {
+    "date": "14/08/2025",
+    "title": "LA 19ª CAMMINATA CON LE TORCE TRA I SENTIERI DI CELANA A CAPRINO BERGAMASCO",
+    "location": "Caprino Bergamasco [Oratorio di Celana] (BG)",
+    "source": "FIASP"
+  },
+  {
+    "date": "30/08/2025",
+    "title": "SVELTICANTO SUMMER NIGHT",
+    "location": "Carvico [Tensostruttura - Area Festa Patronale] (BG)",
+    "source": "FIASP"
+  },
+  {
+    "date": "07/09/2025",
+    "title": "41ª U GIR PER BARIA'",
+    "location": "Fornovo San Giovanni [Arredamenti Anna Giupponi] (BG)",
+    "source": "FIASP"
+  },
+  {
+    "date": "07/09/2025",
+    "title": "40ª MARCIA DEL DONATORE",
+    "location": "Carvico [Area Festa, Piazzale della Chiesa] (BG)",
+    "source": "FIASP"
+  },
+  {
+    "date": "14/09/2025",
+    "title": "49ª  MARCIA DEL DONATORE",
+    "location": "Brembate [Arena Civica, Via San Vittore] (BG)",
+    "source": "FIASP"
+  },
+  {
+    "date": "20/09/2025",
+    "title": "14° MEMORIAL EUGENIO MERCORIO",
+    "location": "Foppolo [Piazzale Ristorante K] (BG)",
+    "source": "FIASP"
+  },
+  {
+    "date": "20/09/2025",
+    "title": "14ª PEDALATA MEMORIAL EUGENIO MERCORIO",
+    "location": "Branzi [Località Gardata] (BG)",
+    "source": "FIASP"
+  },
+  {
+    "date": "21/09/2025",
+    "title": "STRAELA",
+    "location": "Villa d'Adda [Campo Sportivo Via G. Donizetti] (BG)",
+    "source": "FIASP"
+  },
+  {
+    "date": "28/09/2025",
+    "title": "37ª SGAMBADA D'AUTUNNO",
+    "location": "Curnasco [Oratorio, Piazza Don Personeni] (BG)",
+    "source": "FIASP"
+  },
+  {
+    "date": "05/10/2025",
+    "title": "51ª SGAMBADA DE LÒNGUEL",
+    "location": "Bergamo [Oratorio di Longuelo] (BG)",
+    "source": "FIASP"
+  },
+  {
+    "date": "12/10/2025",
+    "title": "IN CAMMINO SULLE ORME DI PAPA GIOVANNI XXIII°",
+    "location": "Sotto Il Monte Giovanni XXIII° [Piazza Giovanni Paolo II°, Sala Civica] (BG)",
+    "source": "FIASP"
+  },
+  {
+    "date": "19/10/2025",
+    "title": "6ª EDIZIONE  MANIFESTAZIONE \"TRA IL ROMANICO ED IL BREMBO\"",
+    "location": "Bonate Sotto [Via G.Garibaldi, 15] (BG)",
+    "source": "FIASP"
+  },
+  {
+    "date": "26/10/2025",
+    "title": "47ª TEREMOTATA - ULTRA MARATONA DELL'ISOLA",
+    "location": "Terno d'Isola [Centro Sportivo - Viale dello Sport, 10) (BG)",
+    "source": "FIASP"
+  },
+  {
+    "date": "02/11/2025",
+    "title": "51ª STRATREVIGLIO",
+    "location": "Treviglio [Piazza Cameroni 1] (BG)",
+    "source": "FIASP"
+  },
+  {
+    "date": "09/11/2025",
+    "title": "CANONICHIAMO 2ª EDIZIONE",
+    "location": "Canonica d'Adda (Bg.) (Oratorio San Luigi - Via Vallazza, 6) (BG)",
+    "source": "FIASP"
+  },
+  {
+    "date": "30/11/2025",
+    "title": "15° STRANTEGNATE",
+    "location": "Antegnate - Centro Incontro Cultura fronte Auchan (BG)",
+    "source": "FIASP"
+  },
+  {
+    "date": "07/12/2025",
+    "title": "CORRI PER TELETHON",
+    "location": "Bonate Sotto  (Centro Socio Culturale Via S.. Sebastiano, 3) (BG)",
+    "source": "FIASP"
+  },
+  {
+    "date": "14/12/2025",
+    "title": "18ª CAMMINATA \"BERGAMO HA UN CUORE GRANDE\" PER LA SOLIDARIETA'",
+    "location": "Bergamo  [ex Ospedale Neuropscichiatrico, Borgo Palazzo 130] (BG)",
+    "source": "FIASP"
   }
 ]
