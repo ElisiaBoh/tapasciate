@@ -89,6 +89,19 @@ h1 {
   background-color: #005f63;
 }
 
+header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.logo {
+  width: 300px;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+  /* filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));  opzionale, per dargli un po' di profondità */
+}
+
 /* Responsive */
 @media (max-width: 600px) {
   .card h2 {
