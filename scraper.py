@@ -94,6 +94,21 @@ def fetch_fiasp_events():
         print("⚠️ FIASP table not found")
         return []
 
+    def convert_drive_link(url: str) -> str:
+        """
+        Converte un link Google Drive da:
+        https://drive.google.com/file/d/ID/view?usp=sharing
+        a:
+        https://drive.google.com/uc?export=view&id=ID
+        """
+        import re
+
+        match = re.search(r'/d/([a-zA-Z0-9_-]+)/', url)
+        if match:
+            file_id = match.group(1)
+            return f"https://drive.google.com/uc?export=view&id={file_id}"
+        return url  
+
     fiasp = []
     for row in table.find_all("tr")[1:]:
         cols = row.find_all("td")
@@ -114,7 +129,7 @@ def fetch_fiasp_events():
                 "title": title,
                 "date": date,
                 "location": location,
-                "poster": flyer_link,
+                "poster": convert_drive_link(flyer_link),
                 "source": "FIASP"
             })
 
