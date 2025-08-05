@@ -39,15 +39,23 @@ def fetch_csi_events_detailed():
         raw = content.get_text(separator="\n", strip=True) if content else ""
         title = raw.split("\n")[0].strip() if raw else ""
 
-        date_m = re.search(r"\d{2}/\d{2}/\d{4}", raw)
-        where_m = re.search(r"Luogo.*?:\s*(.*)", raw, re.IGNORECASE)
+        #image
+        first_image_url = ""
 
+        if content:
+            first_img = content.find("img")
+            if first_img and first_img.get("src"):
+                src = first_img["src"]
+                if src.startswith("/"):
+                    first_image_url = f"{BASE_CSI}{src}"
+                else:
+                    first_image_url = src
+
+        #date
         active_li = ds.select_one("ul.latestnews-items li.active")
-
         event_date = ""
 
         if active_li:
-            # Estrai giorno e mese
             day_tag = active_li.select_one("span.position1.day")
             month_tag = active_li.select_one("span.position3.month")
 
@@ -55,7 +63,6 @@ def fetch_csi_events_detailed():
             day = day_tag.get_text(strip=True)
             month_name = month_tag.get_text(strip=True)
 
-            # Mappa dei mesi italiani → numeri  
             mesi = {
                 "Gennaio": "01", "Febbraio": "02", "Marzo": "03", "Aprile": "04",
                 "Maggio": "05", "Giugno": "06", "Luglio": "07", "Agosto": "08",
@@ -63,21 +70,17 @@ def fetch_csi_events_detailed():
             }
 
             month = mesi.get(month_name, "00")
-
-            # Usa l'anno corrente
             year = str(datetime.datetime.now().year)
-
-            # Format finale
             event_date = f"{day.zfill(2)}/{month}/{year}"
 
         detailed.append({
             "title": title,
             "date": event_date,
             "location": location,
-            "details": raw,
+            "image": first_image_url,
             "source": "CSI"
         })
-        time.sleep(0.5)
+        time.sleep(1)
 
     return detailed
 
