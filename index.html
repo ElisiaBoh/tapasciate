@@ -20,7 +20,12 @@
       .then(data => {
         const ul = document.getElementById('lista-marce');
 
-        data.sort((a, b) => new Date(a.date) - new Date(b.date));
+        function parseDate(str) {
+          const [day, month, year] = str.split('/');
+          return new Date(`${year}-${month}-${day}`);
+        }
+
+        data.sort((a, b) => parseDate(a.date) - parseDate(b.date));
 
         data.forEach(evento => {
           const li = document.createElement('li');
