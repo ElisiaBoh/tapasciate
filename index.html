@@ -4,11 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Prossime marce</title>
-  <link rel="stylesheet" href="cs/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <h1>Prossime Marce</h1>
-  <ul id="lista-marce"></ul>
+  <div class="container">
+    <h1>Tapasciate a Bergamo</h1>
+    <h2 class="subtitle">"Ciao, grazie e buona domenica!"</h2>
+    <ul id="lista-marce" class="lista-marce"></ul>
+  </div>
 
   <script>
     fetch('marce.json')
@@ -16,12 +20,16 @@
       .then(data => {
         const ul = document.getElementById('lista-marce');
 
+        data.sort((a, b) => new Date(a.date) - new Date(b.date));
+
         data.forEach(evento => {
           const li = document.createElement('li');
+          li.classList.add('card');
           li.innerHTML = `
-            <strong>${evento.title}</strong><br>
-            <em>${evento.date}</em><br>
-            ${evento.location}
+            <h2>${evento.title}</h2>
+            <p class="data">${evento.date}</p>
+            <p class="luogo">${evento.location}</p>
+            <p class="associazione">${evento.source || ''}</p>
           `;
           ul.appendChild(li);
         });

@@ -1,26 +1,81 @@
+/* Font e reset base */
 body {
-  font-family: sans-serif;
-  padding: 2rem;
-  background: #f9f9f9;
+  font-family: 'Work Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f2f4f7;
+  color: #333;
 }
 
 h1 {
   text-align: center;
+  margin-top: 2rem;
+  font-size: 2.2rem;
 }
 
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 1rem;
+.subtitle {
+  text-align: center;
+  margin-top: 0.5rem;
+  font-size: 1.2rem;
+  color: #666;
+  font-weight: 400;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* Lista eventi */
+.lista-marce {
+  list-style: none;
+  padding: 0;
+  margin-top: 2rem;
+  display: grid;
+  gap: 1rem;
+}
+
+/* Card evento */
+.card {
   background: white;
+  border-radius: 0.5rem;
+  padding: 1.25rem 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-th, td {
-  border: 1px solid #ddd;
-  padding: 0.75rem;
-  text-align: left;
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
 }
 
-th {
-  background-color: #eeeeee;
+.card h2 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.3rem;
+  color: #222;
+}
+
+.card .data {
+  margin: 0.25rem 0;
+  font-weight: 600;
+  color: #007b7f;
+}
+
+.card .luogo {
+  margin: 0;
+  color: #555;
+}
+
+.associazione {
+  font-size: 0.8rem;
+  color: #aaa;
+  margin-top: 0.5rem;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .card h2 {
+    font-size: 1.1rem;
+  }
 }
