@@ -35,6 +35,8 @@
             <p class="data">${evento.date}</p>
             <p class="luogo">${evento.location}</p>
             <p class="associazione">${evento.source || ''}</p>
+            ${evento.poster ? `<a class="btn-poster" href="${evento.poster}" target="_blank">Apri volantino</a>` : ''}
+
           `;
           ul.appendChild(li);
         });
