@@ -77,7 +77,7 @@ def fetch_csi_events_detailed():
             "title": title,
             "date": event_date,
             "location": location,
-            "image": first_image_url,
+            "poster": first_image_url,
             "source": "CSI"
         })
         time.sleep(1)
@@ -101,13 +101,20 @@ def fetch_fiasp_events():
             continue
         date = cols[0].get_text(strip=True)
         title = cols[1].get_text(strip=True)
-        loc = cols[2].get_text(strip=True)
-        if "bergamo" in loc.lower() or "bg" in loc.lower():
+        location = cols[2].get_text(strip=True)
+
+        #image
+        flyer_link = ""
+        a_tag = cols[6].find("a")
+        if a_tag and a_tag.get("href"):
+            flyer_link = a_tag["href"].strip()
+
+        if "bergamo" in location.lower() or "bg" in location.lower():
             fiasp.append({
                 "title": title,
                 "date": date,
-                "location": loc,
-                "details": "",
+                "location": location,
+                "poster": flyer_link,
                 "source": "FIASP"
             })
 
