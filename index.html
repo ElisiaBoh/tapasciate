@@ -27,12 +27,31 @@
 
         data.sort((a, b) => parseDate(a.date) - parseDate(b.date));
 
+        function formattaDataIt(dataString) {
+          function capitalizeAllWords(str) {
+            return str.split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+          }
+
+          const [giorno, mese, anno] = dataString.split('/');
+          const data = new Date(`${anno}-${mese}-${giorno}`);
+
+          const formatter = new Intl.DateTimeFormat('it-IT', {
+            weekday: 'long',
+            day: 'numeric',
+            month: 'long',
+          });
+
+          const dataFormattata = formatter.format(data);
+          return capitalizeAllWords(dataFormattata);
+        }
+
+
         data.forEach(evento => {
           const li = document.createElement('li');
           li.classList.add('card');
           li.innerHTML = `
             <h2>${evento.title}</h2>
-            <p class="data">${evento.date}</p>
+            <p class="data">${formattaDataIt(evento.date)}</p>
             <p class="luogo">${evento.location}</p>
             <p class="associazione">${evento.source || ''}</p>
             ${evento.poster ? `<a class="btn-poster" href="${evento.poster}" target="_blank">Apri volantino</a>` : ''}
