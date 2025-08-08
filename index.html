@@ -48,15 +48,16 @@
         }
 
 
-        data.forEach(evento => {
+        data.forEach(event => {
           const li = document.createElement('li');
           li.classList.add('card');
           li.innerHTML = `
-            <h2>${evento.title}</h2>
-            <p class="data">${formattaDataIt(evento.date)}</p>
-            <p class="luogo">${evento.location}</p>
-            <p class="organization">${evento.source || ''}</p>
-            ${evento.poster ? `<a class="btn-poster" href="${evento.poster}" target="_blank">Apri volantino</a>` : ''}
+            <h2>${event.title}</h2>
+            <p class="data">${formattaDataIt(event.date)}</p>
+            <p class="luogo">${event.location.city}</p>
+            <p class="luogo">${event.location.province}</p>
+            <p class="organization">${event.source || ''}</p>
+            ${event.poster ? `<a class="btn-poster" href="${event.poster}" target="_blank">Apri volantino</a>` : ''}
 
           `;
           ul.appendChild(li);

@@ -6,20 +6,43 @@ import time
 import datetime
 from pydantic import BaseModel, HttpUrl
 from typing import Optional, Literal
+from enum import Enum
+from provinces import Province
+
 
 BASE_CSI = "https://www.csibergamo.it"
 CSI_LIST = f"{BASE_CSI}/avvisi/prossime-marce.html"
 FIASP_URL = "https://servizi.fiaspitalia.it/www_eventi.php"
 
 
-# --- Event Model ---
+# --- MODELS ----------------------------------------------------
+
+class Location(BaseModel):
+    city: str
+    province: Province
+
 class Event(BaseModel):
     title: str
     date: str  # format dd/mm/yyyy
-    location: str
+    location: Location
     poster: Optional[HttpUrl] = None
     source: Literal["CSI", "FIASP"]
 
+# --- Helper parsing location ---
+def parse_location(location_raw: str) -> Location:
+    parts = location_raw.strip().split()
+    if len(parts) >= 2:
+        city = " ".join(parts[:-1])
+        province_str = parts[-1].strip("()").upper()  # rimuove parentesi
+        try:
+            province = Province(province_str)
+            return Location(city=city, province=province)
+        except ValueError:
+            print(f"⚠️ Unknown province '{province_str}', defaulting to BG")
+
+    return Location(city=location_raw.strip(), province=Province.BG)  # fallback BG
+
+# --- SCRAPERS ----------------------------------------------------
 
 # --- CSI events ---
 def fetch_csi_events_detailed() -> list[Event]:
@@ -46,7 +69,8 @@ def fetch_csi_events_detailed() -> list[Event]:
 
         ds = BeautifulSoup(r.text, "html.parser")
         title_tag = ds.find("h2", class_="contentheading")
-        location = title_tag.get_text(strip=True) if title_tag else a.get_text(strip=True)
+        location_raw = title_tag.get_text(strip=True) if title_tag else a.get_text(strip=True)
+        location = parse_location(location_raw)
 
         content = ds.find("div", class_="jsn-article-content")
         raw = content.get_text(separator="\n", strip=True) if content else ""
@@ -100,10 +124,8 @@ def fetch_csi_events_detailed() -> list[Event]:
 
 
 # --- FIASP events ---
-def fetch_fiasp_events() -> list[Event]:
-    resp = requests.get(FIASP_URL)
-    resp.raise_for_status()
-    soup = BeautifulSoup(resp.text, "html.parser")
+def parse_fiasp_html(html: str) -> list[Event]:
+    soup = BeautifulSoup(html, "html.parser")
     table = soup.find("table")
     if not table:
         print("⚠️ FIASP table not found")
@@ -117,34 +139,41 @@ def fetch_fiasp_events() -> list[Event]:
         return url
 
     fiasp: list[Event] = []
+    print("eccoci")
+    print(len(table.find_all("tr")[1:]))
     for row in table.find_all("tr")[1:]:
         cols = row.find_all("td")
         if len(cols) < 3:
             continue
         date = cols[0].get_text(strip=True)
         title = cols[1].get_text(strip=True)
-        location = cols[2].get_text(strip=True)
+        location_raw = cols[2].get_text(strip=True)
+        location = parse_location(location_raw)
 
-        # image
         flyer_link = None
         if len(cols) >= 7:
             a_tag = cols[6].find("a")
             if a_tag and a_tag.get("href"):
                 flyer_link = convert_drive_link(a_tag["href"].strip())
 
-        if "bergamo" in location.lower() or "bg" in location.lower():
-            try:
-                fiasp.append(Event(
-                    title=title,
-                    date=date,
-                    location=location,
-                    poster=flyer_link,
-                    source="FIASP"
-                ))
-            except Exception as e:
-                print(f"⚠️ Skipped invalid FIASP event: {e}")
+        try:
+            fiasp.append(Event(
+                title=title,
+                date=date,
+                location=location,
+                poster=flyer_link,
+                source="FIASP"
+            ))
+        except Exception as e:
+            print(f"⚠️ Skipped invalid FIASP event: {e}")
 
     return fiasp
+
+def fetch_fiasp_events() -> list[Event]:
+    resp = requests.get(FIASP_URL)
+    resp.raise_for_status()
+    return parse_fiasp_html(resp.text)
+
 
 
 def main():
