@@ -63,7 +63,7 @@
               <h2>${event.title}</h2>
               <p class="data">${formattaDataIt(event.date)}</p>
               <p class="luogo">${event.location.city} - (${event.location.province})</p>
-              ${event.distances && event.distances.length > 0 ? `<p class="distanze">Distanze: ${event.distances.join(", ")}</p>` : ''}
+              ${event.distances && event.distances.length > 0 ? `<p class="distanze">Distanze in Km: ${event.distances.join(", ")}</p>` : ''}
               <p class="organization">${event.source || ''}</p>
               ${event.poster ? `<a class="btn-poster" href="${event.poster}" target="_blank">Apri volantino</a>` : ''}
             `;
