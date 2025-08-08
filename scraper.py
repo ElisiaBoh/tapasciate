@@ -29,7 +29,7 @@ class Event(BaseModel):
     source: Literal["CSI", "FIASP"]
 
 # --- Helper parsing location ---
-def parse_location(location_raw: str) -> Location:
+def parse_location(location_raw: str, default_province: Province = Province.BG) -> Location:
     parts = location_raw.strip().split()
     if len(parts) >= 2:
         city = " ".join(parts[:-1])
@@ -38,9 +38,10 @@ def parse_location(location_raw: str) -> Location:
             province = Province(province_str)
             return Location(city=city, province=province)
         except ValueError:
-            print(f"⚠️ Unknown province '{province_str}', defaulting to BG")
+            print(f"⚠️ Unknown province '{province_str}', defaulting to {default_province.value}")
 
-    return Location(city=location_raw.strip(), province=Province.BG)  # fallback BG
+    return Location(city=location_raw.strip(), province=default_province)  # fallback default_province
+
 
 # --- SCRAPERS ----------------------------------------------------
 
@@ -139,8 +140,6 @@ def parse_fiasp_html(html: str) -> list[Event]:
         return url
 
     fiasp: list[Event] = []
-    print("eccoci")
-    print(len(table.find_all("tr")[1:]))
     for row in table.find_all("tr")[1:]:
         cols = row.find_all("td")
         if len(cols) < 3:

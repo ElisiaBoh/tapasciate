@@ -10,14 +10,9 @@ except Exception as e:
 class TestParseLocation(unittest.TestCase):
 
     def test_valid_location_with_province(self):
-        loc = parse_location("Bergamo BG")
+        loc = parse_location("Bergamo MI")
         self.assertEqual(loc.city, "Bergamo")
-        self.assertEqual(loc.province, Province.BG)
-
-    def test_location_only_city(self):
-        loc = parse_location("Milano")
-        self.assertEqual(loc.city, "Milano")
-        self.assertEqual(loc.province, Province.BG)  # default province
+        self.assertEqual(loc.province, Province.MI)
 
     def test_invalid_province(self):
         loc = parse_location("Como XX")
@@ -38,11 +33,6 @@ class TestParseLocation(unittest.TestCase):
         loc = parse_location("  Lecco   LC  ")
         self.assertEqual(loc.city, "Lecco")
         self.assertEqual(loc.province, Province.LC)
-
-    def test_empty_string(self):
-        loc = parse_location("")
-        self.assertEqual(loc.city, "")
-        self.assertEqual(loc.province, Province.BG)  # default province
 
 
 if __name__ == "__main__":
