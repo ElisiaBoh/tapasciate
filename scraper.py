@@ -169,7 +169,7 @@ def fetch_fiasp_events() -> list[Event]:
 
 
 def main():
-    csi = [] #fetch_csi_events_detailed()
+    csi = fetch_csi_events_detailed()
     fiasp = fetch_fiasp_events()
     all_events = csi + fiasp
 
