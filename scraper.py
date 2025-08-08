@@ -132,13 +132,6 @@ def parse_fiasp_html(html: str) -> list[Event]:
         print("⚠️ FIASP table not found")
         return []
 
-    def convert_drive_link(url: str) -> str:
-        match = re.search(r'/d/([a-zA-Z0-9_-]+)/', url)
-        if match:
-            file_id = match.group(1)
-            return f"https://drive.google.com/uc?export=view&id={file_id}"
-        return url
-
     fiasp: list[Event] = []
     for row in table.find_all("tr")[1:]:
         cols = row.find_all("td")
@@ -153,7 +146,7 @@ def parse_fiasp_html(html: str) -> list[Event]:
         if len(cols) >= 7:
             a_tag = cols[6].find("a")
             if a_tag and a_tag.get("href"):
-                flyer_link = convert_drive_link(a_tag["href"].strip())
+                flyer_link = a_tag["href"].strip()
 
         try:
             fiasp.append(Event(
@@ -176,7 +169,7 @@ def fetch_fiasp_events() -> list[Event]:
 
 
 def main():
-    csi = fetch_csi_events_detailed()
+    csi = [] #fetch_csi_events_detailed()
     fiasp = fetch_fiasp_events()
     all_events = csi + fiasp
 
