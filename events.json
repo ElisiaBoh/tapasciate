@@ -7,7 +7,8 @@
       "province": "BG"
     },
     "poster": "https://www.csibergamo.it/images/marce/10%20Agosto%20-%20Monte%20Ubione%201.jpg",
-    "source": "CSI"
+    "source": "CSI",
+    "distances": []
   },
   {
     "title": "Pegherandando",
@@ -17,7 +18,8 @@
       "province": "BG"
     },
     "poster": "https://www.csibergamo.it/images/marce/10-08%20PegherAndando.jpg",
-    "source": "CSI"
+    "source": "CSI",
+    "distances": []
   },
   {
     "title": "StraBerbenno",
@@ -27,7 +29,8 @@
       "province": "BG"
     },
     "poster": "https://www.csibergamo.it/images/marce/15-08%20StraBerbenno-1.jpg",
-    "source": "CSI"
+    "source": "CSI",
+    "distances": []
   },
   {
     "title": "Mezzoldo - Ca' San Marco",
@@ -37,7 +40,8 @@
       "province": "BG"
     },
     "poster": "https://www.csibergamo.it/images/marce/16-08%20Mezzoldo.png",
-    "source": "CSI"
+    "source": "CSI",
+    "distances": []
   },
   {
     "title": "Camminata della Tripla A",
@@ -47,7 +51,8 @@
       "province": "BG"
     },
     "poster": "https://www.csibergamo.it/images/marce/31-08%20camminata_tripla%20A_2025-1-1.jpg",
-    "source": "CSI"
+    "source": "CSI",
+    "distances": []
   },
   {
     "title": "Maratonina \"Camminiamo nel Verde\"",
@@ -57,7 +62,8 @@
       "province": "BG"
     },
     "poster": "https://www.csibergamo.it/images/marce/31%20Agosto%20Camminiamo%20nel%20Verde-01.jpg",
-    "source": "CSI"
+    "source": "CSI",
+    "distances": []
   },
   {
     "title": "Stralemine",
@@ -67,7 +73,8 @@
       "province": "BG"
     },
     "poster": "https://www.csibergamo.it/images/marce/07-09%20Stralemine%201-1.jpg",
-    "source": "CSI"
+    "source": "CSI",
+    "distances": []
   },
   {
     "title": "La Corsa di Patty",
@@ -77,7 +84,8 @@
       "province": "BG"
     },
     "poster": "https://www.csibergamo.it/images/marce/07-09%20LacorsadiPatty2_flyer_WEB_2025-1.jpg",
-    "source": "CSI"
+    "source": "CSI",
+    "distances": []
   },
   {
     "title": "Quater salcc e öna biida per i strade de Gaerina",
@@ -87,7 +95,8 @@
       "province": "BG"
     },
     "poster": "https://www.csibergamo.it/images/marce/07-09%20Gaverina-2025-v2-1-1.jpg",
-    "source": "CSI"
+    "source": "CSI",
+    "distances": []
   },
   {
     "title": "52° EL GIR DI CENT FOO",
@@ -97,7 +106,11 @@
       "province": "CO"
     },
     "poster": "https://drive.google.com/file/d/1gASG4EhQY66OlS0f6Jf-Za8QgQa9p7H6/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12"
+    ]
   },
   {
     "title": "7ª CAMMINATA SAN GAETANO",
@@ -107,7 +120,11 @@
       "province": "MN"
     },
     "poster": "https://drive.google.com/file/d/1SWhw3IAv-NSkaEGAOeH33UawLqjwEmeh/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "10.5"
+    ]
   },
   {
     "title": "6ª MARCIA DI CIREGNA",
@@ -117,7 +134,11 @@
       "province": "PC"
     },
     "poster": "https://drive.google.com/file/d/1zQsnQM51Zr0WDxeJPuf_GKyyC0JNGRRQ/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "12.5"
+    ]
   },
   {
     "title": "15° EL GIRO DELE FRAZIOM",
@@ -127,7 +148,12 @@
       "province": "TN"
     },
     "poster": "https://drive.google.com/file/d/1BT7ROvPs52VeUqNvUKqVE2_DzSgv49AY/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "10",
+      "14",
+      "20"
+    ]
   },
   {
     "title": "12ª MARCIA DELL'ASSUNTA",
@@ -137,7 +163,12 @@
       "province": "UD"
     },
     "poster": "https://drive.google.com/file/d/1wLsAirwAXUtyfLP9ZefOBbQ81Vgeisag/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "12",
+      "18"
+    ]
   },
   {
     "title": "12° \"UN PASSO CON L'AMICIAD\" TRA NATURA ED ARCHEOLOGIA",
@@ -147,7 +178,12 @@
       "province": "VI"
     },
     "poster": "https://drive.google.com/file/d/1xR0kxRIaC4AgaJRr-pL5UE0ZH_nCoZR_/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "4.5",
+      "8",
+      "16"
+    ]
   },
   {
     "title": "44ª CAMINADA DEI TRE ARCHI - 2° MEMORIAL GIOVANNI MARTINELLI - 15° TROFEO AVIS",
@@ -157,7 +193,11 @@
       "province": "VR"
     },
     "poster": "https://drive.google.com/file/d/1I-dMlhMvbNUvvGp2RdSKmYmEn3TGZtuV/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "7. 12",
+      "18"
+    ]
   },
   {
     "title": "5ª PERCORRENDO STRADE VECCHIE E NUOVE DI CUSIGNANA",
@@ -167,7 +207,11 @@
       "province": "TV"
     },
     "poster": "https://drive.google.com/file/d/1DwQ-mO7MVUWGs6NeyMkuxncmC0PRDjJ5/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "10"
+    ]
   },
   {
     "title": "LA 19ª CAMMINATA CON LE TORCE TRA I SENTIERI DI CELANA A CAPRINO BERGAMASCO",
@@ -177,7 +221,10 @@
       "province": "BG"
     },
     "poster": "https://drive.google.com/file/d/1_TR0XjqWj2amWdJwWweM-FqXNOSjKWou/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "7"
+    ]
   },
   {
     "title": "18ª ATTORNO IL TORRENTE ARTUGNA",
@@ -187,7 +234,11 @@
       "province": "PN"
     },
     "poster": "https://drive.google.com/file/d/1r-fw0ZUMs7OoDeAvCpuIsnZ_vyCB65r3/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "12"
+    ]
   },
   {
     "title": "45ª MARCIA DI CASALI",
@@ -197,7 +248,12 @@
       "province": "PC"
     },
     "poster": "https://drive.google.com/file/d/1V_b-yft3QoXS_ohQ-dmGE6z-lGxCu2BB/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "12",
+      "20"
+    ]
   },
   {
     "title": "32ª MARCIA \"CUL CJAPIEL\"",
@@ -207,7 +263,12 @@
       "province": "PN"
     },
     "poster": "https://drive.google.com/file/d/1qWkcdk8rpC47EOcj4cL5u8w0R7RDXxLr/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "14",
+      "21"
+    ]
   },
   {
     "title": "4° MEMORIAL \" ROBERTO SARTORI \"",
@@ -217,7 +278,11 @@
       "province": "TN"
     },
     "poster": "https://drive.google.com/file/d/1YTzHVPD5_uLqYHIxZRtacQ9RYBYuAQPg/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "10"
+    ]
   },
   {
     "title": "CAMMINIAMO INSIEME \" MEMORIAL FRANCO NEGRO \"",
@@ -227,7 +292,12 @@
       "province": "UD"
     },
     "poster": "https://drive.google.com/file/d/1sThIwQVNgoXy1XHpNVViAZvg0bD9OXkx/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "14",
+      "19"
+    ]
   },
   {
     "title": "39ª MARCIA TRA PINI E CICLAMINI",
@@ -237,7 +307,12 @@
       "province": "VI"
     },
     "poster": "https://drive.google.com/file/d/11NtCFjA4Fvr0t6ggDk_v6JyHsicdV1km/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "10",
+      "20"
+    ]
   },
   {
     "title": "MARCIAFLONGA",
@@ -247,7 +322,11 @@
       "province": "MN"
     },
     "poster": "https://drive.google.com/file/d/1yONbS70d9-K2sPux1v9YeR0c_QPTY8I_/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12"
+    ]
   },
   {
     "title": "4ª INSIEME A FERRAGOSTO",
@@ -257,7 +336,12 @@
       "province": "UD"
     },
     "poster": "https://drive.google.com/file/d/1BYjMZJK2q7-bhN7amQ5fVSGOGyKG1YiA/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "13",
+      "18"
+    ]
   },
   {
     "title": "MEMORIAL GIANCARLO TURRI - 10ª EDIZIONE",
@@ -267,7 +351,12 @@
       "province": "VR"
     },
     "poster": "https://drive.google.com/file/d/1O4mokdRJ9ilWZQP06JYS901WtTOLQjBK/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12",
+      "17"
+    ]
   },
   {
     "title": "1ª MARCIA DELLE BALDASSERIE",
@@ -277,7 +366,11 @@
       "province": "UD"
     },
     "poster": "https://drive.google.com/file/d/1zKVlBBGymd6ARunbxFL-fsJVC71pzRpc/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12"
+    ]
   },
   {
     "title": "3ª QUATRE PASS ANTURNE A MUSCASA'",
@@ -287,7 +380,12 @@
       "province": "CR"
     },
     "poster": "https://drive.google.com/file/d/1hza8qtB6XAx_J6TL6V_YORLusnIsT55a/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "10",
+      "15"
+    ]
   },
   {
     "title": "45ª MARCIA DELLA CONCORDIA",
@@ -297,7 +395,12 @@
       "province": "PC"
     },
     "poster": "https://drive.google.com/file/d/1-WLCrHTvjwsR0-o9u4KU2809_FvJdKIV/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "10",
+      "15"
+    ]
   },
   {
     "title": "47ª MARCIA FESTA IN PIASSA",
@@ -307,7 +410,12 @@
       "province": "PN"
     },
     "poster": "https://drive.google.com/file/d/1aUKmLJg9ra--i9GxAeSOk8du0lv-jr_X/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12",
+      "18"
+    ]
   },
   {
     "title": "10ª CJAMINADE “ BLAVE DI MORTEAN”",
@@ -317,7 +425,12 @@
       "province": "UD"
     },
     "poster": "https://drive.google.com/file/d/1Ns6Rto-j2_-LAFP-hRw0Bzy_gD7jViJ9/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12",
+      "19"
+    ]
   },
   {
     "title": "PASSEGGIATA SUI SENTIERI DELLE CORNIOLE DE.CO.",
@@ -327,7 +440,12 @@
       "province": "VI"
     },
     "poster": "https://drive.google.com/file/d/1_i4thnnSwDkjL5Bq0R4U0uiy1L_QTSRX/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "8",
+      "12",
+      "17"
+    ]
   },
   {
     "title": "8ª CAMINADA DELLE CARNI BIANCHE",
@@ -337,7 +455,11 @@
       "province": "VR"
     },
     "poster": "https://drive.google.com/file/d/1UtaSeUVaop4k4ciEcC_F3uZBaeVlos0d/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "8",
+      "14"
+    ]
   },
   {
     "title": "TREKKING - VIA FRANCIGENA GRAN SAN BERNARDO-IVREA 1ª TAPPA  GRAN S.BERNARDO-ECHEVENNOZ",
@@ -347,7 +469,10 @@
       "province": "AO"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "15"
+    ]
   },
   {
     "title": "TREKKING    – 2ª  TAPPA TREKKING FRANCIGENA - ECHEVENNOZ-AOSTA",
@@ -357,7 +482,10 @@
       "province": "AO"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "14"
+    ]
   },
   {
     "title": "TREKKING -  3ª TAPPA TREKKING FRANCIGENA  AOSTA-CHATILLON",
@@ -367,7 +495,10 @@
       "province": "AO"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "28"
+    ]
   },
   {
     "title": "TREKKING – 4ª TAPPA TREKKING FRANCIGENA - CHATILLON-VERRES",
@@ -377,7 +508,10 @@
       "province": "AO"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "19"
+    ]
   },
   {
     "title": "52ª 4 GIORNI INTERNAZIONALI DI FOGLIZZO",
@@ -387,7 +521,12 @@
       "province": "TO"
     },
     "poster": "https://drive.google.com/file/d/1bgrdZJhSYEZSjLGq4Y4H6P9vC6fgPM1a/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "10",
+      "21",
+      "42"
+    ]
   },
   {
     "title": "TREKKING – 5ª TAPPA TREKKING FRANCIGENA - VERRES-PONT SAINT MARTIN",
@@ -397,7 +536,10 @@
       "province": "AO"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "15"
+    ]
   },
   {
     "title": "26ª MARCIA PER TUTTE LE ETA'",
@@ -407,7 +549,11 @@
       "province": "CR"
     },
     "poster": "https://drive.google.com/file/d/1hgWpuawR3Dj1ECcDP8az42VSwzwFS_jD/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "10"
+    ]
   },
   {
     "title": "49ª PALIDAN MARCIA IN NOTTURNA",
@@ -417,7 +563,11 @@
       "province": "MN"
     },
     "poster": "https://drive.google.com/file/d/1Ch6PobUXWtq7D1g5XNOAF8EayThv3rzi/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "10"
+    ]
   },
   {
     "title": "17ª MARCIA DELLO SPIEDINO",
@@ -427,7 +577,11 @@
       "province": "PC"
     },
     "poster": "https://drive.google.com/file/d/1ftNQka2sUYFDUqpbTeMxx5ykxSqRocVD/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "10"
+    ]
   },
   {
     "title": "52^ 4 GIORNI INTERNAZIONALI DI FOGLIZZO",
@@ -437,7 +591,12 @@
       "province": "TO"
     },
     "poster": "https://drive.google.com/file/d/1bgrdZJhSYEZSjLGq4Y4H6P9vC6fgPM1a/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "10",
+      "21",
+      "42"
+    ]
   },
   {
     "title": "5ª MARCIA SOTTO LE STELLE - 2° MEMORIAL WALTER CANZIAN",
@@ -447,7 +606,10 @@
       "province": "VI"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "5 ripetibili"
+    ]
   },
   {
     "title": "17ª ENOTTURNA TRA LE MURA DI SOAVE",
@@ -457,7 +619,12 @@
       "province": "VR"
     },
     "poster": "https://drive.google.com/file/d/1ry3wLnUgSbzk_sLaPxMleZhSEm4duZq_/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "3",
+      "6",
+      "ripetibile"
+    ]
   },
   {
     "title": "TREKKING – 6ª TAPPA TREKKING FRANCIGENA - PONT SAINT MARTIN - IVREA",
@@ -467,7 +634,10 @@
       "province": "AO"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "21"
+    ]
   },
   {
     "title": "SVELTICANTO SUMMER NIGHT",
@@ -477,7 +647,10 @@
       "province": "BG"
     },
     "poster": "https://drive.google.com/file/d/1OMXt6_NG7GRvWFCUzLlXvlyq72SnUe0I/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "10"
+    ]
   },
   {
     "title": "52^ 4 GIORNI INTERNAZIONALI DI FOGLIZZO",
@@ -487,7 +660,12 @@
       "province": "TO"
     },
     "poster": "https://drive.google.com/file/d/1bgrdZJhSYEZSjLGq4Y4H6P9vC6fgPM1a/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "10",
+      "21",
+      "42"
+    ]
   },
   {
     "title": "34ª MARCIA DI S. ANTONIO",
@@ -497,7 +675,12 @@
       "province": "CR"
     },
     "poster": "https://drive.google.com/file/d/147S2cIAtkv5I9AGCNYa4bqye1nzr8RWH/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "14",
+      "20"
+    ]
   },
   {
     "title": "MARCIA DE LE RAZE",
@@ -507,7 +690,11 @@
       "province": "GO"
     },
     "poster": "https://drive.google.com/file/d/1LE6sPEd2rmmQ6YbQR88KtRUneoaFX6d-/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "14"
+    ]
   },
   {
     "title": "17ª STRAPAGNANO",
@@ -517,7 +704,14 @@
       "province": "LC"
     },
     "poster": "https://drive.google.com/file/d/1sMCZP0FthANoIg39p4LraA8oAqT4Tdme/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "8",
+      "12",
+      "16",
+      "22",
+      "26"
+    ]
   },
   {
     "title": "52ª MARCIA DEL PO \"MEMORIAL UGOLINO MARCHIO' \"",
@@ -527,7 +721,12 @@
       "province": "MN"
     },
     "poster": "https://drive.google.com/file/d/1UxOEo-pCZ04pLKlBwn8h58CoQObQ6Qyb/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12",
+      "17"
+    ]
   },
   {
     "title": "MARCIA DEL VOLONTARIO",
@@ -537,7 +736,12 @@
       "province": "PC"
     },
     "poster": "https://drive.google.com/file/d/1hvdNRRMCaOV1fvlipdXqKraYz93X8je6/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "11",
+      "18"
+    ]
   },
   {
     "title": "4° MARCIA COLOMBARA",
@@ -547,7 +751,11 @@
       "province": "PD"
     },
     "poster": "https://drive.google.com/file/d/1FLiMA6rfqMMK7mtYsuL_ZhGnRzRszWyu/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "15"
+    ]
   },
   {
     "title": "12° OM DE MER –  TRIATHLON GOLIARDICO",
@@ -557,7 +765,12 @@
       "province": "PD"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "0.250",
+      "15",
+      "5"
+    ]
   },
   {
     "title": "6ª MARCIA \"I COLORI DI SAN LEONARDO\"",
@@ -567,7 +780,12 @@
       "province": "PN"
     },
     "poster": "https://drive.google.com/file/d/1B2C9Mw14mG3JYgdxHvv1QJGAeDFExP_P/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "4.5",
+      "9",
+      "16"
+    ]
   },
   {
     "title": "52ª 4 GIORNI INTERNAZIONALI DI FOGLIZZO",
@@ -577,7 +795,12 @@
       "province": "TO"
     },
     "poster": "https://drive.google.com/file/d/1bgrdZJhSYEZSjLGq4Y4H6P9vC6fgPM1a/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "10",
+      "21",
+      "42"
+    ]
   },
   {
     "title": "12^ HAITI FUN RUN",
@@ -587,7 +810,12 @@
       "province": "UD"
     },
     "poster": "https://drive.google.com/file/d/16X7d2STQ9IBB0LM_BQAroQxtzIzb3kFQ/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "8",
+      "12",
+      "15"
+    ]
   },
   {
     "title": "9ª  QUATTAR PASS PAR GAVIRA' RUN FOR ALZHEIMER",
@@ -597,7 +825,11 @@
       "province": "VA"
     },
     "poster": "https://drive.google.com/file/d/11NtCFjA4Fvr0t6ggDk_v6JyHsicdV1km/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "11"
+    ]
   },
   {
     "title": "9ª MARCIA LA RONDINE - MEMORIAL ANTONIO CESARI",
@@ -607,7 +839,13 @@
       "province": "VI"
     },
     "poster": "https://drive.google.com/file/d/1NsBFuWY-xWmNzNoOrW5FEpZIMKEW_O0l/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "3.5",
+      "7",
+      "12",
+      "19"
+    ]
   },
   {
     "title": "10° FARINATE RUNNING",
@@ -617,7 +855,10 @@
       "province": "CR"
     },
     "poster": "https://drive.google.com/file/d/1ATmfJdXGQu1lxxRDivdrZQDkWl8sv0w4/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "7"
+    ]
   },
   {
     "title": "28ª MARCIA DELL'ORATORIO",
@@ -627,7 +868,11 @@
       "province": "CR"
     },
     "poster": "https://drive.google.com/file/d/19xw3KshUHktSU4A4srZNA7YFWmYMS_Lr/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "3",
+      "7"
+    ]
   },
   {
     "title": "35ª CURUM PAR LA CHISOLA",
@@ -637,7 +882,12 @@
       "province": "PC"
     },
     "poster": "https://drive.google.com/file/d/1T3AfK94B_HGbETRnvMHl7NBKGquSxLrQ/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "8",
+      "13"
+    ]
   },
   {
     "title": "12ª RUN & WALK BY NIGHT",
@@ -647,7 +897,10 @@
       "province": "TR"
     },
     "poster": "https://drive.google.com/file/d/1ctEge-rcprtjci-B8X6UESuTtXEGaiFM/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "7+500"
+    ]
   },
   {
     "title": "7ª LUCCIOLATA DI VILLA CALDOGNO",
@@ -657,7 +910,10 @@
       "province": "VI"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "6"
+    ]
   },
   {
     "title": "CAMMINATA TRA BOSCO E LAGO",
@@ -667,7 +923,12 @@
       "province": "CO"
     },
     "poster": "https://drive.google.com/file/d/15eZYiHrSiZY1I1XoEBqg7Awj2DbP_M8m/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "10",
+      "15"
+    ]
   },
   {
     "title": "CORSA PER UNA STELLA",
@@ -677,7 +938,11 @@
       "province": "UD"
     },
     "poster": "https://drive.google.com/file/d/1sbmagIIRwj-0t2WJciVDiNBnBpWPl49U/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "9"
+    ]
   },
   {
     "title": "9° PELLEGRINAGGIO",
@@ -687,7 +952,10 @@
       "province": "VI"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "40"
+    ]
   },
   {
     "title": "41ª U GIR PER BARIA'",
@@ -697,7 +965,12 @@
       "province": "BG"
     },
     "poster": "https://drive.google.com/file/d/1v86GyIinj55iQgAWAmc8deI7nQqFQAAP/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "8",
+      "14",
+      "20"
+    ]
   },
   {
     "title": "40ª MARCIA DEL DONATORE",
@@ -707,7 +980,14 @@
       "province": "BG"
     },
     "poster": "https://drive.google.com/file/d/1f-c6II67Xhf3xw81MIGRKdaOX7_YyA-m/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "12",
+      "15",
+      "22",
+      "27"
+    ]
   },
   {
     "title": "46ª CAMMINATA DELLA SPERANZA",
@@ -717,7 +997,13 @@
       "province": "CO"
     },
     "poster": "https://drive.google.com/file/d/1S-5jl2QvfiYm_uSNtPsILPh0zYC68m4v/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "9",
+      "13",
+      "18"
+    ]
   },
   {
     "title": "37° GIROVERDE",
@@ -727,7 +1013,12 @@
       "province": "CR"
     },
     "poster": "https://drive.google.com/file/d/16AYf1pTBRULEqiPfiwWaS117IvQsZQBA/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "14",
+      "20"
+    ]
   },
   {
     "title": "CAMMINANDO NEL PREVAL",
@@ -737,7 +1028,11 @@
       "province": "GO"
     },
     "poster": "https://drive.google.com/file/d/11EtQv6ljRsFoK2fb9vy2BbgucDZ0UE8s/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "15"
+    ]
   },
   {
     "title": "20ª EDIZIONE TRA ROGGE E PIOPPI",
@@ -747,7 +1042,12 @@
       "province": "LO"
     },
     "poster": "https://drive.google.com/file/d/1DV0vw4kS8FVCZAlrvdSGWsGpsVFvSa6F/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "14",
+      "21"
+    ]
   },
   {
     "title": "21ª CORRIVIADANA",
@@ -757,7 +1057,12 @@
       "province": "MN"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "3(disabili)",
+      "6",
+      "13"
+    ]
   },
   {
     "title": "32ª CAMMINATA DELLE TRE VALLI",
@@ -767,7 +1072,12 @@
       "province": "PC"
     },
     "poster": "https://drive.google.com/file/d/1GIej_vpkSk0sUXfKupb51DOiomjPqDvu/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "12",
+      "21"
+    ]
   },
   {
     "title": "3ª MARCIA DEL KIS",
@@ -777,7 +1087,12 @@
       "province": "PN"
     },
     "poster": "https://drive.google.com/file/d/1javbE9K9MV9JYDP9Mi6WBX5s59gAbF5H/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "14",
+      "21"
+    ]
   },
   {
     "title": "10ª CAMMINIAMO UN PO INSIEME",
@@ -787,7 +1102,11 @@
       "province": "PR"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "10"
+    ]
   },
   {
     "title": "DI CORSA NEL PARCO NEL PARCO",
@@ -797,7 +1116,11 @@
       "province": "PV"
     },
     "poster": "https://drive.google.com/file/d/1g96UUPlM-CjOxF3NLi_EewQYNYxNfR09/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "14"
+    ]
   },
   {
     "title": "32ª CORRERE NELLA CAMPAGNA",
@@ -807,7 +1130,12 @@
       "province": "UD"
     },
     "poster": "https://drive.google.com/file/d/1o8udxIi07_qbTjpiL4kZ_1ARErgbX3G6/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "13",
+      "18"
+    ]
   },
   {
     "title": "16ª  STRAMORAZZONE",
@@ -817,7 +1145,12 @@
       "province": "VA"
     },
     "poster": "https://drive.google.com/file/d/11fkxN99zqHfPMwfQ8hNFXA2pLn2uE0hy/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "10",
+      "18"
+    ]
   },
   {
     "title": "14ª MARCIA DI MARAGNOLE MEMORIAL DON CAMILLO FARESIN",
@@ -827,7 +1160,12 @@
       "province": "VI"
     },
     "poster": "https://drive.google.com/file/d/12JcDWS-vymV4yFhtiXfb4D5JgGnrqi5W/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12",
+      "18"
+    ]
   },
   {
     "title": "17ª CORRI ALLE TORRI (SALIZZOLE VR)",
@@ -837,7 +1175,12 @@
       "province": "VR"
     },
     "poster": "https://drive.google.com/file/d/10l1t9lce5bPIJOGDFP25d-_mGp0iW3Wh/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "10",
+      "16"
+    ]
   },
   {
     "title": "6ª MARCIA LUDICO MOTORIA A PERAROLO DI VIGONZA",
@@ -847,7 +1190,11 @@
       "province": "PD"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "11"
+    ]
   },
   {
     "title": "\"RUN FOR BEAUTY\" IL TRUCCO C'E' E SI CHIAMA PREVENZIONE",
@@ -857,7 +1204,11 @@
       "province": "CR"
     },
     "poster": "https://drive.google.com/file/d/17J96HLsfOZRayyafxoflj7d8b01CcNTm/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "4",
+      "8"
+    ]
   },
   {
     "title": "14ª PALIO  CITTÀ DI CODOGNO",
@@ -867,7 +1218,10 @@
       "province": "LO"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "12"
+    ]
   },
   {
     "title": "A SPASSO AL CHIARO DI LUNA",
@@ -877,7 +1231,10 @@
       "province": "VI"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "10"
+    ]
   },
   {
     "title": "6ª CORRI IN ROSA",
@@ -887,7 +1244,10 @@
       "province": "MB"
     },
     "poster": "https://drive.google.com/file/d/1yMPjoybXV0jJyQXiUofL8VMga7dPiIHo/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "6"
+    ]
   },
   {
     "title": "2° RADUNO NAZIONALE DEI COMITATI FIASP",
@@ -897,7 +1257,10 @@
       "province": "MN"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "7"
+    ]
   },
   {
     "title": "8ª EDIZIONE RUN WITH ZHERMACK",
@@ -907,7 +1270,12 @@
       "province": "RO"
     },
     "poster": "https://drive.google.com/file/d/1XftYXHGEspF0EF1pLkrR7dEZ6D_apY5a/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "2",
+      "5",
+      "12"
+    ]
   },
   {
     "title": "1ª AL CHIARO DI LUNA TRA LE RISORGIVE",
@@ -917,7 +1285,10 @@
       "province": "VI"
     },
     "poster": "https://drive.google.com/file/d/1lzhjzF8pq4VgfMglE6Hb9qMeFStp8lIo/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "8"
+    ]
   },
   {
     "title": "49ª  MARCIA DEL DONATORE",
@@ -927,7 +1298,12 @@
       "province": "BG"
     },
     "poster": "https://drive.google.com/file/d/1BULYS57jGA808WIyqqrHxXeBhckW1t6u/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "10",
+      "15"
+    ]
   },
   {
     "title": "50° FESTIVAL NAZIONALE DEL PODISTA",
@@ -937,7 +1313,13 @@
       "province": "CR"
     },
     "poster": "https://drive.google.com/file/d/1unFhO1pUA799zUoFpPxDoMlGNcN3loWG/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "9",
+      "13",
+      "21"
+    ]
   },
   {
     "title": "MARCIA \"SOLIDARIETA' E' VITA\" -",
@@ -947,7 +1329,12 @@
       "province": "GO"
     },
     "poster": "https://drive.google.com/file/d/1iygDQ30Ir9QHVDS_USCWpiLsJTroLhmL/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "11",
+      "14"
+    ]
   },
   {
     "title": "3ª STRAPELLICANO",
@@ -957,7 +1344,12 @@
       "province": "LC"
     },
     "poster": "https://drive.google.com/file/d/12s-9z0I9ZxLp6mqn6TbJd7vaRJxw3RVz/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "15",
+      "22"
+    ]
   },
   {
     "title": "7ª MARCIA  I GÖSI  E  I  SO  AMISI",
@@ -967,7 +1359,12 @@
       "province": "LO"
     },
     "poster": "https://drive.google.com/file/d/1R9yDW9ksfDYhujY7ug9JXBJUZirH0xU2/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "14",
+      "20"
+    ]
   },
   {
     "title": "MEZZAGORUN 2025",
@@ -977,7 +1374,12 @@
       "province": "MB"
     },
     "poster": "https://drive.google.com/file/d/12kawLOPRQCuM7bX5Vmk0c84XJ54suhGB/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "8",
+      "15",
+      "21"
+    ]
   },
   {
     "title": "17ª CAMMINATA PER LE FRAZIONI DEL COMUNE DI SAN GIORGIO BIGARELLO",
@@ -987,7 +1389,11 @@
       "province": "MN"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12"
+    ]
   },
   {
     "title": "38ª MARCIA DEI TRE ARGINI",
@@ -997,7 +1403,12 @@
       "province": "PC"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "10",
+      "14"
+    ]
   },
   {
     "title": "19ª MARCIA DEL BOSCAT",
@@ -1007,7 +1418,12 @@
       "province": "PN"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "12",
+      "18"
+    ]
   },
   {
     "title": "LA 5000 DELLA GARLASCHESE",
@@ -1017,7 +1433,11 @@
       "province": "PV"
     },
     "poster": "https://drive.google.com/file/d/1MDFsALOXwaFJPnmG7LuAQwXy3tczalKy/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "11"
+    ]
   },
   {
     "title": "10ª MARCIA INTERNAZIONALE   \"TRA LE COLLINE DEL PROSCIUTTO\"",
@@ -1027,7 +1447,12 @@
       "province": "UD"
     },
     "poster": "https://drive.google.com/file/d/1wSPbMwDfMjkxfn2DFq0VklFzfrkbnHgV/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "10",
+      "16"
+    ]
   },
   {
     "title": "22^ QUATTAR PASS IN PINETA",
@@ -1037,7 +1462,11 @@
       "province": "VA"
     },
     "poster": "https://drive.google.com/file/d/1RonAYkMJfHXABajARxL41TsORXWrXXpe/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "13"
+    ]
   },
   {
     "title": "5ª MARCIA PER LE TERRE DEL TIEPOLO",
@@ -1047,7 +1476,12 @@
       "province": "VE"
     },
     "poster": "https://drive.google.com/file/d/1FtSIDChMJcAJUF80kXRqtYlpQue8DxLK/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12",
+      "18"
+    ]
   },
   {
     "title": "PASSI BLU",
@@ -1057,7 +1491,10 @@
       "province": "VI"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "3"
+    ]
   },
   {
     "title": "50ª MARCIA BIANCOVERDE",
@@ -1067,7 +1504,12 @@
       "province": "VI"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12",
+      "21"
+    ]
   },
   {
     "title": "48ª MARCIA VALLI GRANDI VERONESI",
@@ -1077,7 +1519,13 @@
       "province": "VR"
     },
     "poster": "https://drive.google.com/file/d/13Aj50cvSnT1Iu7wPUlWqRuGDOgWUL52P/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "4",
+      "7",
+      "13",
+      "17"
+    ]
   },
   {
     "title": "7ª EDZ. I PERCORSI DELL'EST! EST!! EST!!!",
@@ -1087,7 +1535,11 @@
       "province": "VT"
     },
     "poster": "https://drive.google.com/file/d/1UxGoLNGahBUHi_U6-mBTNFbGOZ6TSPCJ/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "9+500",
+      "20"
+    ]
   },
   {
     "title": "7ª SENTRALE DE NOTE",
@@ -1097,7 +1549,10 @@
       "province": "VI"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "5"
+    ]
   },
   {
     "title": "14° MEMORIAL EUGENIO MERCORIO",
@@ -1107,7 +1562,10 @@
       "province": "BG"
     },
     "poster": "https://drive.google.com/file/d/1yx2rMEaokliXVH-Lcq0H2lTBqsgGS88a/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "12"
+    ]
   },
   {
     "title": "14ª PEDALATA MEMORIAL EUGENIO MERCORIO",
@@ -1117,7 +1575,10 @@
       "province": "BG"
     },
     "poster": "https://drive.google.com/file/d/1yx2rMEaokliXVH-Lcq0H2lTBqsgGS88a/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "10"
+    ]
   },
   {
     "title": "CAMMINATA PER LA VITA \"DOMENICO  LAMURA E ANTONIO TAVOLA\"",
@@ -1127,7 +1588,11 @@
       "province": "LC"
     },
     "poster": "https://drive.google.com/file/d/1lCu_SUs5DVH90UBJ0g9aPg2KH8zkZYfL/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12"
+    ]
   },
   {
     "title": "2ª MARCIA DEL DONATORE",
@@ -1137,7 +1602,11 @@
       "province": "PN"
     },
     "poster": "https://drive.google.com/file/d/1A2hKZfI5FhdOCOuUw0CtOju_3Z9Oupc7/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12"
+    ]
   },
   {
     "title": "1° WALK FOR LIFE",
@@ -1147,7 +1616,11 @@
       "province": "UD"
     },
     "poster": "https://drive.google.com/file/d/1aXXYCrgACYTOT-MeDyomZr-SrZyPmWhn/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12"
+    ]
   },
   {
     "title": "STRAELA",
@@ -1157,7 +1630,14 @@
       "province": "BG"
     },
     "poster": "https://drive.google.com/file/d/1uDanYCjU-Ui2WCPsMSH3BU7lfEHGjRvv/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "1",
+      "6",
+      "13",
+      "16",
+      "22"
+    ]
   },
   {
     "title": "50ª MURSELADA",
@@ -1167,7 +1647,12 @@
       "province": "CR"
     },
     "poster": "https://drive.google.com/file/d/1n0rFHTcCdwIjTYxjTqx6sVLkScyVaG8o/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "12",
+      "20"
+    ]
   },
   {
     "title": "11ª   CAMMINANDO NEL COLLIO",
@@ -1177,7 +1662,13 @@
       "province": "GOR"
     },
     "poster": "https://drive.google.com/file/d/1IePwUA7qdKARUhG_1Fd6kTX9wrLZUX9a/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "3",
+      "7",
+      "13",
+      "21"
+    ]
   },
   {
     "title": "44ª SGAMBATA VERDERESE",
@@ -1187,7 +1678,12 @@
       "province": "LC"
     },
     "poster": "https://drive.google.com/file/d/103-kHRe9kmx9Lh5IJyRPHHpwqF7ZyP0h/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "11",
+      "20"
+    ]
   },
   {
     "title": "45ª CAMINADA DE SCUGNAI",
@@ -1197,7 +1693,13 @@
       "province": "LO"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "9",
+      "15",
+      "20",
+      "25"
+    ]
   },
   {
     "title": "41° TROFEO DON CARLO CARRETTONI",
@@ -1207,7 +1709,12 @@
       "province": "MB"
     },
     "poster": "https://drive.google.com/file/d/1EiFV2ZrV2U0ESxk6EhAB5aXt21FfX-8R/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "13",
+      "22"
+    ]
   },
   {
     "title": "49ª  MARCIA ACLI PODISTICA ORATORIO SAN GIULIANO",
@@ -1217,7 +1724,13 @@
       "province": "MI"
     },
     "poster": "https://drive.google.com/file/d/15rHaXIdz6qgsjdJR0uvwC-lykpDSDK5r/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "4",
+      "6",
+      "14",
+      "18"
+    ]
   },
   {
     "title": "INSIEME PER LA CASA DI IRIS",
@@ -1227,7 +1740,11 @@
       "province": "PC"
     },
     "poster": "https://drive.google.com/file/d/15uyeGeRwfYNI-TE8GIQ0p7rTA6iBaBO7/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "10"
+    ]
   },
   {
     "title": "51ª MARCIA DEI FUNGHI",
@@ -1237,7 +1754,12 @@
       "province": "PN"
     },
     "poster": "https://drive.google.com/file/d/19NsLonXuWihSpQJl78XyEzxhHfXgMgpn/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12",
+      "25"
+    ]
   },
   {
     "title": "10° CORRI A TORRILE",
@@ -1247,7 +1769,11 @@
       "province": "PR"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "10"
+    ]
   },
   {
     "title": "15ª IN SLA' ROTA AD PO",
@@ -1257,7 +1783,12 @@
       "province": "RO"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "12",
+      "18"
+    ]
   },
   {
     "title": "STRAUDINE",
@@ -1267,7 +1798,10 @@
       "province": "UD"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "8.5"
+    ]
   },
   {
     "title": "NONA EDIZIONE MEMORIAL ZANELLA",
@@ -1277,7 +1811,11 @@
       "province": "VA"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "15"
+    ]
   },
   {
     "title": "MARCIA DI CINTO",
@@ -1287,7 +1825,10 @@
       "province": "VE"
     },
     "poster": "https://drive.google.com/file/d/15JMz3iB7VfsNAvJ-Yl2ds9s05qwNcPMz/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "6/12/18"
+    ]
   },
   {
     "title": "15ª MARCIA VILLA CAPPELLO  - 30ª EDIZIONE",
@@ -1297,7 +1838,12 @@
       "province": "VI"
     },
     "poster": "https://drive.google.com/file/d/16qyCP50HWq6eFucMqqnj_PU95-J65V2g/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "12",
+      "20"
+    ]
   },
   {
     "title": "8ª MARCIA DEI CASTELLARI",
@@ -1307,7 +1853,12 @@
       "province": "VI"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "4",
+      "12",
+      "20"
+    ]
   },
   {
     "title": "CAMMINA OSSERVA SCOPRI. 4 PASSI NEL NOSTRO TERRITORIO",
@@ -1317,7 +1868,10 @@
       "province": "CR"
     },
     "poster": "https://drive.google.com/file/d/11i_WujyKixrvGy_LPYGn5KcTMdmt8cKc/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "5"
+    ]
   },
   {
     "title": "3ª NIBIONNO WALK",
@@ -1327,7 +1881,11 @@
       "province": "LC"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "8",
+      "14"
+    ]
   },
   {
     "title": "22° TROFEO ASSOCIAZIONE AS.SO.FA.",
@@ -1337,7 +1895,11 @@
       "province": "PC"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "10"
+    ]
   },
   {
     "title": "51ª MARCIA IN CIMA AL CAMPANILE",
@@ -1347,7 +1909,11 @@
       "province": "PN"
     },
     "poster": "https://drive.google.com/file/d/1z8B3oDGIoOCPx-ppABgseSHKRn4jJ9Db/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "10"
+    ]
   },
   {
     "title": "MARCIA PER RITROVARE IL SORRISO",
@@ -1357,7 +1923,11 @@
       "province": "VI"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12"
+    ]
   },
   {
     "title": "4° CAMMINATA IN ROSA ALBARETANA",
@@ -1367,7 +1937,11 @@
       "province": "VR"
     },
     "poster": "https://drive.google.com/file/d/1xA3pqgzw1tIt9HZYB5fxLf975dByKnO9/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12"
+    ]
   },
   {
     "title": "37ª SGAMBADA D'AUTUNNO",
@@ -1377,7 +1951,12 @@
       "province": "BG"
     },
     "poster": "https://drive.google.com/file/d/1OxHYW3_d6PxhwwDb1GLlaOFSwjhZ-dkq/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12",
+      "18"
+    ]
   },
   {
     "title": "18ª MARCIA DELLA VALLE DELL'OGLIO",
@@ -1387,7 +1966,12 @@
       "province": "CR"
     },
     "poster": "https://drive.google.com/file/d/1OObBbNlUVkJjLBbTR6s0VA-2qrhKPRwV/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "8",
+      "14",
+      "18"
+    ]
   },
   {
     "title": "22ª MARCIA DEL DONATORE",
@@ -1397,7 +1981,12 @@
       "province": "GO"
     },
     "poster": "https://drive.google.com/file/d/1QwAqOBNLaiF9aMw2i2_e_7Nm9HFrlnEd/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12",
+      "20"
+    ]
   },
   {
     "title": "21ª QUATER PASS INTURNU AL S.MARTIN",
@@ -1407,7 +1996,12 @@
       "province": "LC"
     },
     "poster": "https://drive.google.com/file/d/1H7cZI8NBVmPbGmz5MTAWJzH0QtTZATwr/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "8",
+      "15",
+      "22"
+    ]
   },
   {
     "title": "15ª LODI CHE CORRE",
@@ -1417,7 +2011,12 @@
       "province": "LO"
     },
     "poster": "https://drive.google.com/file/d/1XgTBdW1ZP4G2WYa4TlEZgSm4eGLQ2v41/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "8",
+      "14",
+      "18"
+    ]
   },
   {
     "title": "52ª CAMMINATA LUNGO IL PO",
@@ -1427,7 +2026,11 @@
       "province": "PC"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12"
+    ]
   },
   {
     "title": "7ª CAMINA CORI E CIACOEA",
@@ -1437,7 +2040,12 @@
       "province": "PD"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "8",
+      "12",
+      "16"
+    ]
   },
   {
     "title": "20ª MARCIA DELLA PENNA",
@@ -1447,7 +2055,13 @@
       "province": "PN"
     },
     "poster": "https://drive.google.com/file/d/1MkP6dNY8AfVl-tJyrxXChuK7RnLKzCHQ/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "12",
+      "16",
+      "20"
+    ]
   },
   {
     "title": "CAMMINATA ALTA VAL RECCHIO",
@@ -1457,7 +2071,11 @@
       "province": "PR"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "12"
+    ]
   },
   {
     "title": "CAMMINATA DEL DONO",
@@ -1467,7 +2085,11 @@
       "province": "UD"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "11"
+    ]
   },
   {
     "title": "3^ MARCIA DELLE 4 STAGIONI",
@@ -1477,7 +2099,12 @@
       "province": "UD"
     },
     "poster": "https://drive.google.com/file/d/1bUJHTVcM1CviCtviLdcfLwpBZYe8_SpI/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "5.5",
+      "6.0",
+      "12"
+    ]
   },
   {
     "title": "27ª CAMMINATA DEL CARDINALE",
@@ -1487,7 +2114,12 @@
       "province": "VA"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "13",
+      "18"
+    ]
   },
   {
     "title": "22ª MARCIA PER I BAMBINI DI STRADA",
@@ -1497,7 +2129,13 @@
       "province": "VI"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "9",
+      "12",
+      "16"
+    ]
   },
   {
     "title": "40ª MARCIA TRA LE VISELE DEL DURELO",
@@ -1507,7 +2145,12 @@
       "province": "VI"
     },
     "poster": "https://drive.google.com/file/d/11p2sQp67PS8UQ0odLZo-Gzy7hZbsZB1x/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12",
+      "20"
+    ]
   },
   {
     "title": "16ª SU E ZO PAR LA ROSTA",
@@ -1517,7 +2160,12 @@
       "province": "VR"
     },
     "poster": "https://drive.google.com/file/d/1RXOqq5SmNGnYOluOzFjegjiAgeyZroVw/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "3",
+      "6",
+      "12"
+    ]
   },
   {
     "title": "18ª MARCIA DELLE PECORE",
@@ -1527,7 +2175,13 @@
       "province": "MI"
     },
     "poster": "https://drive.google.com/file/d/1tbN6KsKIMndjUvNJkGPubdTSpiiZ-hPD/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "13",
+      "18",
+      "23"
+    ]
   },
   {
     "title": "26ª CAMMINANDO CON BAKHITA",
@@ -1537,7 +2191,10 @@
       "province": "VI"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "28"
+    ]
   },
   {
     "title": "51ª SGAMBADA DE LÒNGUEL",
@@ -1547,7 +2204,11 @@
       "province": "BG"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "10"
+    ]
   },
   {
     "title": "CAMMINIAMO PER INCONTRARE I POPOLI",
@@ -1557,7 +2218,12 @@
       "province": "CO"
     },
     "poster": "https://drive.google.com/file/d/12dLsLnn9weq3dv9mZcAoDHCCsSHKz9vy/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "8",
+      "15",
+      "21"
+    ]
   },
   {
     "title": "14° GIRO DELLA BATTAGLIA",
@@ -1567,7 +2233,12 @@
       "province": "CR"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "12",
+      "16"
+    ]
   },
   {
     "title": "15° TROFEO CASTELLOTTI GIUSEPPE E ZANABONI MARIANO",
@@ -1577,7 +2248,14 @@
       "province": "LO"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "11",
+      "16",
+      "21",
+      "25"
+    ]
   },
   {
     "title": "FAMETTA RUN",
@@ -1587,7 +2265,12 @@
       "province": "MB"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "14",
+      "21"
+    ]
   },
   {
     "title": "8ª LA LENTISSIMA",
@@ -1597,7 +2280,13 @@
       "province": "MI"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "12",
+      "16",
+      "21"
+    ]
   },
   {
     "title": "33ª CAMMINATA DELLA QUERCIA",
@@ -1607,7 +2296,11 @@
       "province": "MN"
     },
     "poster": "https://drive.google.com/file/d/1JiSm-nc0hle315O9yb4gIs6z33IhVw5t/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "10"
+    ]
   },
   {
     "title": "7ª CAMMINATA \"AL GIR AD LI CASA'SI\"",
@@ -1617,7 +2310,10 @@
       "province": "MN"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "8"
+    ]
   },
   {
     "title": "24ª MARCIA DELL'ALPINO IN MEMORIA DI GIUSEPPE BACCHI",
@@ -1627,7 +2323,12 @@
       "province": "PC"
     },
     "poster": "https://drive.google.com/file/d/1PgLHNkGGK749--hvnKKiMuwFX0cwA22D/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "10",
+      "15"
+    ]
   },
   {
     "title": "12ª CRETROI RUN",
@@ -1637,7 +2338,13 @@
       "province": "PN"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "4",
+      "8",
+      "12",
+      "16"
+    ]
   },
   {
     "title": "47ª CAMMINATA GOLESANA",
@@ -1647,7 +2354,11 @@
       "province": "PR"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "10"
+    ]
   },
   {
     "title": "3ª RESANA IN ROSA",
@@ -1657,7 +2368,10 @@
       "province": "TV"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "7"
+    ]
   },
   {
     "title": "36ª SU E ZO PAE RIVE DE MONTEBEUNA",
@@ -1667,7 +2381,12 @@
       "province": "TV"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12",
+      "18"
+    ]
   },
   {
     "title": "18ª MARCIA NEL PARCO DEL TORRE",
@@ -1677,7 +2396,12 @@
       "province": "UD"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "12",
+      "18"
+    ]
   },
   {
     "title": "7^ CAMMINATA CON I CORSALUS",
@@ -1687,7 +2411,13 @@
       "province": "VA"
     },
     "poster": "https://drive.google.com/file/d/1h09d-VhosQEXQqQQPd0R34op2IWc9Ln7/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "4",
+      "7",
+      "13",
+      "19"
+    ]
   },
   {
     "title": "40ª MARCIA VERDIANA",
@@ -1697,7 +2427,13 @@
       "province": "VI"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "4",
+      "7",
+      "13",
+      "18"
+    ]
   },
   {
     "title": "49ª PASSEGGIAMO TRA CASTAGNI E OLIVI - 13° MEMORIAL LINO SBRISSA",
@@ -1707,7 +2443,13 @@
       "province": "VI"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "4",
+      "9",
+      "12",
+      "20"
+    ]
   },
   {
     "title": "19ª CORRI A DONARE",
@@ -1717,7 +2459,12 @@
       "province": "VR"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "11",
+      "17"
+    ]
   },
   {
     "title": "13ª MARCIA PER LA VITA IN RICORDO DI MICHELE SIGNAROLDI",
@@ -1727,7 +2474,11 @@
       "province": "PC"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12"
+    ]
   },
   {
     "title": "CLAUTRAIL",
@@ -1737,7 +2488,11 @@
       "province": "PN"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "16",
+      "29"
+    ]
   },
   {
     "title": "5ª BADIA IN ROSA",
@@ -1747,7 +2502,10 @@
       "province": "RO"
     },
     "poster": "https://drive.google.com/file/d/18iiMFapEW0P9zfX0EZQQjbmPY-mI0AUx/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "7"
+    ]
   },
   {
     "title": "IN CAMMINO SULLE ORME DI PAPA GIOVANNI XXIII°",
@@ -1757,7 +2515,10 @@
       "province": "BG"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "15"
+    ]
   },
   {
     "title": "9ª CARDIORUNNING – RICORDANDO IL DOTT. DANIELE BONARA",
@@ -1767,7 +2528,14 @@
       "province": "CR"
     },
     "poster": "https://drive.google.com/file/d/1RD-CwIQSnxEk6O5FGtUvJi0zUddvw6NY/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "3",
+      "7",
+      "11",
+      "15",
+      "20"
+    ]
   },
   {
     "title": "10ª CAMMINATA NELLA VECCHIA LAUS",
@@ -1777,7 +2545,13 @@
       "province": "LO"
     },
     "poster": "https://drive.google.com/file/d/13tXkpxHXh9prtGCl67kJyTS0McioGi8g/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "8",
+      "13",
+      "16",
+      "20"
+    ]
   },
   {
     "title": "44ª CARATE TRA IL VERDE E L'ANTICO",
@@ -1787,7 +2561,14 @@
       "province": "MB"
     },
     "poster": "https://drive.google.com/file/d/1tHYuOXQacmfmnkxBQDrI3JDj4TODTOCa/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "8",
+      "13",
+      "17",
+      "25"
+    ]
   },
   {
     "title": "11ª CORRICAMBIAGO",
@@ -1797,7 +2578,13 @@
       "province": "MI"
     },
     "poster": "https://drive.google.com/file/d/15ECGm5X9EwBh2ipo4-Bf30FZ7cj6qczw/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "10",
+      "16",
+      "21"
+    ]
   },
   {
     "title": "4ª CORSA DELLA SAGRA",
@@ -1807,7 +2594,11 @@
       "province": "MN"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "14"
+    ]
   },
   {
     "title": "32ª MARCIA AVIS VILLANOVA",
@@ -1817,7 +2608,12 @@
       "province": "PC"
     },
     "poster": "https://drive.google.com/file/d/1gGUP-KXyynY2FQo8jRr1pIspK-FI41aq/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "4",
+      "8",
+      "14"
+    ]
   },
   {
     "title": "5ª LA CLAUTANA",
@@ -1827,7 +2623,13 @@
       "province": "PN"
     },
     "poster": "https://drive.google.com/file/d/18Itbi1aC2YtEA1go7JHTwUaCahqzA_HR/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12",
+      "14",
+      "17"
+    ]
   },
   {
     "title": "50° CIRCUITO DELL'ACCIAIO",
@@ -1837,7 +2639,11 @@
       "province": "TR"
     },
     "poster": "https://drive.google.com/file/d/1jhnmbN4MxHhTkq05Prd1rx6aaqS5CEBy/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "15+200 Minipercorsi"
+    ]
   },
   {
     "title": "13ª \"ATOR PAR RICLUS\"",
@@ -1847,7 +2653,12 @@
       "province": "UD"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "11",
+      "16"
+    ]
   },
   {
     "title": "41° TROFEO PODISTI VALLE OLONA",
@@ -1857,7 +2668,12 @@
       "province": "VA"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "13",
+      "18"
+    ]
   },
   {
     "title": "7ª CAMMINATA \"SU E GIU' PER LE FONTANE\"",
@@ -1867,7 +2683,13 @@
       "province": "VI"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "7",
+      "12",
+      "18"
+    ]
   },
   {
     "title": "19ª MARCIA DEL SORRISO",
@@ -1877,7 +2699,13 @@
       "province": "VI"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "10",
+      "18",
+      "24"
+    ]
   },
   {
     "title": "39ª MARCIA DEL RISO",
@@ -1887,7 +2715,11 @@
       "province": "VR"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "13"
+    ]
   },
   {
     "title": "11ª NORDICANDO IL NORDIC WALKING IN VAL D'ILLASI",
@@ -1897,7 +2729,10 @@
       "province": "VR"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "12"
+    ]
   },
   {
     "title": "7° URBAN TRAIL",
@@ -1907,7 +2742,10 @@
       "province": "PD"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "5"
+    ]
   },
   {
     "title": "6ª MARCIA \"VIN NOUF\"",
@@ -1917,7 +2755,11 @@
       "province": "PN"
     },
     "poster": "https://drive.google.com/file/d/1Yh5lWuToxjRs79A_wqUgGlcAirPdh2uG/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12"
+    ]
   },
   {
     "title": "6ª EDIZIONE  MANIFESTAZIONE \"TRA IL ROMANICO ED IL BREMBO\"",
@@ -1927,7 +2769,12 @@
       "province": "BG"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "8",
+      "13",
+      "16"
+    ]
   },
   {
     "title": "13ª BAOBAB RUNNING CUP",
@@ -1937,7 +2784,11 @@
       "province": "BS"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "10"
+    ]
   },
   {
     "title": "19ª MARCIA UN PAESAGGIO DA RISCOPRIRE",
@@ -1947,7 +2798,12 @@
       "province": "CR"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "8",
+      "13",
+      "21"
+    ]
   },
   {
     "title": "46ª TUTTI ASSIEME A MERATE",
@@ -1957,7 +2813,12 @@
       "province": "LC"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "8",
+      "14",
+      "21"
+    ]
   },
   {
     "title": "47ª QUATAR PASS IN DI CASIN D'INVRUGN - 2ª CAMMINATA ROSA",
@@ -1967,7 +2828,13 @@
       "province": "MI"
     },
     "poster": "https://drive.google.com/file/d/1gYpA12NydgPUu_Ysul5kLmBBmdvArAYl/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "4",
+      "6",
+      "12",
+      "18"
+    ]
   },
   {
     "title": "7ª DONGNOCCHIRUN",
@@ -1977,7 +2844,14 @@
       "province": "MI"
     },
     "poster": "https://drive.google.com/file/d/1HrXr1_eg9MeRVIT31wC8o578kyNH7avn/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "3",
+      "6",
+      "10",
+      "15",
+      "21"
+    ]
   },
   {
     "title": "6ª CAMMINATA DELLA SAGRA DI BELFORTE",
@@ -1987,7 +2861,11 @@
       "province": "MN"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "10"
+    ]
   },
   {
     "title": "52ª \"LA BORGOVALTIDONE\"",
@@ -1997,7 +2875,14 @@
       "province": "PC"
     },
     "poster": "https://drive.google.com/file/d/18Lfdbqd8oE6YfGCPjzxAlWSPMdy9sXxj/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "3",
+      "6",
+      "10",
+      "14",
+      "24"
+    ]
   },
   {
     "title": "COLLIAMO LE TERME",
@@ -2007,7 +2892,12 @@
       "province": "PD"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "14",
+      "21"
+    ]
   },
   {
     "title": "20ª MARCIA BROVADA E MUSET",
@@ -2017,7 +2907,12 @@
       "province": "PN"
     },
     "poster": "https://drive.google.com/file/d/121rQ_vN8VQ6oEU1juymjShLjbxZjUkyc/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12",
+      "18"
+    ]
   },
   {
     "title": "5° MEMORIAL DANIELE ROVEDA",
@@ -2027,7 +2922,13 @@
       "province": "PV"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "8",
+      "11",
+      "16",
+      "23"
+    ]
   },
   {
     "title": "ATOR DE MONT",
@@ -2037,7 +2938,12 @@
       "province": "UD"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "12",
+      "22"
+    ]
   },
   {
     "title": "19ª MARCIA DELL'ABBAZIA",
@@ -2047,7 +2953,12 @@
       "province": "VE"
     },
     "poster": "https://drive.google.com/file/d/1FovhvolEKeq2M2tHk6F3xbYsVbj_6VXw/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "9",
+      "14",
+      "20"
+    ]
   },
   {
     "title": "14ª CAMINADA DEI COLLI BERICI \"LA SERATICENSE\"-1ª MARCIA IN ROSA",
@@ -2057,7 +2968,13 @@
       "province": "VI"
     },
     "poster": "https://drive.google.com/file/d/1EW7hPlTUOlex7VRddrLjKHul9E8RKhx5/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "7",
+      "12",
+      "20"
+    ]
   },
   {
     "title": "21ª PASSEGGIATA \"PER MANO INSIEME\"",
@@ -2067,7 +2984,12 @@
       "province": "VI"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12",
+      "16"
+    ]
   },
   {
     "title": "52° SAFARI DEL COCCODRILLO",
@@ -2077,7 +2999,12 @@
       "province": "VR"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "11",
+      "14"
+    ]
   },
   {
     "title": "47ª TEREMOTATA - ULTRA MARATONA DELL'ISOLA",
@@ -2087,7 +3014,15 @@
       "province": "BG"
     },
     "poster": "https://drive.google.com/file/d/1E-0GzhmJ4364WJh4GpJOqjh6OmJN5oCc/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "8",
+      "15",
+      "24",
+      "32",
+      "50"
+    ]
   },
   {
     "title": "11ª MARATALEA",
@@ -2097,7 +3032,14 @@
       "province": "CO"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "10",
+      "14",
+      "20",
+      "30"
+    ]
   },
   {
     "title": "48ª CAMMINATA AVISINA - 44ª STRABRIANZA",
@@ -2107,7 +3049,12 @@
       "province": "MB"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "14",
+      "22"
+    ]
   },
   {
     "title": "49ª CAMINADA DELLE VALLI",
@@ -2117,7 +3064,11 @@
       "province": "MN"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "12"
+    ]
   },
   {
     "title": "38ª MARCIA AIDO",
@@ -2127,7 +3078,12 @@
       "province": "PC"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "11",
+      "17"
+    ]
   },
   {
     "title": "15ª \"CORRI O CAMMINA AZZANO\"",
@@ -2137,7 +3093,13 @@
       "province": "PN"
     },
     "poster": "https://drive.google.com/file/d/1WQVQyCn_gbG_Ybwy1dUj-2L8JyW-eyPo/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "4",
+      "8",
+      "12",
+      "20"
+    ]
   },
   {
     "title": "30° TROFEO MEMORIAL GIANANGELO GASPARINI",
@@ -2147,7 +3109,11 @@
       "province": "PR"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "10"
+    ]
   },
   {
     "title": "MARCIA DEI VIVAI - 19ª MARCIA CON GLI ALPINI PER LORIA",
@@ -2157,7 +3123,12 @@
       "province": "TV"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12",
+      "18"
+    ]
   },
   {
     "title": "24ª MARCIA INTERNAZIONALE DELLE CASTAGNE",
@@ -2167,7 +3138,14 @@
       "province": "UD"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "3",
+      "6",
+      "11",
+      "20",
+      "25"
+    ]
   },
   {
     "title": "3^ CAMMINATA DELLE STREGHE",
@@ -2177,7 +3155,12 @@
       "province": "VA"
     },
     "poster": "https://drive.google.com/file/d/1uwZEyGKaPqVcntpKGcOi-vXSRB--WadU/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "12",
+      "15"
+    ]
   },
   {
     "title": "9ª MARCIA CON GUSTO",
@@ -2187,7 +3170,12 @@
       "province": "VI"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "13",
+      "21"
+    ]
   },
   {
     "title": "17ª PASSEGGIATA TRA LE COLLINE DI MARSAN",
@@ -2197,7 +3185,13 @@
       "province": "VI"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "4",
+      "7",
+      "13",
+      "21"
+    ]
   },
   {
     "title": "35ª CASCINE E SENTIERI",
@@ -2207,7 +3201,12 @@
       "province": "LC"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "8",
+      "15",
+      "21"
+    ]
   },
   {
     "title": "42ª BRONI-CIGOGNOLA MEMORIAL MASSIMO LORE'",
@@ -2217,7 +3216,12 @@
       "province": "PV"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12",
+      "18"
+    ]
   },
   {
     "title": "DUE PASSI TRA I GORGHI 6° EDIZIONE",
@@ -2227,7 +3231,13 @@
       "province": "RO"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "4",
+      "7",
+      "12",
+      "17"
+    ]
   },
   {
     "title": "21ª MARCIA NATURALISTICA PARCO DELLO STELLA",
@@ -2237,7 +3247,11 @@
       "province": "UD"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "10"
+    ]
   },
   {
     "title": "51ª STRATREVIGLIO",
@@ -2247,7 +3261,12 @@
       "province": "BG"
     },
     "poster": "https://drive.google.com/file/d/15KEYTZ7Hfj7ze2B-ORyMUyC4HBxtf-W1/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "15",
+      "21"
+    ]
   },
   {
     "title": "2ª CAMINADA CUDEGHINA",
@@ -2257,7 +3276,12 @@
       "province": "LO"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "8",
+      "14",
+      "19"
+    ]
   },
   {
     "title": "8ª 8KORRERUN",
@@ -2267,7 +3291,12 @@
       "province": "MB"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "14",
+      "21"
+    ]
   },
   {
     "title": "ZIR DAI SANTS",
@@ -2277,7 +3306,11 @@
       "province": "UD"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "13"
+    ]
   },
   {
     "title": "44° STRADAVERIO",
@@ -2287,7 +3320,12 @@
       "province": "VA"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "13",
+      "20"
+    ]
   },
   {
     "title": "49ª MARCIA DELLE CASTAGNE - 10ª MARATONA STRABERICA",
@@ -2297,7 +3335,14 @@
       "province": "VI"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "10",
+      "20",
+      "30",
+      "42"
+    ]
   },
   {
     "title": "2ª UN GIRO NEI CAMPI",
@@ -2307,7 +3352,11 @@
       "province": "VR"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "12"
+    ]
   },
   {
     "title": "CANONICHIAMO 2ª EDIZIONE",
@@ -2317,7 +3366,13 @@
       "province": "BG"
     },
     "poster": "https://drive.google.com/file/d/1vXlhTOrKnhvWtHxeEzxO0GtueqiaMxso/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12",
+      "18",
+      "21"
+    ]
   },
   {
     "title": "51ª MARCIA DEL TORRONE",
@@ -2327,7 +3382,13 @@
       "province": "CR"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "10",
+      "15",
+      "20"
+    ]
   },
   {
     "title": "10ª MARCIA OLTREADDA",
@@ -2337,7 +3398,12 @@
       "province": "LO"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "14",
+      "21"
+    ]
   },
   {
     "title": "7ª CORSA DI SAN MARTINO",
@@ -2347,7 +3413,12 @@
       "province": "MB"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "16",
+      "21"
+    ]
   },
   {
     "title": "32ª TRA CAMPI E ROGGE NEL PARCO MOLGORA",
@@ -2357,7 +3428,12 @@
       "province": "MI"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "14",
+      "21"
+    ]
   },
   {
     "title": "42ª CJAMINADE PAI CUEI",
@@ -2367,7 +3443,12 @@
       "province": "PN"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12",
+      "22"
+    ]
   },
   {
     "title": "47ª ADASI IN T'LA FUMARA",
@@ -2377,7 +3458,11 @@
       "province": "PR"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "12"
+    ]
   },
   {
     "title": "46ª MARCIA DEL DINDIAT",
@@ -2387,7 +3472,11 @@
       "province": "UD"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "12"
+    ]
   },
   {
     "title": "53ª LA BROSEMADA",
@@ -2397,7 +3486,13 @@
       "province": "VI"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "4",
+      "8",
+      "13",
+      "20"
+    ]
   },
   {
     "title": "32ª CAMINADA DI SAN MARTINO",
@@ -2407,7 +3502,13 @@
       "province": "VR"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "3",
+      "7",
+      "12",
+      "20"
+    ]
   },
   {
     "title": "24ª MARCIA SULL'ALPE E SUL SAN GENESIO",
@@ -2417,7 +3518,14 @@
       "province": "LC"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "4",
+      "8",
+      "16",
+      "23",
+      "30"
+    ]
   },
   {
     "title": "42ª MARCIA DELLA FIERA DI CODOGNO",
@@ -2427,7 +3535,14 @@
       "province": "LO"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "10",
+      "15",
+      "21",
+      "25"
+    ]
   },
   {
     "title": "5ª GESS IN RUN",
@@ -2437,7 +3552,11 @@
       "province": "MI"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "14"
+    ]
   },
   {
     "title": "18ª MARCIA DI SAN MARTINO",
@@ -2447,7 +3566,12 @@
       "province": "PN"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "10",
+      "15"
+    ]
   },
   {
     "title": "31ª CAMMINATA P.A. SALSOMAGGIORE - 40ª STAFFETTA DI SANTA LUCIA",
@@ -2457,7 +3581,10 @@
       "province": "PR"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "7"
+    ]
   },
   {
     "title": "26ª MARCIA CASARILESE MEMORIAL GRITTI NAZZARENO",
@@ -2467,7 +3594,12 @@
       "province": "PV"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "8",
+      "15",
+      "19"
+    ]
   },
   {
     "title": "45ª MARCIA TRA I DINTORNI",
@@ -2477,7 +3609,12 @@
       "province": "RO"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12",
+      "21"
+    ]
   },
   {
     "title": "12ª CORSE PIGNOTE",
@@ -2487,7 +3624,11 @@
       "province": "UD"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "14"
+    ]
   },
   {
     "title": "GORLONGA 2025",
@@ -2497,7 +3638,12 @@
       "province": "VA"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "13",
+      "21"
+    ]
   },
   {
     "title": "47ª MARCIA PER LE PRATERIE",
@@ -2507,7 +3653,13 @@
       "province": "VI"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "9",
+      "11",
+      "20"
+    ]
   },
   {
     "title": "3° CAMMINATA TRA LE VERZE MORETTE DI VERONELLA",
@@ -2517,7 +3669,11 @@
       "province": "VR"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "11"
+    ]
   },
   {
     "title": "51ª QUATTRO PONTI SUL LAMBRO",
@@ -2527,7 +3683,12 @@
       "province": "CO"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12",
+      "21"
+    ]
   },
   {
     "title": "4ª \"CORRI BAGNOLO\"",
@@ -2537,7 +3698,12 @@
       "province": "CR"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "13",
+      "18"
+    ]
   },
   {
     "title": "41ª CAMMINATA DI MARIGNANO",
@@ -2547,7 +3713,12 @@
       "province": "MI"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "10",
+      "15"
+    ]
   },
   {
     "title": "3ª TRA LI AGHIS E I MULINS DI BAGNAROLA",
@@ -2557,7 +3728,13 @@
       "province": "PN"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "3",
+      "6",
+      "12",
+      "21"
+    ]
   },
   {
     "title": "45ª MARCIA INTERNAZIONALE PER LE COLLINE DI FAGAGNA",
@@ -2567,7 +3744,12 @@
       "province": "UD"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "13",
+      "22"
+    ]
   },
   {
     "title": "40ª STRAROSSANO",
@@ -2577,7 +3759,13 @@
       "province": "VI"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "4",
+      "8",
+      "12",
+      "18"
+    ]
   },
   {
     "title": "10° LE PESTE SULL'ADIGE",
@@ -2587,7 +3775,10 @@
       "province": "VR"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "6.12.18"
+    ]
   },
   {
     "title": "24ª STAFFETTA 24X1 ORA TELETHON",
@@ -2597,7 +3788,8 @@
       "province": "UD"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": []
   },
   {
     "title": "15° STRANTEGNATE",
@@ -2607,7 +3799,11 @@
       "province": "BG"
     },
     "poster": "https://drive.google.com/file/d/15EPL7UNMXQlwQ7NazcXjCYnI-2iUni73/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "14"
+    ]
   },
   {
     "title": "INSIEME E' PIU' BELLO",
@@ -2617,7 +3813,12 @@
       "province": "LC"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "8",
+      "14",
+      "15"
+    ]
   },
   {
     "title": "24ª WALKING TOGETHER",
@@ -2627,7 +3828,12 @@
       "province": "LO"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "14",
+      "21"
+    ]
   },
   {
     "title": "13ª I SETTE CAMPANILI",
@@ -2637,7 +3843,12 @@
       "province": "MB"
     },
     "poster": "https://drive.google.com/file/d/1b9dDNL0nUtWjwpCwfPrTxodu6eZ5pFsy/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "13",
+      "18"
+    ]
   },
   {
     "title": "43ª QUATRI PAS TA LA PRADERIA",
@@ -2647,7 +3858,12 @@
       "province": "PN"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "14",
+      "21"
+    ]
   },
   {
     "title": "34^ MARCIA DELLA PREMIAZIONE",
@@ -2657,7 +3873,11 @@
       "province": "TN"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12"
+    ]
   },
   {
     "title": "54ª A PEE IN BRUGHEA",
@@ -2667,7 +3887,12 @@
       "province": "VA"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "10",
+      "14"
+    ]
   },
   {
     "title": "45ª MARCIA DEI 4 MULINI - 42° TROFEO PRO LOCO",
@@ -2677,7 +3902,12 @@
       "province": "VI"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "11",
+      "18"
+    ]
   },
   {
     "title": "ASPETTANDO IL NATALE CON LE RANE",
@@ -2687,7 +3917,11 @@
       "province": "VR"
     },
     "poster": "https://drive.google.com/file/d/1ddJup5wBeJ_97L05lpmTO1wf4BmKE4ev/view?usp=sharing",
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "Km 3",
+      "Km 7 ripetibile (14km)"
+    ]
   },
   {
     "title": "CORRI PER TELETHON",
@@ -2697,7 +3931,11 @@
       "province": "BG"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "13"
+    ]
   },
   {
     "title": "5ª CHRISTMAS RUNNING",
@@ -2707,7 +3945,11 @@
       "province": "MN"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "1",
+      "5 ripetibile"
+    ]
   },
   {
     "title": "MARCIA IN ROSA",
@@ -2717,7 +3959,12 @@
       "province": "UD"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "3",
+      "7",
+      "16"
+    ]
   },
   {
     "title": "13ª MARCIA DELLE RISORGIVE - 10ª MARCIA DEI BABBI NATALE",
@@ -2727,7 +3974,13 @@
       "province": "VI"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "4",
+      "7",
+      "12",
+      "18"
+    ]
   },
   {
     "title": "27ª MARCIA DEI TRI CAPITEI",
@@ -2737,7 +3990,12 @@
       "province": "VR"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12",
+      "19"
+    ]
   },
   {
     "title": "54ª MAGNUS CURSUS POMI",
@@ -2747,7 +4005,12 @@
       "province": "LC"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12",
+      "18"
+    ]
   },
   {
     "title": "1ª BABBO RUN",
@@ -2757,7 +4020,11 @@
       "province": "LO"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "10"
+    ]
   },
   {
     "title": "9ª MARCIA DEI BABBI NATALE",
@@ -2767,7 +4034,12 @@
       "province": "MN"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "3",
+      "8",
+      "11"
+    ]
   },
   {
     "title": "35ª MARCIA DELL'IMMACOLATA",
@@ -2777,7 +4049,11 @@
       "province": "PC"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "10"
+    ]
   },
   {
     "title": "10ª PORTONS DI NADAL",
@@ -2787,7 +4063,11 @@
       "province": "PN"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "13"
+    ]
   },
   {
     "title": "CORSA DELLA COMETA A CASTELNOVO BARIANO",
@@ -2797,7 +4077,11 @@
       "province": "RO"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "10"
+    ]
   },
   {
     "title": "19ª CJAMINADE DI S. LUSSIE",
@@ -2807,7 +4091,12 @@
       "province": "UD"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "14",
+      "20"
+    ]
   },
   {
     "title": "45° ULTIMO PASSO D'AUTUNNO - 16ª MARATONA DEI COLLI BERICI",
@@ -2817,7 +4106,14 @@
       "province": "VI"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "3",
+      "6",
+      "12",
+      "20",
+      "42"
+    ]
   },
   {
     "title": "48ª MARCIA DEL GIOCATTOLO",
@@ -2827,7 +4123,12 @@
       "province": "VR"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "2",
+      "6",
+      "10"
+    ]
   },
   {
     "title": "18ª CAMMINATA \"BERGAMO HA UN CUORE GRANDE\" PER LA SOLIDARIETA'",
@@ -2837,7 +4138,12 @@
       "province": "BG"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "4",
+      "10",
+      "15"
+    ]
   },
   {
     "title": "BABBO NATALE DI CORSA",
@@ -2847,7 +4153,12 @@
       "province": "CO"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "14",
+      "20"
+    ]
   },
   {
     "title": "39ª CAMMINATA PER GLI AMICI SCOMPARSI",
@@ -2857,7 +4168,12 @@
       "province": "CR"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "11",
+      "15"
+    ]
   },
   {
     "title": "26ª CORSA PODISTICA  SAN MICHELE  SUI COLLI DEL GARDA",
@@ -2867,7 +4183,12 @@
       "province": "MN"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "14",
+      "20"
+    ]
   },
   {
     "title": "35ª MARCIA DI SANTA LUCIA",
@@ -2877,7 +4198,11 @@
       "province": "PN"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12"
+    ]
   },
   {
     "title": "37ª MARCIA DEL MANDORLATO",
@@ -2887,7 +4212,12 @@
       "province": "VR"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "11",
+      "15"
+    ]
   },
   {
     "title": "4ª SGANBADA DEI BABBI NATALE",
@@ -2897,7 +4227,11 @@
       "province": "RO"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "3",
+      "7"
+    ]
   },
   {
     "title": "52ª STRACADA",
@@ -2907,7 +4241,12 @@
       "province": "MB"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "14",
+      "21"
+    ]
   },
   {
     "title": "CAMMINATA DI NATALE PER SOLIDARIETA'",
@@ -2917,7 +4256,12 @@
       "province": "MI"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "8",
+      "14",
+      "20"
+    ]
   },
   {
     "title": "BABBO CHRISTMAS RUN",
@@ -2927,7 +4271,8 @@
       "province": "PD"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": []
   },
   {
     "title": "13ª MARCIA DI BABBO NATALE",
@@ -2937,7 +4282,12 @@
       "province": "PN"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12",
+      "18"
+    ]
   },
   {
     "title": "33ª DICEMBRINA CERVIGNANESE",
@@ -2947,7 +4297,12 @@
       "province": "UD"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "12",
+      "21"
+    ]
   },
   {
     "title": "CORSA DEI BABBI NATALE",
@@ -2957,7 +4312,11 @@
       "province": "VI"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "12.5"
+    ]
   },
   {
     "title": "13ª FIACCOLATA DI NATALE",
@@ -2967,7 +4326,10 @@
       "province": "CO"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "10"
+    ]
   },
   {
     "title": "14ª CORRI CHE TI PASSA\"CAMMINATA DELLA VIGILIA\"",
@@ -2977,7 +4339,12 @@
       "province": "MN"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "8",
+      "12"
+    ]
   },
   {
     "title": "34ª MARCIA DEL RADICCHIO ROSSO DI ASIGLIANO",
@@ -2987,7 +4354,12 @@
       "province": "VI"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12",
+      "20"
+    ]
   },
   {
     "title": "35ª CAMMINATA DI FINE ANNO",
@@ -2997,7 +4369,12 @@
       "province": "CO"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "14",
+      "20"
+    ]
   },
   {
     "title": "47ª MARATONINA DI SAN SILVESTRO",
@@ -3007,6 +4384,12 @@
       "province": "TV"
     },
     "poster": null,
-    "source": "FIASP"
+    "source": "FIASP",
+    "distances": [
+      "4",
+      "6",
+      "11",
+      "19"
+    ]
   }
 ]

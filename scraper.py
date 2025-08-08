@@ -4,14 +4,14 @@ import json
 import re
 import time
 import datetime
-from pydantic import BaseModel, HttpUrl
-from typing import Optional, Literal
+from typing import List, Optional, Literal
+from pydantic import BaseModel, HttpUrl, Field
 from enum import Enum
 from provinces import Province
 
 
-BASE_CSI = "https://www.csibergamo.it"
-CSI_LIST = f"{BASE_CSI}/avvisi/prossime-marce.html"
+BASE_CSI_BERGAMO = "https://www.csibergamo.it"
+CSI_LIST = f"{BASE_CSI_BERGAMO}/avvisi/prossime-marce.html"
 FIASP_URL = "https://servizi.fiaspitalia.it/www_eventi.php"
 
 
@@ -27,6 +27,7 @@ class Event(BaseModel):
     location: Location
     poster: Optional[HttpUrl] = None
     source: Literal["CSI", "FIASP"]
+    distances: List[str]
 
 # --- Helper parsing location ---
 def parse_location(location_raw: str, default_province: Province = Province.BG) -> Location:
@@ -43,10 +44,27 @@ def parse_location(location_raw: str, default_province: Province = Province.BG) 
     return Location(city=location_raw.strip(), province=default_province)  # fallback default_province
 
 
+# --- Helper parsing distances Fiasp ---
+def parse_distances(raw: str) -> List[str]:
+    if not raw:
+        return []
+    raw = raw.replace(",", ".").strip()
+    raw = re.sub(r"\s+e\s+", "-", raw, flags=re.IGNORECASE)
+    parts = re.split(r"\s*[-–]\s*|\s{2,}", raw)
+    
+    results = []
+    for part in parts:
+        part = part.strip()
+        if not part:
+            continue
+        results.append(part)
+    
+    return results
+
 # --- SCRAPERS ----------------------------------------------------
 
-# --- CSI events ---
-def fetch_csi_events_detailed() -> list[Event]:
+# --- CSI Bergamo events ---
+def fetch_bergamo_csi_events_detailed() -> list[Event]:
     resp = requests.get(CSI_LIST)
     resp.raise_for_status()
     soup = BeautifulSoup(resp.text, "html.parser")
@@ -60,7 +78,7 @@ def fetch_csi_events_detailed() -> list[Event]:
         a = li.find("a", href=True)
         if not a:
             continue
-        detail_url = BASE_CSI + a["href"]
+        detail_url = BASE_CSI_BERGAMO + a["href"]
         try:
             r = requests.get(detail_url)
             r.raise_for_status()
@@ -84,7 +102,7 @@ def fetch_csi_events_detailed() -> list[Event]:
             if first_img and first_img.get("src"):
                 src = first_img["src"]
                 if src.startswith("/"):
-                    first_image_url = f"{BASE_CSI}{src}"
+                    first_image_url = f"{BASE_CSI_BERGAMO}{src}"
                 else:
                     first_image_url = src
 
@@ -114,7 +132,8 @@ def fetch_csi_events_detailed() -> list[Event]:
                 date=event_date,
                 location=location,
                 poster=first_image_url,
-                source="CSI"
+                source="CSI",
+                distances=[]
             ))
         except Exception as e:
             print(f"⚠️ Skipped invalid CSI event: {e}")
@@ -148,13 +167,18 @@ def parse_fiasp_html(html: str) -> list[Event]:
             if a_tag and a_tag.get("href"):
                 flyer_link = a_tag["href"].strip()
 
+        #distance   
+        distances_raw = cols[3].get_text(strip=True) if len(cols) > 3 else ""
+        distances_list = parse_distances(distances_raw)
+
         try:
             fiasp.append(Event(
                 title=title,
                 date=date,
                 location=location,
                 poster=flyer_link,
-                source="FIASP"
+                source="FIASP",
+                distances=distances_list
             ))
         except Exception as e:
             print(f"⚠️ Skipped invalid FIASP event: {e}")
