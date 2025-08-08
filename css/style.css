@@ -27,8 +27,7 @@ h1 {
   padding: 1rem;
 }
 
-/* Lista eventi */
-.lista-marce {
+.events-list {
   list-style: none;
   padding: 0;
   margin-top: 2rem;
@@ -36,7 +35,6 @@ h1 {
   gap: 1rem;
 }
 
-/* Card evento */
 .card {
   background: white;
   border-radius: 0.5rem;
@@ -67,7 +65,7 @@ h1 {
   color: #555;
 }
 
-.associazione {
+.organization {
   font-size: 0.8rem;
   color: #aaa;
   margin-top: 0.5rem;
@@ -99,7 +97,6 @@ header {
   height: auto;
   margin: 0 auto;
   display: block;
-  /* filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));  opzionale, per dargli un po' di profondità */
 }
 
 /* Responsive */

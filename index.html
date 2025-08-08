@@ -13,14 +13,14 @@
       <img src="img/tapasciate.svg" alt="Logo Tapasciate" class="logo">
     </header>
     <h2 class="subtitle">"Ciao, grazie e buona domenica!"</h2>
-    <ul id="lista-marce" class="lista-marce"></ul>
+    <ul id="events-list" class="events-list"></ul>
   </div>
 
   <script>
     fetch('events.json')
       .then(response => response.json())
       .then(data => {
-        const ul = document.getElementById('lista-marce');
+        const ul = document.getElementById('events-list');
 
         function parseDate(str) {
           const [day, month, year] = str.split('/');
@@ -55,7 +55,7 @@
             <h2>${evento.title}</h2>
             <p class="data">${formattaDataIt(evento.date)}</p>
             <p class="luogo">${evento.location}</p>
-            <p class="associazione">${evento.source || ''}</p>
+            <p class="organization">${evento.source || ''}</p>
             ${evento.poster ? `<a class="btn-poster" href="${evento.poster}" target="_blank">Apri volantino</a>` : ''}
 
           `;
