@@ -12,17 +12,17 @@ CSI_LIST = f"{BASE_CSI}/avvisi/prossime-marce.html"
 FIASP_URL = "https://servizi.fiaspitalia.it/www_eventi.php"
 
 
-# --- Modello tipizzato ---
-class Evento(BaseModel):
+# --- Event Model ---
+class Event(BaseModel):
     title: str
-    date: str  # formato dd/mm/yyyy
+    date: str  # format dd/mm/yyyy
     location: str
     poster: Optional[HttpUrl] = None
     source: Literal["CSI", "FIASP"]
 
 
-# --- CSI: lista e dettagli ---
-def fetch_csi_events_detailed() -> list[Evento]:
+# --- CSI events ---
+def fetch_csi_events_detailed() -> list[Event]:
     resp = requests.get(CSI_LIST)
     resp.raise_for_status()
     soup = BeautifulSoup(resp.text, "html.parser")
@@ -31,7 +31,7 @@ def fetch_csi_events_detailed() -> list[Evento]:
         print("⚠️ CSI list not found")
         return []
 
-    detailed: list[Evento] = []
+    detailed: list[Event] = []
     for li in lista.find_all("li", recursive=False):
         a = li.find("a", href=True)
         if not a:
@@ -84,7 +84,7 @@ def fetch_csi_events_detailed() -> list[Evento]:
             event_date = f"{day.zfill(2)}/{month}/{year}"
 
         try:
-            detailed.append(Evento(
+            detailed.append(Event(
                 title=title,
                 date=event_date,
                 location=location,
@@ -99,8 +99,8 @@ def fetch_csi_events_detailed() -> list[Evento]:
     return detailed
 
 
-# --- FIASP original scraper ---
-def fetch_fiasp_events() -> list[Evento]:
+# --- FIASP events ---
+def fetch_fiasp_events() -> list[Event]:
     resp = requests.get(FIASP_URL)
     resp.raise_for_status()
     soup = BeautifulSoup(resp.text, "html.parser")
@@ -116,7 +116,7 @@ def fetch_fiasp_events() -> list[Evento]:
             return f"https://drive.google.com/uc?export=view&id={file_id}"
         return url
 
-    fiasp: list[Evento] = []
+    fiasp: list[Event] = []
     for row in table.find_all("tr")[1:]:
         cols = row.find_all("td")
         if len(cols) < 3:
@@ -134,7 +134,7 @@ def fetch_fiasp_events() -> list[Evento]:
 
         if "bergamo" in location.lower() or "bg" in location.lower():
             try:
-                fiasp.append(Evento(
+                fiasp.append(Event(
                     title=title,
                     date=date,
                     location=location,
@@ -152,8 +152,7 @@ def main():
     fiasp = fetch_fiasp_events()
     all_events = csi + fiasp
 
-    # Salvataggio dati
-    with open("marce.json", "w", encoding="utf-8") as f:
+    with open("events.json", "w", encoding="utf-8") as f:
         json.dump([e.model_dump(mode="json") for e in all_events], f, ensure_ascii=False, indent=2)
 
     print(f"✅ Saved {len(all_events)} events (CSI {len(csi)}, FIASP {len(fiasp)})")
