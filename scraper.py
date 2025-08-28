@@ -193,11 +193,11 @@ def fetch_fiasp_events() -> list[Event]:
 
 
 def main():
-    csi = fetch_csi_events_detailed()
+    csi = fetch_bergamo_csi_events_detailed()
     fiasp = fetch_fiasp_events()
     all_events = csi + fiasp
 
-    with open("events.json", "w", encoding="utf-8") as f:
+    with open("frontend/public/events.json", "w", encoding="utf-8") as f:
         json.dump([e.model_dump(mode="json") for e in all_events], f, ensure_ascii=False, indent=2)
 
     print(f"✅ Saved {len(all_events)} events (CSI {len(csi)}, FIASP {len(fiasp)})")
