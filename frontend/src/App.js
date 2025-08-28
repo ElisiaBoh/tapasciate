@@ -73,7 +73,7 @@ function App() {
   return (
     <div className="app">
       <header className="header">
-        <img src="/logo.jpg" alt="Logo Eventi di Corsa" className="logo" />
+        <img src="/logo.svg" alt="Logo Eventi di Corsa" className="logo" />
       </header>
 
       <div className="filters">
