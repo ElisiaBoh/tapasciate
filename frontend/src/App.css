@@ -6,17 +6,24 @@
 
 .app {
   min-height: 100vh;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #ec6683 0%, #ffdb8f 50%, #53c4f1 100%);
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
 }
 
 .header {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  color: white;
+  background: white;
   padding: 2rem;
   text-align: center;
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  max-height: 80px;
+  max-width: 300px;
+  object-fit: contain;
 }
 
 .header h1 {
@@ -49,16 +56,25 @@
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
 }
 
-.event-poster {
-  width: 100%;
-  height: 200px;
-  overflow: hidden;
+.poster-button {
+  background: #667eea;
+  color: white;
+  border: none;
+  padding: 0.7rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  margin-top: 1rem;
+  transition: background 0.2s ease;
 }
 
-.event-poster img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.poster-button:hover {
+  background: #5a6fd8;
+}
+
+/* La card ora è più bassa automaticamente */
+.event-content {
+  padding: 1.5rem;
 }
 
 .event-content {

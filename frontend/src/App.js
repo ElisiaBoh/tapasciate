@@ -6,7 +6,6 @@ function App() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    // Per ora leggiamo il JSON statico
     fetch('/events.json')
       .then(response => response.json())
       .then(data => {
@@ -26,8 +25,7 @@ function App() {
   return (
     <div className="app">
       <header className="header">
-        <h1>🏃‍♂️ Eventi di Corsa</h1>
-        <p>Trova la tua prossima gara!</p>
+        <img src="/logo.jpg" alt="Logo Tapasciate.it" className="logo" />
       </header>
 
       <main className="events-container">
@@ -52,34 +50,51 @@ function App() {
 }
 
 function EventCard({ event }) {
+  // Funzione per formattare la data
+  const formatDate = (dateString) => {
+    // dateString è in formato "10/08/2025" (DD/MM/YYYY)
+    const [day, month, year] = dateString.split('/');
+    const date = new Date(year, month - 1, day); // month - 1 perché i mesi partono da 0
+    
+    const giorni = ['Domenica', 'Lunedì', 'Martedì', 'Mercoledì', 'Giovedì', 'Venerdì', 'Sabato'];
+    const mesi = ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 
+                  'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre'];
+    
+    const dayName = giorni[date.getDay()];
+    const dayNumber = parseInt(day);
+    const monthName = mesi[parseInt(month) - 1];
+    
+    return `${dayName} ${dayNumber} ${monthName}`;
+  };
+
   return (
     <div className="event-card">
-      {/* Poster dell'evento */}
-      {event.poster && (
-        <div className="event-poster">
-          <img src={event.poster} alt={event.title} />
-        </div>
-      )}
-      
       <div className="event-content">
         <h3 className="event-title">{event.title}</h3>
         
         <div className="event-details">
-          <p className="event-date">📅 {event.date}</p>
+          <p className="event-date">📅 {formatDate(event.date)}</p>
           <p className="event-location">
             📍 {event.location.city} ({event.location.province})
           </p>
           
-          {/* Distanze disponibili */}
           {event.distances && event.distances.length > 0 && (
             <div className="event-distances">
               🏃 {event.distances.join(', ')}
             </div>
           )}
           
-          {/* Fonte */}
           <p className="event-source">🏛️ {event.source}</p>
         </div>
+
+        {event.poster && (
+          <button 
+            className="poster-button"
+            onClick={() => window.open(event.poster, '_blank')}
+          >
+            🖼️ Vedi Poster
+          </button>
+        )}
       </div>
     </div>
   )
