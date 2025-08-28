@@ -4,7 +4,7 @@ import './App.css'
 function App() {
   const [events, setEvents] = useState([])
   const [loading, setLoading] = useState(true)
-  const [selectedProvince, setSelectedProvince] = useState('') // Filtro provincia
+  const [selectedProvince, setSelectedProvince] = useState('')
 
   useEffect(() => {
     fetch('/events.json')
@@ -19,12 +19,51 @@ function App() {
       })
   }, [])
 
-  // Filtra gli eventi per provincia
+  // Funzione per formattare la data per i titoli delle sezioni
+  const formatSectionDate = (dateString) => {
+    const [day, month, year] = dateString.split('/');
+    const date = new Date(year, month - 1, day);
+    
+    const giorni = ['Domenica', 'Lunedì', 'Martedì', 'Mercoledì', 'Giovedì', 'Venerdì', 'Sabato'];
+    const mesi = ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 
+                  'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre'];
+    
+    const dayName = giorni[date.getDay()];
+    const dayNumber = parseInt(day);
+    const monthName = mesi[parseInt(month) - 1];
+    
+    return `${dayName} ${dayNumber} ${monthName}`;
+  };
+
   const filteredEvents = selectedProvince 
     ? events.filter(event => event.location.province === selectedProvince)
     : events;
 
-  // Ottieni tutte le province uniche per il dropdown
+  const today = new Date(); today.setHours(0, 0, 0, 0);
+
+  const groupedEvents = filteredEvents
+  .filter(event => {
+    const [day, month, year] = event.date.split("/").map(Number);
+    const eventDate = new Date(year, month - 1, day);
+    return eventDate >= today;
+  })
+  .reduce((groups, event) => {
+    const date = event.date;
+    if (!groups[date]) {
+      groups[date] = [];
+    }
+    groups[date].push(event);
+    return groups;
+  }, {});
+
+  const sortedDates = Object.keys(groupedEvents).sort((a, b) => {
+    const [dayA, monthA, yearA] = a.split('/').map(Number);
+    const [dayB, monthB, yearB] = b.split('/').map(Number);
+    const dateA = new Date(yearA, monthA - 1, dayA);
+    const dateB = new Date(yearB, monthB - 1, dayB);
+    return dateA - dateB;
+  });
+
   const provinces = [...new Set(events.map(event => event.location.province))].sort();
 
   if (loading) {
@@ -37,7 +76,6 @@ function App() {
         <img src="/logo.jpg" alt="Logo Eventi di Corsa" className="logo" />
       </header>
 
-      {/* Filtro provincia */}
       <div className="filters">
         <select 
           value={selectedProvince} 
@@ -52,19 +90,33 @@ function App() {
           ))}
         </select>
         
-        {/* Mostra il numero di eventi */}
         <span className="events-count">
           {filteredEvents.length} eventi trovati
         </span>
       </div>
 
       <main className="events-container">
-        {filteredEvents.length > 0 ? (
-          <div className="events-grid">
-            {filteredEvents.map((event, index) => (
-              <EventCard key={index} event={event} />
-            ))}
-          </div>
+        {sortedDates.length > 0 ? (
+          sortedDates.map(date => (
+            <div key={date} className="date-section">
+              {/* Header della sezione con data */}
+              <div className="date-header">
+                <h2 className="date-title">
+                  📅 {formatSectionDate(date)}
+                </h2>
+                <span className="date-count">
+                  {groupedEvents[date].length} eventi
+                </span>
+              </div>
+
+              {/* Griglia degli eventi per questa data */}
+              <div className="events-grid">
+                {groupedEvents[date].map((event, index) => (
+                  <EventCard key={index} event={event} />
+                ))}
+              </div>
+            </div>
+          ))
         ) : (
           <div className="no-events">
             <p>Nessun evento trovato per questa provincia.</p>
