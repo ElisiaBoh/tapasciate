@@ -4,6 +4,7 @@ import './App.css'
 function App() {
   const [events, setEvents] = useState([])
   const [loading, setLoading] = useState(true)
+  const [selectedProvince, setSelectedProvince] = useState('') // Filtro provincia
 
   useEffect(() => {
     fetch('/events.json')
@@ -18,6 +19,14 @@ function App() {
       })
   }, [])
 
+  // Filtra gli eventi per provincia
+  const filteredEvents = selectedProvince 
+    ? events.filter(event => event.location.province === selectedProvince)
+    : events;
+
+  // Ottieni tutte le province uniche per il dropdown
+  const provinces = [...new Set(events.map(event => event.location.province))].sort();
+
   if (loading) {
     return <div className="loading">Caricamento eventi...</div>
   }
@@ -25,19 +34,40 @@ function App() {
   return (
     <div className="app">
       <header className="header">
-        <img src="/logo.jpg" alt="Logo Tapasciate.it" className="logo" />
+        <img src="/logo.jpg" alt="Logo Eventi di Corsa" className="logo" />
       </header>
 
+      {/* Filtro provincia */}
+      <div className="filters">
+        <select 
+          value={selectedProvince} 
+          onChange={(e) => setSelectedProvince(e.target.value)}
+          className="province-filter"
+        >
+          <option value="">🌍 Tutte le province</option>
+          {provinces.map(province => (
+            <option key={province} value={province}>
+              {province}
+            </option>
+          ))}
+        </select>
+        
+        {/* Mostra il numero di eventi */}
+        <span className="events-count">
+          {filteredEvents.length} eventi trovati
+        </span>
+      </div>
+
       <main className="events-container">
-        {events.length > 0 ? (
+        {filteredEvents.length > 0 ? (
           <div className="events-grid">
-            {events.map((event, index) => (
+            {filteredEvents.map((event, index) => (
               <EventCard key={index} event={event} />
             ))}
           </div>
         ) : (
           <div className="no-events">
-            <p>Nessun evento trovato.</p>
+            <p>Nessun evento trovato per questa provincia.</p>
           </div>
         )}
       </main>
