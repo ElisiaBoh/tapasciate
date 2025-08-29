@@ -7,7 +7,7 @@ function App() {
   const [selectedProvince, setSelectedProvince] = useState('')
 
   useEffect(() => {
-    fetch('/events.json')
+    fetch(process.env.PUBLIC_URL + "/events.json")
       .then(response => response.json())
       .then(data => {
         setEvents(data)
@@ -73,7 +73,7 @@ function App() {
   return (
     <div className="app">
       <header className="header">
-        <img src="/logo.svg" alt="Logo Eventi di Corsa" className="logo" />
+        <img src={process.env.PUBLIC_URL + "/logo.svg"} alt="Logo Eventi di Corsa" className="logo" />
       </header>
 
       <div className="filters">
