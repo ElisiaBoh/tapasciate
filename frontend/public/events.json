@@ -1,49 +1,5 @@
 [
   {
-    "title": "Quater pass inturen al pais de Ubial e Claness",
-    "date": "10/08/2025",
-    "location": {
-      "city": "Ubiale Clanezzo",
-      "province": "BG"
-    },
-    "poster": "https://www.csibergamo.it/images/marce/10%20Agosto%20-%20Monte%20Ubione%201.jpg",
-    "source": "CSI",
-    "distances": []
-  },
-  {
-    "title": "Pegherandando",
-    "date": "10/08/2025",
-    "location": {
-      "city": "Peghera-Taleggio",
-      "province": "BG"
-    },
-    "poster": "https://www.csibergamo.it/images/marce/10-08%20PegherAndando.jpg",
-    "source": "CSI",
-    "distances": []
-  },
-  {
-    "title": "StraBerbenno",
-    "date": "15/08/2025",
-    "location": {
-      "city": "Berbenno",
-      "province": "BG"
-    },
-    "poster": "https://www.csibergamo.it/images/marce/15-08%20StraBerbenno-1.jpg",
-    "source": "CSI",
-    "distances": []
-  },
-  {
-    "title": "Mezzoldo - Ca' San Marco",
-    "date": "16/08/2025",
-    "location": {
-      "city": "Mezzoldo",
-      "province": "BG"
-    },
-    "poster": "https://www.csibergamo.it/images/marce/16-08%20Mezzoldo.png",
-    "source": "CSI",
-    "distances": []
-  },
-  {
     "title": "Camminata della Tripla A",
     "date": "31/08/2025",
     "location": {
@@ -99,419 +55,103 @@
     "distances": []
   },
   {
-    "title": "52° EL GIR DI CENT FOO",
-    "date": "10/08/2025",
+    "title": "StraBergamo",
+    "date": "14/09/2025",
     "location": {
-      "city": "Barni",
-      "province": "CO"
-    },
-    "poster": "https://drive.google.com/file/d/1gASG4EhQY66OlS0f6Jf-Za8QgQa9p7H6/view?usp=sharing",
-    "source": "FIASP",
-    "distances": [
-      "6",
-      "12"
-    ]
-  },
-  {
-    "title": "7ª CAMMINATA SAN GAETANO",
-    "date": "10/08/2025",
-    "location": {
-      "city": "Ponti sul Mincio",
-      "province": "MN"
-    },
-    "poster": "https://drive.google.com/file/d/1SWhw3IAv-NSkaEGAOeH33UawLqjwEmeh/view?usp=sharing",
-    "source": "FIASP",
-    "distances": [
-      "6",
-      "10.5"
-    ]
-  },
-  {
-    "title": "6ª MARCIA DI CIREGNA",
-    "date": "10/08/2025",
-    "location": {
-      "city": "Ciregna di Ferriere [Centro]",
-      "province": "PC"
-    },
-    "poster": "https://drive.google.com/file/d/1zQsnQM51Zr0WDxeJPuf_GKyyC0JNGRRQ/view?usp=sharing",
-    "source": "FIASP",
-    "distances": [
-      "7",
-      "12.5"
-    ]
-  },
-  {
-    "title": "15° EL GIRO DELE FRAZIOM",
-    "date": "10/08/2025",
-    "location": {
-      "city": "Brentonico",
-      "province": "TN"
-    },
-    "poster": "https://drive.google.com/file/d/1BT7ROvPs52VeUqNvUKqVE2_DzSgv49AY/view?usp=sharing",
-    "source": "FIASP",
-    "distances": [
-      "10",
-      "14",
-      "20"
-    ]
-  },
-  {
-    "title": "12ª MARCIA DELL'ASSUNTA",
-    "date": "10/08/2025",
-    "location": {
-      "city": "Reana del Rojale",
-      "province": "UD"
-    },
-    "poster": "https://drive.google.com/file/d/1wLsAirwAXUtyfLP9ZefOBbQ81Vgeisag/view?usp=sharing",
-    "source": "FIASP",
-    "distances": [
-      "7",
-      "12",
-      "18"
-    ]
-  },
-  {
-    "title": "12° \"UN PASSO CON L'AMICIAD\" TRA NATURA ED ARCHEOLOGIA",
-    "date": "10/08/2025",
-    "location": {
-      "city": "Rotzo - Scuole Elementari",
-      "province": "VI"
-    },
-    "poster": "https://drive.google.com/file/d/1xR0kxRIaC4AgaJRr-pL5UE0ZH_nCoZR_/view?usp=sharing",
-    "source": "FIASP",
-    "distances": [
-      "4.5",
-      "8",
-      "16"
-    ]
-  },
-  {
-    "title": "44ª CAMINADA DEI TRE ARCHI - 2° MEMORIAL GIOVANNI MARTINELLI - 15° TROFEO AVIS",
-    "date": "10/08/2025",
-    "location": {
-      "city": "Via Chiesa,25 Albaredo d'Adige c/o Campo Fiera",
-      "province": "VR"
-    },
-    "poster": "https://drive.google.com/file/d/1I-dMlhMvbNUvvGp2RdSKmYmEn3TGZtuV/view?usp=sharing",
-    "source": "FIASP",
-    "distances": [
-      "7. 12",
-      "18"
-    ]
-  },
-  {
-    "title": "5ª PERCORRENDO STRADE VECCHIE E NUOVE DI CUSIGNANA",
-    "date": "13/08/2025",
-    "location": {
-      "city": "CUSIGNANA - GIAVERA DEL MONTELLO",
-      "province": "TV"
-    },
-    "poster": "https://drive.google.com/file/d/1DwQ-mO7MVUWGs6NeyMkuxncmC0PRDjJ5/view?usp=sharing",
-    "source": "FIASP",
-    "distances": [
-      "5",
-      "10"
-    ]
-  },
-  {
-    "title": "LA 19ª CAMMINATA CON LE TORCE TRA I SENTIERI DI CELANA A CAPRINO BERGAMASCO",
-    "date": "14/08/2025",
-    "location": {
-      "city": "Caprino Bergamasco [Oratorio di Celana]",
+      "city": "Bergamo",
       "province": "BG"
     },
-    "poster": "https://drive.google.com/file/d/1_TR0XjqWj2amWdJwWweM-FqXNOSjKWou/view?usp=sharing",
-    "source": "FIASP",
-    "distances": [
-      "7"
-    ]
+    "poster": "https://www.csibergamo.it/images/marce/14-09%20StraBergamo-1.jpg",
+    "source": "CSI",
+    "distances": []
   },
   {
-    "title": "18ª ATTORNO IL TORRENTE ARTUGNA",
-    "date": "14/08/2025",
+    "title": "Camminiamo insieme con l'AIDO",
+    "date": "14/09/2025",
     "location": {
-      "city": "Dardago di Budoia",
-      "province": "PN"
+      "city": "Presezzo",
+      "province": "BG"
     },
-    "poster": "https://drive.google.com/file/d/1r-fw0ZUMs7OoDeAvCpuIsnZ_vyCB65r3/view?usp=sharing",
-    "source": "FIASP",
-    "distances": [
-      "7",
-      "12"
-    ]
+    "poster": "https://www.csibergamo.it/images/marce/14-09%20AIDO%20Presezzo%20-1.jpg",
+    "source": "CSI",
+    "distances": []
   },
   {
-    "title": "45ª MARCIA DI CASALI",
-    "date": "15/08/2025",
+    "title": "Millegradini 2025",
+    "date": "21/09/2025",
     "location": {
-      "city": "Casali di mofasso [Pro Loco Casali Centro]",
-      "province": "PC"
+      "city": "Bergamo (20 e 21)",
+      "province": "BG"
     },
-    "poster": "https://drive.google.com/file/d/1V_b-yft3QoXS_ohQ-dmGE6z-lGxCu2BB/view?usp=sharing",
-    "source": "FIASP",
-    "distances": [
-      "5",
-      "12",
-      "20"
-    ]
+    "poster": "https://www.csibergamo.it/images/marce/20-21%20Settembre%20locandina%20Millegradini%201-1.jpg",
+    "source": "CSI",
+    "distances": []
   },
   {
-    "title": "32ª MARCIA \"CUL CJAPIEL\"",
-    "date": "15/08/2025",
+    "title": "SOLIDALMENTE",
+    "date": "21/09/2025",
     "location": {
-      "city": "Frisanco",
-      "province": "PN"
+      "city": "Alme'",
+      "province": "BG"
     },
-    "poster": "https://drive.google.com/file/d/1qWkcdk8rpC47EOcj4cL5u8w0R7RDXxLr/view?usp=sharing",
-    "source": "FIASP",
-    "distances": [
-      "6",
-      "14",
-      "21"
-    ]
+    "poster": "https://www.csibergamo.it/images/marce/21-09%20Solidalmente.jpeg",
+    "source": "CSI",
+    "distances": []
   },
   {
-    "title": "4° MEMORIAL \" ROBERTO SARTORI \"",
-    "date": "15/08/2025",
+    "title": "Tra Torri e Castelli",
+    "date": "21/09/2025",
     "location": {
-      "city": "MALGA BROI - NOVALEDO",
-      "province": "TN"
+      "city": "Casazza",
+      "province": "BG"
     },
-    "poster": "https://drive.google.com/file/d/1YTzHVPD5_uLqYHIxZRtacQ9RYBYuAQPg/view?usp=sharing",
-    "source": "FIASP",
-    "distances": [
-      "6",
-      "10"
-    ]
+    "poster": "https://www.csibergamo.it/images/marce/21-09%20Tra%20Torri%20e%20Castelli-16_L-1.jpg",
+    "source": "CSI",
+    "distances": []
   },
   {
-    "title": "CAMMINIAMO INSIEME \" MEMORIAL FRANCO NEGRO \"",
-    "date": "15/08/2025",
+    "title": "Pigiama Run!",
+    "date": "26/09/2025",
     "location": {
-      "city": "Villanova delle Grotte",
-      "province": "UD"
+      "city": "Bergamo",
+      "province": "BG"
     },
-    "poster": "https://drive.google.com/file/d/1sThIwQVNgoXy1XHpNVViAZvg0bD9OXkx/view?usp=sharing",
-    "source": "FIASP",
-    "distances": [
-      "7",
-      "14",
-      "19"
-    ]
+    "poster": "https://www.csibergamo.it/images/marce/26-09%20Pigiama%20Run-1.jpg",
+    "source": "CSI",
+    "distances": []
   },
   {
-    "title": "39ª MARCIA TRA PINI E CICLAMINI",
-    "date": "15/08/2025",
+    "title": "La 3 ore Pontirolese",
+    "date": "27/09/2025",
     "location": {
-      "city": "Castelvecchio di Valdagno [P.za V.Bicego]",
-      "province": "VI"
+      "city": "Pontirolo Nuovo",
+      "province": "BG"
     },
-    "poster": "https://drive.google.com/file/d/11NtCFjA4Fvr0t6ggDk_v6JyHsicdV1km/view?usp=sharing",
-    "source": "FIASP",
-    "distances": [
-      "5",
-      "10",
-      "20"
-    ]
+    "poster": "https://www.csibergamo.it/images/marce/Pontirolese%2027-09%201.jpg",
+    "source": "CSI",
+    "distances": []
   },
   {
-    "title": "MARCIAFLONGA",
-    "date": "17/08/2025",
+    "title": "Camminata per la ricerca",
+    "date": "28/09/2025",
     "location": {
-      "city": "davanti a Palazzo Cavriani,piazza Municipio,1-Felonica",
-      "province": "MN"
+      "city": "Torre Boldone",
+      "province": "BG"
     },
-    "poster": "https://drive.google.com/file/d/1yONbS70d9-K2sPux1v9YeR0c_QPTY8I_/view?usp=sharing",
-    "source": "FIASP",
-    "distances": [
-      "6",
-      "12"
-    ]
+    "poster": "https://www.csibergamo.it/images/marce/28-09%20Torre%20Boldone-1.jpg",
+    "source": "CSI",
+    "distances": []
   },
   {
-    "title": "4ª INSIEME A FERRAGOSTO",
-    "date": "17/08/2025",
+    "title": "Sotto e Sopra per Cenate",
+    "date": "28/09/2025",
     "location": {
-      "city": "SCLAUNICCO DI LESTIZZA",
-      "province": "UD"
+      "city": "Cenate Sotto",
+      "province": "BG"
     },
-    "poster": "https://drive.google.com/file/d/1BYjMZJK2q7-bhN7amQ5fVSGOGyKG1YiA/view?usp=sharing",
-    "source": "FIASP",
-    "distances": [
-      "7",
-      "13",
-      "18"
-    ]
-  },
-  {
-    "title": "MEMORIAL GIANCARLO TURRI - 10ª EDIZIONE",
-    "date": "17/08/2025",
-    "location": {
-      "city": "Cavaion Veronese Strada Villa 9 presso frantoio Fratelli Turri",
-      "province": "VR"
-    },
-    "poster": "https://drive.google.com/file/d/1O4mokdRJ9ilWZQP06JYS901WtTOLQjBK/view?usp=sharing",
-    "source": "FIASP",
-    "distances": [
-      "6",
-      "12",
-      "17"
-    ]
-  },
-  {
-    "title": "1ª MARCIA DELLE BALDASSERIE",
-    "date": "23/08/2025",
-    "location": {
-      "city": "PARROCCHIA SAN PIO X - Udine -",
-      "province": "UD"
-    },
-    "poster": "https://drive.google.com/file/d/1zKVlBBGymd6ARunbxFL-fsJVC71pzRpc/view?usp=sharing",
-    "source": "FIASP",
-    "distances": [
-      "6",
-      "12"
-    ]
-  },
-  {
-    "title": "3ª QUATRE PASS ANTURNE A MUSCASA'",
-    "date": "24/08/2025",
-    "location": {
-      "city": "MOSCAZZANO",
-      "province": "CR"
-    },
-    "poster": "https://drive.google.com/file/d/1hza8qtB6XAx_J6TL6V_YORLusnIsT55a/view?usp=sharing",
-    "source": "FIASP",
-    "distances": [
-      "5",
-      "10",
-      "15"
-    ]
-  },
-  {
-    "title": "45ª MARCIA DELLA CONCORDIA",
-    "date": "24/08/2025",
-    "location": {
-      "city": "S.Giuliano di Castelvetro [Ex Scuole]",
-      "province": "PC"
-    },
-    "poster": "https://drive.google.com/file/d/1-WLCrHTvjwsR0-o9u4KU2809_FvJdKIV/view?usp=sharing",
-    "source": "FIASP",
-    "distances": [
-      "6",
-      "10",
-      "15"
-    ]
-  },
-  {
-    "title": "47ª MARCIA FESTA IN PIASSA",
-    "date": "24/08/2025",
-    "location": {
-      "city": "Pordenone [Quartiere Villanova]",
-      "province": "PN"
-    },
-    "poster": "https://drive.google.com/file/d/1aUKmLJg9ra--i9GxAeSOk8du0lv-jr_X/view?usp=sharing",
-    "source": "FIASP",
-    "distances": [
-      "6",
-      "12",
-      "18"
-    ]
-  },
-  {
-    "title": "10ª CJAMINADE “ BLAVE DI MORTEAN”",
-    "date": "24/08/2025",
-    "location": {
-      "city": "Mortegliano",
-      "province": "UD"
-    },
-    "poster": "https://drive.google.com/file/d/1Ns6Rto-j2_-LAFP-hRw0Bzy_gD7jViJ9/view?usp=sharing",
-    "source": "FIASP",
-    "distances": [
-      "6",
-      "12",
-      "19"
-    ]
-  },
-  {
-    "title": "PASSEGGIATA SUI SENTIERI DELLE CORNIOLE DE.CO.",
-    "date": "24/08/2025",
-    "location": {
-      "city": "Cornedo Vicentino - Piazza Aldo Moro",
-      "province": "VI"
-    },
-    "poster": "https://drive.google.com/file/d/1_i4thnnSwDkjL5Bq0R4U0uiy1L_QTSRX/view?usp=sharing",
-    "source": "FIASP",
-    "distances": [
-      "8",
-      "12",
-      "17"
-    ]
-  },
-  {
-    "title": "8ª CAMINADA DELLE CARNI BIANCHE",
-    "date": "24/08/2025",
-    "location": {
-      "city": "Via Motta 2 - S. Pietro di Morubio (VR) dal Parco Villa Gobetti",
-      "province": "VR"
-    },
-    "poster": "https://drive.google.com/file/d/1UtaSeUVaop4k4ciEcC_F3uZBaeVlos0d/view?usp=sharing",
-    "source": "FIASP",
-    "distances": [
-      "8",
-      "14"
-    ]
-  },
-  {
-    "title": "TREKKING - VIA FRANCIGENA GRAN SAN BERNARDO-IVREA 1ª TAPPA  GRAN S.BERNARDO-ECHEVENNOZ",
-    "date": "25/08/2025",
-    "location": {
-      "city": "GRAN SAN BERNARDO",
-      "province": "AO"
-    },
-    "poster": null,
-    "source": "FIASP",
-    "distances": [
-      "15"
-    ]
-  },
-  {
-    "title": "TREKKING    – 2ª  TAPPA TREKKING FRANCIGENA - ECHEVENNOZ-AOSTA",
-    "date": "26/08/2025",
-    "location": {
-      "city": "ECHEVENNOZ",
-      "province": "AO"
-    },
-    "poster": null,
-    "source": "FIASP",
-    "distances": [
-      "14"
-    ]
-  },
-  {
-    "title": "TREKKING -  3ª TAPPA TREKKING FRANCIGENA  AOSTA-CHATILLON",
-    "date": "27/08/2025",
-    "location": {
-      "city": "AOSTA",
-      "province": "AO"
-    },
-    "poster": null,
-    "source": "FIASP",
-    "distances": [
-      "28"
-    ]
-  },
-  {
-    "title": "TREKKING – 4ª TAPPA TREKKING FRANCIGENA - CHATILLON-VERRES",
-    "date": "28/08/2025",
-    "location": {
-      "city": "CHATILLON",
-      "province": "AO"
-    },
-    "poster": null,
-    "source": "FIASP",
-    "distances": [
-      "19"
-    ]
+    "poster": "https://www.csibergamo.it/images/marce/28-09%20Sotto%20e%20Sopra%20per%20Cenate%201.jpg",
+    "source": "CSI",
+    "distances": []
   },
   {
     "title": "52ª 4 GIORNI INTERNAZIONALI DI FOGLIZZO",
@@ -605,7 +245,7 @@
       "city": "Villaverla [P.le delle Feste Via Giovanni XXIII]",
       "province": "VI"
     },
-    "poster": null,
+    "poster": "https://drive.google.com/file/d/124FAxKwaxmYxtfpjuRSMyU9aRwP3EIcN/view?usp=sharing",
     "source": "FIASP",
     "distances": [
       "5 ripetibili"
@@ -665,6 +305,20 @@
       "10",
       "21",
       "42"
+    ]
+  },
+  {
+    "title": "Iª PASSEGGIATA SOLIDALE",
+    "date": "30/08/2025",
+    "location": {
+      "city": "GORGO DI LATISANA",
+      "province": "UD"
+    },
+    "poster": "https://drive.google.com/file/d/19ZW6krV96wU8yJojXti9AFQi97ppuLAM/view?usp=sharing",
+    "source": "FIASP",
+    "distances": [
+      "4.5",
+      "10"
     ]
   },
   {
@@ -835,7 +489,7 @@
     "title": "9ª MARCIA LA RONDINE - MEMORIAL ANTONIO CESARI",
     "date": "31/08/2025",
     "location": {
-      "city": "Montecchio Pracalcino [Centro Palazzon Via Murazzo 10] ]",
+      "city": "Montecchio Pracalcino Palazzon Via Murazzo 10",
       "province": "VI"
     },
     "poster": "https://drive.google.com/file/d/1NsBFuWY-xWmNzNoOrW5FEpZIMKEW_O0l/view?usp=sharing",
@@ -909,7 +563,7 @@
       "city": "Caldogno [Villa Caldogno]",
       "province": "VI"
     },
-    "poster": null,
+    "poster": "https://drive.google.com/file/d/1FBEr0tIbHDZgzNKFSYZXTrHQZCtdKhef/view?usp=sharing",
     "source": "FIASP",
     "distances": [
       "6"
@@ -942,19 +596,6 @@
     "distances": [
       "5",
       "9"
-    ]
-  },
-  {
-    "title": "9° PELLEGRINAGGIO",
-    "date": "06/09/2025",
-    "location": {
-      "city": "Vicenza / Padova",
-      "province": "VI"
-    },
-    "poster": null,
-    "source": "FIASP",
-    "distances": [
-      "40"
     ]
   },
   {
@@ -1095,13 +736,13 @@
     ]
   },
   {
-    "title": "10ª CAMMINIAMO UN PO INSIEME",
+    "title": "\"ASPETTANDO ....UN PO' DI SPORT\"",
     "date": "07/09/2025",
     "location": {
       "city": "Mezzani",
       "province": "PR"
     },
-    "poster": null,
+    "poster": "https://drive.google.com/file/d/1rKdc7GSIx77bpibPecII1E5DsnnwApZA/view?usp=sharing",
     "source": "FIASP",
     "distances": [
       "6",
@@ -1183,7 +824,7 @@
     ]
   },
   {
-    "title": "6ª MARCIA LUDICO MOTORIA A PERAROLO DI VIGONZA",
+    "title": "6ª MARCIA DEL CRISTO MORO",
     "date": "09/09/2025",
     "location": {
       "city": "Perarolo di Vigonza",
@@ -1217,7 +858,7 @@
       "city": "Codogno Piazza XX Settembre",
       "province": "LO"
     },
-    "poster": null,
+    "poster": "https://drive.google.com/file/d/10hMjYB4M1lg4Kg2d__SVbZUO6Qy7GMq4/view?usp=sharing",
     "source": "FIASP",
     "distances": [
       "12"
@@ -1388,7 +1029,7 @@
       "city": "presso la Foresta della Carpaneta a Gazzo Comune di San Giorgio Bigarello",
       "province": "MN"
     },
-    "poster": null,
+    "poster": "https://drive.google.com/file/d/1i4htAvP23VUlrY6tskKmOeJ24l7mYk8I/view?usp=sharing",
     "source": "FIASP",
     "distances": [
       "6",
@@ -1417,7 +1058,7 @@
       "city": "Taiedo di Chions",
       "province": "PN"
     },
-    "poster": null,
+    "poster": "https://drive.google.com/file/d/1dv6fKyPq4DPIgXdc8rMsEykvFksvgTSb/view?usp=sharing",
     "source": "FIASP",
     "distances": [
       "7",
@@ -1490,7 +1131,7 @@
       "city": "Vicenza - loc. Maddalene Campo sportivo",
       "province": "VI"
     },
-    "poster": null,
+    "poster": "https://drive.google.com/file/d/1JHSn_MAfl2OWIN1oTxbSpvd8TevwpTLO/view?usp=sharing",
     "source": "FIASP",
     "distances": [
       "3"
@@ -1503,7 +1144,7 @@
       "city": "S.Croce di Bassano [Impianti Sportivi Via Ca' Dolfin 60]",
       "province": "VI"
     },
-    "poster": null,
+    "poster": "https://drive.google.com/file/d/1vHPefYPSDnhfWllHA7JCqGxPmOsc5x1x/view?usp=sharing",
     "source": "FIASP",
     "distances": [
       "6",
@@ -1623,6 +1264,20 @@
     ]
   },
   {
+    "title": "5ª MONTEBELLO CAMMINA IN ROSA",
+    "date": "20/09/2025",
+    "location": {
+      "city": "Montebello Vicentino",
+      "province": "VI"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "3",
+      "6"
+    ]
+  },
+  {
     "title": "STRAELA",
     "date": "21/09/2025",
     "location": {
@@ -1686,13 +1341,13 @@
     ]
   },
   {
-    "title": "45ª CAMINADA DE SCUGNAI",
+    "title": "44ª CAMINADA DE SCUGNAI",
     "date": "21/09/2025",
     "location": {
       "city": "Secugnago",
       "province": "LO"
     },
-    "poster": null,
+    "poster": "https://drive.google.com/file/d/1cPVXAqBDEqi4-4I2UAQt2Xm9i3y6jjVa/view?usp=sharing",
     "source": "FIASP",
     "distances": [
       "9",
@@ -1768,7 +1423,7 @@
       "city": "TORRILE (CIRCOLO IL PORTICO)",
       "province": "PR"
     },
-    "poster": null,
+    "poster": "https://drive.google.com/file/d/1F5bToOWj34--yo1XbV8Ss0v58iwz19Rs/view?usp=sharing",
     "source": "FIASP",
     "distances": [
       "6",
@@ -1782,7 +1437,7 @@
       "city": "Occhiobello Santa Maria Maddalena",
       "province": "RO"
     },
-    "poster": null,
+    "poster": "https://drive.google.com/file/d/19IBDQc5r18KWrt0uatBJs_6PNnz8Wtqc/view?usp=sharing",
     "source": "FIASP",
     "distances": [
       "7",
@@ -1804,13 +1459,13 @@
     ]
   },
   {
-    "title": "NONA EDIZIONE MEMORIAL ZANELLA",
+    "title": "9ª EDIZIONE MEMORIAL ZANELLA",
     "date": "21/09/2025",
     "location": {
       "city": "Varese (San Fermo)",
       "province": "VA"
     },
-    "poster": null,
+    "poster": "https://drive.google.com/file/d/1MULtyQSSt0XDB6pFTLuIamCSzb8ghvGQ/view?usp=sharing",
     "source": "FIASP",
     "distances": [
       "7",
@@ -1852,7 +1507,7 @@
       "city": "Isola Vicentina [Palazzetto dello Sport Via Vallorcola]",
       "province": "VI"
     },
-    "poster": null,
+    "poster": "https://drive.google.com/file/d/1kqEKfBd2qzBfcXWLok-Zl0wmU2FaIfxg/view?usp=sharing",
     "source": "FIASP",
     "distances": [
       "4",
@@ -1894,7 +1549,7 @@
       "city": "Verano di Podenzano [Centro Accoglienza AS.SO.FA]",
       "province": "PC"
     },
-    "poster": null,
+    "poster": "https://drive.google.com/file/d/1m17NWIwphhEjCZTxwPWv0yUJbFXm6jkM/view?usp=sharing",
     "source": "FIASP",
     "distances": [
       "5",
@@ -2019,6 +1674,20 @@
     ]
   },
   {
+    "title": "1ª AVIS CAMMINA MINCIO",
+    "date": "28/09/2025",
+    "location": {
+      "city": "Goito via Bonifacio Calvo",
+      "province": "MN"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12"
+    ]
+  },
+  {
     "title": "52ª CAMMINATA LUNGO IL PO",
     "date": "28/09/2025",
     "location": {
@@ -2030,21 +1699,6 @@
     "distances": [
       "6",
       "12"
-    ]
-  },
-  {
-    "title": "7ª CAMINA CORI E CIACOEA",
-    "date": "28/09/2025",
-    "location": {
-      "city": "Caselle di Selvazzano",
-      "province": "PD"
-    },
-    "poster": null,
-    "source": "FIASP",
-    "distances": [
-      "8",
-      "12",
-      "16"
     ]
   },
   {
@@ -2084,7 +1738,7 @@
       "city": "TOLMEZZO",
       "province": "UD"
     },
-    "poster": null,
+    "poster": "https://drive.google.com/file/d/1JYEi42gaexYRmGOw2EnV3LfFzDczvZzW/view?usp=sharing",
     "source": "FIASP",
     "distances": [
       "6",
@@ -2098,7 +1752,7 @@
       "city": "CERGNEU",
       "province": "UD"
     },
-    "poster": "https://drive.google.com/file/d/1bUJHTVcM1CviCtviLdcfLwpBZYe8_SpI/view?usp=sharing",
+    "poster": null,
     "source": "FIASP",
     "distances": [
       "5.5",
@@ -2113,7 +1767,7 @@
       "city": "Castiglione Olona",
       "province": "VA"
     },
-    "poster": null,
+    "poster": "https://drive.google.com/file/d/13-1Pb6-k6c9PlvM9vZY0wVh1MtTTQjlQ/view?usp=sharing",
     "source": "FIASP",
     "distances": [
       "7",
@@ -2232,7 +1886,7 @@
       "city": "Ripalta Arpina",
       "province": "CR"
     },
-    "poster": null,
+    "poster": "https://drive.google.com/file/d/1nUY29Mtt8bq47zrPGFVesnPPmk-SboDe/view?usp=sharing",
     "source": "FIASP",
     "distances": [
       "7",
@@ -2250,11 +1904,11 @@
     "poster": null,
     "source": "FIASP",
     "distances": [
+      "3",
       "7",
-      "11",
+      "10",
       "16",
-      "21",
-      "25"
+      "21"
     ]
   },
   {
@@ -2337,13 +1991,13 @@
       "city": "Se quals",
       "province": "PN"
     },
-    "poster": null,
+    "poster": "https://drive.google.com/file/d/1OSnfHT6-jfUT2s4tkNmxjLGKG482LPtM/view?usp=sharing",
     "source": "FIASP",
     "distances": [
       "4",
-      "8",
-      "12",
-      "16"
+      "7",
+      "14",
+      "18"
     ]
   },
   {
@@ -2367,7 +2021,7 @@
       "city": "RESANA",
       "province": "TV"
     },
-    "poster": null,
+    "poster": "https://drive.google.com/file/d/17VKwt4-Lo0F4hGkoqU3yuIj9qYIPrK1A/view?usp=sharing",
     "source": "FIASP",
     "distances": [
       "7"
@@ -2380,7 +2034,7 @@
       "city": "MONTEBELLUNA",
       "province": "TV"
     },
-    "poster": null,
+    "poster": "https://drive.google.com/file/d/14kHZqN8Yi3PPacvoBSEONte5Yx1jOt3X/view?usp=sharing",
     "source": "FIASP",
     "distances": [
       "6",
@@ -2426,7 +2080,7 @@
       "city": "Zané Impianti Sportivi Viale dello Sport",
       "province": "VI"
     },
-    "poster": null,
+    "poster": "https://drive.google.com/file/d/1Zxa0FXSKzKy-Zm2mVdIbS2B6mv_YPQke/view?usp=sharing",
     "source": "FIASP",
     "distances": [
       "4",
@@ -2442,7 +2096,7 @@
       "city": "Mussolente [Parco della Vittoria Via della Vittoria 28]",
       "province": "VI"
     },
-    "poster": null,
+    "poster": "https://drive.google.com/file/d/1lOfBVIuh0SNvIoCnD7-UxCzPt9qemNJ5/view?usp=sharing",
     "source": "FIASP",
     "distances": [
       "4",
@@ -2464,6 +2118,19 @@
       "7",
       "11",
       "17"
+    ]
+  },
+  {
+    "title": "5ª CAMMINATA   FLUO RUN FERA D'UTOBER",
+    "date": "10/10/2025",
+    "location": {
+      "city": "Novi di Modena 41016 Modena",
+      "province": "MO"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "5"
     ]
   },
   {
@@ -2560,7 +2227,7 @@
       "city": "Carate Brianza",
       "province": "MB"
     },
-    "poster": "https://drive.google.com/file/d/1tHYuOXQacmfmnkxBQDrI3JDj4TODTOCa/view?usp=sharing",
+    "poster": "https://drive.google.com/file/d/14ue-E7RWf386YA8NOCeA1_DePAut9KsA/view?usp=sharing",
     "source": "FIASP",
     "distances": [
       "5",
@@ -2590,14 +2257,15 @@
     "title": "4ª CORSA DELLA SAGRA",
     "date": "12/10/2025",
     "location": {
-      "city": "P.zza E. Bottoli Cesole di Marcaria",
+      "city": "Cesole di Marcaria - P.zza E. Bottoli",
       "province": "MN"
     },
     "poster": null,
     "source": "FIASP",
     "distances": [
       "6",
-      "14"
+      "13",
+      "18.5"
     ]
   },
   {
@@ -2725,12 +2393,13 @@
     "title": "11ª NORDICANDO IL NORDIC WALKING IN VAL D'ILLASI",
     "date": "12/10/2025",
     "location": {
-      "city": "Illasi [Cantina Sabaini, via Mormontea 6/a]",
+      "city": "Cellore di Illasi c/o impianti sportivi di via XXV Aprile",
       "province": "VR"
     },
     "poster": null,
     "source": "FIASP",
     "distances": [
+      "6",
       "12"
     ]
   },
@@ -2806,13 +2475,28 @@
     ]
   },
   {
+    "title": "10ª MARCIA LA STRADA DAI FASANS",
+    "date": "19/10/2025",
+    "location": {
+      "city": "Villesse",
+      "province": "GO"
+    },
+    "poster": "https://drive.google.com/file/d/10w6hkzIZPzuO5DP2q_ffl13w3B91Vx3h/view?usp=sharing",
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "12",
+      "18"
+    ]
+  },
+  {
     "title": "46ª TUTTI ASSIEME A MERATE",
     "date": "19/10/2025",
     "location": {
       "city": "Merate",
       "province": "LC"
     },
-    "poster": null,
+    "poster": "https://drive.google.com/file/d/1d_hrErdNethBtOR-HC3EAt7YzEzcA4hW/view?usp=sharing",
     "source": "FIASP",
     "distances": [
       "8",
@@ -2995,15 +2679,29 @@
     "title": "52° SAFARI DEL COCCODRILLO",
     "date": "19/10/2025",
     "location": {
-      "city": "Via Verona San Pietro di Legnago",
+      "city": "San Pietro di Legnago Via Verona",
       "province": "VR"
     },
-    "poster": null,
+    "poster": "https://drive.google.com/file/d/1UYmU8q8dPymqjL8YIYXwv20zefFiCAx_/view?usp=sharing",
     "source": "FIASP",
     "distances": [
       "6",
       "11",
       "14"
+    ]
+  },
+  {
+    "title": "TERMINAL NORD CHARITY RUN",
+    "date": "25/10/2025",
+    "location": {
+      "city": "VIALE TRICESIMO 149 - UDINE",
+      "province": "UD"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "10"
     ]
   },
   {
@@ -3039,6 +2737,35 @@
       "14",
       "20",
       "30"
+    ]
+  },
+  {
+    "title": "RADUNO PODISTICO COMITATO FIASP COMO LECCO SONDRIO",
+    "date": "26/10/2025",
+    "location": {
+      "city": "ALZATE BRIANZA",
+      "province": "CO"
+    },
+    "poster": "https://drive.google.com/file/d/1m8BgSvmfPcaB9ltT6S05q-aSqOTQHdV8/view?usp=sharing",
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "14",
+      "21"
+    ]
+  },
+  {
+    "title": "RISCOPRENDO GLI ANTICHI BORGHI DI GRADISCA D'ISONZO",
+    "date": "26/10/2025",
+    "location": {
+      "city": "Gradisca d'Isonzo Campo com. Gino Colussi 6",
+      "province": "GO"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12 20"
     ]
   },
   {
@@ -3116,6 +2843,21 @@
     ]
   },
   {
+    "title": "47ª GRASPAROLA",
+    "date": "26/10/2025",
+    "location": {
+      "city": "Pergolese",
+      "province": "TN"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "4",
+      "11",
+      "18"
+    ]
+  },
+  {
     "title": "MARCIA DEI VIVAI - 19ª MARCIA CON GLI ALPINI PER LORIA",
     "date": "26/10/2025",
     "location": {
@@ -3131,7 +2873,7 @@
     ]
   },
   {
-    "title": "24ª MARCIA INTERNAZIONALE DELLE CASTAGNE",
+    "title": "26ª MARCIA INTERNAZIONALE DELLE CASTAGNE",
     "date": "26/10/2025",
     "location": {
       "city": "Magnano in Riviera",
@@ -3143,8 +2885,7 @@
       "3",
       "6",
       "11",
-      "20",
-      "25"
+      "17"
     ]
   },
   {
@@ -3169,7 +2910,7 @@
       "city": "Sossano [Via Roma 84]",
       "province": "VI"
     },
-    "poster": null,
+    "poster": "https://drive.google.com/file/d/1f5GStsfFgXJh7oCzgAiF_xVnJ4coIola/view?usp=sharing",
     "source": "FIASP",
     "distances": [
       "6",
@@ -3290,7 +3031,7 @@
       "city": "Correzzana - Via Principale 38",
       "province": "MB"
     },
-    "poster": null,
+    "poster": "https://drive.google.com/file/d/11v8g1dCjfPRNpJmgu98w5I0TdxC16fOK/view?usp=sharing",
     "source": "FIASP",
     "distances": [
       "7",
@@ -3371,6 +3112,21 @@
       "6",
       "12",
       "18",
+      "21"
+    ]
+  },
+  {
+    "title": "33ª STRACANTU' - PERCORSI ARTISTICI",
+    "date": "09/11/2025",
+    "location": {
+      "city": "Cantù - Piazza Parini,4 sede comune di Cantù",
+      "province": "CO"
+    },
+    "poster": "https://drive.google.com/file/d/1g81dRx1jDtwwhy93sw6ysLV31zZAeorY/view?usp=sharing",
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "13",
       "21"
     ]
   },
@@ -3465,7 +3221,7 @@
     ]
   },
   {
-    "title": "46ª MARCIA DEL DINDIAT",
+    "title": "48ª MARCIA DEL DINDIAT",
     "date": "09/11/2025",
     "location": {
       "city": "Aiello del Friuli",
@@ -3474,8 +3230,8 @@
     "poster": null,
     "source": "FIASP",
     "distances": [
-      "7",
-      "12"
+      "8",
+      "13"
     ]
   },
   {
@@ -3495,19 +3251,19 @@
     ]
   },
   {
-    "title": "32ª CAMINADA DI SAN MARTINO",
-    "date": "09/11/2025",
+    "title": "TRA LA FOIAROLA E LA STORIA",
+    "date": "16/11/2025",
     "location": {
-      "city": "Legnago [Via Frattini 14]",
-      "province": "VR"
+      "city": "VERMEGLIANO di RONCHI DEI LEGIONARI Viale Garibaldi",
+      "province": "GO"
     },
-    "poster": null,
+    "poster": "https://drive.google.com/file/d/1376LR8wkRENVj_BZxoZtwKxUAj3WGvw0/view?usp=sharing",
     "source": "FIASP",
     "distances": [
-      "3",
+      "4",
       "7",
       "12",
-      "20"
+      "17"
     ]
   },
   {
@@ -3916,7 +3672,7 @@
       "city": "via del Redentore,4 Vangadizza di Legnago",
       "province": "VR"
     },
-    "poster": "https://drive.google.com/file/d/1ddJup5wBeJ_97L05lpmTO1wf4BmKE4ev/view?usp=sharing",
+    "poster": "https://drive.google.com/file/d/1jwtGPMOk-VVhcjoOnp7dYFKlVlz6ZuWu/view?usp=sharing",
     "source": "FIASP",
     "distances": [
       "Km 3",
@@ -3980,21 +3736,6 @@
       "7",
       "12",
       "18"
-    ]
-  },
-  {
-    "title": "27ª MARCIA DEI TRI CAPITEI",
-    "date": "07/12/2025",
-    "location": {
-      "city": "Palesella di Cerea",
-      "province": "VR"
-    },
-    "poster": null,
-    "source": "FIASP",
-    "distances": [
-      "6",
-      "12",
-      "19"
     ]
   },
   {
@@ -4179,7 +3920,7 @@
     "title": "26ª CORSA PODISTICA  SAN MICHELE  SUI COLLI DEL GARDA",
     "date": "14/12/2025",
     "location": {
-      "city": "Park via degli Alpini- Monzambano",
+      "city": "Monzambano - Park via degli Alpini-",
       "province": "MN"
     },
     "poster": null,
