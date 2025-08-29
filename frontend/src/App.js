@@ -11,6 +11,20 @@ function App() {
   const [selectedProvince, setSelectedProvince] = useState('')
   const [error, setError] = useState(null)
 
+  // 🆕 Carica le province solo una volta all'inizio
+  const loadProvinces = async () => {
+    try {
+      const response = await fetch(`${API_BASE}/provinces`);
+      const result = await response.json();
+      
+      if (result.success) {
+        setProvinces(result.data);
+      }
+    } catch (error) {
+      console.error('Errore nel caricare le province:', error);
+    }
+  };
+
   // Carica gli eventi dall'API
   const loadEvents = async (province = '') => {
     setLoading(true);
@@ -26,10 +40,6 @@ function App() {
       
       if (result.success) {
         setEvents(result.data);
-        // Aggiorna anche la lista delle province dalle stats
-        if (result.stats && result.stats.provinces) {
-          setProvinces(result.stats.provinces);
-        }
       } else {
         setError(result.error || 'Errore nel caricare gli eventi');
       }
@@ -41,9 +51,10 @@ function App() {
     }
   };
 
-  // Carica eventi al primo caricamento
+  // 🆕 Carica province e eventi al primo caricamento
   useEffect(() => {
-    loadEvents();
+    loadProvinces(); // Carica le province una sola volta
+    loadEvents();    // Carica tutti gli eventi
   }, []);
 
   // Quando cambia la provincia selezionata
