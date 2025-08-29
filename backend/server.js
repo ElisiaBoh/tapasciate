@@ -26,6 +26,9 @@ const getEventsFromFile = () => {
 const filterEvents = (events, filters = {}) => {
   let filteredEvents = [...events];
 
+  // 🆕 Filtra solo eventi futuri (sempre attivo)
+  filteredEvents = filteredEvents.filter(event => isFutureEvent(event.date));
+
   // Filtra per provincia
   if (filters.province && filters.province !== '') {
     filteredEvents = filteredEvents.filter(event => 
@@ -40,11 +43,6 @@ const filterEvents = (events, filters = {}) => {
     );
   }
 
-  // Filtra per data (futuro)
-  if (filters.dateFrom || filters.dateTo) {
-    // Implementazione futura per range di date
-  }
-
   return filteredEvents;
 };
 
@@ -57,6 +55,18 @@ const sortEventsByDate = (events) => {
     const dateB = new Date(yearB, monthB - 1, dayB);
     return dateA - dateB;
   });
+};
+
+// Funzione per controllare se un evento è futuro
+const isFutureEvent = (dateString) => {
+  const [day, month, year] = dateString.split('/').map(Number);
+  const eventDate = new Date(year, month - 1, day);
+  const today = new Date();
+  
+  // Imposta l'ora di oggi a mezzanotte per confrontare solo le date
+  today.setHours(0, 0, 0, 0);
+  
+  return eventDate >= today;
 };
 
 // ROTTE API
