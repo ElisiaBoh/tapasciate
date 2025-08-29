@@ -197,7 +197,7 @@ def main():
     fiasp = fetch_fiasp_events()
     all_events = csi + fiasp
 
-    with open("frontend/public/events.json", "w", encoding="utf-8") as f:
+    with open("backend/public/events.json", "w", encoding="utf-8") as f:
         json.dump([e.model_dump(mode="json") for e in all_events], f, ensure_ascii=False, indent=2)
 
     print(f"✅ Saved {len(all_events)} events (CSI {len(csi)}, FIASP {len(fiasp)})")

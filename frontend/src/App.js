@@ -1,23 +1,56 @@
 import { useState, useEffect } from 'react'
 import './App.css'
 
+// Configurazione API
+const API_BASE = 'http://localhost:3001/api';
+
 function App() {
   const [events, setEvents] = useState([])
+  const [provinces, setProvinces] = useState([])
   const [loading, setLoading] = useState(true)
   const [selectedProvince, setSelectedProvince] = useState('')
+  const [error, setError] = useState(null)
 
+  // Carica gli eventi dall'API
+  const loadEvents = async (province = '') => {
+    setLoading(true);
+    setError(null);
+    
+    try {
+      const url = province 
+        ? `${API_BASE}/events?province=${province}`
+        : `${API_BASE}/events`;
+      
+      const response = await fetch(url);
+      const result = await response.json();
+      
+      if (result.success) {
+        setEvents(result.data);
+        // Aggiorna anche la lista delle province dalle stats
+        if (result.stats && result.stats.provinces) {
+          setProvinces(result.stats.provinces);
+        }
+      } else {
+        setError(result.error || 'Errore nel caricare gli eventi');
+      }
+    } catch (error) {
+      console.error('Errore API:', error);
+      setError('Impossibile connettersi al server');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // Carica eventi al primo caricamento
   useEffect(() => {
-    fetch(process.env.PUBLIC_URL + "/events.json")
-      .then(response => response.json())
-      .then(data => {
-        setEvents(data)
-        setLoading(false)
-      })
-      .catch(error => {
-        console.error('Errore nel caricare gli eventi:', error)
-        setLoading(false)
-      })
-  }, [])
+    loadEvents();
+  }, []);
+
+  // Quando cambia la provincia selezionata
+  const handleProvinceChange = (province) => {
+    setSelectedProvince(province);
+    loadEvents(province);
+  };
 
   // Funzione per formattare la data per i titoli delle sezioni
   const formatSectionDate = (dateString) => {
@@ -35,19 +68,8 @@ function App() {
     return `${dayName} ${dayNumber} ${monthName}`;
   };
 
-  const filteredEvents = selectedProvince 
-    ? events.filter(event => event.location.province === selectedProvince)
-    : events;
-
-  const today = new Date(); today.setHours(0, 0, 0, 0);
-
-  const groupedEvents = filteredEvents
-  .filter(event => {
-    const [day, month, year] = event.date.split("/").map(Number);
-    const eventDate = new Date(year, month - 1, day);
-    return eventDate >= today;
-  })
-  .reduce((groups, event) => {
+  // Raggruppa eventi per data (ora arrivano già ordinati dal backend)
+  const groupedEvents = events.reduce((groups, event) => {
     const date = event.date;
     if (!groups[date]) {
       groups[date] = [];
@@ -56,18 +78,21 @@ function App() {
     return groups;
   }, {});
 
-  const sortedDates = Object.keys(groupedEvents).sort((a, b) => {
-    const [dayA, monthA, yearA] = a.split('/').map(Number);
-    const [dayB, monthB, yearB] = b.split('/').map(Number);
-    const dateA = new Date(yearA, monthA - 1, dayA);
-    const dateB = new Date(yearB, monthB - 1, dayB);
-    return dateA - dateB;
-  });
-
-  const provinces = [...new Set(events.map(event => event.location.province))].sort();
+  const sortedDates = Object.keys(groupedEvents);
 
   if (loading) {
     return <div className="loading">Caricamento eventi...</div>
+  }
+
+  if (error) {
+    return (
+      <div className="error">
+        <p>❌ {error}</p>
+        <button onClick={() => loadEvents()} className="retry-button">
+          Riprova
+        </button>
+      </div>
+    );
   }
 
   return (
@@ -79,7 +104,7 @@ function App() {
       <div className="filters">
         <select 
           value={selectedProvince} 
-          onChange={(e) => setSelectedProvince(e.target.value)}
+          onChange={(e) => handleProvinceChange(e.target.value)}
           className="province-filter"
         >
           <option value="">🌍 Tutte le province</option>
@@ -91,7 +116,7 @@ function App() {
         </select>
         
         <span className="events-count">
-          {filteredEvents.length} eventi trovati
+          {events.length} eventi trovati
         </span>
       </div>
 
@@ -99,7 +124,6 @@ function App() {
         {sortedDates.length > 0 ? (
           sortedDates.map(date => (
             <div key={date} className="date-section">
-              {/* Header della sezione con data */}
               <div className="date-header">
                 <h2 className="date-title">
                   📅 {formatSectionDate(date)}
@@ -109,10 +133,9 @@ function App() {
                 </span>
               </div>
 
-              {/* Griglia degli eventi per questa data */}
               <div className="events-grid">
                 {groupedEvents[date].map((event, index) => (
-                  <EventCard key={index} event={event} />
+                  <EventCard key={`${date}-${index}`} event={event} />
                 ))}
               </div>
             </div>
@@ -132,11 +155,9 @@ function App() {
 }
 
 function EventCard({ event }) {
-  // Funzione per formattare la data
   const formatDate = (dateString) => {
-    // dateString è in formato "10/08/2025" (DD/MM/YYYY)
     const [day, month, year] = dateString.split('/');
-    const date = new Date(year, month - 1, day); // month - 1 perché i mesi partono da 0
+    const date = new Date(year, month - 1, day);
     
     const giorni = ['Domenica', 'Lunedì', 'Martedì', 'Mercoledì', 'Giovedì', 'Venerdì', 'Sabato'];
     const mesi = ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 
