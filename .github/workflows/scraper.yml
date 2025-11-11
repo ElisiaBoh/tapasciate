@@ -25,7 +25,9 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: pip install requests beautifulsoup4
+        run: |
+          pip install --upgrade pip
+          pip install -r requirements.txt
 
       - name: Run scraper
         run: python scraper.py
@@ -36,4 +38,4 @@ jobs:
           git config --global user.name "GitHub Actions"
           git add events.json
           git commit -m "Update events.json" || echo "No changes to commit"
-          git push https://x-access-token:${{ secrets.GH_PAT }}@github.com/ElisiaBoh/tapasciate.git HEAD:main
+          git push
