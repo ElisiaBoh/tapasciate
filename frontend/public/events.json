@@ -1,16 +1,5 @@
 [
   {
-    "title": "Quater Sallc coi Rane",
-    "date": "16/11/2025",
-    "location": {
-      "city": "Levate",
-      "province": "BG"
-    },
-    "poster": "https://www.csibergamo.it/images/marce/16%20Novembre%20-%20Quater%20sallc%20coi%20Rane%202025%20con%20regolamento-1.jpg",
-    "source": "CSI",
-    "distances": []
-  },
-  {
     "title": "StraOsio",
     "date": "23/11/2025",
     "location": {
@@ -33,167 +22,15 @@
     "distances": []
   },
   {
-    "title": "24ª MARCIA SULL'ALPE E SUL SAN GENESIO",
-    "date": "16/11/2025",
+    "title": "Maratonina di Zanica",
+    "date": "26/12/2025",
     "location": {
-      "city": "Castello Brianza",
-      "province": "LC"
-    },
-    "poster": "https://drive.google.com/file/d/1RFuQLIHNRXf3Lw3ka-SZhSN5-JY1lmd7/view?usp=sharing",
-    "source": "FIASP",
-    "distances": [
-      "4",
-      "8",
-      "16",
-      "23",
-      "30"
-    ]
-  },
-  {
-    "title": "42ª MARCIA DELLA FIERA DI CODOGNO",
-    "date": "16/11/2025",
-    "location": {
-      "city": "Codogno",
-      "province": "LO"
-    },
-    "poster": "https://drive.google.com/file/d/1bq8UC4u31BGhsy11WIUzOB5mMFOZ6jOd/view?usp=sharing",
-    "source": "FIASP",
-    "distances": [
-      "6",
-      "12",
-      "18",
-      "24"
-    ]
-  },
-  {
-    "title": "18ª MARCIA DI SAN MARTINO",
-    "date": "16/11/2025",
-    "location": {
-      "city": "San Martino al Tagliamento",
-      "province": "PN"
-    },
-    "poster": "https://drive.google.com/file/d/10ovI_mVT0BjNTY_f54gxrON_JR3ER2gQ/view?usp=sharing",
-    "source": "FIASP",
-    "distances": [
-      "5",
-      "10",
-      "15"
-    ]
-  },
-  {
-    "title": "31ª CAMMINATA P.A. SALSOMAGGIORE - 40ª STAFFETTA DI SANTA LUCIA",
-    "date": "16/11/2025",
-    "location": {
-      "city": "Salsomaggiore Terme",
-      "province": "PR"
-    },
-    "poster": "https://drive.google.com/file/d/13KrprQDo7kY7HxY5WZ_MCVQCHUPLgxHC/view?usp=sharing",
-    "source": "FIASP",
-    "distances": [
-      "7"
-    ]
-  },
-  {
-    "title": "37ª STRAGELADA MEMORIAL GRITTI NAZZARENO",
-    "date": "16/11/2025",
-    "location": {
-      "city": "CASARILE",
-      "province": "PV"
-    },
-    "poster": "https://drive.google.com/file/d/1LmY3eahz6XDidWexREnlV4M69sgSIM5D/view?usp=sharing",
-    "source": "FIASP",
-    "distances": [
-      "8",
-      "15",
-      "20"
-    ]
-  },
-  {
-    "title": "45ª MARCIA TRA I DINTORNI",
-    "date": "16/11/2025",
-    "location": {
-      "city": "Badia Polesine Via Roma n.537",
-      "province": "RO"
-    },
-    "poster": "https://drive.google.com/file/d/1sD_Bo_HdXmRGvYYmHhfQPrHX2IiISgc5/view?usp=sharing",
-    "source": "FIASP",
-    "distances": [
-      "6",
-      "11",
-      "21"
-    ]
-  },
-  {
-    "title": "13ª CORSE PIGNOTE",
-    "date": "16/11/2025",
-    "location": {
-      "city": "ARTEGNA",
-      "province": "UD"
-    },
-    "poster": "https://drive.google.com/file/d/1JLEXhROUOyWPrW620tNhoIQBYAOBHI8_/view?usp=sharing",
-    "source": "FIASP",
-    "distances": [
-      "7",
-      "14"
-    ]
-  },
-  {
-    "title": "GORLONGA 2025",
-    "date": "16/11/2025",
-    "location": {
-      "city": "Gorla Minore",
-      "province": "VA"
-    },
-    "poster": "https://drive.google.com/file/d/1YgiM2ZR45gdMh4hgbjse6KKKX8Y4ao9b/view?usp=sharing",
-    "source": "FIASP",
-    "distances": [
-      "6",
-      "13",
-      "21"
-    ]
-  },
-  {
-    "title": "47ª MARCIA PER LE PRATERIE",
-    "date": "16/11/2025",
-    "location": {
-      "city": "Poianella di Bressanvido [Palestra Comunale-P.za IV Novembre]",
-      "province": "VI"
-    },
-    "poster": "https://drive.google.com/file/d/1_2Hs2kuuj6j13aj1cUCshvF0W7PShB78/view?usp=sharing",
-    "source": "FIASP",
-    "distances": [
-      "5",
-      "9",
-      "11",
-      "20"
-    ]
-  },
-  {
-    "title": "3° CAMMINATA TRA LE VERZE MORETTE DI VERONELLA",
-    "date": "16/11/2025",
-    "location": {
-      "city": "VERONELLA - PIAZZA GUGLIELMO MARCONI",
-      "province": "VR"
-    },
-    "poster": "https://drive.google.com/file/d/1zMhsEKm5Eq-SXlQN8QvT4SPE28uxdt72/view?usp=sharing",
-    "source": "FIASP",
-    "distances": [
-      "6",
-      "11"
-    ]
-  },
-  {
-    "title": "UN PASSO AVANTI",
-    "date": "23/11/2025",
-    "location": {
-      "city": "Valbrembo [Valbrembo - Via Don Milani, 3",
+      "city": "Zanica",
       "province": "BG"
     },
-    "poster": "https://drive.google.com/file/d/1FayEB17Nu_qPfSajA1-aPs1_y-5Uc9LZ/view?usp=sharing",
-    "source": "FIASP",
-    "distances": [
-      "5"
-    ]
+    "poster": "https://www.csibergamo.it/images/marce/26-12%20Zanica-1.jpg",
+    "source": "CSI",
+    "distances": []
   },
   {
     "title": "51ª QUATTRO PONTI SUL LAMBRO",
@@ -351,7 +188,7 @@
       "city": "BOSISIO PARINI",
       "province": "LC"
     },
-    "poster": "https://drive.google.com/file/d/1VPH7bvrmbN-XahZuZK5Jy4RxHY0pFGze/view?usp=sharing",
+    "poster": "https://drive.google.com/file/d/1Z7Mu5L5n04FovlEj5X-WFP2Im_qG1upO/view?usp=sharing",
     "source": "FIASP",
     "distances": [
       "3",
@@ -455,6 +292,20 @@
     "source": "FIASP",
     "distances": [
       "6 ripetibili"
+    ]
+  },
+  {
+    "title": "1^ STAFFETTA CONTRO LA VIOLENZA SULLE DONNE",
+    "date": "30/11/2025",
+    "location": {
+      "city": "MOGLIANO VENETO",
+      "province": "TV"
+    },
+    "poster": "https://drive.google.com/file/d/1j4hWXm1bJDHpjsn2Peo2hCYY8GfQjdk-/view?usp=sharing",
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "10"
     ]
   },
   {
@@ -729,7 +580,7 @@
       "city": "Orgiano [Scuola Media G.Piovene Via D.Alighieri]",
       "province": "VI"
     },
-    "poster": null,
+    "poster": "https://drive.google.com/file/d/1qumbHLUkYrfaHiKVKln8fDkuXlDAyo9y/view?usp=sharing",
     "source": "FIASP",
     "distances": [
       "3",
@@ -949,7 +800,7 @@
       "city": "Zugliano Via Marconi",
       "province": "VI"
     },
-    "poster": null,
+    "poster": "https://drive.google.com/file/d/1pdAkyrBmwvgk4gJPacT3nwUSKVSyv2kc/view?usp=sharing",
     "source": "FIASP",
     "distances": [
       "7",
