@@ -1,16 +1,5 @@
 [
   {
-    "title": "StraOsio",
-    "date": "23/11/2025",
-    "location": {
-      "city": "Osio Sotto",
-      "province": "BG"
-    },
-    "poster": "https://www.csibergamo.it/images/marce/23%20Novembre%20-%20StraOsio-1.jpg",
-    "source": "CSI",
-    "distances": []
-  },
-  {
     "title": "StraPalazzago",
     "date": "30/11/2025",
     "location": {
@@ -31,170 +20,6 @@
     "poster": "https://www.csibergamo.it/images/marce/26-12%20Zanica-1.jpg",
     "source": "CSI",
     "distances": []
-  },
-  {
-    "title": "51ª QUATTRO PONTI SUL LAMBRO",
-    "date": "23/11/2025",
-    "location": {
-      "city": "Lambrugo",
-      "province": "CO"
-    },
-    "poster": "https://drive.google.com/file/d/1PRHRSU_fffzIZB8V7KzvPG0LGGe8bHMz/view?usp=sharing",
-    "source": "FIASP",
-    "distances": [
-      "6",
-      "12",
-      "21"
-    ]
-  },
-  {
-    "title": "4ª \"CORRI BAGNOLO\"",
-    "date": "23/11/2025",
-    "location": {
-      "city": "Bagnolo-Centro Anziani Opera Pia",
-      "province": "CR"
-    },
-    "poster": "https://drive.google.com/file/d/13mpeazPd0007wdsUCtOlMGbbkihW5jkb/view?usp=sharing",
-    "source": "FIASP",
-    "distances": [
-      "7",
-      "13",
-      "18"
-    ]
-  },
-  {
-    "title": "33ª OSSONAINSIEME",
-    "date": "23/11/2025",
-    "location": {
-      "city": "Ossona - Via Roma parco Villa Bosi",
-      "province": "MI"
-    },
-    "poster": "https://drive.google.com/file/d/1GUoOT8DXnadPTqUC_dRM4oFfbbBadWMn/view?usp=sharing",
-    "source": "FIASP",
-    "distances": [
-      "5",
-      "12",
-      "18"
-    ]
-  },
-  {
-    "title": "41ª CAMMINATA DI MARIGNANO",
-    "date": "23/11/2025",
-    "location": {
-      "city": "Zivido di San Giuliano Milanese",
-      "province": "MI"
-    },
-    "poster": "https://drive.google.com/file/d/1hnjPaSI2M_DuR6Q5khMltD8NsscEcbp_/view?usp=sharing",
-    "source": "FIASP",
-    "distances": [
-      "7",
-      "10",
-      "15"
-    ]
-  },
-  {
-    "title": "11ª MARCIA DEI DUE FIUMI - 11° TROFEO CLAUDIO VENTURI",
-    "date": "23/11/2025",
-    "location": {
-      "city": "Piacenza [P.le Marconi 32]",
-      "province": "PC"
-    },
-    "poster": "https://drive.google.com/file/d/1YG2rWMD-nJTsGBefOqTlbDzAPzbffEZa/view?usp=sharing",
-    "source": "FIASP",
-    "distances": [
-      "7",
-      "10",
-      "15"
-    ]
-  },
-  {
-    "title": "3ª TRA LI AGHIS E I MULINS DI BAGNAROLA",
-    "date": "23/11/2025",
-    "location": {
-      "city": "Bagnarola di Sesto al Reghena",
-      "province": "PN"
-    },
-    "poster": "https://drive.google.com/file/d/1hNryvF9gV_02qLt81zw24yf2OAhXJR8H/view?usp=sharing",
-    "source": "FIASP",
-    "distances": [
-      "3",
-      "6",
-      "13",
-      "21"
-    ]
-  },
-  {
-    "title": "CAMMINATA PER LAURA",
-    "date": "23/11/2025",
-    "location": {
-      "city": "San Polo di Torrile, Piazza Repubblica",
-      "province": "PR"
-    },
-    "poster": "https://drive.google.com/file/d/1iJnulSl_Ejvf-_wAXA6XiUlBtOYOkmTR/view?usp=sharing",
-    "source": "FIASP",
-    "distances": [
-      "7",
-      "9.5"
-    ]
-  },
-  {
-    "title": "45ª MARCIA INTERNAZIONALE PER LE COLLINE DI FAGAGNA",
-    "date": "23/11/2025",
-    "location": {
-      "city": "Fagagna",
-      "province": "UD"
-    },
-    "poster": "https://drive.google.com/file/d/1QQ6kIseHYz75GBXgsd3tn2qTsolVffLS/view?usp=sharing",
-    "source": "FIASP",
-    "distances": [
-      "7",
-      "13",
-      "22"
-    ]
-  },
-  {
-    "title": "40ª STRAROSSANO",
-    "date": "23/11/2025",
-    "location": {
-      "city": "Rossano Veneto [Villa Caffo Via Bassano 21]",
-      "province": "VI"
-    },
-    "poster": "https://drive.google.com/file/d/1zkl3dGpvqCh1GKa7jXA6HSOUF4bBkYmx/view?usp=sharing",
-    "source": "FIASP",
-    "distances": [
-      "4",
-      "8",
-      "12",
-      "18"
-    ]
-  },
-  {
-    "title": "10° LE PESTE SULL'ADIGE",
-    "date": "23/11/2025",
-    "location": {
-      "city": "Roverchiaretta, Via Porto",
-      "province": "VR"
-    },
-    "poster": "https://drive.google.com/file/d/1gP3P_iFtUYuyVynZCf0vdywlrKDQmmmu/view?usp=sharing",
-    "source": "FIASP",
-    "distances": [
-      "6.12.18"
-    ]
-  },
-  {
-    "title": "LA CORSA DEI BABBI NATALE",
-    "date": "29/11/2025",
-    "location": {
-      "city": "BOSISIO PARINI",
-      "province": "LC"
-    },
-    "poster": "https://drive.google.com/file/d/1Z7Mu5L5n04FovlEj5X-WFP2Im_qG1upO/view?usp=sharing",
-    "source": "FIASP",
-    "distances": [
-      "3",
-      "5",
-      "10"
-    ]
   },
   {
     "title": "24ª STAFFETTA 24X1 ORA TELETHON",
@@ -372,7 +197,7 @@
       "city": "Bonate Sotto (Centro Socio Culturale Via S.. Sebastiano, 3)",
       "province": "BG"
     },
-    "poster": "https://drive.google.com/file/d/1iS1jhDwNNBb1UC-VvkLeUiH3r8JMCX1t/view?usp=sharing",
+    "poster": "https://drive.google.com/file/d/17dVZdT86UD4unbRazIy0W1hLyuYnJ0X2/view?usp=sharing",
     "source": "FIASP",
     "distances": [
       "7",
@@ -447,7 +272,7 @@
       "city": "Palesella di Cerea",
       "province": "VR"
     },
-    "poster": "https://drive.google.com/file/d/10J7UWdwtosxn8cVw9kJJC1Jm94nJOWrr/view?usp=sharing",
+    "poster": "https://drive.google.com/file/d/1OZAy77za-7V8p5YUaePYh5cQRaLOGJc2/view?usp=sharing",
     "source": "FIASP",
     "distances": [
       "6",
@@ -506,7 +331,7 @@
       "city": "BESURICA [Via Grazioli 1]",
       "province": "PC"
     },
-    "poster": "https://drive.google.com/file/d/1L11aPSjYup2GQ9I_Ss9KJ2n-3g0PtM15/view?usp=sharing",
+    "poster": "https://drive.google.com/file/d/142EP-dfEv1qG-6g8qyue4xhKeZnQquHq/view?usp=sharing",
     "source": "FIASP",
     "distances": [
       "4",
@@ -556,6 +381,19 @@
     "distances": [
       "5",
       "10"
+    ]
+  },
+  {
+    "title": "2° MONTE CHRISTMAS WALK",
+    "date": "08/12/2025",
+    "location": {
+      "city": "MONTEBELLUNA",
+      "province": "TV"
+    },
+    "poster": "https://drive.google.com/file/d/15mFGC-UvRbmju4n-OUwaB8j99hW_KUWM/view?usp=sharing",
+    "source": "FIASP",
+    "distances": [
+      "8.5"
     ]
   },
   {
@@ -635,6 +473,19 @@
     ]
   },
   {
+    "title": "CAMMINATA DEI BABBO NATALE - 5^ EDIZIONE",
+    "date": "14/12/2025",
+    "location": {
+      "city": "CABIATE",
+      "province": "CO"
+    },
+    "poster": "https://drive.google.com/file/d/1Sf0mHEy5yxV3XitflfRyeNnMqxjyNZRI/view?usp=sharing",
+    "source": "FIASP",
+    "distances": [
+      "4"
+    ]
+  },
+  {
     "title": "39ª CAMMINATA PER GLI AMICI SCOMPARSI",
     "date": "14/12/2025",
     "location": {
@@ -647,6 +498,19 @@
       "6",
       "11",
       "15"
+    ]
+  },
+  {
+    "title": "CAMMINATA NATALIZIA",
+    "date": "14/12/2025",
+    "location": {
+      "city": "GORIZIA Piazza Vittoria",
+      "province": "GO"
+    },
+    "poster": "https://drive.google.com/file/d/1T80pNZLS2bn7d1zghf21uHXAFMfJs2h3/view?usp=sharing",
+    "source": "FIASP",
+    "distances": [
+      "5"
     ]
   },
   {
@@ -714,7 +578,7 @@
       "city": "Seveso",
       "province": "MB"
     },
-    "poster": null,
+    "poster": "https://drive.google.com/file/d/13VAjntkkgSJYQuHq0b_SVtxozQRdxG7n/view?usp=sharing",
     "source": "FIASP",
     "distances": [
       "7",
@@ -755,7 +619,7 @@
       "city": "Spilimbergo",
       "province": "PN"
     },
-    "poster": null,
+    "poster": "https://drive.google.com/file/d/1Ip730bAwoiofU6Exbi_f7tEu6gEEE2oi/view?usp=sharing",
     "source": "FIASP",
     "distances": [
       "6",
@@ -827,7 +691,7 @@
       "city": "Via Piave-Cicognara di Viadana",
       "province": "MN"
     },
-    "poster": null,
+    "poster": "https://drive.google.com/file/d/1aJjkQ8lQzFnh84GF1uzOCj1MJfTm4iJi/view?usp=sharing",
     "source": "FIASP",
     "distances": [
       "5",
