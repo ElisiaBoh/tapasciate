@@ -1,59 +1,39 @@
-# Tapasciate Scraper
+# Tapasciate
 
-This project is a simple Python-based web scraper that collects information about upcoming non-competitive walking events ("tapasciate") in the Bergamo area, published on the [CSI Bergamo website](https://www.csibergamo.it/avvisi/prossime-marce.html).
+Scraper per eventi di camminate non competitive in Italia (CSI Bergamo e FIASP).
 
-The data is periodically extracted and saved in a `events.json` file, which can be used to power static or dynamic websites displaying upcoming events.
-
----
-
-## 🔍 What It Does
-
-- Fetches the list of upcoming walking events from the CSI Bergamo announcements page.
-- Parses the event **title**, **category**, and **location**.
-- Saves the data in a structured JSON format.
-
-Example output (`events.json`):
-
-```json
-[
-  {
-    "info": "03 Agosto Domenica",
-    "categoria": "NON COMPETITIVE",
-    "localita": "Spinone al Lago"
-  },
-  {
-    "info": "07 Settembre Domenica",
-    "categoria": "NON COMPETITIVE",
-    "localita": "Gaverina Terme"
-  }
-]
+## 📁 Struttura del progetto
+```
+tapasciate/
+├── scraper/              # Backend Python
+│   ├── models/          # Modelli dati (Event, Location, Province)
+│   ├── scrapers/        # Scrapers (CSI, FIASP)
+│   ├── utils/           # Utility functions
+│   ├── config.py        # Configurazioni
+│   ├── main.py          # Entry point
+│   └── requirements.txt
+├── frontend/            # Frontend React
+├── data/                # Output JSON
+├── tests/               # Test suite
+└── .github/workflows/   # CI/CD
 ```
 
-## ⚙️ How It Works
+## 🚀 Uso locale
+```bash
+# Installa dipendenze
+python3.11 -m pip install -r scraper/requirements.txt
 
-The project consists of:
+# Esegui scraper
+python3.11 scraper/main.py
 
-- scraper.py: the Python script responsible for fetching and parsing the event data.
-- events.json: the output file containing the structured data.
-- A GitHub Actions workflow (.github/workflows/aggiorna-marce.yml) that runs every Monday at 6:00 UTC (8:00 Italian time), and also when changes are pushed to the scraper.
+# Output: data/events.json
+```
 
-## 🧪 Run Locally
+## 🤖 Automazione
 
-To test the scraper locally:
+Lo scraper gira automaticamente ogni mercoledì alle 8:00 (CET) tramite GitHub Actions.
 
-1. Make sure you have Python 3.11+ installed.
-2. Install dependencies:
-`pip install requests beautifulsoup4`
-3. Run the script:
-   `python scraper.py`
-
-The file events.json will be created or updated in the root directory.
-
-## 🚀 GitHub Actions
-
-The project includes a GitHub Actions workflow that:
-
-- Runs on a weekly schedule
-- Can be manually triggered
-- Commits and pushes updates to events.json
-
+## 🧪 Test
+```bash
+pytest tests/ -v
+```
