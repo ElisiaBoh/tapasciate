@@ -1,0 +1,5 @@
+{
+  "tests/test_location.py": true,
+  "tests/test_fiasp_scraper.py::TestFIASPScraper::test_parse_html_with_fixture": true,
+  "tests/test_fiasp_scraper.py::TestFIASPScraper::test_fetch_events_success": true
+}

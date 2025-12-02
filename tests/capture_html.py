@@ -20,6 +20,7 @@ def capture_csi_list():
     try:
         resp = requests.get(CSI_LIST, timeout=10)
         resp.raise_for_status()
+        print(f"📡 Fetching CSI list: {CSI_LIST}")
         
         fixtures_dir = Path(__file__).parent / "fixtures"
         fixtures_dir.mkdir(exist_ok=True)
@@ -85,7 +86,8 @@ def capture_fiasp():
     try:
         resp = requests.get(FIASP_URL, timeout=10)
         resp.raise_for_status()
-        
+        print("📡 Fetching FIASP list: {FIASP_URL}")
+
         fixtures_dir = Path(__file__).parent / "fixtures"
         fixtures_dir.mkdir(exist_ok=True)
         
