@@ -1,0 +1,578 @@
+[
+  {
+    "title": "Maratonina di Zanica",
+    "date": "26/12/2025",
+    "location": {
+      "city": "Zanica",
+      "province": "BG"
+    },
+    "poster": "https://www.csibergamo.it/images/marce/26-12%20Zanica-1.jpg",
+    "source": "CSI",
+    "distances": []
+  },
+  {
+    "title": "Tra l'sère e castei insemà l'AIDO",
+    "date": "04/01/2025",
+    "location": {
+      "city": "Ghisalba",
+      "province": "BG"
+    },
+    "poster": "https://www.csibergamo.it/images/marce/04-01%20Ghisalba-1.jpg",
+    "source": "CSI",
+    "distances": []
+  },
+  {
+    "title": "4ª CORRI PER TELETHON",
+    "date": "07/12/2025",
+    "location": {
+      "city": "Bonate Sotto (Centro Socio Culturale Via S.. Sebastiano, 3)",
+      "province": "BG"
+    },
+    "poster": "https://drive.google.com/file/d/17dVZdT86UD4unbRazIy0W1hLyuYnJ0X2/view?usp=sharing",
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "13"
+    ]
+  },
+  {
+    "title": "13ª FRA SUCARO E FARINA",
+    "date": "07/12/2025",
+    "location": {
+      "city": "PONTELONGO",
+      "province": "PD"
+    },
+    "poster": "https://drive.google.com/file/d/1XwgJ0OwXqo9StlxKMnlLqkLUobQMIm5E/view?usp=sharing",
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "15",
+      "18"
+    ]
+  },
+  {
+    "title": "1ª MARCIA BABBO RUN",
+    "date": "07/12/2025",
+    "location": {
+      "city": "Cimpello di Fiume Veneto",
+      "province": "PN"
+    },
+    "poster": "https://drive.google.com/file/d/1eljRVbEdGFp1kqkNzXhemzZrcyK-IFAw/view?usp=sharing",
+    "source": "FIASP",
+    "distances": [
+      "4",
+      "7",
+      "12"
+    ]
+  },
+  {
+    "title": "MARCIA IN ROSA",
+    "date": "07/12/2025",
+    "location": {
+      "city": "Gonars",
+      "province": "UD"
+    },
+    "poster": "https://drive.google.com/file/d/17ZgDc0LesbouNAiU8R-ObYZ7E97X3Lkt/view?usp=sharing",
+    "source": "FIASP",
+    "distances": [
+      "3",
+      "7",
+      "16"
+    ]
+  },
+  {
+    "title": "13ª MARCIA DELLE RISORGIVE - 10ª MARCIA DEI BABBI NATALE",
+    "date": "07/12/2025",
+    "location": {
+      "city": "Villaverla [Via Stadio]",
+      "province": "VI"
+    },
+    "poster": "https://drive.google.com/file/d/1fkFreK3gjHNGkP-aApOeD4JBORUJMAIp/view?usp=sharing",
+    "source": "FIASP",
+    "distances": [
+      "4",
+      "7",
+      "12",
+      "18"
+    ]
+  },
+  {
+    "title": "27ª MARCIA DEI TRI CAPITEI",
+    "date": "07/12/2025",
+    "location": {
+      "city": "Palesella di Cerea",
+      "province": "VR"
+    },
+    "poster": "https://drive.google.com/file/d/1OZAy77za-7V8p5YUaePYh5cQRaLOGJc2/view?usp=sharing",
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12",
+      "19"
+    ]
+  },
+  {
+    "title": "54ª MAGNUS CURSUS POMI",
+    "date": "08/12/2025",
+    "location": {
+      "city": "Cremella",
+      "province": "LC"
+    },
+    "poster": "https://drive.google.com/file/d/1JTcKWKWrR2q12nrm8S5W31-krk4MzKUp/view?usp=sharing",
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12",
+      "18"
+    ]
+  },
+  {
+    "title": "1ª BABBO RUN",
+    "date": "08/12/2025",
+    "location": {
+      "city": "Ospedaletto Lodigiano",
+      "province": "LO"
+    },
+    "poster": "https://drive.google.com/file/d/1aihhqZ0eO6dG2jj-32tv0wX7ODF8O9aW/view?usp=sharing",
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "10"
+    ]
+  },
+  {
+    "title": "8ª MARCIA DEI BABBI NATALE",
+    "date": "08/12/2025",
+    "location": {
+      "city": "San Martino dall'Argine",
+      "province": "MN"
+    },
+    "poster": "https://drive.google.com/file/d/1tc--OX3gHyZtSxGjipcFpge5RddjeJkW/view?usp=sharing",
+    "source": "FIASP",
+    "distances": [
+      "3",
+      "8",
+      "11"
+    ]
+  },
+  {
+    "title": "35ª MARCIA DELL'IMMACOLATA",
+    "date": "08/12/2025",
+    "location": {
+      "city": "BESURICA [Via Grazioli 1]",
+      "province": "PC"
+    },
+    "poster": "https://drive.google.com/file/d/142EP-dfEv1qG-6g8qyue4xhKeZnQquHq/view?usp=sharing",
+    "source": "FIASP",
+    "distances": [
+      "4",
+      "8",
+      "13"
+    ]
+  },
+  {
+    "title": "7° CAMINA CORI E CIACOEA",
+    "date": "08/12/2025",
+    "location": {
+      "city": "Rubano - p.zza M. L. King",
+      "province": "PD"
+    },
+    "poster": "https://drive.google.com/file/d/12dpvI3V7BULcAOQZMjDFZLDbr7OpFZ3r/view?usp=sharing",
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "10",
+      "14"
+    ]
+  },
+  {
+    "title": "10ª PORTONS DI NADAL",
+    "date": "08/12/2025",
+    "location": {
+      "city": "Toppo di Travesio - via Fornace",
+      "province": "PN"
+    },
+    "poster": "https://drive.google.com/file/d/1cdaz6uizxJwp6l79OVvWMMtr2hXCIKhB/view?usp=sharing",
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "10",
+      "14"
+    ]
+  },
+  {
+    "title": "CORSA DELLA COMETA A CASTELNOVO BARIANO",
+    "date": "08/12/2025",
+    "location": {
+      "city": "Castelnovo Bariano RO di fronte al Municipio Via Municipale,",
+      "province": "RO"
+    },
+    "poster": "https://drive.google.com/file/d/12tvX_rOiCG0NJvWwXMV_Ef0pyi58RakZ/view?usp=sharing",
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "10"
+    ]
+  },
+  {
+    "title": "2° MONTE CHRISTMAS WALK",
+    "date": "08/12/2025",
+    "location": {
+      "city": "MONTEBELLUNA",
+      "province": "TV"
+    },
+    "poster": "https://drive.google.com/file/d/15mFGC-UvRbmju4n-OUwaB8j99hW_KUWM/view?usp=sharing",
+    "source": "FIASP",
+    "distances": [
+      "8.5"
+    ]
+  },
+  {
+    "title": "22ª CJAMINADE DI S. LUSSIE",
+    "date": "08/12/2025",
+    "location": {
+      "city": "Gemona del Friuli",
+      "province": "UD"
+    },
+    "poster": "https://drive.google.com/file/d/1dDAkXh_Twasf_iG96zEKe6g1DBCVEB1w/view?usp=sharing",
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "14",
+      "21"
+    ]
+  },
+  {
+    "title": "44° ULTIMO PASSO D'AUTUNNO",
+    "date": "08/12/2025",
+    "location": {
+      "city": "Orgiano [Scuola Media G.Piovene Via D.Alighieri]",
+      "province": "VI"
+    },
+    "poster": "https://drive.google.com/file/d/1qumbHLUkYrfaHiKVKln8fDkuXlDAyo9y/view?usp=sharing",
+    "source": "FIASP",
+    "distances": [
+      "3",
+      "6",
+      "12",
+      "20"
+    ]
+  },
+  {
+    "title": "48ª MARCIA DEL GIOCATTOLO",
+    "date": "08/12/2025",
+    "location": {
+      "city": "Verona Piazza dell’Arsenale",
+      "province": "VR"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "2",
+      "5",
+      "10"
+    ]
+  },
+  {
+    "title": "LA CAMMINATA DEI BABBI NATALE",
+    "date": "13/12/2025",
+    "location": {
+      "city": "CAMBIAGO - Oratorio Via Vittorio Veneto,2",
+      "province": "MI"
+    },
+    "poster": "https://drive.google.com/file/d/1wMebYDRu8HSDgLkKy8fsoFf96OGcwgRm/view?usp=sharing",
+    "source": "FIASP",
+    "distances": [
+      "5"
+    ]
+  },
+  {
+    "title": "18ª CAMMINATA \"BERGAMO HA UN CUORE GRANDE\" PER LA SOLIDARIETA'",
+    "date": "14/12/2025",
+    "location": {
+      "city": "Bergamo [ex Ospedale Neuropscichiatrico, Borgo Palazzo 130]",
+      "province": "BG"
+    },
+    "poster": "https://drive.google.com/file/d/1C2GYqzugJvK5tutaSf8e606ruvJBlUlw/view?usp=sharing",
+    "source": "FIASP",
+    "distances": [
+      "4",
+      "10",
+      "15"
+    ]
+  },
+  {
+    "title": "BABBO NATALE DI CORSA",
+    "date": "14/12/2025",
+    "location": {
+      "city": "Rovellasca",
+      "province": "CO"
+    },
+    "poster": "https://drive.google.com/file/d/14AgRKas6fL8oiJgDYxMzSExWoZ2BxxOG/view?usp=sharing",
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "14",
+      "20"
+    ]
+  },
+  {
+    "title": "CAMMINATA DEI BABBO NATALE - 5^ EDIZIONE",
+    "date": "14/12/2025",
+    "location": {
+      "city": "CABIATE",
+      "province": "CO"
+    },
+    "poster": "https://drive.google.com/file/d/1Sf0mHEy5yxV3XitflfRyeNnMqxjyNZRI/view?usp=sharing",
+    "source": "FIASP",
+    "distances": [
+      "4"
+    ]
+  },
+  {
+    "title": "39ª CAMMINATA PER GLI AMICI SCOMPARSI",
+    "date": "14/12/2025",
+    "location": {
+      "city": "Palazzo Pignano",
+      "province": "CR"
+    },
+    "poster": "https://drive.google.com/file/d/1wmfN5s9A22cb0e8JAk4TPHaIaWiAW6ra/view?usp=sharing",
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "11",
+      "15"
+    ]
+  },
+  {
+    "title": "CAMMINATA NATALIZIA",
+    "date": "14/12/2025",
+    "location": {
+      "city": "GORIZIA Piazza Vittoria",
+      "province": "GO"
+    },
+    "poster": "https://drive.google.com/file/d/1T80pNZLS2bn7d1zghf21uHXAFMfJs2h3/view?usp=sharing",
+    "source": "FIASP",
+    "distances": [
+      "5"
+    ]
+  },
+  {
+    "title": "26ª CORSA PODISTICA  SAN MICHELE  SUI COLLI DEL GARDA",
+    "date": "14/12/2025",
+    "location": {
+      "city": "Monzambano - Park via degli Alpini-",
+      "province": "MN"
+    },
+    "poster": "https://drive.google.com/file/d/1MqStqIusnmHq_eMONL0VfpnsK96KODE2/view?usp=sharing",
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "14",
+      "20"
+    ]
+  },
+  {
+    "title": "35ª MARCIA DI SANTA LUCIA",
+    "date": "14/12/2025",
+    "location": {
+      "city": "Porcia",
+      "province": "PN"
+    },
+    "poster": "https://drive.google.com/file/d/1ms-k65bLUSbAteGI7sgc-rKo7Xuht4NZ/view?usp=sharing",
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12"
+    ]
+  },
+  {
+    "title": "37ª MARCIA DEL MANDORLATO",
+    "date": "14/12/2025",
+    "location": {
+      "city": "Cologna VENETA",
+      "province": "VR"
+    },
+    "poster": "https://drive.google.com/file/d/1vfx6pABWMINFE_XtqHyQL-FKz777w8Fr/view?usp=sharing",
+    "source": "FIASP",
+    "distances": [
+      "6.5",
+      "12.5",
+      "17.5"
+    ]
+  },
+  {
+    "title": "4ª SGANBADA DEI BABBI NATALE",
+    "date": "20/12/2025",
+    "location": {
+      "city": "BARUCHELLA Piazza Libertà",
+      "province": "RO"
+    },
+    "poster": "https://drive.google.com/file/d/1DsHK0uKXb7vpyyQopyWkXE3fX60e523n/view?usp=sharing",
+    "source": "FIASP",
+    "distances": [
+      "3",
+      "7"
+    ]
+  },
+  {
+    "title": "52ª STRACADA",
+    "date": "21/12/2025",
+    "location": {
+      "city": "Seveso",
+      "province": "MB"
+    },
+    "poster": "https://drive.google.com/file/d/13VAjntkkgSJYQuHq0b_SVtxozQRdxG7n/view?usp=sharing",
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "14",
+      "21"
+    ]
+  },
+  {
+    "title": "CAMMINATA DI NATALE PER SOLIDARIETA'",
+    "date": "21/12/2025",
+    "location": {
+      "city": "Trezzo sull'Adda",
+      "province": "MI"
+    },
+    "poster": "https://drive.google.com/file/d/1K4A3NOsfo8IaNQJk8Te68_I7OqS77_v9/view?usp=sharing",
+    "source": "FIASP",
+    "distances": [
+      "8",
+      "14",
+      "20"
+    ]
+  },
+  {
+    "title": "BABBO CHRISTMAS RUN",
+    "date": "21/12/2025",
+    "location": {
+      "city": "BASTIA DI ROVOLON",
+      "province": "PD"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": []
+  },
+  {
+    "title": "13ª MARCIA DI BABBO NATALE",
+    "date": "21/12/2025",
+    "location": {
+      "city": "Spilimbergo",
+      "province": "PN"
+    },
+    "poster": "https://drive.google.com/file/d/1Ip730bAwoiofU6Exbi_f7tEu6gEEE2oi/view?usp=sharing",
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12",
+      "18"
+    ]
+  },
+  {
+    "title": "34ª DICEMBRINA CERVIGNANESE",
+    "date": "21/12/2025",
+    "location": {
+      "city": "Cervignano",
+      "province": "UD"
+    },
+    "poster": "https://drive.google.com/file/d/1-9Rl_UUuem-zBx6QZKA2eSbHCKcfYi71/view?usp=sharing",
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "12",
+      "21"
+    ]
+  },
+  {
+    "title": "SPETAME CHE RIVO",
+    "date": "21/12/2025",
+    "location": {
+      "city": "Caorle",
+      "province": "VE"
+    },
+    "poster": "https://drive.google.com/file/d/1CcNb48lP2gTiRhJ8HOZDcrDDoDrrNHUU/view?usp=sharing",
+    "source": "FIASP",
+    "distances": [
+      "5.5",
+      "11.5",
+      "20.5"
+    ]
+  },
+  {
+    "title": "CORSA DEI BABBI NATALE",
+    "date": "21/12/2025",
+    "location": {
+      "city": "Zugliano Via Marconi",
+      "province": "VI"
+    },
+    "poster": "https://drive.google.com/file/d/1pdAkyrBmwvgk4gJPacT3nwUSKVSyv2kc/view?usp=sharing",
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "12.5"
+    ]
+  },
+  {
+    "title": "14ª CORRI CHE TI PASSA\"CAMMINATA DELLA VIGILIA\"",
+    "date": "24/12/2025",
+    "location": {
+      "city": "Via Piave-Cicognara di Viadana",
+      "province": "MN"
+    },
+    "poster": "https://drive.google.com/file/d/1aJjkQ8lQzFnh84GF1uzOCj1MJfTm4iJi/view?usp=sharing",
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "9"
+    ]
+  },
+  {
+    "title": "34ª MARCIA DEL RADICCHIO ROSSO DI ASIGLIANO",
+    "date": "26/12/2025",
+    "location": {
+      "city": "Asigliano Veneto [Municipio Via IV Novembre 3]",
+      "province": "VI"
+    },
+    "poster": "https://drive.google.com/file/d/1S0cpwAUNH89W1dkB-pfHfkA6eUdRrSKN/view?usp=sharing",
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12",
+      "20"
+    ]
+  },
+  {
+    "title": "35ª CAMMINATA DI FINE ANNO",
+    "date": "28/12/2025",
+    "location": {
+      "city": "Novedrate",
+      "province": "CO"
+    },
+    "poster": "https://drive.google.com/file/d/18rfthNs_At4-K3U42Bx3Nc-at1CtzvZc/view?usp=sharing",
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "14",
+      "20"
+    ]
+  },
+  {
+    "title": "47ª MARATONINA DI SAN SILVESTRO",
+    "date": "28/12/2025",
+    "location": {
+      "city": "CUSIGNANA - GIAVERA DEL MONTELLO",
+      "province": "TV"
+    },
+    "poster": "https://drive.google.com/file/d/1aS2YAk7IOUyzpKXkko6-kn3I-E32rQHe/view?usp=sharing",
+    "source": "FIASP",
+    "distances": [
+      "4",
+      "6",
+      "11",
+      "19"
+    ]
+  }
+]

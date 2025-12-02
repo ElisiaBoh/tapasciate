@@ -1,5 +1,8 @@
-# provinces.py
+"""
+Italian provinces enum.
+"""
 from enum import Enum
+
 
 class Province(str, Enum):
     AG = "AG"
