@@ -1,109 +1,179 @@
+/* ============================================
+   TAPASCIATE - Design a Strisce Colorate
+   ============================================ */
+
+/* ---- VARIABILI COLORE ---- */
+:root {
+  --color-yellow: #FDDE74;
+  --color-blue: #38ACB3;
+  --color-pink: #F54C70;
+  --color-text-dark: #000;
+  --color-text-light: #FFFFFF;
+}
+
+/* ---- RESET GENERALE ---- */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+/* ---- APP CONTAINER ---- */
 .app {
   min-height: 100vh;
-  background: linear-gradient(135deg, #ec6683 0%, #ffdb8f 50%, #53c4f1 100%);
+  background: #FFFFFF;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
 }
 
+/* ---- HEADER CON LOGO (GIALLO) ---- */
 .header {
-  background: white;
+  background: var(--color-yellow);
   padding: 2rem;
   text-align: center;
-  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: none;
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 
 .logo {
-  max-height: 80px;
-  max-width: 300px;
+  max-height: 200px;
+  max-width: 500px;
   object-fit: contain;
 }
 
 .header h1 {
   font-size: 2.5rem;
   margin-bottom: 0.5rem;
+  color: var(--color-text-dark);
 }
 
+/* ---- SEZIONE FILTRO (AZZURRO) ---- */
 .filters {
-  background: rgba(255, 255, 255, 0.9);
-  padding: 1rem 2rem;
+  background: var(--color-blue);
+  padding: 1.5rem 2rem 2rem 2rem;
   display: flex;
+  justify-content: center;
   align-items: center;
   gap: 1rem;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: none;
+  width: 100%;
 }
 
 .province-filter {
-  padding: 0.7rem 1rem;
-  border: 2px solid #e2e8f0;
-  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  border: 2px solid var(--color-text-dark);
+  border-radius: 25px;
   background: white;
   font-size: 1rem;
   cursor: pointer;
-  transition: border-color 0.2s ease;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.province-filter:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .province-filter:focus {
   outline: none;
-  border-color: #667eea;
+  border-color: var(--color-pink);
 }
 
 .events-count {
-  color: #4a5568;
+  color: white;
   font-weight: 500;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
 }
 
+/* ---- CONTAINER PRINCIPALE ---- */
 .events-container {
-  padding: 2rem;
+  padding: 0;
+  max-width: none;
+  margin: 0;
+}
+
+/* ---- LOADING E NO EVENTS ---- */
+.loading, .no-events {
+  text-align: center;
+  color: var(--color-text-dark);
+  font-size: 1.2rem;
+  padding: 3rem;
+}
+
+/* ---- SEZIONE DATA ---- */
+.date-section {
+  width: 100%;
+  margin-bottom: 0;
+  padding: 0;
+}
+
+/* Header data */
+.date-header {
+  padding: 1.5rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   max-width: 1200px;
   margin: 0 auto;
 }
 
+/* Pattern 0 (index % 3 = 0): Header ROSA + Eventi GIALLO */
+.date-section.pattern-0 {
+  background: linear-gradient(to bottom, var(--color-pink) 0%, var(--color-pink) 80px, var(--color-yellow) 80px, var(--color-yellow) 100%);
+}
+
+/* Pattern 1 (index % 3 = 1): Header BLU + Eventi ROSA */
+.date-section.pattern-1 {
+  background: linear-gradient(to bottom, var(--color-blue) 0%, var(--color-blue) 80px, var(--color-pink) 80px, var(--color-pink) 100%);
+}
+
+/* Pattern 2 (index % 3 = 2): Header GIALLO + Eventi BLU */
+.date-section.pattern-2 {
+  background: linear-gradient(to bottom, var(--color-yellow) 0%, var(--color-yellow) 80px, var(--color-blue) 80px, var(--color-blue) 100%);
+}
+
+.date-title {
+  color: var(--color-text-dark);
+  font-size: 1.75rem;
+  font-weight: bold;
+  margin: 0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.date-count {
+  background: white;
+  color: var(--color-text-dark);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* ---- GRIGLIA EVENTI ---- */
 .events-grid {
+  padding: 0 2rem 2rem 2rem;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
+/* ---- EVENT CARD ---- */
 .event-card {
   background: white;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .event-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
-}
-
-.poster-button {
-  background: #667eea;
-  color: white;
-  border: none;
-  padding: 0.7rem 1rem;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: 500;
-  margin-top: 1rem;
-  transition: background 0.2s ease;
-}
-
-.poster-button:hover {
-  background: #5a6fd8;
-}
-
-.event-content {
-  padding: 1.5rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 .event-content {
@@ -111,8 +181,9 @@
 }
 
 .event-title {
-  color: #2d3748;
-  font-size: 1.2rem;
+  color: var(--color-text-dark);
+  font-size: 1.25rem;
+  font-weight: bold;
   margin-bottom: 1rem;
   line-height: 1.4;
 }
@@ -122,120 +193,133 @@
 }
 
 .event-details p {
-  margin-bottom: 0.5rem;
-  color: #4a5568;
+  margin-bottom: 0.75rem;
+  color: #666;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.event-date,
+.event-location {
+  color: #666;
 }
 
 .event-distances {
   color: #38a169;
   font-weight: 500;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .event-source {
   color: #805ad5;
   font-size: 0.9rem;
   font-weight: 500;
+  display: inline-block;
+  background: #f8f8f8;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  margin-top: 0.5rem;
+}
+
+/* ---- BOTTONI ---- */
+.poster-button {
+  background: #5865F2;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-top: 1rem;
+  width: 100%;
+  transition: background 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.poster-button:hover {
+  background: #4752C4;
 }
 
 .event-link {
   display: inline-block;
-  background: #667eea;
+  background: #5865F2;
   color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 600;
+  font-size: 0.95rem;
   transition: background 0.2s ease;
 }
 
 .event-link:hover {
-  background: #5a6fd8;
+  background: #4752C4;
 }
 
-.loading, .no-events {
-  text-align: center;
-  color: white;
-  font-size: 1.2rem;
-  padding: 3rem;
-}
-
+/* ---- FOOTER ---- */
 .footer {
-  background: rgba(0, 0, 0, 0.1);
+  background: var(--color-text-dark);
   color: white;
   text-align: center;
-  padding: 1rem;
-  margin-top: 2rem;
+  padding: 1.5rem;
+  margin-top: 0;
 }
 
-.date-section {
-  margin-bottom: 3rem;
-}
-
-.date-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 1.5rem;
-  padding: 1rem 0;
-  border-bottom: 3px solid #667eea;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(5px);
-  border-radius: 8px 8px 0 0;
-  padding: 1rem 1.5rem;
-}
-
-.date-title {
-  color: white;
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin: 0;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-.date-count {
-  background: rgba(255, 255, 255, 0.2);
-  color: white;
-  padding: 0.4rem 0.8rem;
-  border-radius: 15px;
-  font-size: 0.9rem;
-  font-weight: 500;
-}
-
-/* Responsive per mobile */
-@media (max-width: 768px) {
-  .date-header {
-    flex-direction: column;
-    gap: 0.5rem;
-    text-align: center;
-  }
-  
-  .date-title {
-    font-size: 1.3rem;
-  }
-}
-
-/* Responsive */
+/* ---- RESPONSIVE ---- */
 @media (max-width: 768px) {
   .events-grid {
     grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1.5rem 1rem;
+  }
+  
+  .date-title {
+    font-size: 1.5rem;
+  }
+  
+  .filters {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 1rem;
+    gap: 0.75rem;
+  }
+  
+  .province-filter {
+    width: 100%;
+  }
+  
+  .date-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem !important;
+  }
+
+  .header {
+    padding: 1.5rem 1rem;
   }
   
   .header h1 {
     font-size: 2rem;
   }
-  
-  .events-container {
-    padding: 1rem;
-  }
+}
 
-  .filters {
-    flex-direction: column;
-    align-items: stretch;
-    padding: 1rem;
+@media (max-width: 480px) {
+  .date-title {
+    font-size: 1.25rem;
   }
   
-  .province-filter {
-    width: 100%;
+  .event-title {
+    font-size: 1.1rem;
   }
 }
