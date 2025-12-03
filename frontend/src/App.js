@@ -73,7 +73,7 @@ function App() {
   return (
     <div className="app">
       <header className="header">
-        <img src={process.env.PUBLIC_URL + "/logo.svg"} alt="Logo Eventi di Corsa" className="logo" />
+        <img src={process.env.PUBLIC_URL + "/header.svg"} alt="Logo Eventi di Corsa" className="logo" />
       </header>
 
       <div className="filters">
@@ -97,12 +97,12 @@ function App() {
 
       <main className="events-container">
         {sortedDates.length > 0 ? (
-          sortedDates.map(date => (
-            <div key={date} className="date-section">
+          sortedDates.map((date, index) => (
+            <div key={date} className={`date-section pattern-${index % 3}`}>
               {/* Header della sezione con data */}
               <div className="date-header">
                 <h2 className="date-title">
-                  📅 {formatSectionDate(date)}
+                  {formatSectionDate(date)}
                 </h2>
                 <span className="date-count">
                   {groupedEvents[date].length} eventi
