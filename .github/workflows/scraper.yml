@@ -35,8 +35,8 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add frontend/public/events.json
-          if ! git diff --quiet || ! git diff --staged --quiet; then
-            git commit -m "Update events data [skip ci]"
+          git add -f frontend/public/events.json
+          if ! git diff --quiet HEAD || ! git diff --staged --quiet; then
+            git commit -m "Update events data"
             git push
           fi
