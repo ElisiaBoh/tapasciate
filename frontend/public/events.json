@@ -1,45 +1,1689 @@
 [
   {
-    "title": "StraPalazzago",
-    "date": "30/11/2025",
+    "title": "StraStezzano",
+    "date": "18/01/2026",
     "location": {
-      "city": "Palazzago",
+      "city": "Stezzano",
       "province": "BG"
     },
-    "poster": "https://www.csibergamo.it/images/marce/30-11%20StraPalazzago-1.jpg",
+    "poster": "https://www.csibergamo.it/images/marce/A4%20Strastezzano%20-%202026-1-1.jpg",
     "source": "CSI",
     "distances": []
   },
   {
-    "title": "Maratonina di Zanica",
-    "date": "26/12/2025",
+    "title": "Run Cortenuova",
+    "date": "25/01/2026",
     "location": {
-      "city": "Zanica",
+      "city": "Cortenuova",
       "province": "BG"
     },
-    "poster": "https://www.csibergamo.it/images/marce/26-12%20Zanica-1.jpg",
+    "poster": "https://www.csibergamo.it/images/marce/RUN%20CORTENUOVA%202026-1.jpg",
     "source": "CSI",
     "distances": []
   },
   {
-    "title": "24ª STAFFETTA 24X1 ORA TELETHON",
-    "date": "29/11/2025",
+    "title": "Caminada inturen al campanel de Sabe",
+    "date": "01/02/2026",
     "location": {
-      "city": "udine",
+      "city": "Sabbio di Dalmine",
+      "province": "BG"
+    },
+    "poster": "https://www.csibergamo.it/images/marce/01-02%20Sabbio-1A.jpg",
+    "source": "CSI",
+    "distances": []
+  },
+  {
+    "title": "Padelada",
+    "date": "08/02/2026",
+    "location": {
+      "city": "Arcene",
+      "province": "BG"
+    },
+    "poster": "https://www.csibergamo.it/images/marce/08-02%20Arcene%201.jpg",
+    "source": "CSI",
+    "distances": []
+  },
+  {
+    "title": "Töcc insema per le strade de puntirol",
+    "date": "15/02/2026",
+    "location": {
+      "city": "Pontirolo Nuovo",
+      "province": "BG"
+    },
+    "poster": "https://www.csibergamo.it/images/marce/15-02%20TOCC%20INSEMA%20PER%20LE%20STRADE%20DE%20PUNTIROL-1.jpg",
+    "source": "CSI",
+    "distances": []
+  },
+  {
+    "title": "Marcia della Solidarietà",
+    "date": "22/02/2026",
+    "location": {
+      "city": "Grumello del Monte",
+      "province": "BG"
+    },
+    "poster": null,
+    "source": "CSI",
+    "distances": []
+  },
+  {
+    "title": "Lions Half Marathon NonCompetitiva",
+    "date": "22/02/2026",
+    "location": {
+      "city": "Treviglio",
+      "province": "BG"
+    },
+    "poster": "https://www.csibergamo.it/images/marce/22-02%20Treviglio%20-1.jpg",
+    "source": "CSI",
+    "distances": []
+  },
+  {
+    "title": "Marcia per la Vita",
+    "date": "01/03/2026",
+    "location": {
+      "city": "Medolago",
+      "province": "BG"
+    },
+    "poster": null,
+    "source": "CSI",
+    "distances": []
+  },
+  {
+    "title": "Tutti insieme sui colli di Zandobbio",
+    "date": "08/03/2026",
+    "location": {
+      "city": "Zandobbio",
+      "province": "BG"
+    },
+    "poster": null,
+    "source": "CSI",
+    "distances": []
+  },
+  {
+    "title": "Nsö en Zo' de l'ada",
+    "date": "15/03/2026",
+    "location": {
+      "city": "Bottanuco",
+      "province": "BG"
+    },
+    "poster": "https://www.csibergamo.it/images/marce/15-03%20BOTTANUCO%202026_STAMPA-1.jpg",
+    "source": "CSI",
+    "distances": []
+  },
+  {
+    "title": "Mercatorum",
+    "date": "22/03/2026",
+    "location": {
+      "city": "Alzano Lombardo",
+      "province": "BG"
+    },
+    "poster": null,
+    "source": "CSI",
+    "distances": []
+  },
+  {
+    "title": "StraPonte",
+    "date": "22/03/2026",
+    "location": {
+      "city": "Ponte San Pietro",
+      "province": "BG"
+    },
+    "poster": null,
+    "source": "CSI",
+    "distances": []
+  },
+  {
+    "title": "Marcia della Croce Bianca",
+    "date": "29/03/2026",
+    "location": {
+      "city": "Boltiere",
+      "province": "BG"
+    },
+    "poster": null,
+    "source": "CSI",
+    "distances": []
+  },
+  {
+    "title": "17ª  PASSI NEL TEMPO - MARCIA GUIDATA TRA MONTEFORTE E SOAVE",
+    "date": "17/01/2026",
+    "location": {
+      "city": "Monteforte d’Alpone [P.za Salvo d'Acquisto]",
+      "province": "VR"
+    },
+    "poster": "https://drive.google.com/file/d/1L0pRGOfZz45isBBqNnpGf5gcEhnMfXDc/view?usp=sharing",
+    "source": "FIASP",
+    "distances": [
+      "10"
+    ]
+  },
+  {
+    "title": "ASNAGO LA CORSA CHE SCALDA I CUORI",
+    "date": "18/01/2026",
+    "location": {
+      "city": "Cermenate - Piazza SS Pietro e Paolo",
+      "province": "CO"
+    },
+    "poster": "https://drive.google.com/file/d/1ZsQ3VBG-clq4rXDM6DY4QfWnMuseD2Hf/view?usp=sharing",
+    "source": "FIASP",
+    "distances": [
+      "8",
+      "14",
+      "20"
+    ]
+  },
+  {
+    "title": "45ª CAMMINATA PANDINESE",
+    "date": "18/01/2026",
+    "location": {
+      "city": "Pandino",
+      "province": "CR"
+    },
+    "poster": "https://drive.google.com/file/d/1ZQIOij3e68ttjbOFzTnNEgb0EoOP0oFW/view?usp=sharing",
+    "source": "FIASP",
+    "distances": [
+      "8.5",
+      "13.5",
+      "18.5",
+      "22"
+    ]
+  },
+  {
+    "title": "52ª MARCIA DI SANT'AGNESE",
+    "date": "18/01/2026",
+    "location": {
+      "city": "Rorai Piccolo di Porcia",
+      "province": "PN"
+    },
+    "poster": "https://drive.google.com/file/d/1BuWmMIkTUbY373WTiRQc65Q-IibgiNjD/view?usp=sharing",
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "12",
+      "18"
+    ]
+  },
+  {
+    "title": "48ª MARCIA DI SANT'ANTONIO",
+    "date": "18/01/2026",
+    "location": {
+      "city": "Zinasco Vecchio - Piazza Vittoria",
+      "province": "PV"
+    },
+    "poster": "https://drive.google.com/file/d/1zI-xkkkV7CkUm12-QhHKTcLiczu3TBkx/view?usp=sharing",
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "13",
+      "19"
+    ]
+  },
+  {
+    "title": "30ª MARCIA DELLA SOLIDARIETA' \"MEMORIAL FRANCO QUARGNAL \"",
+    "date": "18/01/2026",
+    "location": {
+      "city": "Ruda",
+      "province": "UD"
+    },
+    "poster": "https://drive.google.com/file/d/1DeKpLUR-fVhQm-Ekw9hBbggBwyV4WYxj/view?usp=sharing",
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "12"
+    ]
+  },
+  {
+    "title": "46ª MARCIA DELLA FRATERNITA'",
+    "date": "18/01/2026",
+    "location": {
+      "city": "Monticello Conte Otto Piazzetta ex scuole elementari",
+      "province": "VI"
+    },
+    "poster": "https://drive.google.com/file/d/1J1EweTG2YB0WChNHyKoTvhALgPCCqQSP/view?usp=sharing",
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "13",
+      "18"
+    ]
+  },
+  {
+    "title": "49ª MONTEFORTIANA - S.ANTONIO ABATE  FALCONERI",
+    "date": "18/01/2026",
+    "location": {
+      "city": "Monteforte d’Alpone [P.za Salvo d'Acquisto]",
+      "province": "VR"
+    },
+    "poster": "https://drive.google.com/file/d/1L0pRGOfZz45isBBqNnpGf5gcEhnMfXDc/view?usp=sharing",
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "9",
+      "14",
+      "20"
+    ]
+  },
+  {
+    "title": "12ª MARCIA DEL RADICCHIO",
+    "date": "24/01/2026",
+    "location": {
+      "city": "Casaleone Piastra Polivalente “Loris Romano” Piazza della Pace",
+      "province": "VR"
+    },
+    "poster": "https://drive.google.com/file/d/1t7O5TmsT45uqoqb1-WE5gxUaXhVZkr0p/view?usp=sharing",
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "10"
+    ]
+  },
+  {
+    "title": "15ª CINQ PASS PAR BREGNAN",
+    "date": "25/01/2026",
+    "location": {
+      "city": "Bregnano",
+      "province": "CO"
+    },
+    "poster": "https://drive.google.com/file/d/1oSonBoYBnDPoJq9UHEHtt9o1ovojAt-k/view?usp=sharing",
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12",
+      "20"
+    ]
+  },
+  {
+    "title": "25° GIR DELE MADUNINE DA UMBRIA' - 16ª CORRI PER IL MYANMAR",
+    "date": "25/01/2026",
+    "location": {
+      "city": "Crema [Oratorio Ombriano]",
+      "province": "CR"
+    },
+    "poster": "https://drive.google.com/file/d/1rA6o_n42XZ0s-ekkpa7lz0oa7NHbz-zJ/view?usp=sharing",
+    "source": "FIASP",
+    "distances": [
+      "8",
+      "11",
+      "15",
+      "21"
+    ]
+  },
+  {
+    "title": "8ª CORRI CON ENERGIA LUNGO L'ADDA E LE SUE CENTRALI",
+    "date": "25/01/2026",
+    "location": {
+      "city": "Cornate d'Adda (MB) - Centro Sportivo Via Alighieri",
+      "province": "MB"
+    },
+    "poster": "https://drive.google.com/file/d/1vrD-jyz2hiTsEnT8VYuJazXkEX8w5Kov/view?usp=sharing",
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "9",
+      "15",
+      "18",
+      "27"
+    ]
+  },
+  {
+    "title": "20ª STRABIAGIO",
+    "date": "25/01/2026",
+    "location": {
+      "city": "Cavriana [ Giardini Villa Mirra]",
+      "province": "MN"
+    },
+    "poster": "https://drive.google.com/file/d/1NbGDYn54lKNOi6pn6vJOXxm6jO4e7mHJ/view?usp=sharing",
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "13",
+      "20",
+      "31"
+    ]
+  },
+  {
+    "title": "38ª MARCIA DEL'ANSUL",
+    "date": "25/01/2026",
+    "location": {
+      "city": "Cordenons",
+      "province": "PN"
+    },
+    "poster": "https://drive.google.com/file/d/1LiQQ4Wurrm9TA_5JXHp5kq89r-uS9I0X/view?usp=sharing",
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12",
+      "15",
+      "21"
+    ]
+  },
+  {
+    "title": "19ª SANT'AGATA RUN",
+    "date": "25/01/2026",
+    "location": {
+      "city": "Fossalunga - Vedelago",
+      "province": "TV"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12",
+      "21"
+    ]
+  },
+  {
+    "title": "31ª MARCIA DI SANT'AGNESE",
+    "date": "25/01/2026",
+    "location": {
+      "city": "Aiello del Friuli [Loc. Joannis]",
+      "province": "UD"
+    },
+    "poster": "https://drive.google.com/file/d/1r2-t1FN3zR1lqNtK_BwEZXxnRrkJrsQb/view?usp=sharing",
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "12"
+    ]
+  },
+  {
+    "title": "L'ARTICA, CICLOTURISTICA PER BICI D'EPOCA",
+    "date": "25/01/2026",
+    "location": {
+      "city": "Lonigo Piazza Garibaldi",
+      "province": "VI"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "25",
+      "55"
+    ]
+  },
+  {
+    "title": "CIRCUITO DEL CINQUANTENARIO FIASP VICENZA 1ª RADUNO SU P.P. LE RISORGIVE",
+    "date": "25/01/2026",
+    "location": {
+      "city": "Poianella di Bressanvido piazza IV Novembre",
+      "province": "VI"
+    },
+    "poster": "https://drive.google.com/file/d/1VKzycStFM4aqL8BVkXZ871PBfPVe2OU7/view?usp=sharing",
+    "source": "FIASP",
+    "distances": [
+      "4",
+      "8 ripetibili"
+    ]
+  },
+  {
+    "title": "46ª CAMINADA DE SAN BIAGIO",
+    "date": "25/01/2026",
+    "location": {
+      "city": "Bovolone Centro Sportivo S. Pierino Via Creari 32",
+      "province": "VR"
+    },
+    "poster": "https://drive.google.com/file/d/10Nprjooh-l3No1kkrV0XnEJBBlBN51UU/view?usp=sharing",
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "13"
+    ]
+  },
+  {
+    "title": "SCALDAGAMBE",
+    "date": "01/02/2026",
+    "location": {
+      "city": "Carvico/Bg [Parco Serraglio - Via Predazzi]",
+      "province": "BG"
+    },
+    "poster": "https://drive.google.com/file/d/1X4XGVS6Tml2vBPNnIipVmzzhgYoOpKsr/view?usp=sharing",
+    "source": "FIASP",
+    "distances": [
+      "10",
+      "16"
+    ]
+  },
+  {
+    "title": "20ª CIRIMIDO CORRE IN MASCHERA",
+    "date": "01/02/2026",
+    "location": {
+      "city": "Cirimido",
+      "province": "CO"
+    },
+    "poster": "https://drive.google.com/file/d/1XGjCOg5Hqe_K50dTGSMGXLaHvfNQcxph/view?usp=sharing",
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "10",
+      "15"
+    ]
+  },
+  {
+    "title": "7ª CORI AL FAS SANC",
+    "date": "01/02/2026",
+    "location": {
+      "city": "Romans d'Isonzo-Impianti Sport. Via Atleti Azzurri d'Italia",
+      "province": "GO"
+    },
+    "poster": "https://drive.google.com/file/d/1e1qVFIJshzPUIfcs-YeoCeT-6NtWVVmr/view?usp=sharing",
+    "source": "FIASP",
+    "distances": [
+      "6 12 18"
+    ]
+  },
+  {
+    "title": "48ª QUATER PASS TRA EL CASIN EL CAF",
+    "date": "01/02/2026",
+    "location": {
+      "city": "Villanova di Bernareggio - Via Don Guidali 5",
+      "province": "MB"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "13",
+      "20"
+    ]
+  },
+  {
+    "title": "50ª PODISTICA VALLENONCELLO",
+    "date": "01/02/2026",
+    "location": {
+      "city": "Pordenone [Quartiere Vallenoncello]",
+      "province": "PN"
+    },
+    "poster": "https://drive.google.com/file/d/17UzBixBXosoqwtLbkNpOlSljI4UbBKk8/view?usp=sharing",
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12",
+      "22",
+      "30"
+    ]
+  },
+  {
+    "title": "50ª MARCIA DEL REDENTORE",
+    "date": "01/02/2026",
+    "location": {
+      "city": "Povolaro di Dueville [Piazza Schorndorf - Povolaro]",
+      "province": "VI"
+    },
+    "poster": "https://drive.google.com/file/d/1mto9eQSys7nITj4EiFswLgbZRV-7yzc9/view?usp=sharing",
+    "source": "FIASP",
+    "distances": [
+      "4",
+      "8",
+      "12",
+      "22"
+    ]
+  },
+  {
+    "title": "36ª TROVIAMOCI IN AMICIZIA - 18° TROFEO CLAUDIO FERRARI",
+    "date": "01/02/2026",
+    "location": {
+      "city": "Canove di Legnago [Via Pisa Campo Sportivo]",
+      "province": "VR"
+    },
+    "poster": "https://drive.google.com/file/d/1N25y7qoGm9FSIT67I4LZlWBNBm_QSfBh/view?usp=sharing",
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12",
+      "19"
+    ]
+  },
+  {
+    "title": "9ª MARCIA DEI DUE SANTUARI",
+    "date": "08/02/2026",
+    "location": {
+      "city": "Castelleone [Palestra Via Dosso]",
+      "province": "CR"
+    },
+    "poster": "https://drive.google.com/file/d/1MVvE3WUml_aVTu6tORYZ8a-UMhkxmquO/view?usp=sharing",
+    "source": "FIASP",
+    "distances": [
+      "9",
+      "13",
+      "18"
+    ]
+  },
+  {
+    "title": "46° TROFEO AMBROGIO LONGONI",
+    "date": "08/02/2026",
+    "location": {
+      "city": "Bevera di Sirtori",
+      "province": "LC"
+    },
+    "poster": "https://drive.google.com/file/d/1xwuzYSEs8_n4f6cs642TINj2sHLGKbYk/view?usp=sharing",
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12",
+      "18"
+    ]
+  },
+  {
+    "title": "8ª MARCIA DEI RAN RUN",
+    "date": "08/02/2026",
+    "location": {
+      "city": "Pieve Fissiraga",
+      "province": "LO"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "13",
+      "19"
+    ]
+  },
+  {
+    "title": "2ª CORRI IN MASCHERA",
+    "date": "08/02/2026",
+    "location": {
+      "city": "P.zza Don Primo Mazzolari Cicognara di Viadana",
+      "province": "MN"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "8"
+    ]
+  },
+  {
+    "title": "13ª MARCIANDO LIBERA…..MENTE",
+    "date": "08/02/2026",
+    "location": {
+      "city": "Arzene",
+      "province": "PN"
+    },
+    "poster": "https://drive.google.com/file/d/1QxndM2zCRVIERcuuM--isj_7e_YplvBQ/view?usp=sharing",
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12",
+      "18"
+    ]
+  },
+  {
+    "title": "48ª LUNGO I CONFINI DI VICOFERTILE",
+    "date": "08/02/2026",
+    "location": {
+      "city": "Vicofertile",
+      "province": "PR"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12"
+    ]
+  },
+  {
+    "title": "17ª CAMMINANDO IN COMPAGNIA",
+    "date": "08/02/2026",
+    "location": {
+      "city": "Adorgnano di Tricesimo",
+      "province": "UD"
+    },
+    "poster": "https://drive.google.com/file/d/1c8PIChTTdOsbquCqHYyCT_dWsqBksErb/view?usp=sharing",
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "15"
+    ]
+  },
+  {
+    "title": "CIRCUITO DEL CINQUANTENARIO FIASP VICENZA 2ª RADUNO SU P.P. LE RISORGIVE",
+    "date": "08/02/2026",
+    "location": {
+      "city": "POIANELLA DI BRESSANVITO",
+      "province": "VI"
+    },
+    "poster": "https://drive.google.com/file/d/1gIZZ7IMOylsamLasMCBawnQW1VQTeuXY/view?usp=sharing",
+    "source": "FIASP",
+    "distances": [
+      "4",
+      "8 ripetibili"
+    ]
+  },
+  {
+    "title": "27ª MARCIA CONCA PAR LA SANOA - X° MEMORIAL ADRIANO PIZZINI",
+    "date": "08/02/2026",
+    "location": {
+      "city": "Concamarise via L.Battisti presso Area Verde sede Pro Loco concamarise",
+      "province": "VR"
+    },
+    "poster": "https://drive.google.com/file/d/1ntKk94EhwrbCyUkGAIOu7Qxk5neeztXd/view?usp=sharing",
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "12",
+      "17"
+    ]
+  },
+  {
+    "title": "7ª CAMMINATA IN COMPAGNIA",
+    "date": "15/02/2026",
+    "location": {
+      "city": "Alzate Brianza",
+      "province": "CO"
+    },
+    "poster": "https://drive.google.com/file/d/1uQSYlbPKjWpNv6z2_26LxbPFRz5by6wk/view?usp=sharing",
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "13",
+      "18"
+    ]
+  },
+  {
+    "title": "8ª MARCIA DEL GALLO",
+    "date": "15/02/2026",
+    "location": {
+      "city": "Ospedaletto Lodigiano-Centro Sportivo V.le Gaffurio",
+      "province": "LO"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "12",
+      "18"
+    ]
+  },
+  {
+    "title": "6ª BOLLATE RUN",
+    "date": "15/02/2026",
+    "location": {
+      "city": "Castellazzo di Bollate - Corte Grande - Via Fametta",
+      "province": "MI"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "14",
+      "21"
+    ]
+  },
+  {
+    "title": "7ª MARCIA DEE FRITOE",
+    "date": "15/02/2026",
+    "location": {
+      "city": "GRANTORTO",
+      "province": "PD"
+    },
+    "poster": "https://drive.google.com/file/d/1MM8R2JmnluuBmj_eArtTMHFg1e6_DNHk/view?usp=sharing",
+    "source": "FIASP",
+    "distances": [
+      "8",
+      "14",
+      "21"
+    ]
+  },
+  {
+    "title": "12ª ITINERARI PER I COLLI DI GIAIS",
+    "date": "15/02/2026",
+    "location": {
+      "city": "Giais di Aviano",
+      "province": "PN"
+    },
+    "poster": "https://drive.google.com/file/d/1YHHkwgxDmirLreG5OjGFAJyc_q09UWD8/view?usp=sharing",
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "10",
+      "15"
+    ]
+  },
+  {
+    "title": "6ª STRABUSSETO IN MASCHERA KIDS",
+    "date": "15/02/2026",
+    "location": {
+      "city": "Busseto",
+      "province": "PR"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "1.5"
+    ]
+  },
+  {
+    "title": "27ª DURAN E DINTURAN",
+    "date": "15/02/2026",
+    "location": {
+      "city": "Dorno",
+      "province": "PV"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "10",
+      "14"
+    ]
+  },
+  {
+    "title": "2ª CAMINADA IN MASCHERA DE SAN VALENTIN",
+    "date": "15/02/2026",
+    "location": {
+      "city": "BAVARIA - NERVESA DELLA BATTAGLIA",
+      "province": "TV"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "10"
+    ]
+  },
+  {
+    "title": "8ª I LOVE IN RICLUS",
+    "date": "15/02/2026",
+    "location": {
+      "city": "Racchiuso di Attimis",
+      "province": "UD"
+    },
+    "poster": "https://drive.google.com/file/d/1esCDehqy1F7zpIuKBAL1R9lW8wqDIL-F/view?usp=sharing",
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12",
+      "16"
+    ]
+  },
+  {
+    "title": "27ª MARCIA DELL'ARCOBALENO",
+    "date": "15/02/2026",
+    "location": {
+      "city": "Trivignano",
+      "province": "VE"
+    },
+    "poster": "https://drive.google.com/file/d/1KzAbH8oBjO2TOT9NLyuxkX2qMpQKd_CY/view?usp=sharing",
+    "source": "FIASP",
+    "distances": [
+      "2",
+      "5",
+      "10",
+      "15",
+      "21"
+    ]
+  },
+  {
+    "title": "54ª SCAMPAGNADA MARANESE",
+    "date": "15/02/2026",
+    "location": {
+      "city": "Marano Vicentino [Imp. Sportivi V.le Europa]",
+      "province": "VI"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "10",
+      "18"
+    ]
+  },
+  {
+    "title": "44ª CAMINADA AI CASONI",
+    "date": "15/02/2026",
+    "location": {
+      "city": "Casoni San Pietro di Legnago",
+      "province": "VR"
+    },
+    "poster": "https://drive.google.com/file/d/1P4HMrOrlXtZJ9AiwDPu3m-7ZZzF0CPhW/view?usp=sharing",
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "12",
+      "17"
+    ]
+  },
+  {
+    "title": "10ª NOTTURNA - CAMINARE DE NOTE IN BRENTA",
+    "date": "21/02/2026",
+    "location": {
+      "city": "Tezze sul Brenta Parco dell'amicizia",
+      "province": "VI"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "8"
+    ]
+  },
+  {
+    "title": "10ª STRABIANCA RUN",
+    "date": "22/02/2026",
+    "location": {
+      "city": "Calusco d'Adda - Palestra Scuole Medie- Via G. Marconi, 915",
+      "province": "BG"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "13",
+      "17",
+      "21",
+      "30"
+    ]
+  },
+  {
+    "title": "9ª CAMMINANDO PER LURAGO",
+    "date": "22/02/2026",
+    "location": {
+      "city": "Lurago Marinone",
+      "province": "CO"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12",
+      "18"
+    ]
+  },
+  {
+    "title": "10ª RASPADURA RUN",
+    "date": "22/02/2026",
+    "location": {
+      "city": "Orio Litta",
+      "province": "LO"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "8",
+      "16",
+      "22"
+    ]
+  },
+  {
+    "title": "38ª MARCIA DEL MUFLONE",
+    "date": "22/02/2026",
+    "location": {
+      "city": "Fanna",
+      "province": "PN"
+    },
+    "poster": "https://drive.google.com/file/d/14sgGT6JkDEaRNHpNqm_KYZ-UekTocwoJ/view?usp=sharing",
+    "source": "FIASP",
+    "distances": [
+      "3.5",
+      "6",
+      "10",
+      "17"
+    ]
+  },
+  {
+    "title": "3ª EDIZIONE 4 PASSI PER VILLABONA",
+    "date": "22/02/2026",
+    "location": {
+      "city": "piazz.ta San Costanzo Villa d'Adige di Badia Polesine",
+      "province": "RO"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "3",
+      "7",
+      "12"
+    ]
+  },
+  {
+    "title": "CIRCUITO DEL CINQUANTENARIO FIASP VICENZA 3ª RADUNO SU P.P. LE RISORGIVE",
+    "date": "22/02/2026",
+    "location": {
+      "city": "POIANELLA DI BRESSANVIDO",
+      "province": "VI"
+    },
+    "poster": "https://drive.google.com/file/d/1TBNNlKiqC_sa4sOZb9nIQhX16vndYQWa/view?usp=sharing",
+    "source": "FIASP",
+    "distances": [
+      "4",
+      "8",
+      "ripetibili"
+    ]
+  },
+  {
+    "title": "13ª ASPETTANDO LA CORRILLASI - CAMMINIAMO INSIEME OLTRE LA DISABILITA' 5ª PASSEGGIATA SCUOLA SPORT",
+    "date": "27/02/2026",
+    "location": {
+      "city": "Illasi piazzale Olimpia (stadio Venturi)",
+      "province": "VR"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "3",
+      "6"
+    ]
+  },
+  {
+    "title": "5° MEMORIAL 2 PASSI CON MAURO",
+    "date": "01/03/2026",
+    "location": {
+      "city": "Romano di Lombardia [Palazzo Muratori Via T. Tasso ang. Via Rubini]",
+      "province": "BG"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "8",
+      "16",
+      "21"
+    ]
+  },
+  {
+    "title": "38ª CAMMINATA AVIS LOMAGNA",
+    "date": "01/03/2026",
+    "location": {
+      "city": "Lomagna",
+      "province": "LC"
+    },
+    "poster": "https://drive.google.com/file/d/1WQ6Be5fiUZhMYhqM286-fO4EEQrVOUSa/view?usp=sharing",
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "14",
+      "21"
+    ]
+  },
+  {
+    "title": "50ª CAMMINATA TRA LE CASCINE",
+    "date": "01/03/2026",
+    "location": {
+      "city": "Valera Fratta",
+      "province": "LO"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "13",
+      "18"
+    ]
+  },
+  {
+    "title": "16ª SALAMELLANDO CON L'AVIS",
+    "date": "01/03/2026",
+    "location": {
+      "city": "Abbiategrasso - La Cappelletta Via Stignani",
+      "province": "MI"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "13",
+      "17",
+      "20"
+    ]
+  },
+  {
+    "title": "9ª RUDUNADA",
+    "date": "01/03/2026",
+    "location": {
+      "city": "Groppello di Cassano d'Adda",
+      "province": "MI"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "8",
+      "16",
+      "20"
+    ]
+  },
+  {
+    "title": "17ª MARCIA DEL VOLONTARIATO",
+    "date": "01/03/2026",
+    "location": {
+      "city": "Ponte dell'Olio [Sede Pubblica Assistenza - Via F. Parri 10]",
+      "province": "PC"
+    },
+    "poster": "https://drive.google.com/file/d/1bXuv_MQ376L8UfKVo1L7OC-oMfz4iP_E/view?usp=sharing",
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "9",
+      "15"
+    ]
+  },
+  {
+    "title": "7ª MARCIA \"I COLORI DI SAN LEONARDO\"",
+    "date": "01/03/2026",
+    "location": {
+      "city": "San Leonardo Val Cellina-Pro Loco San Leonardo",
+      "province": "PN"
+    },
+    "poster": "https://drive.google.com/file/d/1oFxcNHLXR-9x9QMHYYvLf0kSkjHt3WMi/view?usp=sharing",
+    "source": "FIASP",
+    "distances": [
+      "4",
+      "10",
+      "16"
+    ]
+  },
+  {
+    "title": "53ª MARCIA DEL DONATORE DI SANGUE",
+    "date": "01/03/2026",
+    "location": {
+      "city": "Piazza Trieste Cavazzale - Monticello Conte Otto",
+      "province": "VI"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "4",
+      "7",
+      "15"
+    ]
+  },
+  {
+    "title": "A PASSO DI DONNA TRA LAGO E NATURA",
+    "date": "07/03/2026",
+    "location": {
+      "city": "BOSISIO PARINI",
+      "province": "CO"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "8"
+    ]
+  },
+  {
+    "title": "CAMMINABILE NON E' UNA PASSEGGIATA",
+    "date": "07/03/2026",
+    "location": {
+      "city": "San Polo di Torrile",
+      "province": "PR"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "11"
+    ]
+  },
+  {
+    "title": "49ª CAMMINATA 5 FONTI",
+    "date": "08/03/2026",
+    "location": {
+      "city": "Misano Gera d'Adda [Oratorio, Via Roma]",
+      "province": "BG"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "11",
+      "16"
+    ]
+  },
+  {
+    "title": "7ª MARCIA DEI PESETT",
+    "date": "08/03/2026",
+    "location": {
+      "city": "Ripalta Guerina",
+      "province": "CR"
+    },
+    "poster": "https://drive.google.com/file/d/1WQPEw2O68R744f7GF9lgWJwm8egHgLzi/view?usp=sharing",
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "13",
+      "21"
+    ]
+  },
+  {
+    "title": "41ª MARCIA DELLA SOLIDARIETA'",
+    "date": "08/03/2026",
+    "location": {
+      "city": "Missaglia [Centro Parrocchiale]",
+      "province": "LC"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12",
+      "18"
+    ]
+  },
+  {
+    "title": "32ª MARCIA GRAFFIGNANINA",
+    "date": "08/03/2026",
+    "location": {
+      "city": "Graffignana",
+      "province": "LO"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12",
+      "18"
+    ]
+  },
+  {
+    "title": "14ª MARCIA DI PRIMAVERA",
+    "date": "08/03/2026",
+    "location": {
+      "city": "Furato di Inveruno - Campo Sportivo Via Boves",
+      "province": "MI"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "10"
+    ]
+  },
+  {
+    "title": "23ª MARCIA DEI \"5 FIUMI\"",
+    "date": "08/03/2026",
+    "location": {
+      "city": "Palse di Porcia",
+      "province": "PN"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "10"
+    ]
+  },
+  {
+    "title": "42ª STRABUSSETO IN MASCHERA",
+    "date": "08/03/2026",
+    "location": {
+      "city": "Busseto",
+      "province": "PR"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "13"
+    ]
+  },
+  {
+    "title": "1ª PASSI DI PARITÁ",
+    "date": "08/03/2026",
+    "location": {
+      "city": "PRIMULACCO",
       "province": "UD"
     },
     "poster": null,
     "source": "FIASP",
-    "distances": []
+    "distances": [
+      "7",
+      "13"
+    ]
   },
   {
-    "title": "15° STRANTEGNATE",
-    "date": "30/11/2025",
+    "title": "53ª MARCIA DELLE PRIMULE",
+    "date": "08/03/2026",
     "location": {
-      "city": "Antegnate - Centro Incontro Cultura fronte Auchan",
+      "city": "Magrè di Schio partenza Via Asolo",
+      "province": "VI"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "4",
+      "6",
+      "14",
+      "19"
+    ]
+  },
+  {
+    "title": "48ª MARCIA DEI CAVINI",
+    "date": "08/03/2026",
+    "location": {
+      "city": "San Pietro di Rosa' Via S.Pellico 1",
+      "province": "VI"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "4",
+      "7",
+      "12"
+    ]
+  },
+  {
+    "title": "1ª CORRIRETRONE IN NOTTURNA",
+    "date": "11/03/2026",
+    "location": {
+      "city": "Vicenza via Vaccari,8 Zona ferrovieri",
+      "province": "VI"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "8",
+      "12"
+    ]
+  },
+  {
+    "title": "4ª EDIZIONE \"PENSATI LIBERA\"",
+    "date": "15/03/2026",
+    "location": {
+      "city": "Terno d'Isola (Bg.) (Casa Bravi - Via Bravi, 29)",
       "province": "BG"
     },
-    "poster": "https://drive.google.com/file/d/15EPL7UNMXQlwQ7NazcXjCYnI-2iUni73/view?usp=sharing",
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "8",
+      "15",
+      "24"
+    ]
+  },
+  {
+    "title": "43ª MARCIA DEL FERROVIERE",
+    "date": "15/03/2026",
+    "location": {
+      "city": "Cremona [Parco ex Colonie Padane - via del Sale 60]",
+      "province": "CR"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "12",
+      "18"
+    ]
+  },
+  {
+    "title": "CAMMINIAMO CON L'ORATORIO PER LA PACE",
+    "date": "15/03/2026",
+    "location": {
+      "city": "Oggiono",
+      "province": "LC"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "12",
+      "21"
+    ]
+  },
+  {
+    "title": "46ª MARCIA DEL NEBBIOLO",
+    "date": "15/03/2026",
+    "location": {
+      "city": "Tavazzano con Villavesco",
+      "province": "LO"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12",
+      "15",
+      "20"
+    ]
+  },
+  {
+    "title": "14ª CAMMINATA SULBIATESE",
+    "date": "15/03/2026",
+    "location": {
+      "city": "Sulbiate",
+      "province": "MB"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "4",
+      "7",
+      "14",
+      "21"
+    ]
+  },
+  {
+    "title": "7ª MARCIA DELL'ASINO",
+    "date": "15/03/2026",
+    "location": {
+      "city": "Mestrino",
+      "province": "PD"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "8",
+      "13",
+      "16"
+    ]
+  },
+  {
+    "title": "23ª MARCIA SAN OSVALDO",
+    "date": "15/03/2026",
+    "location": {
+      "city": "S.Martino al Tagliamento",
+      "province": "PN"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12",
+      "18"
+    ]
+  },
+  {
+    "title": "5ª CAMMINATA PER LA SAN VINCENZO",
+    "date": "15/03/2026",
+    "location": {
+      "city": "BUSTO ARSIZIO",
+      "province": "VA"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "10"
+    ]
+  },
+  {
+    "title": "15ª MARCIA DEL SANTO.MIO",
+    "date": "15/03/2026",
+    "location": {
+      "city": "Santomio di Malo Piazza Gen.Bassetto 14",
+      "province": "VI"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "12",
+      "18"
+    ]
+  },
+  {
+    "title": "51ª SGAMBADA DE SAN GIUSEPPE",
+    "date": "15/03/2026",
+    "location": {
+      "city": "Verona fraz. Santa Maria in Stelle (Fruttaio Cantine di Verona)",
+      "province": "VR"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "10",
+      "16"
+    ]
+  },
+  {
+    "title": "CAMMINANDO ASPETTANDO LA PRIMAVERA",
+    "date": "22/03/2026",
+    "location": {
+      "city": "Casnate con Bernate",
+      "province": "CO"
+    },
+    "poster": "https://drive.google.com/file/d/14ZIiWPSvtF0AUwKGCa86gpdb9GnO7B4F/view?usp=sharing",
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12",
+      "18",
+      "24"
+    ]
+  },
+  {
+    "title": "2ª MARCIA AMICI DI EDO-ODV",
+    "date": "22/03/2026",
+    "location": {
+      "city": "Pizzighettone",
+      "province": "CR"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "13",
+      "18"
+    ]
+  },
+  {
+    "title": "28ª CAMMINATA TA LE VIGNE DE LISONZ - 22° MEMORIAL SILVANA LORENZON",
+    "date": "22/03/2026",
+    "location": {
+      "city": "Pieris di San Canzian d'Isonzo",
+      "province": "GO"
+    },
+    "poster": "https://drive.google.com/file/d/1YLxfbf7tPrhoJk6Ot-VxAyJspAuQX8hS/view?usp=sharing",
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "12"
+    ]
+  },
+  {
+    "title": "15ª TRA VENERE E CASCINE",
+    "date": "22/03/2026",
+    "location": {
+      "city": "Livraga",
+      "province": "LO"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "10",
+      "17"
+    ]
+  },
+  {
+    "title": "47° UL GIR DE MUNT",
+    "date": "22/03/2026",
+    "location": {
+      "city": "Montesiro di Besana Brianza - Oratorio Via S.Siro",
+      "province": "MB"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "13",
+      "18",
+      "22"
+    ]
+  },
+  {
+    "title": "5ª CURNARE' INSEMA",
+    "date": "22/03/2026",
+    "location": {
+      "city": "Cornaredo -Centro Sportivo S.Pertini Via dello Sport 70",
+      "province": "MI"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "8",
+      "15",
+      "21"
+    ]
+  },
+  {
+    "title": "26° GIRO DI TORRE D'OGLIO",
+    "date": "22/03/2026",
+    "location": {
+      "city": "Piazza E. Bottoli -Cesole di Marcaria",
+      "province": "MN"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "14"
+    ]
+  },
+  {
+    "title": "SULLE ORME DI ANNIBALE",
+    "date": "22/03/2026",
+    "location": {
+      "city": "Gragnano Trebbiese [Piazza Pace]",
+      "province": "PC"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12",
+      "18"
+    ]
+  },
+  {
+    "title": "52ª MARCIA DELLE STRADELLE",
+    "date": "22/03/2026",
+    "location": {
+      "city": "Maron di Brugnera",
+      "province": "PN"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "3.5",
+      "7",
+      "12",
+      "18"
+    ]
+  },
+  {
+    "title": "50ª CAMMINATA CAMPAGNOLA CARZETANA",
+    "date": "22/03/2026",
+    "location": {
+      "city": "Carzeto",
+      "province": "PR"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "13",
+      "21"
+    ]
+  },
+  {
+    "title": "38ª CAMMINANDO CON LA SPLUGEN",
+    "date": "22/03/2026",
+    "location": {
+      "city": "Induno Olona",
+      "province": "VA"
+    },
+    "poster": "https://drive.google.com/file/d/1ODTpTNS1hbw-Gx4PEZpvbr6COvxR5PWP/view?usp=sharing",
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "11",
+      "15"
+    ]
+  },
+  {
+    "title": "MARCIA DI SAN GIUSEPPE",
+    "date": "22/03/2026",
+    "location": {
+      "city": "Zanè Piazzale Aldo Moro",
+      "province": "VI"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "13"
+    ]
+  },
+  {
+    "title": "\"FIMON IN MARCIA CONTRO LA VIOLENZA SULLE DONNE\"",
+    "date": "22/03/2026",
+    "location": {
+      "city": "Torri di Arcugnano [Piazza Rumor]",
+      "province": "VI"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "13",
+      "18"
+    ]
+  },
+  {
+    "title": "17ª STAFFETTA 3X3 PER TREI'",
+    "date": "28/03/2026",
+    "location": {
+      "city": "Treviglio [Oratorio S. Pietro, Via A.Vespucci]",
+      "province": "BG"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "1"
+    ]
+  },
+  {
+    "title": "52ª MATTINATA A SONCINO (ALLA MEMORIA DEI PODISTI CHE CI HANNO LASCIATO)",
+    "date": "29/03/2026",
+    "location": {
+      "city": "SONCINO",
+      "province": "CR"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "14",
+      "18"
+    ]
+  },
+  {
+    "title": "5ª BOFFALORA DA CAMMINARE",
+    "date": "29/03/2026",
+    "location": {
+      "city": "Boffalora d'Adda - Via Umberto 1° n.30 Municipio",
+      "province": "LO"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "13",
+      "18"
+    ]
+  },
+  {
+    "title": "49ª QUATER PASS CUN I AVISIT",
+    "date": "29/03/2026",
+    "location": {
+      "city": "Lazzate - Scuole Media via Laratta",
+      "province": "MB"
+    },
+    "poster": "https://drive.google.com/file/d/1m8NNvdLV9FlWLoL6lIAl_rJUjstLkNTQ/view?usp=sharing",
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "14",
+      "19"
+    ]
+  },
+  {
+    "title": "5ª GESS IN RUN",
+    "date": "29/03/2026",
+    "location": {
+      "city": "Gessate",
+      "province": "MI"
+    },
+    "poster": "https://drive.google.com/file/d/1GTIJJYeKtoeCEojhIGIYfLwmhxFs5Ddl/view?usp=sharing",
     "source": "FIASP",
     "distances": [
       "7",
@@ -47,25 +1691,968 @@
     ]
   },
   {
-    "title": "INSIEME E' PIU' BELLO",
-    "date": "30/11/2025",
+    "title": "CORRI IN AVIS PARK",
+    "date": "29/03/2026",
     "location": {
-      "city": "Lecco",
-      "province": "LC"
+      "city": "VIA M.K. GANDHI,3 CERESE DI BORGO VIRGILIO",
+      "province": "MN"
     },
-    "poster": "https://drive.google.com/file/d/16xkVTywjzHL5W73ZOKRR45qbwJ3v3e5F/view?usp=sharing",
+    "poster": null,
     "source": "FIASP",
     "distances": [
-      "8",
-      "14",
+      "6",
+      "12"
+    ]
+  },
+  {
+    "title": "48ª MARCIA DEL GONFALONE",
+    "date": "29/03/2026",
+    "location": {
+      "city": "Gossolengo [Presso Municipio - P.za Roma]",
+      "province": "PC"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "10",
       "15"
     ]
   },
   {
-    "title": "24ª WALKING TOGETHER",
-    "date": "30/11/2025",
+    "title": "28ª MARCIA DELLA VAL MEDUNA",
+    "date": "29/03/2026",
     "location": {
-      "city": "Somaglia",
+      "city": "Meduno",
+      "province": "PN"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12",
+      "18"
+    ]
+  },
+  {
+    "title": "10ª  QUATTAR PASS PAR GAVIRA' RUN FOR ALZHEIMER",
+    "date": "29/03/2026",
+    "location": {
+      "city": "Gavirate",
+      "province": "VA"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "11"
+    ]
+  },
+  {
+    "title": "18ª CORRIRETRONE",
+    "date": "29/03/2026",
+    "location": {
+      "city": "Vicenza - Via Carta loc. Ferrovieri",
+      "province": "VI"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "8",
+      "12",
+      "21",
+      "32"
+    ]
+  },
+  {
+    "title": "53ª QUATTRO PASSI DI PRIMAVERA",
+    "date": "29/03/2026",
+    "location": {
+      "city": "Centro Polisportivo Avesani - Via Santini 72 Verona",
+      "province": "VR"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "3",
+      "7",
+      "11",
+      "20"
+    ]
+  },
+  {
+    "title": "21° CAMINADA DEI TRE CAMPANILI IN FESTA",
+    "date": "29/03/2026",
+    "location": {
+      "city": "BONAVICINA DI SAN PIETRO DI MORUBIO (VR)",
+      "province": "VR"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": []
+  },
+  {
+    "title": "47° CROSS OLGIATESE - RICORDANDO MARIO BRICCOLA",
+    "date": "06/04/2026",
+    "location": {
+      "city": "Olgiate Comasco - Centro Sportivo, Via Don Sterlocchi 60",
+      "province": "CO"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "12",
+      "21"
+    ]
+  },
+  {
+    "title": "18ª MARCIA DEL LATTE",
+    "date": "06/04/2026",
+    "location": {
+      "city": "Borgo San Giovanni",
+      "province": "LO"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "8",
+      "13",
+      "18"
+    ]
+  },
+  {
+    "title": "13ª INZAGHISSIMA",
+    "date": "06/04/2026",
+    "location": {
+      "city": "Inzago - Centro Sportivo Via Boccaccio 10",
+      "province": "MI"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "12",
+      "16",
+      "21",
+      "25"
+    ]
+  },
+  {
+    "title": "4 PASSI A PIEVE",
+    "date": "06/04/2026",
+    "location": {
+      "city": "PIEVE DI CUSIGNANO",
+      "province": "PR"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "12"
+    ]
+  },
+  {
+    "title": "NA CORSETTA EL DI DE PASQUETTA",
+    "date": "06/04/2026",
+    "location": {
+      "city": "Meledo di Sarego",
+      "province": "VI"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "14",
+      "20"
+    ]
+  },
+  {
+    "title": "MARCIA TRA I CILIEGI",
+    "date": "06/04/2026",
+    "location": {
+      "city": "P.zza della Chiesa – San Giovanni Ilarione",
+      "province": "VR"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "3",
+      "6",
+      "11",
+      "17"
+    ]
+  },
+  {
+    "title": "14ª PER UN AMICO",
+    "date": "11/04/2026",
+    "location": {
+      "city": "Castello Brianza",
+      "province": "LC"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "13"
+    ]
+  },
+  {
+    "title": "14ª CAMMINATA TRA I BOSCHI DI FORNIO - 7° MEMORIAL DAVIDE MAMBRIANI",
+    "date": "11/04/2026",
+    "location": {
+      "city": "Fidenza sede CFS Fornio loc. Fornio 7",
+      "province": "PR"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12"
+    ]
+  },
+  {
+    "title": "49ª GIRÀDA EN SÖ E N ZÓ DÈ L'OI",
+    "date": "12/04/2026",
+    "location": {
+      "city": "Rudiano [Oratorio Don Bosco, Via Borghetto]",
+      "province": "BS"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "4",
+      "7",
+      "13",
+      "19"
+    ]
+  },
+  {
+    "title": "50 PASSI INSIEME",
+    "date": "12/04/2026",
+    "location": {
+      "city": "Fino Mornasco (CI)",
+      "province": "BG"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12",
+      "22"
+    ]
+  },
+  {
+    "title": "44° GIR DA' ARZEN",
+    "date": "12/04/2026",
+    "location": {
+      "city": "Montodine",
+      "province": "CR"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "3",
+      "7",
+      "10",
+      "14",
+      "18",
+      "24"
+    ]
+  },
+  {
+    "title": "51ª CAMMINATA DELL'AMICIZIA",
+    "date": "12/04/2026",
+    "location": {
+      "city": "Bosisio Parini",
+      "province": "LC"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "12"
+    ]
+  },
+  {
+    "title": "49ª MARCIA BARASINA MEMORIAL MARIO BONESCHI E VIRGINIO FRIGENI",
+    "date": "12/04/2026",
+    "location": {
+      "city": "Sant'Angelo Lodigiano",
+      "province": "LO"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "13",
+      "20",
+      "23"
+    ]
+  },
+  {
+    "title": "41ª CAMMINATA SULL'ADDA",
+    "date": "12/04/2026",
+    "location": {
+      "city": "Trezzo sull'Adda",
+      "province": "MI"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "8",
+      "14",
+      "20",
+      "26"
+    ]
+  },
+  {
+    "title": "CORRI LA MEZZA ... GODITI LA MARCIA",
+    "date": "12/04/2026",
+    "location": {
+      "city": "Podenzano [Giardino Haway - Via C. Battisti]",
+      "province": "PC"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12",
+      "21"
+    ]
+  },
+  {
+    "title": "9ª 4 PASSI PAR MONTAGNANA",
+    "date": "12/04/2026",
+    "location": {
+      "city": "Montagnana",
+      "province": "PD"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "11",
+      "16"
+    ]
+  },
+  {
+    "title": "6ª RINCORRENDO IL DOMANI",
+    "date": "12/04/2026",
+    "location": {
+      "city": "Tramonti di Sotto",
+      "province": "PN"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "11.5",
+      "15",
+      "21"
+    ]
+  },
+  {
+    "title": "47ª CORSA 2 MULINI",
+    "date": "12/04/2026",
+    "location": {
+      "city": "Sant'Angelo - Treviso",
+      "province": "TV"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "10"
+    ]
+  },
+  {
+    "title": "30ª MARCIA DI PRIMAVERA - 30ª MARATONA CITTA' DI ALTAVILLA",
+    "date": "12/04/2026",
+    "location": {
+      "city": "Altavilla Vicentina Via Cavour 100",
+      "province": "VI"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "6",
+      "12",
+      "18",
+      "24",
+      "42"
+    ]
+  },
+  {
+    "title": "30ª MARCIA ANGET",
+    "date": "12/04/2026",
+    "location": {
+      "city": "Legnago [Circolo AUSER Via XXIV Maggio 8/10]",
+      "province": "VR"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "2.5 / 7 / 13 / 17"
+    ]
+  },
+  {
+    "title": "22ª MARCIA DEI VII CASTELLI GAZZOLESI",
+    "date": "18/04/2026",
+    "location": {
+      "city": "Gazzola [Municipio - via Roma 1]",
+      "province": "PC"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "13"
+    ]
+  },
+  {
+    "title": "9ª AVIS IN CAMMINO",
+    "date": "19/04/2026",
+    "location": {
+      "city": "Cisano Bergamasco [Impianti Sportivi, Via D. Pietri]",
+      "province": "BG"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "13",
+      "17",
+      "20"
+    ]
+  },
+  {
+    "title": "9ª CAMMINIAMO CON L'AVIS",
+    "date": "19/04/2026",
+    "location": {
+      "city": "Fontanella [Stadio Parrocchiale - Via Garibaldi]",
+      "province": "BG"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "4",
+      "7",
+      "14"
+    ]
+  },
+  {
+    "title": "14ª BAOBAB RUNNING CUP TOUR",
+    "date": "19/04/2026",
+    "location": {
+      "city": "Padergnone di Rodengo Saiano [Oratorio Via Franzine], 1",
+      "province": "BS"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "10"
+    ]
+  },
+  {
+    "title": "LAGHI - BOSISIO PARINI",
+    "date": "19/04/2026",
+    "location": {
+      "city": "Bosisio Parini",
+      "province": "LC"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12"
+    ]
+  },
+  {
+    "title": "21ª STRACINISELLOBALSAMO",
+    "date": "19/04/2026",
+    "location": {
+      "city": "Cinisello Balsamo - sede AVIS di Via Marconi, 50",
+      "province": "MI"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "10",
+      "15",
+      "21"
+    ]
+  },
+  {
+    "title": "50ª  MARCIA ACLI PODISTICA ORATORIO SAN GIULIANO",
+    "date": "19/04/2026",
+    "location": {
+      "city": "Cologno Monzese",
+      "province": "MI"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "4",
+      "6",
+      "10",
+      "15"
+    ]
+  },
+  {
+    "title": "6° TROFEO FORESTA DELLA CARPANETA",
+    "date": "19/04/2026",
+    "location": {
+      "city": "Gazzo di San Giorgio Bigarello",
+      "province": "MN"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12"
+    ]
+  },
+  {
+    "title": "49ª ATTRAVERSO LE RISORGIVE",
+    "date": "19/04/2026",
+    "location": {
+      "city": "Porcia",
+      "province": "PN"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12",
+      "18"
+    ]
+  },
+  {
+    "title": "19ª MARCIA SUI SENTIERI DEGLI ALPINI",
+    "date": "19/04/2026",
+    "location": {
+      "city": "Tabiano Terme",
+      "province": "PR"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12"
+    ]
+  },
+  {
+    "title": "31ª CAMMINATA NEI BOSCHI",
+    "date": "19/04/2026",
+    "location": {
+      "city": "Miradolo Terme",
+      "province": "PV"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "14",
+      "21"
+    ]
+  },
+  {
+    "title": "DUE PASSI TRA I GORGHI 5 EDIZIONE",
+    "date": "19/04/2026",
+    "location": {
+      "city": "trecenta",
+      "province": "RO"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "14"
+    ]
+  },
+  {
+    "title": "3ª EDIZIONE \"CO CALMA RIVE\"",
+    "date": "19/04/2026",
+    "location": {
+      "city": "Sant'Andrea - Montebelluna",
+      "province": "TV"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "11"
+    ]
+  },
+  {
+    "title": "27ª CAMMINATA TRA IL RIA' E UL TANUR",
+    "date": "19/04/2026",
+    "location": {
+      "city": "Carnago",
+      "province": "VA"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12",
+      "17"
+    ]
+  },
+  {
+    "title": "49ª MARCIA DEL BEATO",
+    "date": "19/04/2026",
+    "location": {
+      "city": "Marostica [Parco Borgo Panica]",
+      "province": "VI"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "4",
+      "7",
+      "13",
+      "21"
+    ]
+  },
+  {
+    "title": "15ª  TRI PASS E UNA VULADA",
+    "date": "22/04/2026",
+    "location": {
+      "city": "Groppello Cairoli",
+      "province": "PV"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "10"
+    ]
+  },
+  {
+    "title": "QUATAR PASS NELLA VALLE DEL LURA",
+    "date": "25/04/2026",
+    "location": {
+      "city": "BREGNANO",
+      "province": "CO"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12",
+      "20"
+    ]
+  },
+  {
+    "title": "10ª QUATER PASS INSEMA AI SGURBAT",
+    "date": "25/04/2026",
+    "location": {
+      "city": "Casatenovo [Fraz.Rogoredo]",
+      "province": "LC"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "14",
+      "22"
+    ]
+  },
+  {
+    "title": "27° QUATOR PASS ANDREE  ADA",
+    "date": "25/04/2026",
+    "location": {
+      "city": "Bertonico",
+      "province": "LO"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "10",
+      "18"
+    ]
+  },
+  {
+    "title": "18ª CORRI RONCELLO",
+    "date": "25/04/2026",
+    "location": {
+      "city": "Roncello - Campo Tamburello Roncello - Oratorio San Luigi - Ingesso Via Verdi",
+      "province": "MB"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "10",
+      "15",
+      "21",
+      "27"
+    ]
+  },
+  {
+    "title": "51ª MILLEPIEDI \"MATTINATA SUL PO\"",
+    "date": "25/04/2026",
+    "location": {
+      "city": "Motteggiana - Parco Comunale Via G. Pascoli",
+      "province": "MN"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12"
+    ]
+  },
+  {
+    "title": "9ª MARCIA A BESENZONE",
+    "date": "25/04/2026",
+    "location": {
+      "city": "Besenzone",
+      "province": "PC"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "10",
+      "17"
+    ]
+  },
+  {
+    "title": "2ª EDIZIONE \"EL BALDO FRA I DO ARZARI\"",
+    "date": "25/04/2026",
+    "location": {
+      "city": "Castelbaldo via roma 1 Campo sportivo Comunale",
+      "province": "PD"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12",
+      "18"
+    ]
+  },
+  {
+    "title": "20ª MARCIA ACAT \"LA FORTAJADA\"",
+    "date": "25/04/2026",
+    "location": {
+      "city": "Pordenone [Parco San Valentino]",
+      "province": "PN"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "12"
+    ]
+  },
+  {
+    "title": "10ª MARCIA SUL MONTELLO - RICORDANDO GLI AMICI",
+    "date": "25/04/2026",
+    "location": {
+      "city": "Giavera del Montello-Villa Letizia Wasserman",
+      "province": "TV"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "4",
+      "6",
+      "11",
+      "19"
+    ]
+  },
+  {
+    "title": "MARCIA LA BRENTANA",
+    "date": "25/04/2026",
+    "location": {
+      "city": "Pozzoleone [Plesso Scolastico Giovanni Paolo II]",
+      "province": "VI"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12"
+    ]
+  },
+  {
+    "title": "MUOVI LA TUA VITA - CAMMINATA SOLIDALE",
+    "date": "26/04/2026",
+    "location": {
+      "city": "Adro [Via Cairoli, 29]",
+      "province": "BS"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "13"
+    ]
+  },
+  {
+    "title": "43ª CAMMINATA A ROBBIANO",
+    "date": "26/04/2026",
+    "location": {
+      "city": "Robbiano di Giussano",
+      "province": "MB"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "8",
+      "15",
+      "20"
+    ]
+  },
+  {
+    "title": "12ª TREZZANO IN CORSA",
+    "date": "26/04/2026",
+    "location": {
+      "city": "Trezzano sul Naviglio - Via Togliatti",
+      "province": "MI"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "3",
+      "6",
+      "9",
+      "15"
+    ]
+  },
+  {
+    "title": "13ª MARCIA FO.CA.RO.SA.",
+    "date": "26/04/2026",
+    "location": {
+      "city": "Roveleto di Cadeo [Piazzetta del Pellegrino]",
+      "province": "PC"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "14",
+      "20"
+    ]
+  },
+  {
+    "title": "41ª MARCIA DEI MURONI",
+    "date": "26/04/2026",
+    "location": {
+      "city": "Sanguinaro",
+      "province": "PR"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "9",
+      "12"
+    ]
+  },
+  {
+    "title": "37ª MARCIA A BADIA",
+    "date": "26/04/2026",
+    "location": {
+      "city": "Badia Pavese",
+      "province": "PV"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "14",
+      "19"
+    ]
+  },
+  {
+    "title": "33ª MARCIA DELLA SOLIDARIETA' - 4° MEMORIAL \"GIMMY\"",
+    "date": "26/04/2026",
+    "location": {
+      "city": "Villaverla [P.le delle Feste Via Giovanni XXIII]",
+      "province": "VI"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "12",
+      "20"
+    ]
+  },
+  {
+    "title": "CAMMINANDO VERSO IL CANOVA",
+    "date": "26/04/2026",
+    "location": {
+      "city": "Bassano del Grappa scuola primaria A.Canova Santa Croce,41",
+      "province": "VI"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "4",
+      "10"
+    ]
+  },
+  {
+    "title": "STEP BY STEP….PASSO DOPO PASSO",
+    "date": "26/04/2026",
+    "location": {
+      "city": "San Giovanni Lupatoto PIAZZA SEYSSINET PARISET (incrocio via Ugo Foscolo – via Primo Maggio",
+      "province": "VR"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "12"
+    ]
+  },
+  {
+    "title": "DI CORSA TRA ADDA E CANTO -145 MEMORIAL VIOLA CENTURELLI",
+    "date": "01/05/2026",
+    "location": {
+      "city": "Calusco d'Adda [Pol. Caluschese, Via Cavalieri del Lavoro, 236]",
+      "province": "BG"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "13",
+      "17",
+      "21"
+    ]
+  },
+  {
+    "title": "52ª MARCIA DUE MULINI",
+    "date": "01/05/2026",
+    "location": {
+      "city": "Ticengo",
+      "province": "CR"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12",
+      "18"
+    ]
+  },
+  {
+    "title": "5ª STRAZELO",
+    "date": "01/05/2026",
+    "location": {
+      "city": "Zelo Buon Persico",
       "province": "LO"
     },
     "poster": null,
@@ -77,28 +2664,400 @@
     ]
   },
   {
-    "title": "13ª I SETTE CAMPANILI",
-    "date": "30/11/2025",
+    "title": "11ª PICCOLI PASSI",
+    "date": "01/05/2026",
     "location": {
-      "city": "Montesiro di Besana Brianza",
-      "province": "MB"
+      "city": "Vergo Zoccorino di Besana Brianza",
+      "province": "MI"
     },
-    "poster": "https://drive.google.com/file/d/1b9dDNL0nUtWjwpCwfPrTxodu6eZ5pFsy/view?usp=sharing",
+    "poster": null,
     "source": "FIASP",
     "distances": [
+      "6",
+      "12",
+      "18"
+    ]
+  },
+  {
+    "title": "XXXª CORSA DI PRIMAVERA",
+    "date": "01/05/2026",
+    "location": {
+      "city": "Milano - P.za Gabriele Rosa - Sagrato della Chiesa",
+      "province": "MI"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "10"
+    ]
+  },
+  {
+    "title": "30ª CAMMINATA DELLE SIEPI 2026",
+    "date": "01/05/2026",
+    "location": {
+      "city": "Novi di Modena",
+      "province": "MO"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "8",
+      "12"
+    ]
+  },
+  {
+    "title": "55ª MARCIA DEL 1° MAGGIO",
+    "date": "01/05/2026",
+    "location": {
+      "city": "Fiorenzuola d'Arda [C.C. Cappuccini - Via Kennedy 2]",
+      "province": "PC"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "4",
+      "6",
+      "13",
+      "18",
+      "25"
+    ]
+  },
+  {
+    "title": "54ª MARCIA DEL VINO",
+    "date": "01/05/2026",
+    "location": {
+      "city": "Casarsa della Delizia",
+      "province": "PN"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12"
+    ]
+  },
+  {
+    "title": "41ª CAMINA' PER CIOSA E MARINA",
+    "date": "01/05/2026",
+    "location": {
+      "city": "Chioggia",
+      "province": "VE"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "15"
+    ]
+  },
+  {
+    "title": "36ª MARCIA SANTUARIO S.MARIA DELL'ALZANA",
+    "date": "01/05/2026",
+    "location": {
+      "city": "Arcole P.zza Don Felice Penzo (c/o Chiesa Parrocchiale)",
+      "province": "VR"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "13",
+      "21"
+    ]
+  },
+  {
+    "title": "1° MINI 24ORE",
+    "date": "02/05/2026",
+    "location": {
+      "city": "Ciserano [Scuole elementari",
+      "province": "BG"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "1"
+    ]
+  },
+  {
+    "title": "42ª EDIZIONE 24 ORE CISERANESE",
+    "date": "02/05/2026",
+    "location": {
+      "city": "Ciserano [Scuole elementari Via Don Pedrinelli]",
+      "province": "BG"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "1"
+    ]
+  },
+  {
+    "title": "MARCIA  \"LA ROSADA\"",
+    "date": "02/05/2026",
+    "location": {
+      "city": "Rosà - Parco delle Rose Via Schallstadt",
+      "province": "VI"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "11"
+    ]
+  },
+  {
+    "title": "STRA URGNANO 2.0",
+    "date": "03/05/2026",
+    "location": {
+      "city": "Urgnano [Bar centro Sportivo Largo dello Sport,127]",
+      "province": "BG"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12",
+      "18"
+    ]
+  },
+  {
+    "title": "43° TROFEO GRUPPO BRIANZA NORD",
+    "date": "03/05/2026",
+    "location": {
+      "city": "Alzate Brianza",
+      "province": "CO"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "8",
+      "13",
+      "18",
+      "21"
+    ]
+  },
+  {
+    "title": "28° AL GIR DALE LAME",
+    "date": "03/05/2026",
+    "location": {
+      "city": "Cremosano",
+      "province": "CR"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12",
+      "18"
+    ]
+  },
+  {
+    "title": "13ª MARCIA VERDE MEMORIAL MALAGNI IVANO - EVENTO DEL CINQUANTENARIO FIASP",
+    "date": "03/05/2026",
+    "location": {
+      "city": "CASTIRAGA VIDARDO",
+      "province": "LO"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6 / 12 /18"
+    ]
+  },
+  {
+    "title": "12ª CIÀ CHE CURUM",
+    "date": "03/05/2026",
+    "location": {
+      "city": "BELLUSCO - Centro Sportivo via Pascoli, 7",
+      "province": "MB"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "13",
+      "19"
+    ]
+  },
+  {
+    "title": "48ª LA FAVORITA",
+    "date": "03/05/2026",
+    "location": {
+      "city": "Porto Mantovano Bocciofila Montata Carra",
+      "province": "MN"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "9.8"
+    ]
+  },
+  {
+    "title": "45ª SALSOLONGA  - CAMMINATA NEL PARCO DELLO STIRONE",
+    "date": "03/05/2026",
+    "location": {
+      "city": "Scipione Ponte",
+      "province": "PR"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "12"
+    ]
+  },
+  {
+    "title": "50ª CAMINADA TRA I SPARGEER",
+    "date": "03/05/2026",
+    "location": {
+      "city": "Cantello",
+      "province": "VA"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12",
+      "16"
+    ]
+  },
+  {
+    "title": "A PIEDI PER BIBIONE",
+    "date": "03/05/2026",
+    "location": {
+      "city": "Bibione",
+      "province": "VE"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6/15/20/25"
+    ]
+  },
+  {
+    "title": "23ª MARCIA DEGLI ASPARAGI",
+    "date": "03/05/2026",
+    "location": {
+      "city": "S.Zeno di Cassola [P.za San Zeno 29/D]",
+      "province": "VI"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "4",
       "6",
       "13",
       "18"
     ]
   },
   {
-    "title": "43ª QUATRI PAS TA LA PRADERIA",
-    "date": "30/11/2025",
+    "title": "9ª \"VILLA CALDOGNO\"",
+    "date": "03/05/2026",
     "location": {
-      "city": "Istrago di Spilimbergo",
-      "province": "PN"
+      "city": "Caldogno [Villa Caldogno Via Zanella 3]",
+      "province": "VI"
     },
-    "poster": "https://drive.google.com/file/d/1YgU6ItMPFbwRjA60uw66ky0vj5i6mEsX/view?usp=sharing",
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "12",
+      "18"
+    ]
+  },
+  {
+    "title": "23ª STRALEGNAGO",
+    "date": "03/05/2026",
+    "location": {
+      "city": "Legnago Viale dei Tigli, 54 Cascina Parco Comunale",
+      "province": "VR"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "13",
+      "18"
+    ]
+  },
+  {
+    "title": "5ª EDIZIONE \"EL GIR DE SAN LEON\"",
+    "date": "08/05/2026",
+    "location": {
+      "city": "Bargano (LOD)",
+      "province": "BG"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "11"
+    ]
+  },
+  {
+    "title": "32ª CAMMINATA CITTA' DI SUZZARA  MEMORIAL PAVARINI - GIRALDO - GONELLA",
+    "date": "08/05/2026",
+    "location": {
+      "city": "Suzzara",
+      "province": "MN"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "10"
+    ]
+  },
+  {
+    "title": "2ª GORLA NIGHT RUN",
+    "date": "08/05/2026",
+    "location": {
+      "city": "Gorla Maggiore",
+      "province": "VA"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "5"
+    ]
+  },
+  {
+    "title": "GIORNATA MONDIALE DELLA MARCIA IVV",
+    "date": "08/05/2026",
+    "location": {
+      "city": "Verona - Montorio",
+      "province": "VR"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "10"
+    ]
+  },
+  {
+    "title": "16ª CAMMINATA DELLA MAMMA",
+    "date": "09/05/2026",
+    "location": {
+      "city": "Pessano con Bornago - Piazza Castello 22-20",
+      "province": "MI"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "5"
+    ]
+  },
+  {
+    "title": "21ª MARCIA DONATORI AIDO CAPRINO BERGAMASCO",
+    "date": "10/05/2026",
+    "location": {
+      "city": "Caprino Bergamasco - Via Dei Giardini - Campo Sportivo",
+      "province": "BG"
+    },
+    "poster": null,
     "source": "FIASP",
     "distances": [
       "7",
@@ -107,26 +3066,162 @@
     ]
   },
   {
-    "title": "34ª MARCIA DELLA PREMIAZIONE",
-    "date": "30/11/2025",
+    "title": "ASNAGH TRA LA CAMPURA E LA VAL DEL SEVES",
+    "date": "10/05/2026",
     "location": {
-      "city": "VILLAZZANO CEN. SPORT. DON O. SPADA",
-      "province": "TN"
+      "city": "Asnago di Cermenate - Piazza SS Pietro e Paolo",
+      "province": "CO"
     },
-    "poster": "https://drive.google.com/file/d/1hbFuVBTFmCEZHfZMx9imnTr0mMCbl1k-/view?usp=sharing",
+    "poster": null,
     "source": "FIASP",
     "distances": [
-      "6 ripetibili"
+      "7",
+      "14",
+      "18"
     ]
   },
   {
-    "title": "1^ STAFFETTA CONTRO LA VIOLENZA SULLE DONNE",
-    "date": "30/11/2025",
+    "title": "31ª MAGGENGA",
+    "date": "10/05/2026",
     "location": {
-      "city": "MOGLIANO VENETO",
-      "province": "TV"
+      "city": "Corte Madama [Castelleone]",
+      "province": "CR"
     },
-    "poster": "https://drive.google.com/file/d/1j4hWXm1bJDHpjsn2Peo2hCYY8GfQjdk-/view?usp=sharing",
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "8",
+      "14",
+      "20"
+    ]
+  },
+  {
+    "title": "11ª IN MARCIA CON L'AVIS - 5° MEMORIAL LUIGI POZZOLI",
+    "date": "10/05/2026",
+    "location": {
+      "city": "Carate Brianza Residenza il Parco Vle Garibaldi, 37",
+      "province": "MB"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "14",
+      "21"
+    ]
+  },
+  {
+    "title": "48° TROFEO SAN GIORGIO",
+    "date": "10/05/2026",
+    "location": {
+      "city": "Dresano",
+      "province": "MI"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "8",
+      "13",
+      "18"
+    ]
+  },
+  {
+    "title": "10ª MARCIA PER IL GRANELLO",
+    "date": "10/05/2026",
+    "location": {
+      "city": "San Vito al Tagliamento-Piazza del Popolo",
+      "province": "PN"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "12",
+      "20"
+    ]
+  },
+  {
+    "title": "CAMMINATA FRANCIGENA \"LENTI ALLA META\"",
+    "date": "10/05/2026",
+    "location": {
+      "city": "FIDENZA (PIAZZA GARIBALDI)",
+      "province": "PR"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "12",
+      "22",
+      "34"
+    ]
+  },
+  {
+    "title": "48ª MARATONA DELLE ACQUE TERNI",
+    "date": "10/05/2026",
+    "location": {
+      "city": "Terni",
+      "province": "TR"
+    },
+    "poster": "https://drive.google.com/file/d/1nShIVf4FZogslhIAXAmR3lPE9VjaCIo7/view?usp=sharing",
+    "source": "FIASP",
+    "distances": [
+      "10",
+      "20+500"
+    ]
+  },
+  {
+    "title": "37ª CAMINADA DE SAN BIAGIO",
+    "date": "10/05/2026",
+    "location": {
+      "city": "Grumolo Pedemonte di Zugliano [P.le della Chiesa]",
+      "province": "VI"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "4",
+      "8",
+      "11",
+      "20"
+    ]
+  },
+  {
+    "title": "49ª MARCIARENA MEETING DEL CUSTOZA – 19ª  I CAMPIONI DI DOMANI",
+    "date": "10/05/2026",
+    "location": {
+      "city": "Sommacampagna [Via 2 Giugno Villa Venier]",
+      "province": "VR"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "9",
+      "14"
+    ]
+  },
+  {
+    "title": "33ª MARCIA TRA COLLI E VIGNETI",
+    "date": "10/05/2026",
+    "location": {
+      "city": "Colognola ai Colli",
+      "province": "VR"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "5/11/17"
+    ]
+  },
+  {
+    "title": "20ª CAMMINATA TRA LO ZARA E IL PO",
+    "date": "15/05/2026",
+    "location": {
+      "city": "S.Prospero di Suzzara-Area sportiva \"Festa Paesana\"",
+      "province": "MN"
+    },
+    "poster": null,
     "source": "FIASP",
     "distances": [
       "5",
@@ -134,13 +3229,3275 @@
     ]
   },
   {
-    "title": "54ª A PEE IN BRUGHEA",
-    "date": "30/11/2025",
+    "title": "31ª CAMMINATA DI SOLIDARIETA' - LA PELLEGRINA",
+    "date": "15/05/2026",
     "location": {
-      "city": "Busto Arsizio",
+      "city": "Pellegrina di Piacenza [Strada Agazzana 68]",
+      "province": "PC"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "10"
+    ]
+  },
+  {
+    "title": "3ª PERLENOI IN CAMMINO",
+    "date": "16/05/2026",
+    "location": {
+      "city": "Camparada - Scuola Primaria Viale Brianza",
+      "province": "MB"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "11"
+    ]
+  },
+  {
+    "title": "38° GIR DEI GAT",
+    "date": "17/05/2026",
+    "location": {
+      "city": "Romanengo [Oratorio]",
+      "province": "CR"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "8",
+      "14",
+      "18"
+    ]
+  },
+  {
+    "title": "CORRICOGLIATE - 36ª CAMMINIAMO A COGLIATE IN ALLEGRIA",
+    "date": "17/05/2026",
+    "location": {
+      "city": "Cogliate - Oratorio di via Minoretti 49",
+      "province": "MB"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "8",
+      "14",
+      "20"
+    ]
+  },
+  {
+    "title": "20° GIRO NELL'OASI DEL PARCO COLLINARE DI  S.COLOMBANO",
+    "date": "17/05/2026",
+    "location": {
+      "city": "San Colombano Al Lambro",
+      "province": "MI"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "14",
+      "17",
+      "21"
+    ]
+  },
+  {
+    "title": "4ª  CAMMINA \" CORRI CON AIDO\"",
+    "date": "17/05/2026",
+    "location": {
+      "city": "Mantova",
+      "province": "MN"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "13"
+    ]
+  },
+  {
+    "title": "53ª SCARPINEDA",
+    "date": "17/05/2026",
+    "location": {
+      "city": "Carpaneto [V.le Vittoria]",
+      "province": "PC"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "4.5",
+      "8",
+      "11.5",
+      "16",
+      "21"
+    ]
+  },
+  {
+    "title": "8ª CAMMINATA ATTORNO ALL'ABBAZIA",
+    "date": "17/05/2026",
+    "location": {
+      "city": "Sesto al Reghena",
+      "province": "PN"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "3",
+      "6",
+      "13",
+      "21"
+    ]
+  },
+  {
+    "title": "26ª CAMINADA TRA IL KIWI",
+    "date": "17/05/2026",
+    "location": {
+      "city": "Baruchella Via A. De Gasperi",
+      "province": "RO"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12",
+      "19"
+    ]
+  },
+  {
+    "title": "14ª MARATONINA DEL RUGARETO",
+    "date": "17/05/2026",
+    "location": {
+      "city": "Cislago",
       "province": "VA"
     },
-    "poster": "https://drive.google.com/file/d/1McE5HaIt9dU__RJBmRNNghRy1mLnxwcB/view?usp=sharing",
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "15",
+      "19"
+    ]
+  },
+  {
+    "title": "25ª MARCIA DELLE CONTRADE",
+    "date": "17/05/2026",
+    "location": {
+      "city": "Caltrano via Alessandro Rossi",
+      "province": "VI"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "4",
+      "6",
+      "10",
+      "18"
+    ]
+  },
+  {
+    "title": "43ª STRAVERONA",
+    "date": "17/05/2026",
+    "location": {
+      "city": "Verona Piazza Bra",
+      "province": "VR"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "10",
+      "20"
+    ]
+  },
+  {
+    "title": "46ª QUATAR SALT COI SCIATT",
+    "date": "18/05/2026",
+    "location": {
+      "city": "Ornago - Oratorio S.Giovanni Bosco",
+      "province": "MB"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "8",
+      "13",
+      "18"
+    ]
+  },
+  {
+    "title": "40° TROFEO SILVIO BELLINI",
+    "date": "19/05/2026",
+    "location": {
+      "city": "Loppio di Mori",
+      "province": "TN"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "4",
+      "10"
+    ]
+  },
+  {
+    "title": "15ª CAMMINATA SERALE NEL PARCO SILLARO - MEMORIAL DAVIDE VIGANO'",
+    "date": "22/05/2026",
+    "location": {
+      "city": "Tavazzano con Villavesco-Piazza Maria Grossi",
+      "province": "LO"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "09"
+    ]
+  },
+  {
+    "title": "CORRIAMO PER MICHELA E MAURIZIO",
+    "date": "22/05/2026",
+    "location": {
+      "city": "Piacenza [Via Nino Bixio 24]",
+      "province": "PC"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "11"
+    ]
+  },
+  {
+    "title": "7ª MONTECCHIO AL CHIAR DI LUNA",
+    "date": "22/05/2026",
+    "location": {
+      "city": "Montecchio Precalcino [Piazzale Municipio]",
+      "province": "VI"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "5"
+    ]
+  },
+  {
+    "title": "4ª PASSEGGIATA A 6 ZAMPE",
+    "date": "23/05/2026",
+    "location": {
+      "city": "Pessano con Bornago - P.za Castello 20/22",
+      "province": "MI"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "3"
+    ]
+  },
+  {
+    "title": "TRA ARTE E MUSICA - PASSEGGIATA NOTTURNA",
+    "date": "23/05/2026",
+    "location": {
+      "city": "Pozzoleone [Piazza Pozzoleone Via Roma 6]",
+      "province": "VI"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6"
+    ]
+  },
+  {
+    "title": "9ª SAN BASAN AP & DAUN",
+    "date": "24/05/2026",
+    "location": {
+      "city": "San Bassano",
+      "province": "CR"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12",
+      "18",
+      "21"
+    ]
+  },
+  {
+    "title": "43° TROFEO PENNE MOZZE MISSAGLIESI",
+    "date": "24/05/2026",
+    "location": {
+      "city": "Missaglia",
+      "province": "LC"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "14",
+      "21"
+    ]
+  },
+  {
+    "title": "6° MEMORIAL TINO DACO'",
+    "date": "24/05/2026",
+    "location": {
+      "city": "Castiglione d'Adda Centro sportivo A.Spoldi",
+      "province": "LO"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "7",
+      "12",
+      "19"
+    ]
+  },
+  {
+    "title": "41ª MARCIA DEL MULINO",
+    "date": "24/05/2026",
+    "location": {
+      "city": "Brugherio - Area Feste via Aldo Moro",
+      "province": "MB"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "8",
+      "14",
+      "21"
+    ]
+  },
+  {
+    "title": "32ª SU E ZO PAR LA FRATA",
+    "date": "24/05/2026",
+    "location": {
+      "city": "Monastero San Salvaro (PAD)",
+      "province": "BG"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "13",
+      "18"
+    ]
+  },
+  {
+    "title": "24ª MARCIA AVIS PONTENURE",
+    "date": "24/05/2026",
+    "location": {
+      "city": "Valconasso di Pontenure",
+      "province": "PC"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "11",
+      "15"
+    ]
+  },
+  {
+    "title": "22ª MARCIA DEL MESTRI",
+    "date": "24/05/2026",
+    "location": {
+      "city": "Lestans di Sequals",
+      "province": "PN"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12",
+      "21"
+    ]
+  },
+  {
+    "title": "28ª CAMMINATA SULLA VIA FRANCIGENA-17° MEMORIAL CLAUDIO PONGOLINI",
+    "date": "24/05/2026",
+    "location": {
+      "city": "Noceto-Piazza Garibaldi",
+      "province": "PR"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "3",
+      "7",
+      "12"
+    ]
+  },
+  {
+    "title": "BUSTA CORRE - 5° MEMORIAL CESARINO TESSARIOL",
+    "date": "24/05/2026",
+    "location": {
+      "city": "BUSTA - MONTEBELLUNA",
+      "province": "TV"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "10"
+    ]
+  },
+  {
+    "title": "47ª CAMMINATA DI SAN CARLO INTORNO AL LAGO DI VARESE",
+    "date": "24/05/2026",
+    "location": {
+      "city": "Gavirate",
+      "province": "VA"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "13",
+      "19"
+    ]
+  },
+  {
+    "title": "PASSEGGIATA TRA FIUME E MONTAGNA",
+    "date": "24/05/2026",
+    "location": {
+      "city": "Campolongo sul Brenta - Valbrenta [P.za Roma]",
+      "province": "VI"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "3",
+      "6",
+      "12",
+      "20"
+    ]
+  },
+  {
+    "title": "SARNISERA  - CORSA SERALE IN RIVA AL LAGO",
+    "date": "29/05/2026",
+    "location": {
+      "city": "Sarnico [Lido Nettuno, Via Predore]",
+      "province": "BG"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "10"
+    ]
+  },
+  {
+    "title": "2ª TERRANOVA RUN",
+    "date": "29/05/2026",
+    "location": {
+      "city": "TERRANOVA PASSERINI",
+      "province": "LO"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "8",
+      "12"
+    ]
+  },
+  {
+    "title": "UNA LUCE PER IL CENTRO \"C.A.S.A.\"",
+    "date": "29/05/2026",
+    "location": {
+      "city": "Villaverla [PADEL SPORT Via Firenze]",
+      "province": "VI"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6 ripetibili"
+    ]
+  },
+  {
+    "title": "CAMMINATA - CORSA ALL'ALBA",
+    "date": "30/05/2026",
+    "location": {
+      "city": "Cernobbio",
+      "province": "CO"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "2",
+      "6",
+      "12"
+    ]
+  },
+  {
+    "title": "32ª CORRI BONATE",
+    "date": "31/05/2026",
+    "location": {
+      "city": "Bonate Sotto [Oratorio San Giorgio]",
+      "province": "BG"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "4",
+      "7",
+      "13",
+      "21"
+    ]
+  },
+  {
+    "title": "53ª MARCIAVERDE DELLA BRIANZA",
+    "date": "31/05/2026",
+    "location": {
+      "city": "Cremnago [Fraz.Inverigo]-Oratorio P.za S.Vincenzo 1",
+      "province": "CO"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "8",
+      "13",
+      "18",
+      "24"
+    ]
+  },
+  {
+    "title": "50ª MARCIA DA BAGNOL CREMASC",
+    "date": "31/05/2026",
+    "location": {
+      "city": "Bagnolo Cremasco( Centro sportivo)",
+      "province": "CR"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "12",
+      "21"
+    ]
+  },
+  {
+    "title": "5ª  CAMINADA DE MASALENGH",
+    "date": "31/05/2026",
+    "location": {
+      "city": "Massalengo - Pol. Alpina - Via Amendola, 1",
+      "province": "LO"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "8",
+      "14",
+      "20"
+    ]
+  },
+  {
+    "title": "16ª CAMMINATA CUORE E CERVELLO \" UNA CORSA PER LA VITA\"",
+    "date": "31/05/2026",
+    "location": {
+      "city": "Bozzolo (Piazza Europa)",
+      "province": "MN"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "10"
+    ]
+  },
+  {
+    "title": "15ª PASSEGGIATA RICORDANDO GIO' 2026",
+    "date": "31/05/2026",
+    "location": {
+      "city": "Piozzano [Campo Sportivo - Via Campo Sportivo 3]",
+      "province": "PC"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "10",
+      "15"
+    ]
+  },
+  {
+    "title": "IL TREKKING DELL'ULTIMO CAMMINO DI SANT'ANTONIO",
+    "date": "31/05/2026",
+    "location": {
+      "city": "Camposampiero",
+      "province": "PD"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "24"
+    ]
+  },
+  {
+    "title": "35ª MARCIA VERDE DI SANT'ANTONIO",
+    "date": "31/05/2026",
+    "location": {
+      "city": "Sant'Antonio di Porcia-Piazza Oratorio Via Papa Giovanni 23°",
+      "province": "PN"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "13"
+    ]
+  },
+  {
+    "title": "13ª  CORSA E CAMMINATA DI PRIMAVERA",
+    "date": "31/05/2026",
+    "location": {
+      "city": "Villazzano Centro Sportivo Don O. Spada",
+      "province": "TN"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "11",
+      "15"
+    ]
+  },
+  {
+    "title": "40ª LA GALOPERA",
+    "date": "31/05/2026",
+    "location": {
+      "city": "Maddalene [Centro Sportivo Strada Maddalene 49/A]",
+      "province": "VI"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "4",
+      "7.5",
+      "12",
+      "16.5",
+      "20"
+    ]
+  },
+  {
+    "title": "26ª MARCIA DI SANT'ANTONIO",
+    "date": "31/05/2026",
+    "location": {
+      "city": "S.Bonifacio Piaz.tta Sant'Antonio chiosco Coalonga",
+      "province": "VR"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "13"
+    ]
+  },
+  {
+    "title": "18ª CAMMINADDA",
+    "date": "02/06/2026",
+    "location": {
+      "city": "via Circonvalazione,13 Spino D'Adda",
+      "province": "CR"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "11",
+      "13",
+      "16",
+      "18",
+      "20",
+      "25",
+      "25"
+    ]
+  },
+  {
+    "title": "ADDA RUN",
+    "date": "02/06/2026",
+    "location": {
+      "city": "Paderno d'Adda",
+      "province": "LC"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "8",
+      "15",
+      "22"
+    ]
+  },
+  {
+    "title": "48° UL GIR DE MUNT ESTATE",
+    "date": "02/06/2026",
+    "location": {
+      "city": "Montesiro di Besana Brianza",
+      "province": "MB"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "13",
+      "18"
+    ]
+  },
+  {
+    "title": "5ª ALLA SCOPERTA DELLE MURA",
+    "date": "02/06/2026",
+    "location": {
+      "city": "Piazza Ducale-Sabbioneta",
+      "province": "MN"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12"
+    ]
+  },
+  {
+    "title": "1ª MARCIA DEL PO",
+    "date": "02/06/2026",
+    "location": {
+      "city": "CASTELVETRO PIACENTINO [PIAZZA DEL MUNICIPIO]",
+      "province": "PC"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "11",
+      "16"
+    ]
+  },
+  {
+    "title": "40ª MARCIA DEL VIN",
+    "date": "02/06/2026",
+    "location": {
+      "city": "Castelnovo del Friuli-Località Paludea 28",
+      "province": "PN"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "12",
+      "18"
+    ]
+  },
+  {
+    "title": "12ª MONTA SU CHE NEMO A PIE'",
+    "date": "02/06/2026",
+    "location": {
+      "city": "San Vito di Legnago [P.za Madonna della Pace]",
+      "province": "VR"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "12",
+      "15"
+    ]
+  },
+  {
+    "title": "5ª CAMMINATA LONGA DA VEDERE",
+    "date": "05/06/2026",
+    "location": {
+      "city": "Longa di Schiavon Piazzale della Chiesa",
+      "province": "VI"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "9"
+    ]
+  },
+  {
+    "title": "GREPPI BIKE",
+    "date": "06/06/2026",
+    "location": {
+      "city": "MONTICELLO BRIANZA",
+      "province": "LC"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "40",
+      "80"
+    ]
+  },
+  {
+    "title": "5ª CAMMINATA DEL CUORE",
+    "date": "06/06/2026",
+    "location": {
+      "city": "Bertonico",
+      "province": "LO"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "3",
+      "7"
+    ]
+  },
+  {
+    "title": "6ª IL MONDO CORRE IN BRIANZA",
+    "date": "06/06/2026",
+    "location": {
+      "city": "Carate in Brianza",
+      "province": "MB"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "16"
+    ]
+  },
+  {
+    "title": "42ª MARCIA DI ALBARETO",
+    "date": "06/06/2026",
+    "location": {
+      "city": "Albareto di Ziano",
+      "province": "PC"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "13",
+      "21"
+    ]
+  },
+  {
+    "title": "41ª STAFFETTA 24X1 ORA - SABATO 6 E DOMENICA 7 GIUGNO",
+    "date": "06/06/2026",
+    "location": {
+      "city": "Saronno",
+      "province": "VA"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "24X1h"
+    ]
+  },
+  {
+    "title": "14ª INSIEME DAL SERIO AI FONTANILI",
+    "date": "07/06/2026",
+    "location": {
+      "city": "Mozzanica [Oratorio, Largo Don P. Salini 3]",
+      "province": "BG"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "4",
+      "7",
+      "10",
+      "13",
+      "18"
+    ]
+  },
+  {
+    "title": "13ª CAMMINATA \"RUNCADELLO\" IN MEMORIA DI GIOVANNI CAVALLI",
+    "date": "07/06/2026",
+    "location": {
+      "city": "Via Lepanto-26041-Roncadello di Casalmaggiore-CR",
+      "province": "CR"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "11.5"
+    ]
+  },
+  {
+    "title": "GREPPI RUN  - ISS A.GREPPI",
+    "date": "07/06/2026",
+    "location": {
+      "city": "Monticello Brianza",
+      "province": "LC"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "13",
+      "21"
+    ]
+  },
+  {
+    "title": "45ª PASSEGGIATA NEL PARCO NATURALE DEL MONTE BARRO",
+    "date": "07/06/2026",
+    "location": {
+      "city": "Galbiate-Largo Indipendenza",
+      "province": "LC"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "14",
+      "20"
+    ]
+  },
+  {
+    "title": "20ª LA MARCIA DEI COLORI",
+    "date": "07/06/2026",
+    "location": {
+      "city": "Brembio",
+      "province": "LO"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "4",
+      "7",
+      "14",
+      "21"
+    ]
+  },
+  {
+    "title": "34ª MARCIA DEI TEMPLARI",
+    "date": "07/06/2026",
+    "location": {
+      "city": "San Quirino - Scuole Medie - via Cellina, 1",
+      "province": "PN"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "13",
+      "21"
+    ]
+  },
+  {
+    "title": "CAMMINATA NEI VIGNETI",
+    "date": "07/06/2026",
+    "location": {
+      "city": "Barbiano di Felino",
+      "province": "PR"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "12"
+    ]
+  },
+  {
+    "title": "47ª A PEE PAR CASSAN",
+    "date": "07/06/2026",
+    "location": {
+      "city": "Cassano Magnago",
+      "province": "VA"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "13",
+      "18"
+    ]
+  },
+  {
+    "title": "MARCIA DELLA SPIGA DI POJANA 8ª EDIZIONE",
+    "date": "07/06/2026",
+    "location": {
+      "city": "Pojana Maggiore Via Castello 43 - presso parco Villa Pojana",
+      "province": "VI"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "3",
+      "7",
+      "12",
+      "18"
+    ]
+  },
+  {
+    "title": "54° GIRO DELLE COLOMBARE",
+    "date": "07/06/2026",
+    "location": {
+      "city": "Breganze [Cantina Sociale Beato Bartolomeo]",
+      "province": "VI"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "4",
+      "7",
+      "13",
+      "21"
+    ]
+  },
+  {
+    "title": "32ª GIRADÖ TRA LE CASCINE E LE BONIFICHE",
+    "date": "10/06/2026",
+    "location": {
+      "city": "Lograto/Bs [Villa Morando - Via Calini]",
+      "province": "BS"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "11"
+    ]
+  },
+  {
+    "title": "8° DOSSO RUN BY NIGHT",
+    "date": "12/06/2026",
+    "location": {
+      "city": "Lodi Vecchio-Bar Dosso-Via Curiel 9",
+      "province": "LO"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12"
+    ]
+  },
+  {
+    "title": "10ª LUCCIOLATA BERICA",
+    "date": "12/06/2026",
+    "location": {
+      "city": "Castegnero [Piazza Mercato]",
+      "province": "VI"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6"
+    ]
+  },
+  {
+    "title": "THE COLOR RUN",
+    "date": "13/06/2026",
+    "location": {
+      "city": "Fontanella [Stadio Parrocchiale - Via Garibaldi]",
+      "province": "BG"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "4"
+    ]
+  },
+  {
+    "title": "I° FESTA DEL DONATORE - MARCIA",
+    "date": "13/06/2026",
+    "location": {
+      "city": "CARVICO (BG.) Oratorio di Carvico",
+      "province": "BG"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "10"
+    ]
+  },
+  {
+    "title": "47ª CAMINADA AVIS RICORDANDO LUIGI E MANUELA FLISI",
+    "date": "13/06/2026",
+    "location": {
+      "city": "Casaletto di Viadana",
+      "province": "MN"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "1.2",
+      "6",
+      "12"
+    ]
+  },
+  {
+    "title": "CAMINATA DELLA LAMPADA",
+    "date": "13/06/2026",
+    "location": {
+      "city": "Mogliano Veneto- Stadio Comunale Arles Parisi",
+      "province": "TV"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7"
+    ]
+  },
+  {
+    "title": "38ª CAMMINATA ALLA RIVIERA - 24° TROFEO ALLA MEMORIA MOTTA MARIO E GABRIELLA",
+    "date": "14/06/2026",
+    "location": {
+      "city": "Pontida [Piazza S.Carlo Borromeo 52]",
+      "province": "BG"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "11",
+      "15",
+      "20"
+    ]
+  },
+  {
+    "title": "11ª CAMMINATA DI TRIGOLO",
+    "date": "14/06/2026",
+    "location": {
+      "city": "Trigolo",
+      "province": "CR"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "13",
+      "18"
+    ]
+  },
+  {
+    "title": "42ª CAMINADA DE CASAL",
+    "date": "14/06/2026",
+    "location": {
+      "city": "Casalpusterlengo [Centro Sportivo Ducatona]",
+      "province": "LO"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "14",
+      "21"
+    ]
+  },
+  {
+    "title": "37ª STRACADA CON GLI ALPINI",
+    "date": "14/06/2026",
+    "location": {
+      "city": "Cesano Maderno - Piazza Esedra",
+      "province": "MB"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12",
+      "18"
+    ]
+  },
+  {
+    "title": "7ª STRA VAPRIO",
+    "date": "14/06/2026",
+    "location": {
+      "city": "Vaprio d'Adda - via Oratorio, 3, partenza dall'oratorio di Vaprio d'Adda",
+      "province": "MI"
+    },
+    "poster": "https://drive.google.com/file/d/1cex7ciMMK2jawltMu-p2NxMcjvN7sk81/view?usp=sharing",
+    "source": "FIASP",
+    "distances": [
+      "8",
+      "15",
+      "22",
+      "28"
+    ]
+  },
+  {
+    "title": "7° PEDALABIKE FRA ARGINI E VALLI",
+    "date": "14/06/2026",
+    "location": {
+      "city": "Belforte di Gazzuolo",
+      "province": "MN"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "27"
+    ]
+  },
+  {
+    "title": "41ª MARCIA DEL TAPPETO FIORITO",
+    "date": "14/06/2026",
+    "location": {
+      "city": "Chiaravalle della Colomba [Abbazia]",
+      "province": "PC"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "13",
+      "18"
+    ]
+  },
+  {
+    "title": "37ª VIENI E CAMMINA",
+    "date": "14/06/2026",
+    "location": {
+      "city": "San Giovanni della Casarsa",
+      "province": "PN"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "8",
+      "12",
+      "18"
+    ]
+  },
+  {
+    "title": "5° SU E XO' PAR L'ACQUARO",
+    "date": "14/06/2026",
+    "location": {
+      "city": "Badia Polesine - Via Martiri di Villamarza",
+      "province": "RO"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "2",
+      "6",
+      "12",
+      "18"
+    ]
+  },
+  {
+    "title": "46ª MARCIA A SAN VALENTINO MONTEPIAN",
+    "date": "14/06/2026",
+    "location": {
+      "city": "Malo [P.za Zanini 1]",
+      "province": "VI"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "5.5",
+      "6.5",
+      "12",
+      "20"
+    ]
+  },
+  {
+    "title": "4ª CAMMINATA SOLIDALE CITTA' DI VICENZA",
+    "date": "14/06/2026",
+    "location": {
+      "city": "Vicenza - Anconetta",
+      "province": "VI"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "10"
+    ]
+  },
+  {
+    "title": "10ª MARCIA PROVA A PRENDERMI A SPINIMBECCO - 7° MEMORIAL GIULIANO MARCHETTI",
+    "date": "14/06/2026",
+    "location": {
+      "city": "SPINIMBECCO",
+      "province": "VR"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "3",
+      "6",
+      "12",
+      "18"
+    ]
+  },
+  {
+    "title": "CIRCUITO E...STATE CORRENDO 2025 - TAPPA NERVIANO",
+    "date": "18/06/2026",
+    "location": {
+      "city": "Nerviano - Monsignor Luigi Piazza, 15",
+      "province": "MI"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "5"
+    ]
+  },
+  {
+    "title": "2°MARCIA STRAORATORIO",
+    "date": "19/06/2026",
+    "location": {
+      "city": "CASTELLEONE",
+      "province": "CR"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "8.5"
+    ]
+  },
+  {
+    "title": "30ª  MARCIA TRA COLLI E PRATI-1° TROFEO A.M. RAFFALDI DONATO/FORNI MARIO/RUSCONI DANILO",
+    "date": "19/06/2026",
+    "location": {
+      "city": "Monteleone",
+      "province": "PV"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "12"
+    ]
+  },
+  {
+    "title": "CI 6 ALLE 6?",
+    "date": "20/06/2026",
+    "location": {
+      "city": "Montebelluna",
+      "province": "TV"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6"
+    ]
+  },
+  {
+    "title": "12ª STRAFARA",
+    "date": "21/06/2026",
+    "location": {
+      "city": "Fara Gera d'Adda [Oratorio S.Luigi-Sant'Agnese Via Dante Alighieri, 8/10 Fara Gera d'Adda ]",
+      "province": "BG"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "9",
+      "12",
+      "18"
+    ]
+  },
+  {
+    "title": "LA BELA MANERA DE CURR",
+    "date": "21/06/2026",
+    "location": {
+      "city": "Manera di Lomazzo - Oratorio/Centro sportivo parrocchiale",
+      "province": "CO"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "15"
+    ]
+  },
+  {
+    "title": "4ª MARCIA AVIS MONTODINE",
+    "date": "21/06/2026",
+    "location": {
+      "city": "Montodine",
+      "province": "CR"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "10",
+      "15"
+    ]
+  },
+  {
+    "title": "16ª  MARCIA TRA I DUE FIUMI",
+    "date": "21/06/2026",
+    "location": {
+      "city": "Castelnuovo Bocca d'Adda-Centro Sport.Com. Via Piave",
+      "province": "LO"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "13",
+      "18",
+      "21"
+    ]
+  },
+  {
+    "title": "3° MEMORIAL #CORRIAMO CON GIADA",
+    "date": "21/06/2026",
+    "location": {
+      "city": "Cormano - Centro Sportivo via Europa 7",
+      "province": "MI"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "11",
+      "15"
+    ]
+  },
+  {
+    "title": "36ª CAMINADA IN SL'ARSAN AD SAN MICHEL-MEMORIAL ANGELO REGATTIERI",
+    "date": "21/06/2026",
+    "location": {
+      "city": "San Michele in Bosco di Marcaria",
+      "province": "MN"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "11",
+      "17.5"
+    ]
+  },
+  {
+    "title": "IN RICORDO DI UN AMICO - 10ª EDIZIONE",
+    "date": "21/06/2026",
+    "location": {
+      "city": "Bettola [via Martiri della Resistenza]",
+      "province": "PC"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "9",
+      "11",
+      "20"
+    ]
+  },
+  {
+    "title": "12ª MARCIA DEL DONATORE",
+    "date": "21/06/2026",
+    "location": {
+      "city": "Campagna di Maniago-Via Dei Venier",
+      "province": "PN"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12",
+      "20"
+    ]
+  },
+  {
+    "title": "8ª CORSA DEI TRE CAMPANILI",
+    "date": "21/06/2026",
+    "location": {
+      "city": "Torrevecchia Pia",
+      "province": "PV"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "13",
+      "20"
+    ]
+  },
+  {
+    "title": "22ª CAMMINATA \"TRA ULIVI E CILIEGI\"",
+    "date": "21/06/2026",
+    "location": {
+      "city": "Crespignaga di Maser",
+      "province": "TV"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "5.5",
+      "10"
+    ]
+  },
+  {
+    "title": "42ª CAMMINATA DEI TRE CAMPANILI",
+    "date": "21/06/2026",
+    "location": {
+      "city": "Sant' Antonino Ticino di Lonate Pozzolo",
+      "province": "VA"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "8",
+      "13",
+      "18"
+    ]
+  },
+  {
+    "title": "SGAMBELADA VALDAGNESE",
+    "date": "21/06/2026",
+    "location": {
+      "city": "Valdagno - Parco della Favorita",
+      "province": "VI"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12",
+      "18"
+    ]
+  },
+  {
+    "title": "50ª PASSEGGIATA PANORAMICA",
+    "date": "21/06/2026",
+    "location": {
+      "city": "Carrè [Palestra Intercomunale Via Monte Paù]",
+      "province": "VI"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "11",
+      "16"
+    ]
+  },
+  {
+    "title": "5ª BOLCA ECO TRAIL",
+    "date": "21/06/2026",
+    "location": {
+      "city": "BOLCA di VESTENANOVA",
+      "province": "VR"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "11"
+    ]
+  },
+  {
+    "title": "CIRCUITO E...STATE CORRENDO 2025 - TAPPA SENAGO",
+    "date": "23/06/2026",
+    "location": {
+      "city": "Senago - Via Aldo Moro",
+      "province": "MI"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "5"
+    ]
+  },
+  {
+    "title": "CIRCUITO E...STATE CORRENDO 2025 - TAPPA DESIO",
+    "date": "25/06/2026",
+    "location": {
+      "city": "DESIO",
+      "province": "MB"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "5"
+    ]
+  },
+  {
+    "title": "7ª EDIZIONE VISMARUM",
+    "date": "26/06/2026",
+    "location": {
+      "city": "San Bassano",
+      "province": "CR"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12"
+    ]
+  },
+  {
+    "title": "34ª MARCIA DELLE PRUGNE",
+    "date": "26/06/2026",
+    "location": {
+      "city": "Chero di Carpaneto [Campo Sportivo]",
+      "province": "PC"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "11"
+    ]
+  },
+  {
+    "title": "18ª CORRICARUGO",
+    "date": "28/06/2026",
+    "location": {
+      "city": "Carugo",
+      "province": "CO"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "14",
+      "21"
+    ]
+  },
+  {
+    "title": "45ª GIR DALE MADUNINE",
+    "date": "28/06/2026",
+    "location": {
+      "city": "Madignano - Oratorio Parrocchiale",
+      "province": "CR"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "8",
+      "13",
+      "19"
+    ]
+  },
+  {
+    "title": "DAGHENTAY",
+    "date": "28/06/2026",
+    "location": {
+      "city": "OSNAGO",
+      "province": "LC"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "3",
+      "7",
+      "14",
+      "21"
+    ]
+  },
+  {
+    "title": "3ª CORRIINCORTE",
+    "date": "28/06/2026",
+    "location": {
+      "city": "COLNAGO DI CORNATE D'ADDA - Via Castello 59",
+      "province": "MB"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "8",
+      "14",
+      "21"
+    ]
+  },
+  {
+    "title": "34ª CAMMINATA DELLA QUERCIA",
+    "date": "28/06/2026",
+    "location": {
+      "city": "Suzzara",
+      "province": "MN"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "10"
+    ]
+  },
+  {
+    "title": "10ª MARCIA DI CATTARAGNA - LA TERRAZZA DELLA VAL D'AVETO",
+    "date": "28/06/2026",
+    "location": {
+      "city": "Cattaragna di Ferriere",
+      "province": "PC"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "4",
+      "9",
+      "14",
+      "18"
+    ]
+  },
+  {
+    "title": "40ª LA PANORAMICA",
+    "date": "28/06/2026",
+    "location": {
+      "city": "Barcis-Piazza Lungolago",
+      "province": "PN"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12",
+      "18"
+    ]
+  },
+  {
+    "title": "14ª MARCIA EDELWEISS",
+    "date": "28/06/2026",
+    "location": {
+      "city": "Biancoia Lusiana Conco",
+      "province": "VI"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12",
+      "20"
+    ]
+  },
+  {
+    "title": "8ª MARCIA DELLE TRE VALLI",
+    "date": "28/06/2026",
+    "location": {
+      "city": "Brenton di Roncà",
+      "province": "VR"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "8",
+      "11",
+      "13",
+      "18"
+    ]
+  },
+  {
+    "title": "CIRCUITO E...STATE CORRENDO 2025 - TAPPA SARONNO",
+    "date": "30/06/2026",
+    "location": {
+      "city": "Saronno - Via Trento",
+      "province": "VA"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "5"
+    ]
+  },
+  {
+    "title": "CIRCUITO E...STATE CORRENDO 2025 - TAPPA GARBAGNATE MILANESE",
+    "date": "02/07/2026",
+    "location": {
+      "city": "Garbagnate Milanese - Centro Sportivo Via Montenero",
+      "province": "MI"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "5"
+    ]
+  },
+  {
+    "title": "20° GIR DE LA SERCA",
+    "date": "03/07/2026",
+    "location": {
+      "city": "Mozzanica (Oratorio Largo Don P. Salini, 2)",
+      "province": "BG"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "3",
+      "7"
+    ]
+  },
+  {
+    "title": "6ª QUATTRO PASSI IN RIVA AL VACCHELLI",
+    "date": "03/07/2026",
+    "location": {
+      "city": "Spino d'Adda-via Milano,1",
+      "province": "CR"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "10"
+    ]
+  },
+  {
+    "title": "49ª TRI PASS AL ROCUL",
+    "date": "05/07/2026",
+    "location": {
+      "city": "Cantù-Campo Sportivo Via degli Arconi",
+      "province": "CO"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "10",
+      "13",
+      "17",
+      "21"
+    ]
+  },
+  {
+    "title": "48ª CAMMINATA TRA IL VERDE E L'ASFALTO",
+    "date": "05/07/2026",
+    "location": {
+      "city": "Lurago Marinone",
+      "province": "CO"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "14",
+      "23"
+    ]
+  },
+  {
+    "title": "22ª CAMINADA DE MARUD",
+    "date": "05/07/2026",
+    "location": {
+      "city": "Marudo",
+      "province": "LO"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "13",
+      "20"
+    ]
+  },
+  {
+    "title": "8ª CAMMINATA SULLE COLLINE DI VIGOLO",
+    "date": "05/07/2026",
+    "location": {
+      "city": "Vigolo Marchese [Loc.Costa Trenchi 9/a]",
+      "province": "PC"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "3.6",
+      "7.5",
+      "13"
+    ]
+  },
+  {
+    "title": "34° RADUNO PROVINCIALE GRUPPI PADOVANI  FIASP FAMILY EVENT",
+    "date": "05/07/2026",
+    "location": {
+      "city": "GALZIGNANO TERME",
+      "province": "PD"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "16"
+    ]
+  },
+  {
+    "title": "3ª CORI E CAMINA PAR VILOTA",
+    "date": "05/07/2026",
+    "location": {
+      "city": "Villotta di Chions",
+      "province": "PN"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12",
+      "18"
+    ]
+  },
+  {
+    "title": "19ª MARCIA LE CONTRA' DE RECOARO TERME",
+    "date": "05/07/2026",
+    "location": {
+      "city": "Recoaro Terme [via E.Pozza 6]",
+      "province": "VI"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "4",
+      "6",
+      "12",
+      "18"
+    ]
+  },
+  {
+    "title": "28ª STRACEREA",
+    "date": "05/07/2026",
+    "location": {
+      "city": "Cerea",
+      "province": "VR"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "10",
+      "15",
+      "20"
+    ]
+  },
+  {
+    "title": "17ª STAFFETTA SERALE STRACITTADINA",
+    "date": "10/07/2026",
+    "location": {
+      "city": "Corno Giovine",
+      "province": "LO"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "2.100"
+    ]
+  },
+  {
+    "title": "15ª CAMMINATA DI LUNA PIENA LUNGO IL LAMBRO",
+    "date": "10/07/2026",
+    "location": {
+      "city": "Carate Brianza",
+      "province": "MB"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "9"
+    ]
+  },
+  {
+    "title": "9ª CAMMINATA AVIS LUZZARA - 2° MEMORIAL DINO CARNEVALI",
+    "date": "10/07/2026",
+    "location": {
+      "city": "Luzzara - Piazza Iscaro ,1-Via Croce",
+      "province": "RE"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "10"
+    ]
+  },
+  {
+    "title": "50° TRITTICO DELLE TARTARUGHE",
+    "date": "12/07/2026",
+    "location": {
+      "city": "Bergamo [Bergamo Via Federico Ozanam, 10]",
+      "province": "BG"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "9",
+      "14",
+      "19"
+    ]
+  },
+  {
+    "title": "49ª VAI COL BOOMERANG",
+    "date": "12/07/2026",
+    "location": {
+      "city": "Carbonate",
+      "province": "CO"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12",
+      "18"
+    ]
+  },
+  {
+    "title": "47ª CAMINADA SURESINESA",
+    "date": "12/07/2026",
+    "location": {
+      "city": "Soresina",
+      "province": "CR"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "8",
+      "13",
+      "18"
+    ]
+  },
+  {
+    "title": "17ª CURSA DI MULIN VEG",
+    "date": "12/07/2026",
+    "location": {
+      "city": "Caselle Lurani-Centro Comunale M.Nazzari",
+      "province": "LO"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "4",
+      "7",
+      "12",
+      "18"
+    ]
+  },
+  {
+    "title": "55° MINI GIRO BRIANZOLO",
+    "date": "12/07/2026",
+    "location": {
+      "city": "Briosco",
+      "province": "MB"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "14"
+    ]
+  },
+  {
+    "title": "11ª MARCIA DI BAGULUN",
+    "date": "12/07/2026",
+    "location": {
+      "city": "Scorzarolo di Borgo Virgilio",
+      "province": "MN"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "2",
+      "7",
+      "12"
+    ]
+  },
+  {
+    "title": "18ª MARCIA DELLE CASCATE A CASTEL D'ERBIA",
+    "date": "12/07/2026",
+    "location": {
+      "city": "Calenzano di Bettola [Circolo ANSPI - Calenzano Centro]",
+      "province": "PC"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "10",
+      "15"
+    ]
+  },
+  {
+    "title": "11ª MARCIA ATOR PAI PECOI",
+    "date": "12/07/2026",
+    "location": {
+      "city": "Pradis di Sopra (loc. Val da Ros) - Clauzetto",
+      "province": "PN"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "4",
+      "7",
+      "12",
+      "20"
+    ]
+  },
+  {
+    "title": "CAMMINATA DELLA VALCENEDOLA",
+    "date": "12/07/2026",
+    "location": {
+      "city": "BORE",
+      "province": "PR"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "11"
+    ]
+  },
+  {
+    "title": "24ª MARCIA DEL CICLAMINO",
+    "date": "12/07/2026",
+    "location": {
+      "city": "Laghi [Part. Campo sportivo-Arr. Piazza]",
+      "province": "VI"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "4",
+      "7",
+      "15",
+      "22"
+    ]
+  },
+  {
+    "title": "47ª CAMINADA PAR LE SETTE RIVE",
+    "date": "12/07/2026",
+    "location": {
+      "city": "Villafontana di Bovolone Via Pace \"Centro Sportivo La Fontana\"",
+      "province": "VR"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "13"
+    ]
+  },
+  {
+    "title": "MARCIA DEL NARCISO",
+    "date": "19/07/2026",
+    "location": {
+      "city": "Civenna",
+      "province": "CO"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "12",
+      "18"
+    ]
+  },
+  {
+    "title": "32° MEMORIAL MILVA PRATI -12° MEMORIAL WALTER MEDOLA",
+    "date": "19/07/2026",
+    "location": {
+      "city": "Cavriana",
+      "province": "MN"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "13"
+    ]
+  },
+  {
+    "title": "36ª MARCIA DEL SOLLEONE",
+    "date": "19/07/2026",
+    "location": {
+      "city": "Castelnuovo Fogliani",
+      "province": "PC"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12",
+      "18",
+      "24"
+    ]
+  },
+  {
+    "title": "17ª MARCIA DI SAN GIACOMO",
+    "date": "19/07/2026",
+    "location": {
+      "city": "Maniago",
+      "province": "PN"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "10",
+      "12",
+      "14",
+      "19"
+    ]
+  },
+  {
+    "title": "27ª CAMMINATA DEL PROSCIUTTO",
+    "date": "19/07/2026",
+    "location": {
+      "city": "Scurano",
+      "province": "PR"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "11",
+      "18"
+    ]
+  },
+  {
+    "title": "3ª MARCIA \"CAMPI DI BATTAGLIA DELLA GRANDE GUERRA\"",
+    "date": "19/07/2026",
+    "location": {
+      "city": "Stoccareddo di Gallio",
+      "province": "VI"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12",
+      "18"
+    ]
+  },
+  {
+    "title": "CORRI CON LA FIDAS PER I MALATI DI SLA 10 EDIZIONE",
+    "date": "19/07/2026",
+    "location": {
+      "city": "Pozzo San Giovanni Lupatoto - Via Chiesa",
+      "province": "VR"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12"
+    ]
+  },
+  {
+    "title": "47ª CINQUE CAMPANILI",
+    "date": "26/07/2026",
+    "location": {
+      "city": "SCANNABUE",
+      "province": "CR"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "10",
+      "16"
+    ]
+  },
+  {
+    "title": "18ª DE CHE E DE LA DEL LAMBER",
+    "date": "26/07/2026",
+    "location": {
+      "city": "Costa Lambro di Carate Brianza-Centro Sportivo Via M.Buonarroti",
+      "province": "MB"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "11",
+      "15",
+      "20"
+    ]
+  },
+  {
+    "title": "CAMMINATA SULLE COLLINE DELL'ALTA VAL TIDONE",
+    "date": "26/07/2026",
+    "location": {
+      "city": "STRA' DI ALTA VAL TIDONE [VIA DEL SANTUARIO 10]",
+      "province": "PC"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "4",
+      "8",
+      "12"
+    ]
+  },
+  {
+    "title": "28ª QUATRE PAS PAR ANDREES",
+    "date": "26/07/2026",
+    "location": {
+      "city": "Andreis",
+      "province": "PN"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "3",
+      "6",
+      "12",
+      "18"
+    ]
+  },
+  {
+    "title": "AVANTI E INDRIO PAR E CONTRAE DEL BRENTA",
+    "date": "26/07/2026",
+    "location": {
+      "city": "Valstagna [P.za S.Marco]",
+      "province": "VI"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "6",
+      "12",
+      "21"
+    ]
+  },
+  {
+    "title": "23ª AN GIR PER AL SERE",
+    "date": "31/07/2026",
+    "location": {
+      "city": "Pianengo",
+      "province": "CR"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "7",
+      "9"
+    ]
+  },
+  {
+    "title": "50ª LA TAPASCIADA DI REZZAGO",
+    "date": "02/08/2026",
+    "location": {
+      "city": "Rezzago",
+      "province": "CO"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "10",
+      "18"
+    ]
+  },
+  {
+    "title": "52ª CAMMINATA DI SAN LORENZO",
+    "date": "02/08/2026",
+    "location": {
+      "city": "Monticelli d'Ongina [Soc. Canottieri Via Meucci]",
+      "province": "PC"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "11"
+    ]
+  },
+  {
+    "title": "8ª MARCIA DELLA STRIA",
+    "date": "02/08/2026",
+    "location": {
+      "city": "Bannia di Fiume Veneto",
+      "province": "PN"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "13",
+      "18"
+    ]
+  },
+  {
+    "title": "42ª MARCIA DELLE MALGHE",
+    "date": "02/08/2026",
+    "location": {
+      "city": "Montagne di Caltrano [Pozza del Favero Bar Alpino]",
+      "province": "VI"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12",
+      "18"
+    ]
+  },
+  {
+    "title": "15° GIRO DELLE FRAZIOM",
+    "date": "06/08/2026",
+    "location": {
+      "city": "BRENTONICO",
+      "province": "TN"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": []
+  },
+  {
+    "title": "53° EL GIR DI CENT FOO",
+    "date": "09/08/2026",
+    "location": {
+      "city": "Barni",
+      "province": "CO"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12"
+    ]
+  },
+  {
+    "title": "8ª CAMMINATA SAN GAETANO",
+    "date": "09/08/2026",
+    "location": {
+      "city": "Ponti sul Mincio",
+      "province": "MN"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "10"
+    ]
+  },
+  {
+    "title": "8ª MARCIA DI CIREGNA",
+    "date": "09/08/2026",
+    "location": {
+      "city": "Ciregna di Ferriere [Centro]",
+      "province": "PC"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "12.5",
+      "16"
+    ]
+  },
+  {
+    "title": "13ª MARCIA DEI CASTAGNI",
+    "date": "09/08/2026",
+    "location": {
+      "city": "Bore",
+      "province": "PR"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "11"
+    ]
+  },
+  {
+    "title": "13° \"UN PASSO CON L'AMICIAD\" TRA NATURA ED ARCHEOLOGIA",
+    "date": "09/08/2026",
+    "location": {
+      "city": "Rotzo - Scuole Elementari",
+      "province": "VI"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "4.5",
+      "8",
+      "16"
+    ]
+  },
+  {
+    "title": "45ª CAMINADA DEI TRE ARCHI - 3° MEMORIAL GIOVANNI MARTINELLI - 16° TROFEO AVIS",
+    "date": "09/08/2026",
+    "location": {
+      "city": "Via Chiesa,25 Albaredo d'Adige c/o Campo Fiera",
+      "province": "VR"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7. 12",
+      "18"
+    ]
+  },
+  {
+    "title": "5ª PERCORRENDO STRADE VECCHIE E NUOVE DI CUSIGNANA",
+    "date": "13/08/2026",
+    "location": {
+      "city": "CUSIGNANA - GIAVERA DEL MONTELLO",
+      "province": "TV"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "10"
+    ]
+  },
+  {
+    "title": "LA 18ª CAMMINATA CON LE TORCE TRA I SENTIERI DI CELANA A CAPRINO BERGAMASCO",
+    "date": "14/08/2026",
+    "location": {
+      "city": "Caprino Bergamasco [Oratorio di Celana]",
+      "province": "BG"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6"
+    ]
+  },
+  {
+    "title": "19ª ATTORNO IL TORRENTE ARTUGNA",
+    "date": "14/08/2026",
+    "location": {
+      "city": "Dardago di Budoia",
+      "province": "PN"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "12"
+    ]
+  },
+  {
+    "title": "46ª MARCIA DI CASALI",
+    "date": "15/08/2026",
+    "location": {
+      "city": "Casali di mofasso [Pro Loco Casali Centro]",
+      "province": "PC"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "12",
+      "20"
+    ]
+  },
+  {
+    "title": "33ª MARCIA \"CUL CJAPIEL\"",
+    "date": "15/08/2026",
+    "location": {
+      "city": "Frisanco",
+      "province": "PN"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "14",
+      "21"
+    ]
+  },
+  {
+    "title": "40ª MARCIA TRA PINI E CICLAMINI",
+    "date": "15/08/2026",
+    "location": {
+      "city": "Castelvecchio di Valdagno [P.za V.Bicego]",
+      "province": "VI"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "10",
+      "20"
+    ]
+  },
+  {
+    "title": "MARCIAFLONGA",
+    "date": "16/08/2026",
+    "location": {
+      "city": "Piazza Municipio,1 Felonica",
+      "province": "MN"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12"
+    ]
+  },
+  {
+    "title": "GIIR DI FUNTANIT",
+    "date": "23/08/2026",
+    "location": {
+      "city": "Valbrona",
+      "province": "CO"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12"
+    ]
+  },
+  {
+    "title": "4ª QUATRE PASS ANTURNE A MUSCHESA'",
+    "date": "23/08/2026",
+    "location": {
+      "city": "Moscazzano",
+      "province": "CR"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "10",
+      "18"
+    ]
+  },
+  {
+    "title": "1ª CORSA DI SAN BARTOLOMEO",
+    "date": "23/08/2026",
+    "location": {
+      "city": "MONZAMBANO",
+      "province": "MN"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12"
+    ]
+  },
+  {
+    "title": "46ª MARCIA DELLA CONCORDIA",
+    "date": "23/08/2026",
+    "location": {
+      "city": "S.Giuliano di Castelvetro [Ex Scuole]",
+      "province": "PC"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "11",
+      "17"
+    ]
+  },
+  {
+    "title": "47ª MARCIA FESTA IN PIASSA",
+    "date": "23/08/2026",
+    "location": {
+      "city": "Pordenone [Quartiere Villanova]",
+      "province": "PN"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12",
+      "18"
+    ]
+  },
+  {
+    "title": "9° CAMINADA DELLE CARNI BIANCHE",
+    "date": "23/08/2026",
+    "location": {
+      "city": "SAN PIETRO DI MORUBIO",
+      "province": "VR"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": []
+  },
+  {
+    "title": "TREKKING - LA VIA LAURETANA - 1° TAPPA SIENA - VESCONA",
+    "date": "24/08/2026",
+    "location": {
+      "city": "SIENA",
+      "province": "SI"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "19.7"
+    ]
+  },
+  {
+    "title": "TREKKING -  LA VIA LAURETANA -  2ª  TAPPA VESCONA -SERRE DI RAPOLANO",
+    "date": "25/08/2026",
+    "location": {
+      "city": "VESCONA",
+      "province": "SI"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "23.1"
+    ]
+  },
+  {
+    "title": "TREKKING - LA VIA LAURETANA -   3ª TAPPA SERRE DI RAPOLANO - SINALUNGA",
+    "date": "26/08/2026",
+    "location": {
+      "city": "SERRE DI RAPOLANO",
+      "province": "SI"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "19.3"
+    ]
+  },
+  {
+    "title": "TREKKING - LA VIA LAURETANA - 4ª TAPPA SINALUNGA - VALIANO",
+    "date": "27/08/2026",
+    "location": {
+      "city": "SINALUNGA",
+      "province": "SI"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "28"
+    ]
+  },
+  {
+    "title": "18ª MARCIA DELLO SPIEDINO",
+    "date": "28/08/2026",
+    "location": {
+      "city": "Monticelli d'Ongina [Via Edison]",
+      "province": "PC"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "10"
+    ]
+  },
+  {
+    "title": "TREKKING - LA VIA LAURETANA - 5ª TAPPA VALIANO - CORTONA",
+    "date": "28/08/2026",
+    "location": {
+      "city": "VALIANO",
+      "province": "SI"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "24.5"
+    ]
+  },
+  {
+    "title": "6ª MARCIA SOTTO LE STELLE - 3° MEMORIAL WALTER CANZIAN",
+    "date": "28/08/2026",
+    "location": {
+      "city": "Villaverla [P.le delle Feste Via Giovanni XXIII]",
+      "province": "VI"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "5 ripetibili"
+    ]
+  },
+  {
+    "title": "18ª ENOTTURNA TRA LE MURA DI SOAVE",
+    "date": "28/08/2026",
+    "location": {
+      "city": "Soave [P.za Cavalli]",
+      "province": "VR"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "3",
+      "6",
+      "12"
+    ]
+  },
+  {
+    "title": "50ª PALIDAN MARCIA IN NOTTURNA",
+    "date": "29/08/2026",
+    "location": {
+      "city": "Palidano di Gonzaga",
+      "province": "MN"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "10"
+    ]
+  },
+  {
+    "title": "35ª MARCIA DI S. ANTONIO",
+    "date": "30/08/2026",
+    "location": {
+      "city": "Bolzone",
+      "province": "CR"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "15",
+      "20"
+    ]
+  },
+  {
+    "title": "18ª STRAPAGNANO",
+    "date": "30/08/2026",
+    "location": {
+      "city": "Pagnano di Merate",
+      "province": "LC"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "8",
+      "12",
+      "16",
+      "22",
+      "26"
+    ]
+  },
+  {
+    "title": "53ª MARCIA DEL PO \"MEMORIAL UGOLINO MARCHIO' \"",
+    "date": "30/08/2026",
+    "location": {
+      "city": "Borgoforte di Borgovirgilio",
+      "province": "MN"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12",
+      "17"
+    ]
+  },
+  {
+    "title": "2ª MARCIA DEL VOLONTARIO",
+    "date": "30/08/2026",
+    "location": {
+      "city": "Alseno [Via Turati 23]",
+      "province": "PC"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "8",
+      "12",
+      "17"
+    ]
+  },
+  {
+    "title": "12° OM DE MER –  TRIATHLON GOLIARDICO",
+    "date": "30/08/2026",
+    "location": {
+      "city": "Montagnana",
+      "province": "PD"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "0.250",
+      "15",
+      "5"
+    ]
+  },
+  {
+    "title": "5ª MARCIA COLOMBARA",
+    "date": "30/08/2026",
+    "location": {
+      "city": "bastia di rovolon",
+      "province": "PD"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "15"
+    ]
+  },
+  {
+    "title": "3ª MARCIA INTOR AL VECIU CANAL",
+    "date": "30/08/2026",
+    "location": {
+      "city": "San Leonardo Valcellina",
+      "province": "PN"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "10",
+      "15"
+    ]
+  },
+  {
+    "title": "15ª MARCIA DI MARAGNOLE MEMORIAL DON CAMILLO FARESIN",
+    "date": "30/08/2026",
+    "location": {
+      "city": "Maragnole [Campo Sportivo Parrocchiale]",
+      "province": "VI"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12",
+      "18"
+    ]
+  },
+  {
+    "title": "MEMORIAL GIANCARLO TURRI - 11ª EDIZIONE - 28° RADUNO FIASP VERONA",
+    "date": "30/08/2026",
+    "location": {
+      "city": "Cavaion Veronese",
+      "province": "VR"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "12",
+      "18"
+    ]
+  },
+  {
+    "title": "27ª MARCIA PER TUTTE LE ETA'",
+    "date": "04/09/2026",
+    "location": {
+      "city": "Soncino",
+      "province": "CR"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "10"
+    ]
+  },
+  {
+    "title": "36ª CURUM PAR LA CHISOLA",
+    "date": "04/09/2026",
+    "location": {
+      "city": "Borgonovo Val Tidone [P.zza Garibaldi, 18]",
+      "province": "PC"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "10",
+      "13"
+    ]
+  },
+  {
+    "title": "8ª LUCCIOLATA DI VILLA CALDOGNO",
+    "date": "04/09/2026",
+    "location": {
+      "city": "Caldogno [Villa Caldogno]",
+      "province": "VI"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6"
+    ]
+  },
+  {
+    "title": "41ª MARCIA DEL DONATORE",
+    "date": "06/09/2026",
+    "location": {
+      "city": "Carvico [Area Festa, Piazzale della Chiesa]",
+      "province": "BG"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "12",
+      "15",
+      "22",
+      "27"
+    ]
+  },
+  {
+    "title": "47ª CAMMINATA DELLA SPERANZA",
+    "date": "06/09/2026",
+    "location": {
+      "city": "Cabiate",
+      "province": "CO"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "9",
+      "13",
+      "18"
+    ]
+  },
+  {
+    "title": "33ª CAMMINATA DELLE TRE VALLI",
+    "date": "06/09/2026",
+    "location": {
+      "city": "Carpaneto Piacentino [Palazzetto Sport - Via S.Lazzaro]",
+      "province": "PC"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "12",
+      "21"
+    ]
+  },
+  {
+    "title": "4ª MARCIA DEL KIS",
+    "date": "06/09/2026",
+    "location": {
+      "city": "Castelnovo del Friuli",
+      "province": "PN"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "14",
+      "21"
+    ]
+  },
+  {
+    "title": "DI CORSA NEL PARCO NEL PARCO",
+    "date": "06/09/2026",
+    "location": {
+      "city": "Borgo San Siro (PV)",
+      "province": "PV"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "14"
+    ]
+  },
+  {
+    "title": "17ª  STRAMORAZZONE",
+    "date": "06/09/2026",
+    "location": {
+      "city": "Morazzone",
+      "province": "VA"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "10",
+      "18"
+    ]
+  },
+  {
+    "title": "10ª MARCIA LA RONDINE - MEMORIAL ANTONIO CESARI",
+    "date": "06/09/2026",
+    "location": {
+      "city": "Montecchio Pracalcino c/o sede Alpini",
+      "province": "VI"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "3.5",
+      "7",
+      "13",
+      "20"
+    ]
+  },
+  {
+    "title": "17ª CORRI ALLE TORRI (SALIZZOLE VR)",
+    "date": "06/09/2026",
+    "location": {
+      "city": "Salizzole P.za Castello",
+      "province": "VR"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "10",
+      "16"
+    ]
+  },
+  {
+    "title": "CAMINARDONANDORUN",
+    "date": "06/09/2026",
+    "location": {
+      "city": "Perzacco",
+      "province": "VR"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "14"
+    ]
+  },
+  {
+    "title": "NA CORSETTA IN CAMPAGNAMAGRA  33A ED.",
+    "date": "06/09/2026",
+    "location": {
+      "city": "CAMPAGNAMAGRA DI VIGASIO",
+      "province": "VR"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7/12"
+    ]
+  },
+  {
+    "title": "29ª MARCIA DELL'ORATORIO",
+    "date": "11/09/2026",
+    "location": {
+      "city": "Romanengo",
+      "province": "CR"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "3",
+      "5",
+      "7"
+    ]
+  },
+  {
+    "title": "15ª PALIO  CITTÀ DI CODOGNO",
+    "date": "11/09/2026",
+    "location": {
+      "city": "Codogno Piazza XX Settembre",
+      "province": "LO"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "12"
+    ]
+  },
+  {
+    "title": "CAMMINATA TRA BOSCO E LAGO",
+    "date": "12/09/2026",
+    "location": {
+      "city": "Monguzzo",
+      "province": "CO"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "10",
+      "15"
+    ]
+  },
+  {
+    "title": "2ª AL CHIARO DI LUNA TRA LE RISORGIVE",
+    "date": "12/09/2026",
+    "location": {
+      "city": "Bressanvido P.zza del Cittadino",
+      "province": "VI"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "8"
+    ]
+  },
+  {
+    "title": "50ª  MARCIA DEL DONATORE",
+    "date": "13/09/2026",
+    "location": {
+      "city": "Brembate [Arena Civica, Via San Vittore]",
+      "province": "BG"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "10",
+      "15"
+    ]
+  },
+  {
+    "title": "38° GIROVERDE",
+    "date": "13/09/2026",
+    "location": {
+      "city": "Camisano",
+      "province": "CR"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "8",
+      "14",
+      "21"
+    ]
+  },
+  {
+    "title": "4ª STRAPELLICANO",
+    "date": "13/09/2026",
+    "location": {
+      "city": "Osnago",
+      "province": "LC"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "15",
+      "22"
+    ]
+  },
+  {
+    "title": "8ª MARCIA  I GÖSI  E  I  SO  AMISI",
+    "date": "13/09/2026",
+    "location": {
+      "city": "Salerano sul Lambro",
+      "province": "LO"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "14",
+      "20"
+    ]
+  },
+  {
+    "title": "MEZZAGORUN 2026",
+    "date": "13/09/2026",
+    "location": {
+      "city": "Mezzago",
+      "province": "MB"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "8",
+      "15",
+      "21"
+    ]
+  },
+  {
+    "title": "18ª CAMMINATA PER LE FRAZIONI DEL COMUNE DI SAN GIORGIO BIGARELLO",
+    "date": "13/09/2026",
+    "location": {
+      "city": "Comune di San Giorgio Bigarello",
+      "province": "MN"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12"
+    ]
+  },
+  {
+    "title": "39ª MARCIA DEI TRE ARGINI",
+    "date": "13/09/2026",
+    "location": {
+      "city": "Fossadello di Caorso [Sede ANSPI - Fossadello Centro]",
+      "province": "PC"
+    },
+    "poster": null,
     "source": "FIASP",
     "distances": [
       "5",
@@ -149,13 +6506,1872 @@
     ]
   },
   {
-    "title": "45ª MARCIA DEI 4 MULINI - 42° TROFEO PRO LOCO",
-    "date": "30/11/2025",
+    "title": "20ª MARCIA DEL BOSCAT",
+    "date": "13/09/2026",
+    "location": {
+      "city": "Taiedo di Chions",
+      "province": "PN"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "12",
+      "18"
+    ]
+  },
+  {
+    "title": "23ª QUATTAR PASS IN PINETA",
+    "date": "13/09/2026",
+    "location": {
+      "city": "Abbiate Guazzone (Tradate)",
+      "province": "VA"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "13"
+    ]
+  },
+  {
+    "title": "51ª MARCIA BIANCOVERDE",
+    "date": "13/09/2026",
+    "location": {
+      "city": "S.Croce di Bassano [Impianti Sportivi Via Ca' Dolfin 60]",
+      "province": "VI"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12",
+      "21"
+    ]
+  },
+  {
+    "title": "MARCIA PER RITROVARE IL SORRISO",
+    "date": "13/09/2026",
+    "location": {
+      "city": "Altavilla Vicentina (via Cavour, 100)",
+      "province": "VI"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12"
+    ]
+  },
+  {
+    "title": "49ª MARCIA VALLI GRANDI VERONESI",
+    "date": "13/09/2026",
+    "location": {
+      "city": "Bovolone P.za A. Moro - piazzale della fiera",
+      "province": "VR"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6.5",
+      "13",
+      "17"
+    ]
+  },
+  {
+    "title": "15° MEMORIAL EUGENIO MERCORIO",
+    "date": "19/09/2026",
+    "location": {
+      "city": "Foppolo [Piazzale Ristorante K]",
+      "province": "BG"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "12"
+    ]
+  },
+  {
+    "title": "15ª PEDALATA MEMORIAL EUGENIO MERCORIO",
+    "date": "19/09/2026",
+    "location": {
+      "city": "Branzi [Località Gardata]",
+      "province": "BG"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "10"
+    ]
+  },
+  {
+    "title": "CAMMINATA PER LA VITA \"DOMENICO  LAMURA E ANTONIO TAVOLA\"",
+    "date": "19/09/2026",
+    "location": {
+      "city": "Rogeno",
+      "province": "LC"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12"
+    ]
+  },
+  {
+    "title": "STRAELA",
+    "date": "20/09/2026",
+    "location": {
+      "city": "Villa d'Adda [Campo Sportivo Via G. Donizetti]",
+      "province": "BG"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "1",
+      "6",
+      "13",
+      "16",
+      "22"
+    ]
+  },
+  {
+    "title": "51° FESTIVAL NAZIONALE DEL PODISTA",
+    "date": "20/09/2026",
+    "location": {
+      "city": "Crema",
+      "province": "CR"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "9",
+      "13",
+      "21"
+    ]
+  },
+  {
+    "title": "45ª SGAMBATA VERDERESE",
+    "date": "20/09/2026",
+    "location": {
+      "city": "Verderio",
+      "province": "LC"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "11",
+      "20"
+    ]
+  },
+  {
+    "title": "45ª CAMINADA DE SCUGNAI",
+    "date": "20/09/2026",
+    "location": {
+      "city": "Secugnago",
+      "province": "LO"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "9",
+      "15",
+      "20",
+      "25"
+    ]
+  },
+  {
+    "title": "42° TROFEO DON CARLO CARRETTONI",
+    "date": "20/09/2026",
+    "location": {
+      "city": "Copreno di Lentate sul Seveso - Oratorio in Via Montenero",
+      "province": "MB"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "13",
+      "22"
+    ]
+  },
+  {
+    "title": "4ª CAMMINA MINCIO",
+    "date": "20/09/2026",
+    "location": {
+      "city": "Via Bonifacio Calvo -Goito",
+      "province": "MN"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12",
+      "18"
+    ]
+  },
+  {
+    "title": "INSIEME PER LA CASA DI IRIS",
+    "date": "20/09/2026",
+    "location": {
+      "city": "PIACENZA [VIA BUBBA 100]",
+      "province": "PC"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "10"
+    ]
+  },
+  {
+    "title": "52ª MARCIA DEI FUNGHI",
+    "date": "20/09/2026",
+    "location": {
+      "city": "Budoia",
+      "province": "PN"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12",
+      "25"
+    ]
+  },
+  {
+    "title": "11ª CAMMINIAMO UN PO INSIEME",
+    "date": "20/09/2026",
+    "location": {
+      "city": "Mezzani",
+      "province": "PR"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "10"
+    ]
+  },
+  {
+    "title": "16ª IN SLA' ROTA AD PO",
+    "date": "20/09/2026",
+    "location": {
+      "city": "Occhiobello Santa Maria Maddalena",
+      "province": "RO"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "12",
+      "18"
+    ]
+  },
+  {
+    "title": "10ª MARCIA DEI CASTELLARI",
+    "date": "20/09/2026",
+    "location": {
+      "city": "Isola Vicentina [Palazzetto dello Sport Via Vallorcola]",
+      "province": "VI"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "4",
+      "8",
+      "12",
+      "16",
+      "20"
+    ]
+  },
+  {
+    "title": "4ª NIBIONNO WALK",
+    "date": "26/09/2026",
+    "location": {
+      "city": "Nibionno",
+      "province": "LC"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "8",
+      "14"
+    ]
+  },
+  {
+    "title": "23° TROFEO ASSOCIAZIONE AS.SO.FA.",
+    "date": "26/09/2026",
+    "location": {
+      "city": "Verano di Podenzano [Centro Accoglienza AS.SO.FA]",
+      "province": "PC"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "10"
+    ]
+  },
+  {
+    "title": "52ª MARCIA IN CIMA AL CAMPANILE",
+    "date": "26/09/2026",
+    "location": {
+      "city": "Porcia",
+      "province": "PN"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "10"
+    ]
+  },
+  {
+    "title": "2° CAMMINATA IN ROSA ALBARETANA",
+    "date": "26/09/2026",
+    "location": {
+      "city": "Abaredo d'Adige",
+      "province": "VR"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12"
+    ]
+  },
+  {
+    "title": "51ª MURSELADA",
+    "date": "27/09/2026",
+    "location": {
+      "city": "Pianengo",
+      "province": "CR"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "12",
+      "20"
+    ]
+  },
+  {
+    "title": "22ª QUATER PASS INTURNU AL S.MARTIN",
+    "date": "27/09/2026",
+    "location": {
+      "city": "Garbagnate Monastero",
+      "province": "LC"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "8",
+      "15",
+      "22"
+    ]
+  },
+  {
+    "title": "16ª LODI CHE CORRE",
+    "date": "27/09/2026",
+    "location": {
+      "city": "Lodi Viale Piacenza, Oratorio San Bernardo]",
+      "province": "LO"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "8",
+      "14",
+      "18"
+    ]
+  },
+  {
+    "title": "19ª MARCIA DELLE PECORE",
+    "date": "27/09/2026",
+    "location": {
+      "city": "Melzo - Centro Sportivo via Buozzi 3",
+      "province": "MI"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "13",
+      "18",
+      "23"
+    ]
+  },
+  {
+    "title": "53ª CAMMINATA LUNGO IL PO \"CAMMINATA DEL CUORE\"",
+    "date": "27/09/2026",
+    "location": {
+      "city": "Fogarole di Monticelli [P.za della Chiesa]",
+      "province": "PC"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12"
+    ]
+  },
+  {
+    "title": "21ª MARCIA DELLA PENNA",
+    "date": "27/09/2026",
+    "location": {
+      "city": "Polcenigo-Sede Alpini Piazza di Coltura",
+      "province": "PN"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "12",
+      "16",
+      "20"
+    ]
+  },
+  {
+    "title": "28ª CAMMINATA DEL CARDINALE",
+    "date": "27/09/2026",
+    "location": {
+      "city": "Castiglione Olona",
+      "province": "VA"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "13",
+      "18"
+    ]
+  },
+  {
+    "title": "23ª MARCIA PER I BAMBINI DI STRADA",
+    "date": "27/09/2026",
+    "location": {
+      "city": "Valle S.Floriano di Marostica [Impianti Sportivi Via Stroppari]",
+      "province": "VI"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "9",
+      "12",
+      "16"
+    ]
+  },
+  {
+    "title": "17ª SU E ZO PAR LA ROSTA",
+    "date": "27/09/2026",
+    "location": {
+      "city": "Bonavicina Via Cesare Battisti, 1 ( Piazzale degli Alpini)",
+      "province": "VR"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12",
+      "17"
+    ]
+  },
+  {
+    "title": "37ª SGAMBADA D'AUTUNNO",
+    "date": "28/09/2026",
+    "location": {
+      "city": "Curnasco [Oratorio, Piazza Don Personeni]",
+      "province": "BG"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12",
+      "18"
+    ]
+  },
+  {
+    "title": "2ª CAMMINATA IN ROSA",
+    "date": "03/10/2026",
+    "location": {
+      "city": "Carnago",
+      "province": "VA"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6"
+    ]
+  },
+  {
+    "title": "27ª CAMMINANDO CON BAKHITA",
+    "date": "03/10/2026",
+    "location": {
+      "city": "Schio [P.le Divisione Acqui]- arr. Duomo di San Pietro",
+      "province": "VI"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "28"
+    ]
+  },
+  {
+    "title": "52ª SGAMBADA DE LÒNGUEL",
+    "date": "04/10/2026",
+    "location": {
+      "city": "Bergamo [Oratorio di Longuelo]",
+      "province": "BG"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "10"
+    ]
+  },
+  {
+    "title": "CAMMINIAMO PER INCONTRARE I POPOLI",
+    "date": "04/10/2026",
+    "location": {
+      "city": "Lurago d'Erba",
+      "province": "CO"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "8",
+      "15",
+      "21"
+    ]
+  },
+  {
+    "title": "19ª MARCIA DELLA VALLE DELL'OGLIO",
+    "date": "04/10/2026",
+    "location": {
+      "city": "Soncino [ex Colonia Fluviale]",
+      "province": "CR"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "8",
+      "14",
+      "18"
+    ]
+  },
+  {
+    "title": "16° TROFEO CASTELLOTTI GIUSEPPE E ZANABONI MARIANO",
+    "date": "04/10/2026",
+    "location": {
+      "city": "Senna Lodigiana",
+      "province": "LO"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "11",
+      "16",
+      "21",
+      "25"
+    ]
+  },
+  {
+    "title": "FAMETTA RUN",
+    "date": "04/10/2026",
+    "location": {
+      "city": "Garbagnate Milanese - Via Fametta 50",
+      "province": "MB"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "14",
+      "21"
+    ]
+  },
+  {
+    "title": "9ª LA LENTISSIMA",
+    "date": "04/10/2026",
+    "location": {
+      "city": "Inzago",
+      "province": "MI"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "3",
+      "7",
+      "12",
+      "16",
+      "21"
+    ]
+  },
+  {
+    "title": "25ª MARCIA DELL'ALPINO IN MEMORIA DI GIUSEPPE BACCHI",
+    "date": "04/10/2026",
+    "location": {
+      "city": "Vigolzone [Baita Alpini, Via Coppi 14]",
+      "province": "PC"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "10",
+      "15"
+    ]
+  },
+  {
+    "title": "48ª CAMMINATA GOLESANA",
+    "date": "04/10/2026",
+    "location": {
+      "city": "Baganziola",
+      "province": "PR"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "10"
+    ]
+  },
+  {
+    "title": "4ª RESANA IN ROSA",
+    "date": "04/10/2026",
+    "location": {
+      "city": "RESANA",
+      "province": "TV"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7"
+    ]
+  },
+  {
+    "title": "36ª SU E ZO PAE RIVE DE MONTEBEUNA",
+    "date": "04/10/2026",
+    "location": {
+      "city": "MONTEBELLUNA",
+      "province": "TV"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12",
+      "18"
+    ]
+  },
+  {
+    "title": "8ª CAMMINATA CON I CORSALUS",
+    "date": "04/10/2026",
+    "location": {
+      "city": "Gerenzano",
+      "province": "VA"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "4",
+      "7",
+      "14",
+      "19"
+    ]
+  },
+  {
+    "title": "41ª MARCIA VERDIANA",
+    "date": "04/10/2026",
+    "location": {
+      "city": "Zané Impianti Sportivi Viale dello Sport",
+      "province": "VI"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "4",
+      "7",
+      "13",
+      "18"
+    ]
+  },
+  {
+    "title": "50ª PASSEGGIAMO TRA CASTAGNI E OLIVI - 14° MEMORIAL LINO SBRISSA",
+    "date": "04/10/2026",
+    "location": {
+      "city": "Mussolente [Parco della Vittoria Via della Vittoria 28]",
+      "province": "VI"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "4",
+      "9",
+      "12",
+      "20"
+    ]
+  },
+  {
+    "title": "27ª CAMINADA DE L'ACQUA CALDA",
+    "date": "04/10/2026",
+    "location": {
+      "city": "Caldiero [Terme di Giunone]",
+      "province": "VR"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12",
+      "16"
+    ]
+  },
+  {
+    "title": "14ª MARCIA PER LA VITA IN RICORDO DI MICHELE SIGNAROLDI",
+    "date": "10/10/2026",
+    "location": {
+      "city": "Ponte Dell'Olio [Centro Sportivo Cementirossi - Via A. Boggiani]",
+      "province": "PC"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12"
+    ]
+  },
+  {
+    "title": "CLAUTRAIL",
+    "date": "10/10/2026",
+    "location": {
+      "city": "CLAUT",
+      "province": "PN"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "16",
+      "29"
+    ]
+  },
+  {
+    "title": "4ª BADIA IN ROSA",
+    "date": "10/10/2026",
+    "location": {
+      "city": "Badia Polesine, Pza. Vittorio Emanuele",
+      "province": "RO"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7"
+    ]
+  },
+  {
+    "title": "IN CAMMINO SULLE ORME DI PAPA GIOVANNI XXIII°",
+    "date": "11/10/2026",
+    "location": {
+      "city": "Sotto Il Monte Giovanni XXIII° [Piazza Giovanni Paolo II°, Sala Civica]",
+      "province": "BG"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "15"
+    ]
+  },
+  {
+    "title": "15° GIRO DELLA BATTAGLIA DELLA MOTTA",
+    "date": "11/10/2026",
+    "location": {
+      "city": "Ripalta Arpina",
+      "province": "CR"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "12",
+      "16"
+    ]
+  },
+  {
+    "title": "11ª CAMMINATA NELLA VECCHIA LAUS",
+    "date": "11/10/2026",
+    "location": {
+      "city": "Lodi Vecchio",
+      "province": "LO"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "8",
+      "13",
+      "16",
+      "20"
+    ]
+  },
+  {
+    "title": "45ª CARATE TRA IL VERDE E L'ANTICO",
+    "date": "11/10/2026",
+    "location": {
+      "city": "Carate Brianza",
+      "province": "MB"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "8",
+      "13",
+      "17",
+      "25"
+    ]
+  },
+  {
+    "title": "5ª CORSA DELLA SAGRA",
+    "date": "11/10/2026",
+    "location": {
+      "city": "P.zza E. Bottoli Cesole di Marcaria",
+      "province": "MN"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "13",
+      "18.5"
+    ]
+  },
+  {
+    "title": "33ª MARCIA AVIS VILLANOVA",
+    "date": "11/10/2026",
+    "location": {
+      "city": "VILLANOVA SULL'ARDA [P.le Pro Loco - Via Repubblica 36]",
+      "province": "PC"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "4",
+      "8",
+      "14"
+    ]
+  },
+  {
+    "title": "6ª LA CLAUTANA",
+    "date": "11/10/2026",
+    "location": {
+      "city": "Claut",
+      "province": "PN"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12",
+      "14",
+      "17"
+    ]
+  },
+  {
+    "title": "42° TROFEO PODISTI VALLE OLONA",
+    "date": "11/10/2026",
+    "location": {
+      "city": "Gorla Maggiore",
+      "province": "VA"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "13",
+      "18"
+    ]
+  },
+  {
+    "title": "20ª MARCIA DEL SORRISO",
+    "date": "11/10/2026",
+    "location": {
+      "city": "Romano d'Ezzelino Villa Negri Via Romana Loc. San Giacomo",
+      "province": "VI"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "11",
+      "16",
+      "22"
+    ]
+  },
+  {
+    "title": "40ª MARCIA DEL RISO",
+    "date": "11/10/2026",
+    "location": {
+      "city": "Anson di Minerbe",
+      "province": "VR"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": []
+  },
+  {
+    "title": "12ª NORDICANDO IL NORDIC WALKING IN VAL D'ILLASI",
+    "date": "11/10/2026",
+    "location": {
+      "city": "Illasi [Cantina Sabaini, via Mormontea 6/a]",
+      "province": "VR"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "12"
+    ]
+  },
+  {
+    "title": "7° URBAN TRAIL",
+    "date": "17/10/2026",
+    "location": {
+      "city": "Montagnana",
+      "province": "PD"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "5"
+    ]
+  },
+  {
+    "title": "7ª MARCIA \"VIN NOUF\"",
+    "date": "17/10/2026",
+    "location": {
+      "city": "Villa d'Arco di Cordenons",
+      "province": "PN"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12"
+    ]
+  },
+  {
+    "title": "7ª EDIZIONE  MANIFESTAZIONE \"TRA IL ROMANICO ED IL BREMBO\"",
+    "date": "18/10/2026",
+    "location": {
+      "city": "Bonate Sotto [Via G.Garibaldi, 15]",
+      "province": "BG"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "8",
+      "13",
+      "16"
+    ]
+  },
+  {
+    "title": "15ª BAOBAB RUNNING CUP",
+    "date": "18/10/2026",
+    "location": {
+      "city": "Castenedolo [Oratorio Pio X°, Via G.Matteotti]",
+      "province": "BS"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "10"
+    ]
+  },
+  {
+    "title": "RADUNO PODISTICO GRUPPI COMITATO TERRITORIALE",
+    "date": "18/10/2026",
+    "location": {
+      "city": "ALZATE BRIANZA",
+      "province": "CO"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "13",
+      "20"
+    ]
+  },
+  {
+    "title": "20° SEPRIO RUNNING RACE",
+    "date": "18/10/2026",
+    "location": {
+      "city": "Locate Varesino",
+      "province": "CO"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "13",
+      "19"
+    ]
+  },
+  {
+    "title": "10ª CARDIORUNNING – RICORDANDO IL DOTT. DANIELE BONARA",
+    "date": "18/10/2026",
+    "location": {
+      "city": "Crema",
+      "province": "CR"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "3",
+      "7",
+      "11",
+      "15",
+      "20"
+    ]
+  },
+  {
+    "title": "48ª QUATAR PASS IN DI CASIN D'INVRUGN",
+    "date": "18/10/2026",
+    "location": {
+      "city": "Inveruno",
+      "province": "MI"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12",
+      "18"
+    ]
+  },
+  {
+    "title": "8ª DONGNOCCHIRUN",
+    "date": "18/10/2026",
+    "location": {
+      "city": "Pessano con Bornago",
+      "province": "MI"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "3",
+      "6",
+      "10",
+      "15",
+      "21"
+    ]
+  },
+  {
+    "title": "7ª CAMMINATA DELLA SAGRA DI BELFORTE",
+    "date": "18/10/2026",
+    "location": {
+      "city": "Belforte di Gazzuolo",
+      "province": "MN"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "10"
+    ]
+  },
+  {
+    "title": "53ª \"LA BORGOVALTIDONE\"",
+    "date": "18/10/2026",
+    "location": {
+      "city": "Borgonovo Val Tidone [Cantina Valtidone, Via Moretta 58]",
+      "province": "PC"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "3",
+      "6",
+      "10",
+      "15",
+      "24"
+    ]
+  },
+  {
+    "title": "COLLIAMO LE TERME",
+    "date": "18/10/2026",
+    "location": {
+      "city": "Abano Terme (loc. Monteortone)",
+      "province": "PD"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "14",
+      "21"
+    ]
+  },
+  {
+    "title": "21ª MARCIA BROVADA E MUSET",
+    "date": "18/10/2026",
+    "location": {
+      "city": "Tauriano di Spilimbergo",
+      "province": "PN"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12",
+      "18"
+    ]
+  },
+  {
+    "title": "15ª MEMORIAL DANIELE ROVEDA",
+    "date": "18/10/2026",
+    "location": {
+      "city": "SANTA CRISTINA E BISSONE",
+      "province": "PV"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "13",
+      "21"
+    ]
+  },
+  {
+    "title": "22ª PASSEGGIATA \"PER MANO INSIEME\"",
+    "date": "18/10/2026",
+    "location": {
+      "city": "Sant'Eusebio di Bassano del Grappa [Imp.Sportivi Villaggio S.Eusebio 43]",
+      "province": "VI"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "6",
+      "12",
+      "16"
+    ]
+  },
+  {
+    "title": "53° SAFARI DEL COCCODRILLO",
+    "date": "18/10/2026",
+    "location": {
+      "city": "Via Verona San Pietro di Legnago",
+      "province": "VR"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "11",
+      "14"
+    ]
+  },
+  {
+    "title": "48ª TEREMOTATA - ULTRA MARATONA DELL'ISOLA",
+    "date": "25/10/2026",
+    "location": {
+      "city": "Terno d'Isola [Comune - Via Casolini, 7",
+      "province": "BG"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "8",
+      "15",
+      "24",
+      "32",
+      "50"
+    ]
+  },
+  {
+    "title": "20ª MARCIA UN PAESAGGIO DA RISCOPRIRE",
+    "date": "25/10/2026",
+    "location": {
+      "city": "Dovera",
+      "province": "CR"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "8",
+      "13",
+      "21"
+    ]
+  },
+  {
+    "title": "47ª TUTTI ASSIEME A MERATE",
+    "date": "25/10/2026",
+    "location": {
+      "city": "Merate",
+      "province": "LC"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "8",
+      "14",
+      "21"
+    ]
+  },
+  {
+    "title": "49ª CAMMINATA AVISINA - 45ª STRABRIANZA",
+    "date": "25/10/2026",
+    "location": {
+      "city": "Seregno",
+      "province": "MB"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "14",
+      "22"
+    ]
+  },
+  {
+    "title": "12ª CORRICAMBIAGO",
+    "date": "25/10/2026",
+    "location": {
+      "city": "Cambiago - Oratorio Via V.Veneto 2",
+      "province": "MI"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "10",
+      "16",
+      "21"
+    ]
+  },
+  {
+    "title": "50ª CAMINADA DELLE VALLI",
+    "date": "25/10/2026",
+    "location": {
+      "city": "Buscoldo",
+      "province": "MN"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "12"
+    ]
+  },
+  {
+    "title": "39ª MARCIA AIDO",
+    "date": "25/10/2026",
+    "location": {
+      "city": "San Nazzaro di Monticelli [Oratorio]",
+      "province": "PC"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6.7",
+      "12.6"
+    ]
+  },
+  {
+    "title": "16ª \"CORRI O CAMMINA AZZANO\"",
+    "date": "25/10/2026",
+    "location": {
+      "city": "Azzano Decimo",
+      "province": "PN"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "4",
+      "8",
+      "12",
+      "20"
+    ]
+  },
+  {
+    "title": "31° TROFEO MEMORIAL GIANANGELO GASPARINI",
+    "date": "25/10/2026",
+    "location": {
+      "city": "Monticelli Terme",
+      "province": "PR"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "10"
+    ]
+  },
+  {
+    "title": "16ª CAMINADA PAR EL SGUAZO",
+    "date": "25/10/2026",
+    "location": {
+      "city": "Giacciano con Baruchella [P.za Pace]",
+      "province": "RO"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "12",
+      "18"
+    ]
+  },
+  {
+    "title": "MARCIA DEI VIVAI - 19ª MARCIA CON GLI ALPINI PER LORIA",
+    "date": "25/10/2026",
+    "location": {
+      "city": "Loria",
+      "province": "TV"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12",
+      "18"
+    ]
+  },
+  {
+    "title": "18ª PASSEGGIATA TRA LE COLLINE DI MARSAN",
+    "date": "25/10/2026",
+    "location": {
+      "city": "Marsan di Marostica Imp. Sport. Via Vivian",
+      "province": "VI"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "4",
+      "7",
+      "13",
+      "21"
+    ]
+  },
+  {
+    "title": "52ª STRATREVIGLIO",
+    "date": "01/11/2026",
+    "location": {
+      "city": "Treviglio [Piazza Cameroni 1]",
+      "province": "BG"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "15",
+      "21"
+    ]
+  },
+  {
+    "title": "36ª CASCINE E SENTIERI",
+    "date": "01/11/2026",
+    "location": {
+      "city": "Casatenovo",
+      "province": "LC"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "8",
+      "15",
+      "21"
+    ]
+  },
+  {
+    "title": "43ª BRONI-CIGOGNOLA GARA STORICA",
+    "date": "01/11/2026",
+    "location": {
+      "city": "BRONI [Palabrera - via Galilei]",
+      "province": "PV"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12",
+      "18"
+    ]
+  },
+  {
+    "title": "45° STRADAVERIO",
+    "date": "01/11/2026",
+    "location": {
+      "city": "Daverio",
+      "province": "VA"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "13",
+      "20"
+    ]
+  },
+  {
+    "title": "50ª MARCIA DELLE CASTAGNE - 11ª MARATONA STRABERICA",
+    "date": "01/11/2026",
+    "location": {
+      "city": "Castegnero [P.za Mercato]",
+      "province": "VI"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "10",
+      "20",
+      "30",
+      "42"
+    ]
+  },
+  {
+    "title": "CANONICHIAMO 3ª EDIZIONE",
+    "date": "08/11/2026",
+    "location": {
+      "city": "Canonica d'Adda (Bg.) (Oratorio San Luigi - Via Vallazza, 6)",
+      "province": "BG"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12",
+      "18",
+      "21"
+    ]
+  },
+  {
+    "title": "34ª STRACANTU' - PERCORSI ARTISTICI",
+    "date": "08/11/2026",
+    "location": {
+      "city": "Cantù - Piazza Parini,4 sede comune di Cantù",
+      "province": "CO"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "13",
+      "21"
+    ]
+  },
+  {
+    "title": "11ª MARCIA OLTREADDA",
+    "date": "08/11/2026",
+    "location": {
+      "city": "Corte Palasio",
+      "province": "LO"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "14",
+      "21"
+    ]
+  },
+  {
+    "title": "9ª 8KORRERUN",
+    "date": "08/11/2026",
+    "location": {
+      "city": "Correzzana",
+      "province": "MB"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "14",
+      "21"
+    ]
+  },
+  {
+    "title": "33ª TRA CAMPI E ROGGE NEL PARCO MOLGORA",
+    "date": "08/11/2026",
+    "location": {
+      "city": "Carugate",
+      "province": "MI"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "14",
+      "21",
+      "26"
+    ]
+  },
+  {
+    "title": "43ª CJAMINADE PAI CUEI",
+    "date": "08/11/2026",
+    "location": {
+      "city": "Pinzano al Tagliamento",
+      "province": "PN"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "3",
+      "8",
+      "12",
+      "22"
+    ]
+  },
+  {
+    "title": "48ª ADASI IN T'LA FUMARA",
+    "date": "08/11/2026",
+    "location": {
+      "city": "VICOFERTILE",
+      "province": "PR"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "12"
+    ]
+  },
+  {
+    "title": "54ª LA BROSEMADA",
+    "date": "08/11/2026",
+    "location": {
+      "city": "Dueville [Ex Lanerossi Via B.Fracasso]",
+      "province": "VI"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "4",
+      "8",
+      "13",
+      "20"
+    ]
+  },
+  {
+    "title": "33ª CAMINADA DI SAN MARTINO",
+    "date": "08/11/2026",
+    "location": {
+      "city": "Legnago [Via Frattini 14]",
+      "province": "VR"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "3",
+      "7",
+      "12",
+      "20"
+    ]
+  },
+  {
+    "title": "52ª MARCIA DEL TORRONE",
+    "date": "15/11/2026",
+    "location": {
+      "city": "Cremona [Centro Sportivo Stradivari]",
+      "province": "CR"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "10",
+      "15",
+      "20"
+    ]
+  },
+  {
+    "title": "25ª MARCIA SULL'ALPE E SUL SAN GENESIO",
+    "date": "15/11/2026",
+    "location": {
+      "city": "Castello Brianza",
+      "province": "LC"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "4",
+      "8",
+      "16",
+      "23",
+      "30"
+    ]
+  },
+  {
+    "title": "43ª MARCIA DELLA FIERA DI CODOGNO",
+    "date": "15/11/2026",
+    "location": {
+      "city": "Codogno",
+      "province": "LO"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "10",
+      "15",
+      "21",
+      "25"
+    ]
+  },
+  {
+    "title": "18ª MARCIA DI SAN MARTINO",
+    "date": "15/11/2026",
+    "location": {
+      "city": "San Martino al Tagliamento",
+      "province": "PN"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "10",
+      "15"
+    ]
+  },
+  {
+    "title": "CANNETOLO IN MARCIA",
+    "date": "15/11/2026",
+    "location": {
+      "city": "CANNETOLO",
+      "province": "PR"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "10"
+    ]
+  },
+  {
+    "title": "46ª MARCIA TRA I DINTORNI",
+    "date": "15/11/2026",
+    "location": {
+      "city": "Badia Polesine P.za Marconi",
+      "province": "RO"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12",
+      "21"
+    ]
+  },
+  {
+    "title": "48ª MARCIA PER LE PRATERIE",
+    "date": "15/11/2026",
+    "location": {
+      "city": "Poianella di Bressanvido [Palestra Comunale-P.za IV Novembre]",
+      "province": "VI"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "9",
+      "11",
+      "20"
+    ]
+  },
+  {
+    "title": "16° STRANTEGNATE",
+    "date": "22/11/2026",
+    "location": {
+      "city": "Antegnate [Centro Incontro Culturale di fronte Auchan]",
+      "province": "BG"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "14"
+    ]
+  },
+  {
+    "title": "UN PASSO AVANTI",
+    "date": "22/11/2026",
+    "location": {
+      "city": "Valbrembo (BG.) [Centro Sportivo  - Via Don Milani, 3] (BG.)",
+      "province": "BG"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "5"
+    ]
+  },
+  {
+    "title": "52ª QUATTRO PONTI SUL LAMBRO",
+    "date": "22/11/2026",
+    "location": {
+      "city": "Lambrugo",
+      "province": "CO"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12",
+      "21"
+    ]
+  },
+  {
+    "title": "42ª MCAMMINATA DI MARIGNANO (MEMORIAL ZUFFETTI)",
+    "date": "22/11/2026",
+    "location": {
+      "city": "Zivido san Giuliano M.",
+      "province": "LO"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "10",
+      "15"
+    ]
+  },
+  {
+    "title": "4ª TRA LI AGHIS E I MULINS DI BAGNAROLA",
+    "date": "22/11/2026",
+    "location": {
+      "city": "BAGNAROLA di SESTO AL REGHENA",
+      "province": "PN"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "3",
+      "6",
+      "13",
+      "21"
+    ]
+  },
+  {
+    "title": "41ª STRAROSSANO",
+    "date": "22/11/2026",
+    "location": {
+      "city": "Rossano Veneto [Villa Caffo Via Bassano 21]",
+      "province": "VI"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "4",
+      "8",
+      "12",
+      "18"
+    ]
+  },
+  {
+    "title": "11° LE PESTE SULL'ADIGE",
+    "date": "22/11/2026",
+    "location": {
+      "city": "Roverchiaretta, Via Porto",
+      "province": "VR"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6.12.18"
+    ]
+  },
+  {
+    "title": "5ª \"CORRI BAGNOLO\"",
+    "date": "29/11/2026",
+    "location": {
+      "city": "Bagnolo-Centro Anziani Opera Pia",
+      "province": "CR"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "13",
+      "18"
+    ]
+  },
+  {
+    "title": "8ª CORSA DI SAN MARTINO",
+    "date": "29/11/2026",
+    "location": {
+      "city": "Veduggio con Colzano - Centro Sportivo via dell'Atleta",
+      "province": "MB"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "16",
+      "21"
+    ]
+  },
+  {
+    "title": "INSIEME PER RICORDARE",
+    "date": "29/11/2026",
+    "location": {
+      "city": "Besenzone [Piazza della Repubblica]",
+      "province": "PC"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "10"
+    ]
+  },
+  {
+    "title": "44ª QUATRI PAS TA LA PRADERIA",
+    "date": "29/11/2026",
+    "location": {
+      "city": "Istrago di Spilimbergo",
+      "province": "PN"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "14",
+      "21"
+    ]
+  },
+  {
+    "title": "55ª A PEE IN BRUGHEA",
+    "date": "29/11/2026",
+    "location": {
+      "city": "Busto Arsizio",
+      "province": "VA"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "10",
+      "14"
+    ]
+  },
+  {
+    "title": "46ª MARCIA DEI 4 MULINI - 43° TROFEO PRO LOCO",
+    "date": "29/11/2026",
     "location": {
       "city": "Bolzano Vicentino via C.Battisti",
       "province": "VI"
     },
-    "poster": "https://drive.google.com/file/d/1YBIzDgJK4wdV75RI5PnSiXUd1oUq6Etu/view?usp=sharing",
+    "poster": null,
     "source": "FIASP",
     "distances": [
       "5",
@@ -165,39 +8381,25 @@
   },
   {
     "title": "ASPETTANDO IL NATALE CON LE RANE",
-    "date": "30/11/2025",
+    "date": "29/11/2026",
     "location": {
       "city": "via del Redentore,4 Vangadizza di Legnago",
       "province": "VR"
     },
-    "poster": "https://drive.google.com/file/d/1jwtGPMOk-VVhcjoOnp7dYFKlVlz6ZuWu/view?usp=sharing",
+    "poster": null,
     "source": "FIASP",
     "distances": [
-      "Km 3",
-      "Km 7 ripetibile (14km)"
+      "7 ripetibile (14km)"
     ]
   },
   {
-    "title": "1ª CAMMINATA DI BABBO NATALE",
-    "date": "06/12/2025",
-    "location": {
-      "city": "Centro Culturale via Frida Kahlo San Giorgio Bigarello",
-      "province": "MN"
-    },
-    "poster": "https://drive.google.com/file/d/1jvbb0iUyXmL2hJuc6FbpqecfI8xd8x5W/view?usp=sharing",
-    "source": "FIASP",
-    "distances": [
-      "5 RIPETIBILI"
-    ]
-  },
-  {
-    "title": "4ª CORRI PER TELETHON",
-    "date": "07/12/2025",
+    "title": "CORRI PER TELETHON",
+    "date": "06/12/2026",
     "location": {
       "city": "Bonate Sotto (Centro Socio Culturale Via S.. Sebastiano, 3)",
       "province": "BG"
     },
-    "poster": "https://drive.google.com/file/d/17dVZdT86UD4unbRazIy0W1hLyuYnJ0X2/view?usp=sharing",
+    "poster": null,
     "source": "FIASP",
     "distances": [
       "7",
@@ -205,58 +8407,57 @@
     ]
   },
   {
-    "title": "13ª FRA SUCARO E FARINA",
-    "date": "07/12/2025",
+    "title": "40ª CAMMINATA PER GLI AMICI SCOMPARSI",
+    "date": "06/12/2026",
     "location": {
-      "city": "PONTELONGO",
-      "province": "PD"
+      "city": "Palazzo Pignano",
+      "province": "CR"
     },
-    "poster": "https://drive.google.com/file/d/1XwgJ0OwXqo9StlxKMnlLqkLUobQMIm5E/view?usp=sharing",
+    "poster": null,
     "source": "FIASP",
     "distances": [
       "6",
-      "15",
+      "11",
+      "15"
+    ]
+  },
+  {
+    "title": "16ª I SETTE CAMPANILI",
+    "date": "06/12/2026",
+    "location": {
+      "city": "Montesiro di Besana Brianza",
+      "province": "MB"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "13",
       "18"
     ]
   },
   {
-    "title": "1ª MARCIA BABBO RUN",
-    "date": "07/12/2025",
+    "title": "35ª MARCIA DELLA PREMIAZIONE",
+    "date": "06/12/2026",
     "location": {
-      "city": "Cimpello di Fiume Veneto",
-      "province": "PN"
+      "city": "VILLAZZANO CEN. SPORT. DON O. SPADA",
+      "province": "TN"
     },
-    "poster": "https://drive.google.com/file/d/1eljRVbEdGFp1kqkNzXhemzZrcyK-IFAw/view?usp=sharing",
+    "poster": null,
     "source": "FIASP",
     "distances": [
-      "4",
-      "7",
+      "6",
       "12"
     ]
   },
   {
-    "title": "MARCIA IN ROSA",
-    "date": "07/12/2025",
-    "location": {
-      "city": "Gonars",
-      "province": "UD"
-    },
-    "poster": "https://drive.google.com/file/d/17ZgDc0LesbouNAiU8R-ObYZ7E97X3Lkt/view?usp=sharing",
-    "source": "FIASP",
-    "distances": [
-      "3",
-      "7",
-      "16"
-    ]
-  },
-  {
-    "title": "13ª MARCIA DELLE RISORGIVE - 10ª MARCIA DEI BABBI NATALE",
-    "date": "07/12/2025",
+    "title": "13ª MARCIA DELLE RISORGIVE - 11ª MARCIA DEI BABBI NATALE",
+    "date": "06/12/2026",
     "location": {
       "city": "Villaverla [Via Stadio]",
       "province": "VI"
     },
-    "poster": "https://drive.google.com/file/d/1fkFreK3gjHNGkP-aApOeD4JBORUJMAIp/view?usp=sharing",
+    "poster": null,
     "source": "FIASP",
     "distances": [
       "4",
@@ -266,13 +8467,13 @@
     ]
   },
   {
-    "title": "27ª MARCIA DEI TRI CAPITEI",
-    "date": "07/12/2025",
+    "title": "28ª MARCIA DEI TRI CAPITEI",
+    "date": "06/12/2026",
     "location": {
       "city": "Palesella di Cerea",
       "province": "VR"
     },
-    "poster": "https://drive.google.com/file/d/1OZAy77za-7V8p5YUaePYh5cQRaLOGJc2/view?usp=sharing",
+    "poster": null,
     "source": "FIASP",
     "distances": [
       "6",
@@ -281,13 +8482,13 @@
     ]
   },
   {
-    "title": "54ª MAGNUS CURSUS POMI",
-    "date": "08/12/2025",
+    "title": "55ª MAGNUS CURSUS POMI",
+    "date": "08/12/2026",
     "location": {
       "city": "Cremella",
       "province": "LC"
     },
-    "poster": "https://drive.google.com/file/d/1JTcKWKWrR2q12nrm8S5W31-krk4MzKUp/view?usp=sharing",
+    "poster": null,
     "source": "FIASP",
     "distances": [
       "6",
@@ -296,13 +8497,13 @@
     ]
   },
   {
-    "title": "1ª BABBO RUN",
-    "date": "08/12/2025",
+    "title": "2ª BABBO RUN",
+    "date": "08/12/2026",
     "location": {
       "city": "Ospedaletto Lodigiano",
       "province": "LO"
     },
-    "poster": "https://drive.google.com/file/d/1aihhqZ0eO6dG2jj-32tv0wX7ODF8O9aW/view?usp=sharing",
+    "poster": null,
     "source": "FIASP",
     "distances": [
       "6",
@@ -310,13 +8511,13 @@
     ]
   },
   {
-    "title": "8ª MARCIA DEI BABBI NATALE",
-    "date": "08/12/2025",
+    "title": "9ª MARCIA DEI BABBI NATALE",
+    "date": "08/12/2026",
     "location": {
       "city": "San Martino dall'Argine",
       "province": "MN"
     },
-    "poster": "https://drive.google.com/file/d/1tc--OX3gHyZtSxGjipcFpge5RddjeJkW/view?usp=sharing",
+    "poster": null,
     "source": "FIASP",
     "distances": [
       "3",
@@ -325,13 +8526,13 @@
     ]
   },
   {
-    "title": "35ª MARCIA DELL'IMMACOLATA",
-    "date": "08/12/2025",
+    "title": "36ª MARCIA DELL'IMMACOLATA",
+    "date": "08/12/2026",
     "location": {
-      "city": "BESURICA [Via Grazioli 1]",
+      "city": "PIACENZA QUARTIERE BESURICA [PIAZZ.LE ORATORIO PARROCCHIA]",
       "province": "PC"
     },
-    "poster": "https://drive.google.com/file/d/142EP-dfEv1qG-6g8qyue4xhKeZnQquHq/view?usp=sharing",
+    "poster": null,
     "source": "FIASP",
     "distances": [
       "4",
@@ -340,116 +8541,43 @@
     ]
   },
   {
-    "title": "7° CAMINA CORI E CIACOEA",
-    "date": "08/12/2025",
-    "location": {
-      "city": "Rubano - p.zza M. L. King",
-      "province": "PD"
-    },
-    "poster": "https://drive.google.com/file/d/12dpvI3V7BULcAOQZMjDFZLDbr7OpFZ3r/view?usp=sharing",
-    "source": "FIASP",
-    "distances": [
-      "6",
-      "10",
-      "14"
-    ]
-  },
-  {
-    "title": "10ª PORTONS DI NADAL",
-    "date": "08/12/2025",
+    "title": "11ª PORTONS DI NADAL",
+    "date": "08/12/2026",
     "location": {
       "city": "Toppo di Travesio - via Fornace",
       "province": "PN"
     },
-    "poster": "https://drive.google.com/file/d/1cdaz6uizxJwp6l79OVvWMMtr2hXCIKhB/view?usp=sharing",
+    "poster": null,
     "source": "FIASP",
     "distances": [
       "7",
       "10",
-      "14"
+      "13"
     ]
   },
   {
-    "title": "CORSA DELLA COMETA A CASTELNOVO BARIANO",
-    "date": "08/12/2025",
+    "title": "49ª MARCIA DEL GIOCATTOLO",
+    "date": "08/12/2026",
     "location": {
-      "city": "Castelnovo Bariano RO di fronte al Municipio Via Municipale,",
-      "province": "RO"
-    },
-    "poster": "https://drive.google.com/file/d/12tvX_rOiCG0NJvWwXMV_Ef0pyi58RakZ/view?usp=sharing",
-    "source": "FIASP",
-    "distances": [
-      "5",
-      "10"
-    ]
-  },
-  {
-    "title": "2° MONTE CHRISTMAS WALK",
-    "date": "08/12/2025",
-    "location": {
-      "city": "MONTEBELLUNA",
-      "province": "TV"
-    },
-    "poster": "https://drive.google.com/file/d/15mFGC-UvRbmju4n-OUwaB8j99hW_KUWM/view?usp=sharing",
-    "source": "FIASP",
-    "distances": [
-      "8.5"
-    ]
-  },
-  {
-    "title": "22ª CJAMINADE DI S. LUSSIE",
-    "date": "08/12/2025",
-    "location": {
-      "city": "Gemona del Friuli",
-      "province": "UD"
-    },
-    "poster": "https://drive.google.com/file/d/1dDAkXh_Twasf_iG96zEKe6g1DBCVEB1w/view?usp=sharing",
-    "source": "FIASP",
-    "distances": [
-      "7",
-      "14",
-      "21"
-    ]
-  },
-  {
-    "title": "44° ULTIMO PASSO D'AUTUNNO",
-    "date": "08/12/2025",
-    "location": {
-      "city": "Orgiano [Scuola Media G.Piovene Via D.Alighieri]",
-      "province": "VI"
-    },
-    "poster": "https://drive.google.com/file/d/1qumbHLUkYrfaHiKVKln8fDkuXlDAyo9y/view?usp=sharing",
-    "source": "FIASP",
-    "distances": [
-      "3",
-      "6",
-      "12",
-      "20"
-    ]
-  },
-  {
-    "title": "48ª MARCIA DEL GIOCATTOLO",
-    "date": "08/12/2025",
-    "location": {
-      "city": "Verona Piazza dell’Arsenale",
+      "city": "Verona [P.za Brà]",
       "province": "VR"
     },
     "poster": null,
     "source": "FIASP",
     "distances": [
       "2",
-      "5",
+      "6",
       "10"
     ]
   },
   {
-    "title": "18ª CAMMINATA \"BERGAMO HA UN CUORE GRANDE\" PER LA SOLIDARIETA'",
-    "date": "14/12/2025",
+    "title": "19ª CAMMINATA \"BERGAMO HA UN CUORE GRANDE\" PER LA SOLIDARIETA'",
+    "date": "13/12/2026",
     "location": {
       "city": "Bergamo [ex Ospedale Neuropscichiatrico, Borgo Palazzo 130]",
       "province": "BG"
     },
-    "poster": "https://drive.google.com/file/d/1C2GYqzugJvK5tutaSf8e606ruvJBlUlw/view?usp=sharing",
+    "poster": null,
     "source": "FIASP",
     "distances": [
       "4",
@@ -459,12 +8587,12 @@
   },
   {
     "title": "BABBO NATALE DI CORSA",
-    "date": "14/12/2025",
+    "date": "13/12/2026",
     "location": {
       "city": "Rovellasca",
       "province": "CO"
     },
-    "poster": "https://drive.google.com/file/d/14AgRKas6fL8oiJgDYxMzSExWoZ2BxxOG/view?usp=sharing",
+    "poster": null,
     "source": "FIASP",
     "distances": [
       "6",
@@ -473,54 +8601,26 @@
     ]
   },
   {
-    "title": "CAMMINATA DEI BABBO NATALE - 5^ EDIZIONE",
-    "date": "14/12/2025",
+    "title": "CAMMINATA DEI BABBO NATALE - 6° EDIZIONE",
+    "date": "13/12/2026",
     "location": {
       "city": "CABIATE",
       "province": "CO"
     },
-    "poster": "https://drive.google.com/file/d/1Sf0mHEy5yxV3XitflfRyeNnMqxjyNZRI/view?usp=sharing",
+    "poster": null,
     "source": "FIASP",
     "distances": [
       "4"
     ]
   },
   {
-    "title": "39ª CAMMINATA PER GLI AMICI SCOMPARSI",
-    "date": "14/12/2025",
+    "title": "27ª CORSA PODISTICA  SAN MICHELE  SUI COLLI DEL GARDA",
+    "date": "13/12/2026",
     "location": {
-      "city": "Palazzo Pignano",
-      "province": "CR"
-    },
-    "poster": "https://drive.google.com/file/d/1wmfN5s9A22cb0e8JAk4TPHaIaWiAW6ra/view?usp=sharing",
-    "source": "FIASP",
-    "distances": [
-      "6",
-      "11",
-      "15"
-    ]
-  },
-  {
-    "title": "CAMMINATA NATALIZIA",
-    "date": "14/12/2025",
-    "location": {
-      "city": "GORIZIA Piazza Vittoria",
-      "province": "GO"
-    },
-    "poster": "https://drive.google.com/file/d/1T80pNZLS2bn7d1zghf21uHXAFMfJs2h3/view?usp=sharing",
-    "source": "FIASP",
-    "distances": [
-      "5"
-    ]
-  },
-  {
-    "title": "26ª CORSA PODISTICA  SAN MICHELE  SUI COLLI DEL GARDA",
-    "date": "14/12/2025",
-    "location": {
-      "city": "Monzambano - Park via degli Alpini-",
+      "city": "Park via degli Alpini- Monzambano",
       "province": "MN"
     },
-    "poster": "https://drive.google.com/file/d/1MqStqIusnmHq_eMONL0VfpnsK96KODE2/view?usp=sharing",
+    "poster": null,
     "source": "FIASP",
     "distances": [
       "6",
@@ -529,13 +8629,13 @@
     ]
   },
   {
-    "title": "35ª MARCIA DI SANTA LUCIA",
-    "date": "14/12/2025",
+    "title": "36ª MARCIA DI SANTA LUCIA",
+    "date": "13/12/2026",
     "location": {
-      "city": "Porcia",
+      "city": "PORCIA",
       "province": "PN"
     },
-    "poster": "https://drive.google.com/file/d/1ms-k65bLUSbAteGI7sgc-rKo7Xuht4NZ/view?usp=sharing",
+    "poster": null,
     "source": "FIASP",
     "distances": [
       "6",
@@ -543,25 +8643,39 @@
     ]
   },
   {
-    "title": "37ª MARCIA DEL MANDORLATO",
-    "date": "14/12/2025",
+    "title": "CIRCUITO DEL CINQUANTENARIO FIASP VICENZA 4ª RADUNO SU P.P. LE RISORGIVE",
+    "date": "13/12/2026",
+    "location": {
+      "city": "POIANELLA DI BRESSANVIDO",
+      "province": "VI"
+    },
+    "poster": "https://drive.google.com/file/d/1J4-t7Bv2oBtpoYzfdxO_IusGW-4lkImg/view?usp=sharing",
+    "source": "FIASP",
+    "distances": [
+      "4",
+      "8 ripetibili"
+    ]
+  },
+  {
+    "title": "MANDORLATO",
+    "date": "13/12/2026",
     "location": {
       "city": "Cologna VENETA",
       "province": "VR"
     },
-    "poster": "https://drive.google.com/file/d/1vfx6pABWMINFE_XtqHyQL-FKz777w8Fr/view?usp=sharing",
+    "poster": null,
     "source": "FIASP",
     "distances": [
-      "6.5",
-      "12.5",
-      "17.5"
+      "6",
+      "12",
+      "19"
     ]
   },
   {
-    "title": "4ª SGANBADA DEI BABBI NATALE",
-    "date": "20/12/2025",
+    "title": "5ª SGANBADA DEI BABBI NATALE",
+    "date": "19/12/2026",
     "location": {
-      "city": "BARUCHELLA Piazza Libertà",
+      "city": "Baruchella Piazza Libertà",
       "province": "RO"
     },
     "poster": null,
@@ -572,13 +8686,13 @@
     ]
   },
   {
-    "title": "52ª STRACADA",
-    "date": "21/12/2025",
+    "title": "53ª STRACADA",
+    "date": "20/12/2026",
     "location": {
       "city": "Seveso",
       "province": "MB"
     },
-    "poster": "https://drive.google.com/file/d/13VAjntkkgSJYQuHq0b_SVtxozQRdxG7n/view?usp=sharing",
+    "poster": null,
     "source": "FIASP",
     "distances": [
       "7",
@@ -588,12 +8702,12 @@
   },
   {
     "title": "CAMMINATA DI NATALE PER SOLIDARIETA'",
-    "date": "21/12/2025",
+    "date": "20/12/2026",
     "location": {
       "city": "Trezzo sull'Adda",
       "province": "MI"
     },
-    "poster": "https://drive.google.com/file/d/1K4A3NOsfo8IaNQJk8Te68_I7OqS77_v9/view?usp=sharing",
+    "poster": null,
     "source": "FIASP",
     "distances": [
       "8",
@@ -603,7 +8717,7 @@
   },
   {
     "title": "BABBO CHRISTMAS RUN",
-    "date": "21/12/2025",
+    "date": "20/12/2026",
     "location": {
       "city": "BASTIA DI ROVOLON",
       "province": "PD"
@@ -613,58 +8727,29 @@
     "distances": []
   },
   {
-    "title": "13ª MARCIA DI BABBO NATALE",
-    "date": "21/12/2025",
+    "title": "14ª MARCIA DI BABBO NATALE",
+    "date": "20/12/2026",
     "location": {
       "city": "Spilimbergo",
       "province": "PN"
     },
-    "poster": "https://drive.google.com/file/d/1Ip730bAwoiofU6Exbi_f7tEu6gEEE2oi/view?usp=sharing",
+    "poster": null,
     "source": "FIASP",
     "distances": [
+      "4",
       "6",
       "12",
       "18"
     ]
   },
   {
-    "title": "34ª DICEMBRINA CERVIGNANESE",
-    "date": "21/12/2025",
-    "location": {
-      "city": "Cervignano",
-      "province": "UD"
-    },
-    "poster": "https://drive.google.com/file/d/1-9Rl_UUuem-zBx6QZKA2eSbHCKcfYi71/view?usp=sharing",
-    "source": "FIASP",
-    "distances": [
-      "7",
-      "12",
-      "21"
-    ]
-  },
-  {
-    "title": "SPETAME CHE RIVO",
-    "date": "21/12/2025",
-    "location": {
-      "city": "Caorle",
-      "province": "VE"
-    },
-    "poster": "https://drive.google.com/file/d/1CcNb48lP2gTiRhJ8HOZDcrDDoDrrNHUU/view?usp=sharing",
-    "source": "FIASP",
-    "distances": [
-      "5.5",
-      "11.5",
-      "20.5"
-    ]
-  },
-  {
     "title": "CORSA DEI BABBI NATALE",
-    "date": "21/12/2025",
+    "date": "20/12/2026",
     "location": {
       "city": "Zugliano Via Marconi",
       "province": "VI"
     },
-    "poster": "https://drive.google.com/file/d/1pdAkyrBmwvgk4gJPacT3nwUSKVSyv2kc/view?usp=sharing",
+    "poster": null,
     "source": "FIASP",
     "distances": [
       "7",
@@ -672,8 +8757,8 @@
     ]
   },
   {
-    "title": "13ª FIACCOLATA DI NATALE",
-    "date": "24/12/2025",
+    "title": "14ª FIACCOLATA DI NATALE",
+    "date": "24/12/2026",
     "location": {
       "city": "Como",
       "province": "CO"
@@ -685,13 +8770,13 @@
     ]
   },
   {
-    "title": "14ª CORRI CHE TI PASSA\"CAMMINATA DELLA VIGILIA\"",
-    "date": "24/12/2025",
+    "title": "15ª CORRI CHE TI PASSA\"CAMMINATA DELLA VIGILIA\"",
+    "date": "24/12/2026",
     "location": {
-      "city": "Via Piave-Cicognara di Viadana",
+      "city": "Piazza Don Primo Mazzolari-Cicognara di Viadana",
       "province": "MN"
     },
-    "poster": "https://drive.google.com/file/d/1aJjkQ8lQzFnh84GF1uzOCj1MJfTm4iJi/view?usp=sharing",
+    "poster": null,
     "source": "FIASP",
     "distances": [
       "5",
@@ -699,13 +8784,13 @@
     ]
   },
   {
-    "title": "34ª MARCIA DEL RADICCHIO ROSSO DI ASIGLIANO",
-    "date": "26/12/2025",
+    "title": "35ª MARCIA DEL RADICCHIO ROSSO DI ASIGLIANO",
+    "date": "26/12/2026",
     "location": {
       "city": "Asigliano Veneto [Municipio Via IV Novembre 3]",
       "province": "VI"
     },
-    "poster": "https://drive.google.com/file/d/1S0cpwAUNH89W1dkB-pfHfkA6eUdRrSKN/view?usp=sharing",
+    "poster": null,
     "source": "FIASP",
     "distances": [
       "6",
@@ -714,13 +8799,13 @@
     ]
   },
   {
-    "title": "35ª CAMMINATA DI FINE ANNO",
-    "date": "28/12/2025",
+    "title": "36ª CAMMINATA DI FINE ANNO",
+    "date": "27/12/2026",
     "location": {
       "city": "Novedrate",
       "province": "CO"
     },
-    "poster": "https://drive.google.com/file/d/18rfthNs_At4-K3U42Bx3Nc-at1CtzvZc/view?usp=sharing",
+    "poster": null,
     "source": "FIASP",
     "distances": [
       "6",
@@ -730,12 +8815,12 @@
   },
   {
     "title": "47ª MARATONINA DI SAN SILVESTRO",
-    "date": "28/12/2025",
+    "date": "27/12/2026",
     "location": {
       "city": "CUSIGNANA - GIAVERA DEL MONTELLO",
       "province": "TV"
     },
-    "poster": "https://drive.google.com/file/d/1aS2YAk7IOUyzpKXkko6-kn3I-E32rQHe/view?usp=sharing",
+    "poster": null,
     "source": "FIASP",
     "distances": [
       "4",
