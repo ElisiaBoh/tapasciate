@@ -768,7 +768,7 @@
     "title": "2ª CAMINADA IN MASCHERA DE SAN VALENTIN",
     "date": "15/02/2026",
     "location": {
-      "city": "BAVARIA - NERVESA DELLA BATTAGLIA",
+      "city": "Piazza A. Moro - NERVESA DELLA BATTAGLIA - BAVARIA",
       "province": "TV"
     },
     "poster": null,
@@ -1175,20 +1175,6 @@
     "location": {
       "city": "Furato di Inveruno - Campo Sportivo Via Boves",
       "province": "MI"
-    },
-    "poster": null,
-    "source": "FIASP",
-    "distances": [
-      "5",
-      "10"
-    ]
-  },
-  {
-    "title": "23ª MARCIA DEI \"5 FIUMI\"",
-    "date": "08/03/2026",
-    "location": {
-      "city": "Palse di Porcia",
-      "province": "PN"
     },
     "poster": null,
     "source": "FIASP",
@@ -2618,7 +2604,7 @@
     ]
   },
   {
-    "title": "DI CORSA TRA ADDA E CANTO -145 MEMORIAL VIOLA CENTURELLI",
+    "title": "DI CORSA TRA ADDA E CANTO -15 MEMORIAL VIOLA CENTURELLI",
     "date": "01/05/2026",
     "location": {
       "city": "Calusco d'Adda [Pol. Caluschese, Via Cavalieri del Lavoro, 236]",
@@ -3022,19 +3008,6 @@
     "source": "FIASP",
     "distances": [
       "5"
-    ]
-  },
-  {
-    "title": "GIORNATA MONDIALE DELLA MARCIA IVV",
-    "date": "08/05/2026",
-    "location": {
-      "city": "Verona - Montorio",
-      "province": "VR"
-    },
-    "poster": null,
-    "source": "FIASP",
-    "distances": [
-      "10"
     ]
   },
   {
@@ -5028,6 +5001,20 @@
     ]
   },
   {
+    "title": "23ª MARCIA DEI \"5 FIUMI\"",
+    "date": "04/07/2026",
+    "location": {
+      "city": "Palse di Porcia",
+      "province": "PN"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "10"
+    ]
+  },
+  {
     "title": "49ª TRI PASS AL ROCUL",
     "date": "05/07/2026",
     "location": {
@@ -5423,14 +5410,16 @@
     "title": "27ª CAMMINATA DEL PROSCIUTTO",
     "date": "19/07/2026",
     "location": {
-      "city": "Scurano",
+      "city": "Scurano - via enza 2",
       "province": "PR"
     },
     "poster": null,
     "source": "FIASP",
     "distances": [
-      "5",
+      "4",
+      "7",
       "11",
+      "14",
       "18"
     ]
   },
