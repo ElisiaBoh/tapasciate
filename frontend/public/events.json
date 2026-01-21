@@ -1,16 +1,5 @@
 [
   {
-    "title": "StraStezzano",
-    "date": "18/01/2026",
-    "location": {
-      "city": "Stezzano",
-      "province": "BG"
-    },
-    "poster": "https://www.csibergamo.it/images/marce/A4%20Strastezzano%20-%202026-1-1.jpg",
-    "source": "CSI",
-    "distances": []
-  },
-  {
     "title": "Run Cortenuova",
     "date": "25/01/2026",
     "location": {
@@ -61,7 +50,7 @@
       "city": "Grumello del Monte",
       "province": "BG"
     },
-    "poster": null,
+    "poster": "https://www.csibergamo.it/images/marce/22-02%20Grumello.jpg",
     "source": "CSI",
     "distances": []
   },
@@ -83,7 +72,7 @@
       "city": "Medolago",
       "province": "BG"
     },
-    "poster": null,
+    "poster": "https://www.csibergamo.it/images/marce/marcia_per_la_vita_2026_breve-1.jpg",
     "source": "CSI",
     "distances": []
   },
@@ -141,139 +130,6 @@
     "poster": null,
     "source": "CSI",
     "distances": []
-  },
-  {
-    "title": "17ª  PASSI NEL TEMPO - MARCIA GUIDATA TRA MONTEFORTE E SOAVE",
-    "date": "17/01/2026",
-    "location": {
-      "city": "Monteforte d’Alpone [P.za Salvo d'Acquisto]",
-      "province": "VR"
-    },
-    "poster": "https://drive.google.com/file/d/1L0pRGOfZz45isBBqNnpGf5gcEhnMfXDc/view?usp=sharing",
-    "source": "FIASP",
-    "distances": [
-      "10"
-    ]
-  },
-  {
-    "title": "ASNAGO LA CORSA CHE SCALDA I CUORI",
-    "date": "18/01/2026",
-    "location": {
-      "city": "Cermenate - Piazza SS Pietro e Paolo",
-      "province": "CO"
-    },
-    "poster": "https://drive.google.com/file/d/1ZsQ3VBG-clq4rXDM6DY4QfWnMuseD2Hf/view?usp=sharing",
-    "source": "FIASP",
-    "distances": [
-      "8",
-      "14",
-      "20"
-    ]
-  },
-  {
-    "title": "45ª CAMMINATA PANDINESE",
-    "date": "18/01/2026",
-    "location": {
-      "city": "Pandino",
-      "province": "CR"
-    },
-    "poster": "https://drive.google.com/file/d/1ZQIOij3e68ttjbOFzTnNEgb0EoOP0oFW/view?usp=sharing",
-    "source": "FIASP",
-    "distances": [
-      "8.5",
-      "13.5",
-      "18.5",
-      "22"
-    ]
-  },
-  {
-    "title": "52ª MARCIA DI SANT'AGNESE",
-    "date": "18/01/2026",
-    "location": {
-      "city": "Rorai Piccolo di Porcia",
-      "province": "PN"
-    },
-    "poster": "https://drive.google.com/file/d/1BuWmMIkTUbY373WTiRQc65Q-IibgiNjD/view?usp=sharing",
-    "source": "FIASP",
-    "distances": [
-      "7",
-      "12",
-      "18"
-    ]
-  },
-  {
-    "title": "48ª MARCIA DI SANT'ANTONIO",
-    "date": "18/01/2026",
-    "location": {
-      "city": "Zinasco Vecchio - Piazza Vittoria",
-      "province": "PV"
-    },
-    "poster": "https://drive.google.com/file/d/1zI-xkkkV7CkUm12-QhHKTcLiczu3TBkx/view?usp=sharing",
-    "source": "FIASP",
-    "distances": [
-      "7",
-      "13",
-      "19"
-    ]
-  },
-  {
-    "title": "30ª MARCIA DELLA SOLIDARIETA' \"MEMORIAL FRANCO QUARGNAL \"",
-    "date": "18/01/2026",
-    "location": {
-      "city": "Ruda",
-      "province": "UD"
-    },
-    "poster": "https://drive.google.com/file/d/1DeKpLUR-fVhQm-Ekw9hBbggBwyV4WYxj/view?usp=sharing",
-    "source": "FIASP",
-    "distances": [
-      "7",
-      "12"
-    ]
-  },
-  {
-    "title": "46ª MARCIA DELLA FRATERNITA'",
-    "date": "18/01/2026",
-    "location": {
-      "city": "Monticello Conte Otto Piazzetta ex scuole elementari",
-      "province": "VI"
-    },
-    "poster": "https://drive.google.com/file/d/1J1EweTG2YB0WChNHyKoTvhALgPCCqQSP/view?usp=sharing",
-    "source": "FIASP",
-    "distances": [
-      "7",
-      "13",
-      "18"
-    ]
-  },
-  {
-    "title": "49ª MONTEFORTIANA - S.ANTONIO ABATE  FALCONERI",
-    "date": "18/01/2026",
-    "location": {
-      "city": "Monteforte d’Alpone [P.za Salvo d'Acquisto]",
-      "province": "VR"
-    },
-    "poster": "https://drive.google.com/file/d/1L0pRGOfZz45isBBqNnpGf5gcEhnMfXDc/view?usp=sharing",
-    "source": "FIASP",
-    "distances": [
-      "6",
-      "9",
-      "14",
-      "20"
-    ]
-  },
-  {
-    "title": "12ª MARCIA DEL RADICCHIO",
-    "date": "24/01/2026",
-    "location": {
-      "city": "Casaleone Piastra Polivalente “Loris Romano” Piazza della Pace",
-      "province": "VR"
-    },
-    "poster": "https://drive.google.com/file/d/1t7O5TmsT45uqoqb1-WE5gxUaXhVZkr0p/view?usp=sharing",
-    "source": "FIASP",
-    "distances": [
-      "5",
-      "10"
-    ]
   },
   {
     "title": "15ª CINQ PASS PAR BREGNAN",
@@ -362,7 +218,7 @@
       "city": "Fossalunga - Vedelago",
       "province": "TV"
     },
-    "poster": null,
+    "poster": "https://drive.google.com/file/d/1-TKJj37PdU4zOnVFDpxCjR9TPixyDU5N/view?usp=sharing",
     "source": "FIASP",
     "distances": [
       "6",
@@ -500,6 +356,19 @@
     ]
   },
   {
+    "title": "GC 01/2026 FORCA CANAPINE (RI)",
+    "date": "01/02/2026",
+    "location": {
+      "city": "Pantani di Accumoli (RI)",
+      "province": "RI"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7"
+    ]
+  },
+  {
     "title": "50ª MARCIA DEL REDENTORE",
     "date": "01/02/2026",
     "location": {
@@ -582,7 +451,7 @@
       "city": "P.zza Don Primo Mazzolari Cicognara di Viadana",
       "province": "MN"
     },
-    "poster": null,
+    "poster": "https://drive.google.com/file/d/17CBZVwxV8YsK4mGwc7F_pNa0NXfk7HZ4/view?usp=sharing",
     "source": "FIASP",
     "distances": [
       "5",
@@ -698,7 +567,7 @@
       "city": "Castellazzo di Bollate - Corte Grande - Via Fametta",
       "province": "MI"
     },
-    "poster": null,
+    "poster": "https://drive.google.com/file/d/13rgVCmBjFLMPjBkKJ4tMPi65Ep3DaN6e/view?usp=sharing",
     "source": "FIASP",
     "distances": [
       "7",
@@ -771,7 +640,7 @@
       "city": "Piazza A. Moro - NERVESA DELLA BATTAGLIA - BAVARIA",
       "province": "TV"
     },
-    "poster": null,
+    "poster": "https://drive.google.com/file/d/10ukJEPB3Xl_uTojg-Fj4q9KV03n072di/view?usp=sharing",
     "source": "FIASP",
     "distances": [
       "5",
@@ -847,7 +716,7 @@
       "city": "Tezze sul Brenta Parco dell'amicizia",
       "province": "VI"
     },
-    "poster": null,
+    "poster": "https://drive.google.com/file/d/124E4tkD0GiT28Gljb2YhEFXkij8UhXJ0/view?usp=sharing",
     "source": "FIASP",
     "distances": [
       "8"
@@ -860,7 +729,7 @@
       "city": "Calusco d'Adda - Palestra Scuole Medie- Via G. Marconi, 915",
       "province": "BG"
     },
-    "poster": null,
+    "poster": "https://drive.google.com/file/d/1Tn76Oj8gQeM5y0dHNUd0Z3Gc9zTwbhNi/view?usp=sharing",
     "source": "FIASP",
     "distances": [
       "7",
@@ -923,7 +792,7 @@
       "city": "piazz.ta San Costanzo Villa d'Adige di Badia Polesine",
       "province": "RO"
     },
-    "poster": null,
+    "poster": "https://drive.google.com/file/d/1txbm-kPKF0FJqfgPlvZnXu3lzkWbVUKK/view?usp=sharing",
     "source": "FIASP",
     "distances": [
       "3",
@@ -1059,7 +928,7 @@
       "city": "San Leonardo Val Cellina-Pro Loco San Leonardo",
       "province": "PN"
     },
-    "poster": "https://drive.google.com/file/d/1oFxcNHLXR-9x9QMHYYvLf0kSkjHt3WMi/view?usp=sharing",
+    "poster": "https://drive.google.com/file/d/1qjpJZBWjc6wmeok-WPJfw-a9T5LIcLFp/view?usp=sharing",
     "source": "FIASP",
     "distances": [
       "4",
@@ -1074,7 +943,7 @@
       "city": "Piazza Trieste Cavazzale - Monticello Conte Otto",
       "province": "VI"
     },
-    "poster": null,
+    "poster": "https://drive.google.com/file/d/1HRBGvkDUqesDsqCIcCjbmdx_Fzt3WjnF/view?usp=sharing",
     "source": "FIASP",
     "distances": [
       "4",
@@ -1212,6 +1081,21 @@
     ]
   },
   {
+    "title": "29ª MARCIA DEE VIOE",
+    "date": "08/03/2026",
+    "location": {
+      "city": "Annone Veneto - Piazzale del Donatore",
+      "province": "VE"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "10",
+      "20"
+    ]
+  },
+  {
     "title": "53ª MARCIA DELLE PRIMULE",
     "date": "08/03/2026",
     "location": {
@@ -1294,7 +1178,7 @@
       "city": "Oggiono",
       "province": "LC"
     },
-    "poster": null,
+    "poster": "https://drive.google.com/file/d/1PjoteF8W8bc_dWugWisgyNUKG6szuUQ4/view?usp=sharing",
     "source": "FIASP",
     "distances": [
       "7",
@@ -1371,7 +1255,7 @@
       "city": "BUSTO ARSIZIO",
       "province": "VA"
     },
-    "poster": null,
+    "poster": "https://drive.google.com/file/d/1PjoteF8W8bc_dWugWisgyNUKG6szuUQ4/view?usp=sharing",
     "source": "FIASP",
     "distances": [
       "6",
@@ -1536,7 +1420,7 @@
       "city": "Maron di Brugnera",
       "province": "PN"
     },
-    "poster": null,
+    "poster": "https://drive.google.com/file/d/1qOdhc6Fa1aC4OYnH9JjTxJywWLgdvQA_/view?usp=sharing",
     "source": "FIASP",
     "distances": [
       "3.5",
@@ -1624,12 +1508,25 @@
       "city": "SONCINO",
       "province": "CR"
     },
-    "poster": null,
+    "poster": "https://drive.google.com/file/d/15GurCbBelPFHFEpb9SPlq6qVSYoUTy4K/view?usp=sharing",
     "source": "FIASP",
     "distances": [
       "7",
       "14",
       "18"
+    ]
+  },
+  {
+    "title": "TRA LA FOIAROLA E LA STORIA",
+    "date": "29/03/2026",
+    "location": {
+      "city": "Vermegliano Viale Garibaldi Parrocchia S.Stefano",
+      "province": "GO"
+    },
+    "poster": "https://drive.google.com/file/d/1zWd4RHu-nsPbtwOMOJUpKgy9lUc_9myy/view?usp=sharing",
+    "source": "FIASP",
+    "distances": [
+      "4 7 12 17"
     ]
   },
   {
@@ -1712,7 +1609,7 @@
       "city": "Meduno",
       "province": "PN"
     },
-    "poster": null,
+    "poster": "https://drive.google.com/file/d/1v3LgHhUU0e3L8UXGLUsxtg-ZIT9KZQTk/view?usp=sharing",
     "source": "FIASP",
     "distances": [
       "6",
@@ -1779,6 +1676,20 @@
     "distances": []
   },
   {
+    "title": "7° PASQUA CON VERONA RUNNER",
+    "date": "05/04/2026",
+    "location": {
+      "city": "Verona Piazza Bra",
+      "province": "VR"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "10"
+    ]
+  },
+  {
     "title": "47° CROSS OLGIATESE - RICORDANDO MARIO BRICCOLA",
     "date": "06/04/2026",
     "location": {
@@ -1837,6 +1748,21 @@
     "distances": [
       "7",
       "12"
+    ]
+  },
+  {
+    "title": "26ª CORMORANA",
+    "date": "06/04/2026",
+    "location": {
+      "city": "Martignacco",
+      "province": "UD"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "14",
+      "21.5"
     ]
   },
   {
@@ -1936,7 +1862,7 @@
       "city": "Montodine",
       "province": "CR"
     },
-    "poster": null,
+    "poster": "https://drive.google.com/file/d/1ViTJUzn1662kNZraQh7tpscnKN8RWeIA/view?usp=sharing",
     "source": "FIASP",
     "distances": [
       "3",
@@ -2060,7 +1986,7 @@
       "city": "Altavilla Vicentina Via Cavour 100",
       "province": "VI"
     },
-    "poster": null,
+    "poster": "https://drive.google.com/file/d/1nc8kgTfb2UdGnMbljP19MSVf7aohsZ7T/view?usp=sharing",
     "source": "FIASP",
     "distances": [
       "5",
@@ -2144,6 +2070,19 @@
     ]
   },
   {
+    "title": "MARCIA \"SOLIDARIETA' E' VITA\" IVª EDIZIONE",
+    "date": "19/04/2026",
+    "location": {
+      "city": "MONFALCONE",
+      "province": "GO"
+    },
+    "poster": "https://drive.google.com/file/d/1ffL-WKf24jS7aTZ7rJMkbzuJ6V98e2v-/view?usp=sharing",
+    "source": "FIASP",
+    "distances": [
+      "4 8 13"
+    ]
+  },
+  {
     "title": "LAGHI - BOSISIO PARINI",
     "date": "19/04/2026",
     "location": {
@@ -2187,20 +2126,6 @@
       "6",
       "10",
       "15"
-    ]
-  },
-  {
-    "title": "6° TROFEO FORESTA DELLA CARPANETA",
-    "date": "19/04/2026",
-    "location": {
-      "city": "Gazzo di San Giorgio Bigarello",
-      "province": "MN"
-    },
-    "poster": null,
-    "source": "FIASP",
-    "distances": [
-      "6",
-      "12"
     ]
   },
   {
@@ -2516,6 +2441,20 @@
     ]
   },
   {
+    "title": "6° TROFEO FORESTA DELLA CARPANETA",
+    "date": "26/04/2026",
+    "location": {
+      "city": "Gazzo di San Giorgio Bigarello",
+      "province": "MN"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12"
+    ]
+  },
+  {
     "title": "13ª MARCIA FO.CA.RO.SA.",
     "date": "26/04/2026",
     "location": {
@@ -2777,6 +2716,20 @@
     "source": "FIASP",
     "distances": [
       "1"
+    ]
+  },
+  {
+    "title": "OGGIONO CORRE",
+    "date": "02/05/2026",
+    "location": {
+      "city": "Oggiono",
+      "province": "LC"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7",
+      "13"
     ]
   },
   {
@@ -3160,21 +3113,6 @@
     ]
   },
   {
-    "title": "49ª MARCIARENA MEETING DEL CUSTOZA – 19ª  I CAMPIONI DI DOMANI",
-    "date": "10/05/2026",
-    "location": {
-      "city": "Sommacampagna [Via 2 Giugno Villa Venier]",
-      "province": "VR"
-    },
-    "poster": null,
-    "source": "FIASP",
-    "distances": [
-      "6",
-      "9",
-      "14"
-    ]
-  },
-  {
     "title": "33ª MARCIA TRA COLLI E VIGNETI",
     "date": "10/05/2026",
     "location": {
@@ -3369,21 +3307,6 @@
     ]
   },
   {
-    "title": "43ª STRAVERONA",
-    "date": "17/05/2026",
-    "location": {
-      "city": "Verona Piazza Bra",
-      "province": "VR"
-    },
-    "poster": null,
-    "source": "FIASP",
-    "distances": [
-      "5",
-      "10",
-      "20"
-    ]
-  },
-  {
     "title": "46ª QUATAR SALT COI SCIATT",
     "date": "18/05/2026",
     "location": {
@@ -3396,6 +3319,20 @@
       "8",
       "13",
       "18"
+    ]
+  },
+  {
+    "title": "7ª BUSA 10 KM",
+    "date": "19/05/2026",
+    "location": {
+      "city": "Busa di Vigonza",
+      "province": "PD"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "5",
+      "10"
     ]
   },
   {
@@ -3539,6 +3476,19 @@
       "8",
       "14",
       "21"
+    ]
+  },
+  {
+    "title": "3ª MEGLIO MUOVERSI",
+    "date": "24/05/2026",
+    "location": {
+      "city": "Buscoldo - Curtatone",
+      "province": "MN"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "7"
     ]
   },
   {
@@ -4339,6 +4289,23 @@
     ]
   },
   {
+    "title": "43ª CAMMINATA AVIS",
+    "date": "14/06/2026",
+    "location": {
+      "city": "Oggiono",
+      "province": "LC"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "4",
+      "7",
+      "12",
+      "21",
+      "30"
+    ]
+  },
+  {
     "title": "42ª CAMINADA DE CASAL",
     "date": "14/06/2026",
     "location": {
@@ -4778,6 +4745,21 @@
     "source": "FIASP",
     "distances": [
       "5"
+    ]
+  },
+  {
+    "title": "DI CORSA CON  ELI",
+    "date": "26/06/2026",
+    "location": {
+      "city": "Rudiano [Centro Sportivo - Via degli Sportivi]",
+      "province": "BS"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "3",
+      "6",
+      "12"
     ]
   },
   {
@@ -6833,6 +6815,21 @@
     ]
   },
   {
+    "title": "37ª SGAMBADA D'AUTUNNO",
+    "date": "27/09/2026",
+    "location": {
+      "city": "Curnasco [Oratorio, Piazza Don Personeni]",
+      "province": "BG"
+    },
+    "poster": null,
+    "source": "FIASP",
+    "distances": [
+      "6",
+      "12",
+      "18"
+    ]
+  },
+  {
     "title": "51ª MURSELADA",
     "date": "27/09/2026",
     "location": {
@@ -6967,21 +6964,6 @@
       "6",
       "12",
       "17"
-    ]
-  },
-  {
-    "title": "37ª SGAMBADA D'AUTUNNO",
-    "date": "28/09/2026",
-    "location": {
-      "city": "Curnasco [Oratorio, Piazza Don Personeni]",
-      "province": "BG"
-    },
-    "poster": null,
-    "source": "FIASP",
-    "distances": [
-      "6",
-      "12",
-      "18"
     ]
   },
   {
