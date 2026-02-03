@@ -1,54 +1,59 @@
 """
 Main entry point for the Tapasciate scraper.
 """
-import json
+import os
 import sys
 from pathlib import Path
+from dotenv import load_dotenv
+
+# Carica variabili d'ambiente dal file .env
+load_dotenv()
 
 # Aggiungi la root del progetto al PYTHONPATH
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from scrapers.csi_scraper import CSIScraper
+from scraper.scrapers.csi_scraper import CSIScraper
 from scraper.scrapers.fiasp_scraper import FIASPScraper
-from scraper.config import OUTPUT_FILE
+from scraper.db.supabase_client import SupabaseManager
+
 
 def main():
-    """
-    Run all scrapers and save combined results to JSON.
-    """
+    """Esegue tutti gli scraper e salva su Supabase"""
+    
     print("🚀 Starting Tapasciate scraper...")
     
-    # Initialize scrapers
+    # Verifica env variables
+    if not os.getenv("SUPABASE_URL") or not os.getenv("SUPABASE_KEY"):
+        print("❌ SUPABASE_URL and SUPABASE_KEY environment variables required")
+        return
+    
+    # Pulisci eventi passati
+    print("\n🗑️  Deleting past events...")
+    try:
+        SupabaseManager.delete_past_events()
+        print("✅ Past events deleted")
+    except Exception as e:
+        print(f"⚠️  Failed to delete past events: {e}")
+    
     scrapers = [
         CSIScraper(),
-        FIASPScraper()
+        FIASPScraper(),
     ]
     
-    # Collect events from all sources
-    all_events = []
+    total_inserted = 0
+    total_updated = 0
+    
     for scraper in scrapers:
-        print(f"\n📡 Fetching events from {scraper.source_name}...")
+        print(f"\n🔄 Running {scraper.source_name}...")
         try:
-            events = scraper.fetch_events()
-            all_events.extend(events)
-            print(f"✅ Found {len(events)} events from {scraper.source_name}")
+            inserted, updated = scraper.run()
+            print(f"✅ {scraper.source_name}: {inserted} inserted, {updated} updated")
+            total_inserted += inserted
+            total_updated += updated
         except Exception as e:
-            print(f"❌ Error fetching from {scraper.source_name}: {e}")
+            print(f"❌ {scraper.source_name} failed: {e}")
     
-    # Ensure output directory exists
-    output_path = Path(OUTPUT_FILE)
-    output_path.parent.mkdir(parents=True, exist_ok=True)
-    
-    # Save to JSON
-    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-        json.dump(
-            [event.model_dump(mode="json") for event in all_events],
-            f,
-            ensure_ascii=False,
-            indent=2
-        )
-    
-    print(f"\n💾 Saved {len(all_events)} total events to {OUTPUT_FILE}")
+    print(f"\n✅ Total: {total_inserted} inserted, {total_updated} updated")
     print("✨ Scraping complete!")
 
 

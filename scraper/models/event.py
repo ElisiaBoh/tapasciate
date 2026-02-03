@@ -5,10 +5,12 @@ from typing import List, Optional, Literal
 from pydantic import BaseModel, HttpUrl
 from scraper.models.provinces import Province
 
+
 class Location(BaseModel):
     """Represents a location with city and province."""
     city: str
     province: Province
+    region: str
 
 
 class Event(BaseModel):

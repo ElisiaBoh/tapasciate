@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import './App.css'
+import { fetchEvents } from './services/eventsService'
 
 function App() {
   const [events, setEvents] = useState([])
@@ -7,8 +8,7 @@ function App() {
   const [selectedProvince, setSelectedProvince] = useState('')
 
   useEffect(() => {
-    fetch(process.env.PUBLIC_URL + "/events.json")
-      .then(response => response.json())
+    fetchEvents()
       .then(data => {
         setEvents(data)
         setLoading(false)
