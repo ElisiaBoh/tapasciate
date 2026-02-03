@@ -2,6 +2,7 @@ import os
 from supabase import create_client, Client
 from typing import Optional, List
 from datetime import datetime, date
+from scraper.models.operation import Operation
 
 
 class SupabaseManager:
@@ -55,8 +56,13 @@ class SupabaseManager:
         url: Optional[str] = None,
         poster: Optional[str] = None,
         distances: Optional[List[str]] = None
-    ):
-        """Inserisce o aggiorna un evento (UPSERT basato su name + date)"""
+    ) -> Operation:
+        """
+        Inserisce o aggiorna un evento (UPSERT basato su name + date)
+        
+        Returns:
+            Operation.INSERTED se nuovo evento, Operation.UPDATED se aggiornato
+        """
         client = cls.get_client()
         
         # Converti data da DD/MM/YYYY a YYYY-MM-DD
@@ -83,9 +89,11 @@ class SupabaseManager:
             event_id = result.data[0]["id"]
             event_data["updated_at"] = datetime.now().isoformat()
             client.table("events").update(event_data).eq("id", event_id).execute()
+            return Operation.UPDATED
         else:
             # INSERT
             client.table("events").insert(event_data).execute()
+            return Operation.INSERTED
     
     @classmethod
     def delete_past_events(cls):

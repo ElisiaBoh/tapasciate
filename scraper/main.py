@@ -14,6 +14,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from scraper.scrapers.csi_scraper import CSIScraper
 from scraper.scrapers.fiasp_scraper import FIASPScraper
+from scraper.db.supabase_client import SupabaseManager
 
 
 def main():
@@ -26,23 +27,33 @@ def main():
         print("❌ SUPABASE_URL and SUPABASE_KEY environment variables required")
         return
     
+    # Pulisci eventi passati
+    print("\n🗑️  Deleting past events...")
+    try:
+        SupabaseManager.delete_past_events()
+        print("✅ Past events deleted")
+    except Exception as e:
+        print(f"⚠️  Failed to delete past events: {e}")
+    
     scrapers = [
         CSIScraper(),
         FIASPScraper(),
     ]
     
-    total_saved = 0
+    total_inserted = 0
+    total_updated = 0
     
     for scraper in scrapers:
         print(f"\n🔄 Running {scraper.source_name}...")
         try:
-            count = scraper.run()
-            print(f"✅ {scraper.source_name}: {count} events saved")
-            total_saved += count
+            inserted, updated = scraper.run()
+            print(f"✅ {scraper.source_name}: {inserted} inserted, {updated} updated")
+            total_inserted += inserted
+            total_updated += updated
         except Exception as e:
             print(f"❌ {scraper.source_name} failed: {e}")
     
-    print(f"\n✅ Total events saved: {total_saved}")
+    print(f"\n✅ Total: {total_inserted} inserted, {total_updated} updated")
     print("✨ Scraping complete!")
 
 
