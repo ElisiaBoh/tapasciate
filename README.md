@@ -1,39 +1,140 @@
-# Tapasciate
+# Tapasciate - Guida Sviluppo Locale
 
-Scraper per eventi di camminate non competitive in Italia (CSI Bergamo e FIASP).
+Guida rapida per eseguire scraper e frontend in locale.
 
-## 📁 Struttura del progetto
-```
-tapasciate/
-├── scraper/              # Backend Python
-│   ├── models/          # Modelli dati (Event, Location, Province)
-│   ├── scrapers/        # Scrapers (CSI, FIASP)
-│   ├── utils/           # Utility functions
-│   ├── config.py        # Configurazioni
-│   ├── main.py          # Entry point
-│   └── requirements.txt
-├── frontend/            # Frontend React
-├── data/                # Output JSON
-├── tests/               # Test suite
-└── .github/workflows/   # CI/CD
-```
+---
 
-## 🚀 Uso locale
+## 🐍 Scraper (Backend)
+
+### Prerequisiti
+- Python 3.11+ installato
+- Virtual environment già configurato
+- File `.env` nella root del progetto
+
+### Quick Start
+
 ```bash
-# Installa dipendenze
-python3.11 -m pip install -r scraper/requirements.txt
+# 1. Attiva virtual environment
+source venv/bin/activate
 
-# Esegui scraper
-python3.11 scraper/main.py
+# 2. Vai nella cartella scraper
+cd scraper
 
-# Output: data/events.json
+# 3. Esegui lo scraper
+python main.py
 ```
 
-## 🤖 Automazione
+### Output Atteso
 
-Lo scraper gira automaticamente ogni mercoledì alle 8:00 (CET) tramite GitHub Actions.
+```
+🚀 Starting Tapasciate scraper...
 
-## 🧪 Test
+🗑️  Deleting past events...
+✅ Past events deleted
+
+🔄 Running CSI Bergamo...
+✅ Inserted: Mercatorum
+🔄 Updated: StraPonte
+✅ CSI Bergamo: 2 inserted, 1 updated
+
+🔄 Running FIASP Italia...
+✅ Inserted: 8ª MARCIA DEI RAN RUN
+✅ FIASP Italia: 450 inserted, 60 updated
+
+✅ Total: 452 inserted, 61 updated
+✨ Scraping complete!
+```
+
+### File `.env` Richiesto
+
+Crea `.env` nella **root del progetto** (non in `scraper/`):
+
 ```bash
-pytest tests/ -v
+SUPABASE_URL=https://zwypodzchumtuitkhkta.supabase.co
+SUPABASE_KEY=sb_publishable_Yeo_ij8JWe7fVfqUw3VIfA_lvb5DO3t
 ```
+
+**IMPORTANTE**: Verifica che `.env` sia nel `.gitignore`!
+
+---
+
+## ⚛️ Frontend (React)
+
+### Prerequisiti
+- Node.js installato
+- npm installato
+
+### Quick Start
+
+```bash
+# 1. Vai nella cartella frontend
+cd frontend
+
+# 2. Installa dipendenze (solo prima volta)
+npm install
+
+# 3. Avvia il server di sviluppo
+npm start
+```
+
+Il sito si apre automaticamente su `http://localhost:3000`
+
+### Build per Produzione
+
+```bash
+# Dalla cartella frontend/
+npm run build
+```
+
+I file ottimizzati finiscono in `frontend/build/`
+
+---
+
+## 🗄️ Database Supabase
+
+### Dashboard
+🔗 https://supabase.com/dashboard/project/zwypodzchumtuitkhkta
+
+
+### Schema Database
+
+**Tabella `locations`:**
+```
+id          | BIGSERIAL PRIMARY KEY
+city        | VARCHAR(100) NOT NULL
+province    | VARCHAR(2) NOT NULL
+region      | VARCHAR(50) NOT NULL
+created_at  | TIMESTAMP DEFAULT NOW()
+```
+
+**Tabella `events`:**
+```
+id          | BIGSERIAL PRIMARY KEY
+name        | VARCHAR(255) NOT NULL
+date        | DATE NOT NULL
+location_id | BIGINT (FK → locations)
+organizer   | VARCHAR(100)
+url         | VARCHAR(500)
+poster      | VARCHAR(500)
+distances   | TEXT[]
+created_at  | TIMESTAMP DEFAULT NOW()
+updated_at  | TIMESTAMP DEFAULT NOW()
+```
+
+---
+
+## 🤖 GitHub Actions
+
+### Scraper automatico
+- **Quando**: Ogni mercoledì alle 6:00 CEST
+- **Cosa fa**: Esegue gli scraper e aggiorna Supabase
+- **File**: `.github/workflows/scraper.yml`
+
+### Esecuzione Manuale
+1. GitHub → tab **Actions**
+2. Seleziona workflow **"Scraper"**
+3. **Run workflow** → **Run workflow**
+
+
+---
+
