@@ -45,16 +45,25 @@ python main.py
 ✨ Scraping complete!
 ```
 
-### File `.env` Richiesto
+### Eseguire i Test
 
-Crea `.env` nella **root del progetto** (non in `scraper/`):
+I test verificano la logica di parsing senza fare chiamate HTTP o accedere al database.
 
 ```bash
-SUPABASE_URL=https://zwypodzchumtuitkhkta.supabase.co
-SUPABASE_KEY=sb_publishable_Yeo_ij8JWe7fVfqUw3VIfA_lvb5DO3t
-```
+# Dalla cartella scraper/ con venv attivo
+pytest tests/
 
-**IMPORTANTE**: Verifica che `.env` sia nel `.gitignore`!
+# Esegui test con output dettagliato
+pytest tests/ -v
+
+# Esegui solo test specifici
+pytest tests/test_parsers.py
+pytest tests/test_fiasp_scraper.py
+pytest tests/test_csi_scraper.py
+
+# Esegui con coverage
+pytest tests/ --cov=scraper --cov-report=html
+```
 
 ---
 
