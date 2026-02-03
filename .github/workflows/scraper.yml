@@ -1,5 +1,4 @@
 name: Scraper
-
 on:
   schedule:
     - cron: '0 4 * * 3'  # every Wednesday at 6 CEST (4:00 UTC)
@@ -23,20 +22,9 @@ jobs:
           pip install -r requirements.txt
       
       - name: Run scraper
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
         run: |
           cd scraper
           python main.py
-      
-      - name: Copy events to frontend (optional)
-        run: |
-          cp data/events.json frontend/public/events.json
-      
-      - name: Commit and push changes
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add -f frontend/public/events.json
-          if ! git diff --quiet HEAD || ! git diff --staged --quiet; then
-            git commit -m "Update events data"
-            git push
-          fi
