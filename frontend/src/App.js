@@ -2,6 +2,21 @@ import { useState, useEffect } from 'react'
 import './App.css'
 import { fetchEvents } from './services/eventsService'
 
+const formatDate = (dateString) => {
+  const [day, month, year] = dateString.split('/');
+  const date = new Date(year, month - 1, day);
+  
+  const giorni = ['Domenica', 'Lunedì', 'Martedì', 'Mercoledì', 'Giovedì', 'Venerdì', 'Sabato'];
+  const mesi = ['gennaio', 'febbraio', 'marzo', 'aprile', 'maggio', 'giugno', 
+                'luglio', 'agosto', 'settembre', 'ottobre', 'novembre', 'dicembre'];
+  
+  const dayName = giorni[date.getDay()];
+  const dayNumber = parseInt(day);
+  const monthName = mesi[parseInt(month) - 1];
+  
+  return `${dayName} ${dayNumber} ${monthName}`;
+};
+
 function App() {
   const [events, setEvents] = useState([])
   const [loading, setLoading] = useState(true)
@@ -18,22 +33,6 @@ function App() {
         setLoading(false)
       })
   }, [])
-
-  // Funzione per formattare la data per i titoli delle sezioni
-  const formatSectionDate = (dateString) => {
-    const [day, month, year] = dateString.split('/');
-    const date = new Date(year, month - 1, day);
-    
-    const giorni = ['Domenica', 'Lunedì', 'Martedì', 'Mercoledì', 'Giovedì', 'Venerdì', 'Sabato'];
-    const mesi = ['gennaio', 'febbraio', 'marzo', 'aprile', 'maggio', 'giugno', 
-                  'luglio', 'agosto', 'settembre', 'ottobre', 'novembre', 'dicembre'];
-    
-    const dayName = giorni[date.getDay()];
-    const dayNumber = parseInt(day);
-    const monthName = mesi[parseInt(month) - 1];
-    
-    return `${dayName} ${dayNumber} ${monthName}`;
-  };
 
   const filteredEvents = selectedProvince 
     ? events.filter(event => event.location.province === selectedProvince)
@@ -103,7 +102,7 @@ function App() {
               <div className="date-header">
                 <div className="date-header-content">
                   <h2 className="date-title">
-                    {formatSectionDate(date)}
+                    {formatDate(date)}
                   </h2>
                   <span className="date-count">
                     {groupedEvents[date].length} tapasciate
@@ -172,7 +171,7 @@ function EventCard({ event }) {
               </p>
               
               <p className="event-date">
-                {event.date}
+                {formatDate(event.date)}
               </p>
               
               {event.distances && event.distances.length > 0 && (
