@@ -160,40 +160,44 @@ function App() {
 
 function EventCard({ event }) {
   return (
-    <div className="event-card">
-      <div className="event-content">
-        <div className="event-info">
-          <h3 className="event-title">{event.title}</h3>
-          
-          <div className="event-details">
-            <p className="event-location">
-              {event.location.city} ({event.location.province})
-            </p>
+    <>
+      <div className="event-card">
+        <div className="event-content">
+          <div className="event-info">
+            <h3 className="event-title">{event.title}</h3>
             
-            <p className="event-date">
-              {event.date}
-            </p>
-            
-            {event.distances && event.distances.length > 0 && (
-              <p className="event-distances">
-                km: {event.distances.join(' - ')}
+            <div className="event-details">
+              <p className="event-location">
+                {event.location.city} ({event.location.province})
               </p>
-            )}
+              
+              <p className="event-date">
+                {event.date}
+              </p>
+              
+              {event.distances && event.distances.length > 0 && (
+                <p className="event-distances">
+                  km: {event.distances.join(' - ')}
+                </p>
+              )}
+            </div>
           </div>
 
-          <span className="event-source">{event.source}</span>
+          <div className="event-actions">
+            <span className="event-source">{event.source}</span>
+            {event.poster && (
+              <button 
+                className="poster-button"
+                onClick={() => window.open(event.poster, '_blank')}
+              >
+                poster
+              </button>
+            )}
+          </div>
         </div>
-
-        {event.poster && (
-          <button 
-            className="poster-button"
-            onClick={() => window.open(event.poster, '_blank')}
-          >
-            poster
-          </button>
-        )}
       </div>
-    </div>
+      <div className="event-divider"></div>
+    </>
   )
 }
 
