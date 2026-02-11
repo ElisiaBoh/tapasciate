@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/tapasciate/static/css/main.08cadc0a.css",
+    "main.js": "/tapasciate/static/js/main.a1030bec.js",
+    "static/js/453.670e15c7.chunk.js": "/tapasciate/static/js/453.670e15c7.chunk.js",
+    "index.html": "/tapasciate/index.html",
+    "main.08cadc0a.css.map": "/tapasciate/static/css/main.08cadc0a.css.map",
+    "main.a1030bec.js.map": "/tapasciate/static/js/main.a1030bec.js.map",
+    "453.670e15c7.chunk.js.map": "/tapasciate/static/js/453.670e15c7.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.08cadc0a.css",
+    "static/js/main.a1030bec.js"
+  ]
+}
