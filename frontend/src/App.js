@@ -2,6 +2,21 @@ import { useState, useEffect } from 'react'
 import './App.css'
 import { fetchEvents } from './services/eventsService'
 
+const formatDate = (dateString) => {
+  const [day, month, year] = dateString.split('/');
+  const date = new Date(year, month - 1, day);
+  
+  const giorni = ['Domenica', 'Lunedì', 'Martedì', 'Mercoledì', 'Giovedì', 'Venerdì', 'Sabato'];
+  const mesi = ['gennaio', 'febbraio', 'marzo', 'aprile', 'maggio', 'giugno', 
+                'luglio', 'agosto', 'settembre', 'ottobre', 'novembre', 'dicembre'];
+  
+  const dayName = giorni[date.getDay()];
+  const dayNumber = parseInt(day);
+  const monthName = mesi[parseInt(month) - 1];
+  
+  return `${dayName} ${dayNumber} ${monthName}`;
+};
+
 function App() {
   const [events, setEvents] = useState([])
   const [loading, setLoading] = useState(true)
@@ -18,22 +33,6 @@ function App() {
         setLoading(false)
       })
   }, [])
-
-  // Funzione per formattare la data per i titoli delle sezioni
-  const formatSectionDate = (dateString) => {
-    const [day, month, year] = dateString.split('/');
-    const date = new Date(year, month - 1, day);
-    
-    const giorni = ['Domenica', 'Lunedì', 'Martedì', 'Mercoledì', 'Giovedì', 'Venerdì', 'Sabato'];
-    const mesi = ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 
-                  'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre'];
-    
-    const dayName = giorni[date.getDay()];
-    const dayNumber = parseInt(day);
-    const monthName = mesi[parseInt(month) - 1];
-    
-    return `${dayName} ${dayNumber} ${monthName}`;
-  };
 
   const filteredEvents = selectedProvince 
     ? events.filter(event => event.location.province === selectedProvince)
@@ -73,26 +72,26 @@ function App() {
   return (
     <div className="app">
       <header className="header">
-        <img src={process.env.PUBLIC_URL + "/header.svg"} alt="Logo Eventi di Corsa" className="logo" />
+        <div className="header-content">
+          <img src={process.env.PUBLIC_URL + "/header.svg"} alt="Logo Tapasciate" className="logo" />
+        </div>
       </header>
 
       <div className="filters">
-        <select 
-          value={selectedProvince} 
-          onChange={(e) => setSelectedProvince(e.target.value)}
-          className="province-filter"
-        >
-          <option value="">🌍 Tutte le province</option>
-          {provinces.map(province => (
-            <option key={province} value={province}>
-              {province}
-            </option>
-          ))}
-        </select>
-        
-        <span className="events-count">
-          {filteredEvents.length} eventi trovati
-        </span>
+        <div className="filters-content">
+          <select 
+            value={selectedProvince} 
+            onChange={(e) => setSelectedProvince(e.target.value)}
+            className="province-filter"
+          >
+            <option value="">Tutte le province</option>
+            {provinces.map(province => (
+              <option key={province} value={province}>
+                {province}
+              </option>
+            ))}
+          </select>
+        </div>
       </div>
 
       <main className="events-container">
@@ -101,15 +100,17 @@ function App() {
             <div key={date} className={`date-section pattern-${index % 3}`}>
               {/* Header della sezione con data */}
               <div className="date-header">
-                <h2 className="date-title">
-                  {formatSectionDate(date)}
-                </h2>
-                <span className="date-count">
-                  {groupedEvents[date].length} eventi
-                </span>
+                <div className="date-header-content">
+                  <h2 className="date-title">
+                    {formatDate(date)}
+                  </h2>
+                  <span className="date-count">
+                    {groupedEvents[date].length} tapasciate
+                  </span>
+                </div>
               </div>
 
-              {/* Griglia degli eventi per questa data */}
+              {/* Lista degli eventi per questa data */}
               <div className="events-grid">
                 {groupedEvents[date].map((event, index) => (
                   <EventCard key={index} event={event} />
@@ -125,60 +126,77 @@ function App() {
       </main>
 
       <footer className="footer">
-        <p>Aggiornato ogni mercoledì</p>
+        <div className="footer-hero">
+          <div className="footer-hero-placeholder">
+            [Spazio riservato per immagine "Grazie Ciaoe Buona Domenica"]
+          </div>
+        </div>
+        
+        <div className="footer-content">
+          <div className="footer-branding">
+            <img 
+              src={process.env.PUBLIC_URL + "/footer-logo.svg"} 
+              alt="Tapasciate Logo" 
+              className="footer-logo"
+              onError={(e) => { e.target.style.display = 'none' }}
+            />
+            <div className="footer-partners">
+              <div>CóR</div>
+              <div>nuovadot</div>
+            </div>
+          </div>
+          
+          <div className="footer-info">
+            <p>Tapasciate.it è un progetto<br/>di CóR e NuovaDOt</p>
+            <p>Nuova DOT srl<br/>04444540169</p>
+            <p>via per Grumello 61<br/>24127 Bergamo</p>
+          </div>
+        </div>
       </footer>
     </div>
   )
 }
 
 function EventCard({ event }) {
-  // Funzione per formattare la data
-  const formatDate = (dateString) => {
-    // dateString è in formato "10/08/2025" (DD/MM/YYYY)
-    const [day, month, year] = dateString.split('/');
-    const date = new Date(year, month - 1, day); // month - 1 perché i mesi partono da 0
-    
-    const giorni = ['Domenica', 'Lunedì', 'Martedì', 'Mercoledì', 'Giovedì', 'Venerdì', 'Sabato'];
-    const mesi = ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 
-                  'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre'];
-    
-    const dayName = giorni[date.getDay()];
-    const dayNumber = parseInt(day);
-    const monthName = mesi[parseInt(month) - 1];
-    
-    return `${dayName} ${dayNumber} ${monthName}`;
-  };
-
   return (
-    <div className="event-card">
-      <div className="event-content">
-        <h3 className="event-title">{event.title}</h3>
-        
-        <div className="event-details">
-          <p className="event-date">📅 {formatDate(event.date)}</p>
-          <p className="event-location">
-            📍 {event.location.city} ({event.location.province})
-          </p>
-          
-          {event.distances && event.distances.length > 0 && (
-            <div className="event-distances">
-              🏃 {event.distances.join(', ')}
+    <>
+      <div className="event-card">
+        <div className="event-content">
+          <div className="event-info">
+            <h3 className="event-title">{event.title}</h3>
+            
+            <div className="event-details">
+              <p className="event-location">
+                {event.location.city} ({event.location.province})
+              </p>
+              
+              <p className="event-date">
+                {formatDate(event.date)}
+              </p>
+              
+              {event.distances && event.distances.length > 0 && (
+                <p className="event-distances">
+                  km: {event.distances.join(' - ')}
+                </p>
+              )}
             </div>
-          )}
-          
-          <p className="event-source">🏛️ {event.source}</p>
-        </div>
+          </div>
 
-        {event.poster && (
-          <button 
-            className="poster-button"
-            onClick={() => window.open(event.poster, '_blank')}
-          >
-            🖼️ Vedi Poster
-          </button>
-        )}
+          <div className="event-actions">
+            <span className="event-source">{event.source}</span>
+            {event.poster && (
+              <button 
+                className="poster-button"
+                onClick={() => window.open(event.poster, '_blank')}
+              >
+                poster
+              </button>
+            )}
+          </div>
+        </div>
       </div>
-    </div>
+      <div className="event-divider"></div>
+    </>
   )
 }
 
