@@ -3,6 +3,7 @@ from supabase import create_client, Client
 from typing import Optional, List
 from datetime import datetime, date
 from scraper.models.operation import Operation
+from scraper.config import SUPABASE_STORAGE_BUCKET
 
 
 class SupabaseManager:
@@ -94,14 +95,70 @@ class SupabaseManager:
             # INSERT
             client.table("events").insert(event_data).execute()
             return Operation.INSERTED
-    
+
+    @classmethod
+    def upload_poster(cls, filename: str, pdf_bytes: bytes) -> Optional[str]:
+        """
+        Carica un PDF su Supabase Storage e ritorna l'URL pubblico.
+        Se un file con lo stesso nome esiste già, lo sovrascrive.
+        
+        Args:
+            filename: nome del file (es. "csi-bottanuco-2026-03-15.pdf")
+            pdf_bytes: contenuto del PDF in memoria
+            
+        Returns:
+            URL pubblico del file, o None in caso di errore
+        """
+        client = cls.get_client()
+        
+        try:
+            # upsert=True sovrascrive se il file esiste già
+            client.storage.from_(SUPABASE_STORAGE_BUCKET).upload(
+                path=filename,
+                file=pdf_bytes,
+                file_options={"content-type": "application/pdf", "upsert": "true"}
+            )
+            
+            url = client.storage.from_(SUPABASE_STORAGE_BUCKET).get_public_url(filename)
+            return url
+        except Exception as e:
+            print(f"❌ Failed to upload poster {filename}: {e}")
+            return None
+
+    @classmethod
+    def delete_poster(cls, poster_url: str):
+        """
+        Cancella un file da Supabase Storage dato il suo URL pubblico.
+        
+        Args:
+            poster_url: URL pubblico del poster (es. https://xxx.supabase.co/storage/v1/object/public/posters/file.pdf)
+        """
+        client = cls.get_client()
+        
+        try:
+            # Estrai il filename dall'URL (ultima parte del path)
+            filename = poster_url.split(f"/{SUPABASE_STORAGE_BUCKET}/")[-1]
+            client.storage.from_(SUPABASE_STORAGE_BUCKET).remove([filename])
+        except Exception as e:
+            print(f"⚠️ Failed to delete poster {poster_url}: {e}")
+
     @classmethod
     def delete_past_events(cls):
-        """Cancella eventi con data passata"""
+        """Cancella eventi con data passata, inclusi i poster su Storage"""
         client = cls.get_client()
         today = date.today().isoformat()
+        
+        # Prima recupera i poster URL degli eventi da cancellare
+        result = client.table("events").select("poster").lt("date", today).execute()
+        
+        # Cancella i file da Storage
+        for row in result.data:
+            if row.get("poster"):
+                cls.delete_poster(row["poster"])
+        
+        # Poi cancella i record dal DB
         client.table("events").delete().lt("date", today).execute()
-    
+
     @classmethod
     def _parse_date(cls, date_str: str) -> str:
         """Converte DD/MM/YYYY in YYYY-MM-DD"""
