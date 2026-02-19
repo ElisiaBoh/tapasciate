@@ -2,10 +2,13 @@
 Scraper for CSI Bergamo events.
 """
 import requests
-from bs4 import BeautifulSoup
+import img2pdf
+import io
+import re
 import time
 import datetime
-from typing import Tuple
+from typing import Tuple, Optional
+from bs4 import BeautifulSoup
 from scraper.scrapers.base import BaseScraper
 from scraper.models.event import Event
 from scraper.models.provinces import Province
@@ -90,27 +93,79 @@ class CSIScraper(BaseScraper):
         raw = content.get_text(separator="\n", strip=True) if content else ""
         title = raw.split("\n")[0].strip() if raw else ""
         
-        # Parse poster
-        poster = self._extract_poster(content)
-        
         # Parse date
         date = self._parse_date(soup)
+        
+        # Parse poster: scarica tutte le immagini, crea PDF, carica su Storage
+        poster_url = self._extract_and_upload_poster(content, title, date)
         
         try:
             return Event(
                 title=title,
                 date=date,
                 location=location,
-                poster=poster,
+                poster=poster_url,
                 source="CSI",
                 distances=[]
             )
         except Exception as e:
             print(f"⚠️ Skipped invalid CSI event: {e}")
             return None
-    
-    def _extract_poster(self, content) -> str | None:
-        """Estrae URL del poster"""
+
+    def _extract_and_upload_poster(self, content, title: str, date: str) -> Optional[str]:
+        """
+        Raccoglie tutte le immagini del poster, le unisce in un PDF
+        e lo carica su Supabase Storage. Ritorna l'URL pubblico.
+        """
+        if not content:
+            return None
+
+        # Raccogli tutti i src delle immagini nel contenuto
+        imgs = content.find_all("img")
+        if not imgs:
+            return None
+
+        image_bytes_list = []
+        for img in imgs:
+            src = img.get("src")
+            if not src:
+                continue
+            url = f"{BASE_CSI_BERGAMO}{src}" if src.startswith("/") else src
+            try:
+                resp = requests.get(url, timeout=REQUEST_TIMEOUT)
+                resp.raise_for_status()
+                image_bytes_list.append(resp.content)
+            except Exception as e:
+                print(f"⚠️ Failed to download poster image {url}: {e}")
+
+        if not image_bytes_list:
+            return None
+
+        # Converti le immagini in un unico PDF in memoria
+        try:
+            pdf_bytes = img2pdf.convert(image_bytes_list)
+        except Exception as e:
+            print(f"⚠️ Failed to convert poster images to PDF: {e}")
+            return None
+
+        # Genera filename dal titolo e dalla data (es. "csi-bottanuco-2026-03-15.pdf")
+        safe_title = re.sub(r"[^a-z0-9]+", "-", title.lower()).strip("-")[:50]
+        safe_date = date.replace("/", "-") if date else "unknown"
+        # Converti DD-MM-YYYY → YYYY-MM-DD per ordinamento leggibile
+        parts = safe_date.split("-")
+        if len(parts) == 3 and len(parts[2]) == 4:
+            safe_date = f"{parts[2]}-{parts[1]}-{parts[0]}"
+        filename = f"csi-{safe_title}-{safe_date}.pdf"
+
+        # Carica su Supabase Storage
+        poster_url = SupabaseManager.upload_poster(filename, pdf_bytes)
+        return poster_url
+
+    def _extract_poster(self, content) -> Optional[str]:
+        """
+        Mantenuto per compatibilità con i test esistenti.
+        Ritorna solo la prima immagine come URL (comportamento originale).
+        """
         if not content:
             return None
         
@@ -122,33 +177,32 @@ class CSIScraper(BaseScraper):
         if src.startswith("/"):
             return f"{BASE_CSI_BERGAMO}{src}"
         return src
-    
+
     def _parse_date(self, soup: BeautifulSoup) -> str:
         """Estrae data dalla pagina"""
         active_li = soup.select_one("ul.latestnews-items li.active")
         if not active_li:
             return ""
         
-        day_tag = active_li.select_one("span.position1.day")
-        month_tag = active_li.select_one("span.position3.month")
+        day = active_li.select_one("span.position1.day")
+        month = active_li.select_one("span.position3.month")
         
-        if not (day_tag and month_tag):
+        if not day or not month:
             return ""
         
-        day = day_tag.get_text(strip=True)
-        month_name = month_tag.get_text(strip=True)
-        
-        months = {
-            "Gennaio": "01", "Febbraio": "02", "Marzo": "03", "Aprile": "04",
-            "Maggio": "05", "Giugno": "06", "Luglio": "07", "Agosto": "08",
-            "Settembre": "09", "Ottobre": "10", "Novembre": "11", "Dicembre": "12"
+        month_map = {
+            "Gennaio": "01", "Febbraio": "02", "Marzo": "03",
+            "Aprile": "04", "Maggio": "05", "Giugno": "06",
+            "Luglio": "07", "Agosto": "08", "Settembre": "09",
+            "Ottobre": "10", "Novembre": "11", "Dicembre": "12"
         }
         
-        month = months.get(month_name, "00")
-        year = str(datetime.datetime.now().year)
+        day_str = day.get_text(strip=True).zfill(2)
+        month_str = month_map.get(month.get_text(strip=True), "01")
+        year_str = str(datetime.datetime.now().year)
         
-        return f"{day.zfill(2)}/{month}/{year}"
-    
+        return f"{day_str}/{month_str}/{year_str}"
+
     def _save_to_supabase(self, event: Event) -> Operation:
         """Salva evento su Supabase"""
         try:

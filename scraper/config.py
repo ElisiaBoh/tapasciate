@@ -17,3 +17,6 @@ OUTPUT_FILE = os.path.join(DATA_DIR, "events.json")
 REQUEST_DELAY = 1  # secondi tra richieste
 REQUEST_TIMEOUT = 10  # timeout in secondi
 DEFAULT_PROVINCE = "BG"  # Provincia di default per Bergamo
+
+# Supabase Storage
+SUPABASE_STORAGE_BUCKET = "posters"
