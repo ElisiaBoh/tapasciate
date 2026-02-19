@@ -407,7 +407,7 @@
   .province-filter {
     width: 100%;
     font-size: 1.25rem;
-    padding: 0.75rem 3rem 0.75rem 1.5rem;
+    padding: 0.3rem 3rem 0.3rem 1.5rem;
   }
   
   .date-header-content {
@@ -456,5 +456,9 @@
 
   .event-source {
     font-size: 1rem;
+  }
+
+  .logo {
+    max-width: 100%;
   }
 }
