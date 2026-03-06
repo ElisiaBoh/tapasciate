@@ -63,7 +63,14 @@ function App() {
     return dateA - dateB;
   });
 
-  const provinces = [...new Set(events.map(event => event.location.province))].sort();
+  const provinces = [...new Set(
+    events
+      .filter(event => {
+        const [day, month, year] = event.date.split("/").map(Number);
+        return new Date(year, month - 1, day) >= today;
+      })
+      .map(event => event.location.province)
+  )].sort();
 
   if (loading) {
     return <div className="loading">Caricamento eventi...</div>
