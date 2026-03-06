@@ -167,7 +167,7 @@ function App() {
             <a href="https://servizi.fiaspitalia.it/www_eventi.php" target="_blank" rel="noopener noreferrer">FIASP Italia</a>.
             Tutti i diritti sui dati appartengono ai rispettivi siti.
           </p>
-          <a href="#" className="footer-privacy">Privacy Policy</a>
+          <span className="footer-privacy">Privacy Policy</span>
         </div>
       </footer>
     </div>
