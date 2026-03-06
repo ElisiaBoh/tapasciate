@@ -2,8 +2,126 @@
 Tests for parsing utilities.
 """
 import pytest
-from scraper.utils.parsers import parse_location, parse_distances
+from scraper.utils.parsers import extract_province_str, parse_location, parse_distances
 from scraper.models.provinces import Province
+
+
+class TestExtractProvinceStr:
+    """Unit test per la funzione pura extract_province_str."""
+
+    # --- Formato con parentesi ---
+
+    def test_parentheses_standard(self):
+        assert extract_province_str("Spinone al Lago (BG)") == ("Spinone al Lago", "BG")
+
+    def test_parentheses_single_word_city(self):
+        assert extract_province_str("Milano (MI)") == ("Milano", "MI")
+
+    def test_parentheses_multiword_city(self):
+        assert extract_province_str("San Giovanni Bianco (BG)") == ("San Giovanni Bianco", "BG")
+
+    def test_parentheses_city_with_brackets(self):
+        assert extract_province_str("Carvico [Tensostruttura] (BG)") == ("Carvico [Tensostruttura]", "BG")
+
+    def test_parentheses_lowercase_province_normalized(self):
+        city, prov = extract_province_str("Milano (mi)")
+        assert prov == "MI"
+        assert city == "Milano"
+
+    def test_parentheses_no_space_before(self):
+        city, prov = extract_province_str("Roma(RM)")
+        assert prov == "RM"
+        assert city == "Roma"
+
+    def test_parentheses_trailing_spaces(self):
+        city, prov = extract_province_str("  Bergamo (BG)  ")
+        assert prov == "BG"
+        assert city == "Bergamo"
+
+    def test_parentheses_only_province_no_city(self):
+        city, prov = extract_province_str("(BG)")
+        assert prov == "BG"
+        assert city == ""
+
+    # --- Formato senza parentesi (fallback posizionale) ---
+
+    def test_no_parens_standard(self):
+        assert extract_province_str("Varese VA") == ("Varese", "VA")
+
+    def test_no_parens_lowercase_normalized(self):
+        city, prov = extract_province_str("Brescia bs")
+        assert prov == "BS"
+        assert city == "Brescia"
+
+    def test_no_parens_multiword_city(self):
+        city, prov = extract_province_str("Lecco Abbadia Lariana LC")
+        assert prov == "LC"
+        assert city == "Lecco Abbadia Lariana"
+
+    def test_no_parens_extra_internal_spaces(self):
+        city, prov = extract_province_str("  Lecco   LC  ")
+        assert prov == "LC"
+        assert city == "Lecco"
+
+    # --- Nessuna provincia rilevabile ---
+
+    def test_single_word_no_province(self):
+        city, prov = extract_province_str("Bergamo")
+        assert prov is None
+        assert city == "Bergamo"
+
+    def test_empty_string(self):
+        city, prov = extract_province_str("")
+        assert prov is None
+        assert city == ""
+
+    def test_only_spaces(self):
+        city, prov = extract_province_str("   ")
+        assert prov is None
+        assert city == ""
+
+    # --- Provincia non valida (stringa presente ma non riconoscibile) ---
+
+    def test_invalid_province_code_returned_as_is(self):
+        """extract_province_str non valida l'enum: ritorna la sigla grezza."""
+        city, prov = extract_province_str("Como XX")
+        assert prov == "XX"
+        assert city == "Como"
+
+    # --- Parametrizzato su formati misti ---
+
+    @pytest.mark.parametrize("input_str,expected_city,expected_prov", [
+        ("Roma (RM)",          "Roma",          "RM"),
+        ("Torino (TO)",        "Torino",        "TO"),
+        ("Napoli (NA)",        "Napoli",        "NA"),
+        ("Palermo (PA)",       "Palermo",       "PA"),
+        ("Venezia (VE)",       "Venezia",       "VE"),
+        ("Venezia VE",         "Venezia",       "VE"),
+        ("Trento TN",          "Trento",        "TN"),
+        ("Bolzano (BZ)",       "Bolzano",       "BZ"),
+    ])
+    def test_various_formats(self, input_str, expected_city, expected_prov):
+        city, prov = extract_province_str(input_str)
+        assert city == expected_city
+        assert prov == expected_prov
+
+
+class TestGORProvince:
+    """Verifica che il codice non-standard GOR (Gorizia) venga gestito correttamente."""
+
+    def test_gor_parsed_from_fiasp_format(self):
+        loc = parse_location("CORMONS (GOR)")
+        assert loc.province == Province.GOR
+        assert loc.region == "Friuli-Venezia Giulia"
+        assert loc.city == "CORMONS"
+
+    def test_gor_mapped_to_correct_region(self):
+        from scraper.utils.region_mapper import get_region_from_province
+        assert get_region_from_province(Province.GOR) == "Friuli-Venezia Giulia"
+
+    def test_gor_not_sconosciuta(self):
+        loc = parse_location("Cormons (GOR)")
+        assert loc.region != "Sconosciuta"
 
 
 class TestParseLocation:
