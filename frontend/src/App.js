@@ -200,7 +200,6 @@ function EventCard({ event }) {
           </div>
 
           <div className="event-actions">
-            <span className="event-source">{event.source}</span>
             {event.poster && (
               <button 
                 className="poster-button"

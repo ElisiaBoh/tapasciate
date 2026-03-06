@@ -186,7 +186,7 @@
 /* ---- EVENT DIVIDER ---- */
 .event-divider {
   width: 100%;
-  height: 20px;
+  height: 5px;
   background: var(--color-cyan);
 }
 
@@ -248,10 +248,10 @@
 
 /* ---- BOTTONE POSTER ---- */
 .poster-button {
-  background: var(--color-yellow);
+  background: white;
   color: var(--color-text-dark);
-  border: none;
-  padding: 1rem 1.5rem;
+  border: 4px solid var(--color-yellow);
+  padding: 0.75rem 1.5rem;
   border-radius: 0;
   cursor: pointer;
   font-weight: 700;
@@ -260,13 +260,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
   white-space: nowrap;
   text-transform: lowercase;
 }
 
 .poster-button:hover {
-  background: #2d8a8f;
+  background: var(--color-yellow);
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
