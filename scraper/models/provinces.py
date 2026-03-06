@@ -112,4 +112,3 @@ class Province(str, Enum):
     VI = "VI"
     VR = "VR"
     VV = "VV"
-    ZA = "ZA"

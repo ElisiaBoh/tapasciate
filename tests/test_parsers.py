@@ -106,6 +106,24 @@ class TestExtractProvinceStr:
         assert prov == expected_prov
 
 
+class TestGORProvince:
+    """Verifica che il codice non-standard GOR (Gorizia) venga gestito correttamente."""
+
+    def test_gor_parsed_from_fiasp_format(self):
+        loc = parse_location("CORMONS (GOR)")
+        assert loc.province == Province.GOR
+        assert loc.region == "Friuli-Venezia Giulia"
+        assert loc.city == "CORMONS"
+
+    def test_gor_mapped_to_correct_region(self):
+        from scraper.utils.region_mapper import get_region_from_province
+        assert get_region_from_province(Province.GOR) == "Friuli-Venezia Giulia"
+
+    def test_gor_not_sconosciuta(self):
+        loc = parse_location("Cormons (GOR)")
+        assert loc.region != "Sconosciuta"
+
+
 class TestParseLocation:
     """Tests for parse_location function."""
     

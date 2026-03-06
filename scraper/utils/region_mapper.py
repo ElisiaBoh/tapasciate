@@ -79,6 +79,7 @@ PROVINCE_TO_REGION = {
     
     # Friuli-Venezia Giulia
     Province.GO: "Friuli-Venezia Giulia",
+    Province.GOR: "Friuli-Venezia Giulia",  # codice non standard usato da FIASP per Gorizia
     Province.PN: "Friuli-Venezia Giulia",
     Province.TS: "Friuli-Venezia Giulia",
     Province.UD: "Friuli-Venezia Giulia",
