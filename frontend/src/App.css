@@ -283,7 +283,7 @@
   padding: 0 2rem;
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   gap: 2rem;
 }
 
@@ -301,7 +301,7 @@
 .footer-partners {
   display: flex;
   flex-direction: column;
-  gap: 0;
+  gap: 1.5rem;
 }
 
 .footer-partner-cor {

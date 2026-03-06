@@ -154,7 +154,7 @@ function App() {
           </div>
 
           <div className="footer-info">
-            <p>Tapasciate.it è un progetto<br/>di CóR e NuovaDOt</p>
+            <p>Tapasciate.it è un progetto di CóR e NuovaDOt</p>
             <p>Nuova DOT srl<br/>04444540169<br/>via per Grumello 61<br/>24127 Bergamo</p>
           </div>
         </div>
