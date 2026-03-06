@@ -10,6 +10,7 @@ class Location(BaseModel):
     """Represents a location with city and province."""
     city: str
     province: Province
+    province_name: str
     region: str
 
 

@@ -209,6 +209,7 @@ class CSIScraper(BaseScraper):
             location_id = SupabaseManager.upsert_location(
                 city=event.location.city,
                 province=event.location.province,
+                province_name=event.location.province_name,
                 region=event.location.region
             )
             

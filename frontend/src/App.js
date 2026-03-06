@@ -63,7 +63,18 @@ function App() {
     return dateA - dateB;
   });
 
-  const provinces = [...new Set(events.map(event => event.location.province))].sort();
+  const provinces = Object.values(
+    events
+      .filter(event => {
+        const [day, month, year] = event.date.split("/").map(Number);
+        return new Date(year, month - 1, day) >= today;
+      })
+      .reduce((acc, event) => {
+        const { province, province_name } = event.location;
+        if (!acc[province]) acc[province] = { code: province, name: province_name || province };
+        return acc;
+      }, {})
+  ).sort((a, b) => a.name.localeCompare(b.name));
 
   if (loading) {
     return <div className="loading">Caricamento eventi...</div>
@@ -86,8 +97,8 @@ function App() {
           >
             <option value="">Tutte le province</option>
             {provinces.map(province => (
-              <option key={province} value={province}>
-                {province}
+              <option key={province.code} value={province.code}>
+                {province.name}
               </option>
             ))}
           </select>

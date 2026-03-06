@@ -23,31 +23,38 @@ class SupabaseManager:
         return cls._instance
 
     @classmethod
-    def upsert_location(cls, city: str, province: str, region: str) -> int:
+    def upsert_location(cls, city: str, province: str, province_name: str, region: str) -> int:
         """Inserisce o recupera una location, ritorna l'ID"""
         client = cls.get_client()
-        
+
         # Normalizza
         city = city.strip().title()
         province = province.strip().upper()
+        province_name = province_name.strip()
         region = region.strip().title()
-        
+
         # Cerca esistente
-        result = client.table("locations").select("id, region").eq("city", city).eq("province", province).execute()
+        result = client.table("locations").select("id, province_name, region").eq("city", city).eq("province", province).execute()
 
         if result.data:
             location_id = result.data[0]["id"]
+            updates = {}
             if result.data[0]["region"] != region:
-                client.table("locations").update({"region": region}).eq("id", location_id).execute()
+                updates["region"] = region
+            if result.data[0]["province_name"] != province_name:
+                updates["province_name"] = province_name
+            if updates:
+                client.table("locations").update(updates).eq("id", location_id).execute()
             return location_id
-        
+
         # Inserisci nuovo
         result = client.table("locations").insert({
             "city": city,
             "province": province,
+            "province_name": province_name,
             "region": region
         }).execute()
-        
+
         return result.data[0]["id"]
     
     @classmethod

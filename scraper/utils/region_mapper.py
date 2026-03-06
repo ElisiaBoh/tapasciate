@@ -153,14 +153,138 @@ PROVINCE_TO_REGION = {
 }
 
 
+PROVINCE_TO_NAME = {
+    Province.AG: "Agrigento",
+    Province.AL: "Alessandria",
+    Province.AN: "Ancona",
+    Province.AO: "Aosta",
+    Province.AP: "Ascoli Piceno",
+    Province.AQ: "L'Aquila",
+    Province.AR: "Arezzo",
+    Province.AT: "Asti",
+    Province.AV: "Avellino",
+    Province.BA: "Bari",
+    Province.BG: "Bergamo",
+    Province.BI: "Biella",
+    Province.BL: "Belluno",
+    Province.BN: "Benevento",
+    Province.BO: "Bologna",
+    Province.BR: "Brindisi",
+    Province.BS: "Brescia",
+    Province.BT: "Barletta-Andria-Trani",
+    Province.BZ: "Bolzano",
+    Province.CA: "Cagliari",
+    Province.CB: "Campobasso",
+    Province.CE: "Caserta",
+    Province.CH: "Chieti",
+    Province.CL: "Caltanissetta",
+    Province.CN: "Cuneo",
+    Province.CO: "Como",
+    Province.CR: "Cremona",
+    Province.CS: "Cosenza",
+    Province.CT: "Catania",
+    Province.CZ: "Catanzaro",
+    Province.EN: "Enna",
+    Province.FC: "Forlì-Cesena",
+    Province.FE: "Ferrara",
+    Province.FG: "Foggia",
+    Province.FI: "Firenze",
+    Province.FM: "Fermo",
+    Province.FR: "Frosinone",
+    Province.GE: "Genova",
+    Province.GO: "Gorizia",
+    Province.GOR: "Gorizia",
+    Province.GR: "Grosseto",
+    Province.IM: "Imperia",
+    Province.IS: "Isernia",
+    Province.KR: "Crotone",
+    Province.LC: "Lecco",
+    Province.LE: "Lecce",
+    Province.LI: "Livorno",
+    Province.LO: "Lodi",
+    Province.LT: "Latina",
+    Province.LU: "Lucca",
+    Province.MB: "Monza e della Brianza",
+    Province.MC: "Macerata",
+    Province.ME: "Messina",
+    Province.MI: "Milano",
+    Province.MN: "Mantova",
+    Province.MO: "Modena",
+    Province.MS: "Massa-Carrara",
+    Province.MT: "Matera",
+    Province.NA: "Napoli",
+    Province.NO: "Novara",
+    Province.NU: "Nuoro",
+    Province.OR: "Oristano",
+    Province.PA: "Palermo",
+    Province.PC: "Piacenza",
+    Province.PD: "Padova",
+    Province.PE: "Pescara",
+    Province.PG: "Perugia",
+    Province.PI: "Pisa",
+    Province.PN: "Pordenone",
+    Province.PO: "Prato",
+    Province.PR: "Parma",
+    Province.PT: "Pistoia",
+    Province.PU: "Pesaro e Urbino",
+    Province.PV: "Pavia",
+    Province.PZ: "Potenza",
+    Province.RA: "Ravenna",
+    Province.RC: "Reggio Calabria",
+    Province.RE: "Reggio Emilia",
+    Province.RG: "Ragusa",
+    Province.RI: "Rieti",
+    Province.RM: "Roma",
+    Province.RN: "Rimini",
+    Province.RO: "Rovigo",
+    Province.SA: "Salerno",
+    Province.SI: "Siena",
+    Province.SO: "Sondrio",
+    Province.SP: "La Spezia",
+    Province.SR: "Siracusa",
+    Province.SS: "Sassari",
+    Province.SV: "Savona",
+    Province.TA: "Taranto",
+    Province.TE: "Teramo",
+    Province.TN: "Trento",
+    Province.TO: "Torino",
+    Province.TP: "Trapani",
+    Province.TR: "Terni",
+    Province.TS: "Trieste",
+    Province.TV: "Treviso",
+    Province.UD: "Udine",
+    Province.VA: "Varese",
+    Province.VB: "Verbano-Cusio-Ossola",
+    Province.VC: "Vercelli",
+    Province.VE: "Venezia",
+    Province.VI: "Vicenza",
+    Province.VR: "Verona",
+    Province.VT: "Viterbo",
+    Province.VV: "Vibo Valentia",
+}
+
+
 def get_region_from_province(province: Province) -> str:
     """
     Ritorna la regione data una provincia.
-    
+
     Args:
         province: Codice provincia (enum Province)
-    
+
     Returns:
         Nome della regione
     """
     return PROVINCE_TO_REGION.get(province, "Sconosciuta")
+
+
+def get_name_from_province(province: Province) -> str:
+    """
+    Ritorna il nome esteso della provincia data la sua sigla.
+
+    Args:
+        province: Codice provincia (enum Province)
+
+    Returns:
+        Nome esteso (es. "Bergamo"), o la sigla stessa se non mappata
+    """
+    return PROVINCE_TO_NAME.get(province, province.value)

@@ -5,7 +5,7 @@ import re
 from typing import List
 from scraper.models.event import Location
 from scraper.models.provinces import Province
-from scraper.utils.region_mapper import get_region_from_province
+from scraper.utils.region_mapper import get_name_from_province, get_region_from_province
 
 
 def extract_province_str(text: str) -> tuple[str, str | None]:
@@ -55,12 +55,14 @@ def parse_location(location_raw: str, default_province: Province = Province.BG) 
         try:
             province = Province(province_str)
             region = get_region_from_province(province)
-            return Location(city=city, province=province, region=region)
+            province_name = get_name_from_province(province)
+            return Location(city=city, province=province, province_name=province_name, region=region)
         except ValueError:
             print(f"⚠️ Unknown province '{province_str}', defaulting to {default_province.value}")
 
     region = get_region_from_province(default_province)
-    return Location(city=raw, province=default_province, region=region)
+    province_name = get_name_from_province(default_province)
+    return Location(city=raw, province=default_province, province_name=province_name, region=region)
 
 
 def parse_distances(raw: str) -> List[str]:
