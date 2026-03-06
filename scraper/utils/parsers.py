@@ -31,7 +31,8 @@ def extract_province_str(text: str) -> tuple[str, str | None]:
 
     parts = raw.split()
     if len(parts) >= 2:
-        return " ".join(parts[:-1]), parts[-1].strip("()").upper()
+        candidate = re.sub(r'[^A-Za-z]', '', parts[-1]).upper()
+        return " ".join(parts[:-1]), candidate or None
 
     return raw, None
 

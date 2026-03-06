@@ -88,6 +88,12 @@ class TestExtractProvinceStr:
         assert prov == "XX"
         assert city == "Como"
 
+    def test_trailing_punctuation_stripped(self):
+        """Punteggiatura finale rimossa dal candidato provincia (es. 'BG.' da FIASP)."""
+        city, prov = extract_province_str("Bergamo BG.")
+        assert prov == "BG"
+        assert city == "Bergamo"
+
     # --- Parametrizzato su formati misti ---
 
     @pytest.mark.parametrize("input_str,expected_city,expected_prov", [
