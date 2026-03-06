@@ -108,7 +108,7 @@
 .loading, .no-events {
   text-align: center;
   color: var(--color-text-dark);
-  font-size: 1.2rem;
+  font-size: 1rem;
   padding: 3rem;
 }
 
@@ -320,7 +320,7 @@
 }
 
 .footer-partner-nuovadot {
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-weight: 400;
   color: var(--color-text-dark);
   text-decoration: none;
@@ -461,14 +461,6 @@
   
   .event-title {
     font-size: 1.1rem;
-  }
-
-  .event-details p {
-    font-size: 0.9rem;
-  }
-
-  .event-source {
-    font-size: 1rem;
   }
 
   .logo {
