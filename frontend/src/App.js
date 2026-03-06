@@ -137,31 +137,35 @@ function App() {
       </main>
 
       <footer className="footer">
-        <div className="footer-hero">
-          <div className="footer-hero-placeholder">
-            [Spazio riservato per immagine "Grazie Ciaoe Buona Domenica"]
-          </div>
-        </div>
-        
         <div className="footer-content">
           <div className="footer-branding">
-            <img 
-              src={process.env.PUBLIC_URL + "/footer-logo.svg"} 
-              alt="Tapasciate Logo" 
+            <img
+              src={process.env.PUBLIC_URL + "/footer-logo.svg"}
+              alt="Tapasciate Logo"
               className="footer-logo"
               onError={(e) => { e.target.style.display = 'none' }}
             />
             <div className="footer-partners">
-              <div>CóR</div>
-              <div>nuovadot</div>
+              <a href="https://cor.nuovadot.com" target="_blank" rel="noopener noreferrer" className="footer-partner-cor">CóR</a>
+              <a href="https://nuovadot.com" target="_blank" rel="noopener noreferrer" className="footer-partner-nuovadot">nuovadot</a>
             </div>
           </div>
-          
+
           <div className="footer-info">
             <p>Tapasciate.it è un progetto<br/>di CóR e NuovaDOt</p>
-            <p>Nuova DOT srl<br/>04444540169</p>
-            <p>via per Grumello 61<br/>24127 Bergamo</p>
+            <p>Nuova DOT srl<br/>04444540169<br/>via per Grumello 61<br/>24127 Bergamo</p>
           </div>
+        </div>
+
+        <div className="footer-bottom">
+          <p className="footer-sources">
+            Dati raccolti da{' '}
+            <a href="https://www.csibergamo.it" target="_blank" rel="noopener noreferrer">CSI Bergamo</a>
+            {' '}e{' '}
+            <a href="https://servizi.fiaspitalia.it/www_eventi.php" target="_blank" rel="noopener noreferrer">FIASP Italia</a>.
+            Tutti i diritti sui dati appartengono ai rispettivi siti.
+          </p>
+          <a href="#" className="footer-privacy">Privacy Policy</a>
         </div>
       </footer>
     </div>
