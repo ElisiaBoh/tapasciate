@@ -33,10 +33,13 @@ class SupabaseManager:
         region = region.strip().title()
         
         # Cerca esistente
-        result = client.table("locations").select("id").eq("city", city).eq("province", province).execute()
-        
+        result = client.table("locations").select("id, region").eq("city", city).eq("province", province).execute()
+
         if result.data:
-            return result.data[0]["id"]
+            location_id = result.data[0]["id"]
+            if result.data[0]["region"] != region:
+                client.table("locations").update({"region": region}).eq("id", location_id).execute()
+            return location_id
         
         # Inserisci nuovo
         result = client.table("locations").insert({
