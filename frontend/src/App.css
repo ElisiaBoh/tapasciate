@@ -34,7 +34,7 @@
 .header-content {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -176,7 +176,7 @@
 .event-content {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 1rem 2rem;
+  padding: 1.5rem 2rem;
   display: grid;
   grid-template-columns: 1fr auto;
   gap: 2rem;
@@ -274,12 +274,13 @@
 .footer {
   background: var(--color-cyan);
   color: var(--color-text-dark);
-  padding: 2rem;
+  padding: 2rem 0;
 }
 
 .footer-content {
   max-width: 1400px;
   margin: 0 auto;
+  padding: 0 2rem;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -346,7 +347,7 @@
 .footer-bottom {
   max-width: 1400px;
   margin: 1.5rem auto 0;
-  padding-top: 1rem;
+  padding: 1rem 2rem 0;
   border-top: 1px solid rgba(0, 0, 0, 0.2);
   display: flex;
   justify-content: space-between;
