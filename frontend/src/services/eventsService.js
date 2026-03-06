@@ -14,6 +14,7 @@ export async function fetchEvents() {
         location:locations (
           city,
           province,
+          province_name,
           region
         )
       `)
@@ -28,6 +29,7 @@ export async function fetchEvents() {
       location: {
         city: event.location.city,
         province: event.location.province,
+        province_name: event.location.province_name,
         region: event.location.region
       },
       poster: event.poster,
