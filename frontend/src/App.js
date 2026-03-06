@@ -146,7 +146,9 @@ function App() {
               onError={(e) => { e.target.style.display = 'none' }}
             />
             <div className="footer-partners">
-              <a href="https://cor.nuovadot.com" target="_blank" rel="noopener noreferrer" className="footer-partner-cor">CóR</a>
+              <a href="https://cor.nuovadot.com" target="_blank" rel="noopener noreferrer" className="footer-partner-cor">
+                <img src={process.env.PUBLIC_URL + "/cor-logo.svg"} alt="CóR" className="footer-cor-logo" />
+              </a>
               <a href="https://nuovadot.com" target="_blank" rel="noopener noreferrer" className="footer-partner-nuovadot">nuovadot</a>
             </div>
           </div>

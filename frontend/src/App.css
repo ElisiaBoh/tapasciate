@@ -305,15 +305,18 @@
 }
 
 .footer-partner-cor {
-  font-size: 2.5rem;
-  font-weight: 900;
-  line-height: 1;
-  color: var(--color-text-dark);
+  display: inline-block;
   text-decoration: none;
 }
 
-.footer-partner-cor:hover {
-  text-decoration: underline;
+.footer-cor-logo {
+  height: 2.5rem;
+  width: auto;
+  display: block;
+}
+
+.footer-partner-cor:hover .footer-cor-logo {
+  opacity: 0.75;
 }
 
 .footer-partner-nuovadot {
