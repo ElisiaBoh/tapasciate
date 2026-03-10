@@ -179,29 +179,27 @@ function EventCard({ event }) {
     <>
       <div className="event-card">
         <div className="event-content">
-          <div className="event-info">
-            <h3 className="event-title">{event.title}</h3>
-            
-            <div className="event-details">
-              <p className="event-location">
-                {event.location.city} ({event.location.province})
+          <h3 className="event-title">{event.title}</h3>
+
+          <div className="event-details">
+            <p className="event-location">
+              {event.location.city} ({event.location.province})
+            </p>
+
+            <p className="event-date">
+              {formatDate(event.date)}
+            </p>
+
+            {event.distances && event.distances.length > 0 && (
+              <p className="event-distances">
+                km: {event.distances.join(' - ')}
               </p>
-              
-              <p className="event-date">
-                {formatDate(event.date)}
-              </p>
-              
-              {event.distances && event.distances.length > 0 && (
-                <p className="event-distances">
-                  km: {event.distances.join(' - ')}
-                </p>
-              )}
-            </div>
+            )}
           </div>
 
           <div className="event-actions">
             {event.poster && (
-              <button 
+              <button
                 className="poster-button"
                 onClick={() => window.open(event.poster, '_blank')}
               >
