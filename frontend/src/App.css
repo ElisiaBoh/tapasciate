@@ -71,7 +71,6 @@
   font-size: 1.5rem;
   font-weight: 900;
   cursor: pointer;
-  transition: all 0.2s ease;
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -84,8 +83,6 @@
 }
 
 .province-filter:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 .province-filter:focus {
@@ -256,7 +253,6 @@
   cursor: pointer;
   font-weight: 700;
   font-size: 1rem;
-  transition: all 0.2s ease;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -266,8 +262,6 @@
 
 .poster-button:hover {
   background: var(--color-yellow);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 /* ---- FOOTER ---- */
