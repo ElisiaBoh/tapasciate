@@ -1,216 +1,29 @@
-import { useState, useEffect } from 'react'
+import { useEvents } from './hooks/useEvents'
+import Header from './components/Header/Header'
+import ProvinceFilter from './components/ProvinceFilter/ProvinceFilter'
+import EventList from './components/EventList/EventList'
+import Footer from './components/Footer/Footer'
 import './App.css'
-import { fetchEvents } from './services/eventsService'
-
-const formatDate = (dateString) => {
-  const [day, month, year] = dateString.split('/');
-  const date = new Date(year, month - 1, day);
-  
-  const giorni = ['Domenica', 'Lunedì', 'Martedì', 'Mercoledì', 'Giovedì', 'Venerdì', 'Sabato'];
-  const mesi = ['gennaio', 'febbraio', 'marzo', 'aprile', 'maggio', 'giugno', 
-                'luglio', 'agosto', 'settembre', 'ottobre', 'novembre', 'dicembre'];
-  
-  const dayName = giorni[date.getDay()];
-  const dayNumber = parseInt(day);
-  const monthName = mesi[parseInt(month) - 1];
-  
-  return `${dayName} ${dayNumber} ${monthName}`;
-};
 
 function App() {
-  const [events, setEvents] = useState([])
-  const [loading, setLoading] = useState(true)
-  const [selectedProvince, setSelectedProvince] = useState('')
-
-  useEffect(() => {
-    fetchEvents()
-      .then(data => {
-        setEvents(data)
-        setLoading(false)
-      })
-      .catch(error => {
-        console.error('Errore nel caricare gli eventi:', error)
-        setLoading(false)
-      })
-  }, [])
-
-  const filteredEvents = selectedProvince 
-    ? events.filter(event => event.location.province === selectedProvince)
-    : events;
-
-  const today = new Date(); today.setHours(0, 0, 0, 0);
-
-  const groupedEvents = filteredEvents
-  .filter(event => {
-    const [day, month, year] = event.date.split("/").map(Number);
-    const eventDate = new Date(year, month - 1, day);
-    return eventDate >= today;
-  })
-  .reduce((groups, event) => {
-    const date = event.date;
-    if (!groups[date]) {
-      groups[date] = [];
-    }
-    groups[date].push(event);
-    return groups;
-  }, {});
-
-  const sortedDates = Object.keys(groupedEvents).sort((a, b) => {
-    const [dayA, monthA, yearA] = a.split('/').map(Number);
-    const [dayB, monthB, yearB] = b.split('/').map(Number);
-    const dateA = new Date(yearA, monthA - 1, dayA);
-    const dateB = new Date(yearB, monthB - 1, dayB);
-    return dateA - dateB;
-  });
-
-  const provinces = Object.values(
-    events
-      .filter(event => {
-        const [day, month, year] = event.date.split("/").map(Number);
-        return new Date(year, month - 1, day) >= today;
-      })
-      .reduce((acc, event) => {
-        const { province, province_name } = event.location;
-        if (!acc[province]) acc[province] = { code: province, name: province_name || province };
-        return acc;
-      }, {})
-  ).sort((a, b) => a.name.localeCompare(b.name));
-
-  if (loading) {
-    return <div className="loading">Caricamento eventi...</div>
-  }
+  const { status, groupedEvents, sortedDates, provinces, selectedProvince, setProvince } = useEvents()
 
   return (
     <div className="app">
-      <header className="header">
-        <div className="header-content">
-          <img src={process.env.PUBLIC_URL + "/header.svg"} alt="Logo Tapasciate" className="logo" />
-        </div>
-      </header>
-
-      <div className="filters">
-        <div className="filters-content">
-          <select 
-            value={selectedProvince} 
-            onChange={(e) => setSelectedProvince(e.target.value)}
-            className="province-filter"
-          >
-            <option value="">Tutte le province</option>
-            {provinces.map(province => (
-              <option key={province.code} value={province.code}>
-                {province.name}
-              </option>
-            ))}
-          </select>
-        </div>
-      </div>
-
-      <main className="events-container">
-        {sortedDates.length > 0 ? (
-          sortedDates.map((date, index) => (
-            <div key={date} className={`date-section pattern-${index % 3}`}>
-              {/* Header della sezione con data */}
-              <div className="date-header">
-                <div className="date-header-content">
-                  <h2 className="date-title">
-                    {formatDate(date)}
-                  </h2>
-                  <span className="date-count">
-                    {groupedEvents[date].length} tapasciate
-                  </span>
-                </div>
-              </div>
-
-              {/* Lista degli eventi per questa data */}
-              <div className="events-grid">
-                {groupedEvents[date].map((event, index) => (
-                  <EventCard key={index} event={event} />
-                ))}
-              </div>
-            </div>
-          ))
-        ) : (
-          <div className="no-events">
-            <p>Nessun evento trovato per questa provincia.</p>
-          </div>
-        )}
-      </main>
-
-      <footer className="footer">
-        <div className="footer-content">
-          <div className="footer-branding">
-            <img
-              src={process.env.PUBLIC_URL + "/footer-logo.svg"}
-              alt="Tapasciate Logo"
-              className="footer-logo"
-              onError={(e) => { e.target.style.display = 'none' }}
-            />
-            <div className="footer-partners">
-              <a href="https://cor.nuovadot.com" target="_blank" rel="noopener noreferrer" className="footer-partner-cor">
-                <img src={process.env.PUBLIC_URL + "/cor-logo.svg"} alt="CóR" className="footer-cor-logo" />
-              </a>
-              <a href="https://nuovadot.com" target="_blank" rel="noopener noreferrer" className="footer-partner-nuovadot">nuovadot</a>
-            </div>
-          </div>
-
-          <div className="footer-info">
-            <p>Tapasciate.it è un progetto di CóR e NuovaDOt</p>
-            <p>Nuova DOT srl<br/>04444540169<br/>via per Grumello 61<br/>24127 Bergamo</p>
-          </div>
-        </div>
-
-        <div className="footer-bottom">
-          <p className="footer-sources">
-            Dati raccolti da{' '}
-            <a href="https://www.csibergamo.it" target="_blank" rel="noopener noreferrer">CSI Bergamo</a>
-            {' '}e{' '}
-            <a href="https://servizi.fiaspitalia.it/www_eventi.php" target="_blank" rel="noopener noreferrer">FIASP Italia</a>.
-            Tutti i diritti sui dati appartengono ai rispettivi siti.
-          </p>
-          <a href="/privacy.html" className="footer-privacy">Privacy Policy</a>
-        </div>
-      </footer>
+      <Header />
+      <ProvinceFilter
+        status={status}
+        provinces={provinces}
+        selectedProvince={selectedProvince}
+        onChange={setProvince}
+      />
+      <EventList
+        status={status}
+        sortedDates={sortedDates}
+        groupedEvents={groupedEvents}
+      />
+      <Footer />
     </div>
-  )
-}
-
-function EventCard({ event }) {
-  return (
-    <>
-      <div className="event-card">
-        <div className="event-content">
-          <h3 className="event-title">{event.title}</h3>
-
-          <div className="event-details">
-            <p className="event-location">
-              {event.location.city} ({event.location.province})
-            </p>
-
-            <p className="event-date">
-              {formatDate(event.date)}
-            </p>
-
-            {event.distances && event.distances.length > 0 && (
-              <p className="event-distances">
-                km: {event.distances.join(' - ')}
-              </p>
-            )}
-          </div>
-
-          <div className="event-actions">
-            {event.poster && (
-              <button
-                className="poster-button"
-                onClick={() => window.open(event.poster, '_blank')}
-              >
-                poster
-              </button>
-            )}
-          </div>
-        </div>
-      </div>
-      <div className="event-divider"></div>
-    </>
   )
 }
 

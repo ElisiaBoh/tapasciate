@@ -25,7 +25,7 @@ export async function fetchEvents() {
     // Trasforma i dati nel formato che si aspetta il frontend
     return data.map(event => ({
       title: event.name,
-      date: formatDateToFrontend(event.date), // Converte da YYYY-MM-DD a DD/MM/YYYY
+      date: event.date,
       location: {
         city: event.location.city,
         province: event.location.province,
@@ -42,10 +42,3 @@ export async function fetchEvents() {
   }
 }
 
-/**
- * Converte la data da formato database (YYYY-MM-DD) a formato frontend (DD/MM/YYYY)
- */
-function formatDateToFrontend(dateString) {
-  const [year, month, day] = dateString.split('-')
-  return `${day}/${month}/${year}`
-}
