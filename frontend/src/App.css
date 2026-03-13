@@ -104,11 +104,55 @@
 }
 
 /* ---- LOADING E NO EVENTS ---- */
-.loading, .no-events {
+.no-events {
   text-align: center;
   color: var(--color-text-dark);
   font-size: 1rem;
   padding: 3rem;
+}
+
+/* ---- SKELETON LOADING ---- */
+@keyframes skeleton-shimmer {
+  0%   { background-position: -600px 0; }
+  100% { background-position: 600px 0; }
+}
+
+.skeleton {
+  background: linear-gradient(90deg, #e0e0e0 25%, #f0f0f0 50%, #e0e0e0 75%);
+  background-size: 1200px 100%;
+  animation: skeleton-shimmer 1.4s infinite linear;
+  border-radius: 2px;
+}
+
+.skeleton-filter {
+  width: 260px;
+  height: 56px;
+}
+
+.skeleton-date-title {
+  width: 200px;
+  height: 1.5rem;
+}
+
+.skeleton-date-count {
+  width: 120px;
+  height: 1.5rem;
+}
+
+.skeleton-event-title {
+  width: 60%;
+  height: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.skeleton-event-line {
+  width: 40%;
+  height: 1rem;
+  margin-bottom: 0.4rem;
+}
+
+.skeleton-event-line--short {
+  width: 25%;
 }
 
 /* ---- SEZIONE DATA ---- */

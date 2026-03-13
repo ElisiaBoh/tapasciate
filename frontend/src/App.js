@@ -76,10 +76,6 @@ function App() {
       }, {})
   ).sort((a, b) => a.name.localeCompare(b.name));
 
-  if (loading) {
-    return <div className="loading">Caricamento eventi...</div>
-  }
-
   return (
     <div className="app">
       <header className="header">
@@ -90,23 +86,57 @@ function App() {
 
       <div className="filters">
         <div className="filters-content">
-          <select 
-            value={selectedProvince} 
-            onChange={(e) => setSelectedProvince(e.target.value)}
-            className="province-filter"
-          >
-            <option value="">Tutte le province</option>
-            {provinces.map(province => (
-              <option key={province.code} value={province.code}>
-                {province.name}
-              </option>
-            ))}
-          </select>
+          {loading ? (
+            <div className="skeleton skeleton-filter" />
+          ) : (
+            <select
+              value={selectedProvince}
+              onChange={(e) => setSelectedProvince(e.target.value)}
+              className="province-filter"
+            >
+              <option value="">Tutte le province</option>
+              {provinces.map(province => (
+                <option key={province.code} value={province.code}>
+                  {province.name}
+                </option>
+              ))}
+            </select>
+          )}
         </div>
       </div>
 
       <main className="events-container">
-        {sortedDates.length > 0 ? (
+        {loading && (
+          <>
+            {[0, 1, 2].map(i => (
+              <div key={i} className="date-section">
+                <div className="date-header">
+                  <div className="date-header-content">
+                    <div className="skeleton skeleton-date-title" />
+                    <div className="skeleton skeleton-date-count" />
+                  </div>
+                </div>
+                <div className="events-grid">
+                  {[0, 1].map(j => (
+                    <div key={j}>
+                      <div className="event-card">
+                        <div className="event-content">
+                          <div className="skeleton skeleton-event-title" />
+                          <div className="event-details">
+                            <div className="skeleton skeleton-event-line" />
+                            <div className="skeleton skeleton-event-line skeleton-event-line--short" />
+                          </div>
+                        </div>
+                      </div>
+                      <div className="event-divider" />
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </>
+        )}
+        {!loading && sortedDates.length > 0 ? (
           sortedDates.map((date, index) => (
             <div key={date} className={`date-section pattern-${index % 3}`}>
               {/* Header della sezione con data */}
@@ -130,9 +160,11 @@ function App() {
             </div>
           ))
         ) : (
-          <div className="no-events">
-            <p>Nessun evento trovato per questa provincia.</p>
-          </div>
+          !loading && (
+            <div className="no-events">
+              <p>Nessun evento trovato per questa provincia.</p>
+            </div>
+          )
         )}
       </main>
 
