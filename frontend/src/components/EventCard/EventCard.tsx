@@ -1,7 +1,12 @@
 import { formatDate } from '../../utils/formatDate'
+import type { Event } from '../../types'
 import './EventCard.css'
 
-export default function EventCard({ event }) {
+interface Props {
+  event: Event
+}
+
+export default function EventCard({ event }: Props) {
   return (
     <>
       <div className="event-card">
@@ -15,7 +20,7 @@ export default function EventCard({ event }) {
             <p className="event-date">
               {formatDate(event.date)}
             </p>
-            {event.distances && event.distances.length > 0 && (
+            {event.distances.length > 0 && (
               <p className="event-distances">
                 km: {event.distances.join(' - ')}
               </p>
@@ -26,7 +31,7 @@ export default function EventCard({ event }) {
             {event.poster && (
               <button
                 className="poster-button"
-                onClick={() => window.open(event.poster, '_blank')}
+                onClick={() => window.open(event.poster!, '_blank')}
               >
                 poster
               </button>

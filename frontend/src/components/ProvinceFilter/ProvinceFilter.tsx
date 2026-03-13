@@ -1,6 +1,14 @@
+import type { Province, Status } from '../../types'
 import './ProvinceFilter.css'
 
-export default function ProvinceFilter({ status, provinces, selectedProvince, onChange }) {
+interface Props {
+  status: Status
+  provinces: Province[]
+  selectedProvince: string
+  onChange: (province: string) => void
+}
+
+export default function ProvinceFilter({ status, provinces, selectedProvince, onChange }: Props) {
   return (
     <div className="filters">
       <div className="filters-content">
