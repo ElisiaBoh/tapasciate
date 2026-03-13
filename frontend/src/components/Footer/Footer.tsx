@@ -9,7 +9,7 @@ export default function Footer() {
             src={process.env.PUBLIC_URL + '/footer-logo.svg'}
             alt="Tapasciate Logo"
             className="footer-logo"
-            onError={(e) => { e.target.style.display = 'none' }}
+            onError={(e) => { (e.target as HTMLImageElement).style.display = 'none' }}
           />
           <div className="footer-partners">
             <a href="https://cor.nuovadot.com" target="_blank" rel="noopener noreferrer" className="footer-partner-cor">

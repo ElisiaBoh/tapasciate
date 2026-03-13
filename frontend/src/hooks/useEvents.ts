@@ -1,14 +1,27 @@
 import { useReducer, useEffect, useMemo } from 'react'
 import { fetchEvents } from '../services/eventsService'
+import type { Event, Province, Status } from '../types'
 
-const INITIAL_STATE = {
+interface EventsState {
+  status: Status
+  events: Event[]
+  error: string | null
+  selectedProvince: string
+}
+
+type EventsAction =
+  | { type: 'FETCH_SUCCESS'; payload: Event[] }
+  | { type: 'FETCH_ERROR'; payload: string }
+  | { type: 'SET_PROVINCE'; payload: string }
+
+const INITIAL_STATE: EventsState = {
   status: 'loading',
   events: [],
   error: null,
   selectedProvince: '',
 }
 
-function eventsReducer(state, action) {
+function eventsReducer(state: EventsState, action: EventsAction): EventsState {
   switch (action.type) {
     case 'FETCH_SUCCESS':
       return { ...state, status: 'success', events: action.payload, error: null }
@@ -16,17 +29,25 @@ function eventsReducer(state, action) {
       return { ...state, status: 'error', error: action.payload }
     case 'SET_PROVINCE':
       return { ...state, selectedProvince: action.payload }
-    default:
-      return state
   }
 }
 
-function parseDate(dateStr) {
+function parseDate(dateStr: string): Date {
   const [y, m, d] = dateStr.split('-').map(Number)
   return new Date(y, m - 1, d)
 }
 
-export function useEvents() {
+export interface UseEventsResult {
+  status: Status
+  error: string | null
+  groupedEvents: Record<string, Event[]>
+  sortedDates: string[]
+  provinces: Province[]
+  selectedProvince: string
+  setProvince: (province: string) => void
+}
+
+export function useEvents(): UseEventsResult {
   const [state, dispatch] = useReducer(eventsReducer, INITIAL_STATE)
 
   const today = useMemo(() => {
@@ -38,7 +59,7 @@ export function useEvents() {
   useEffect(() => {
     fetchEvents()
       .then(data => dispatch({ type: 'FETCH_SUCCESS', payload: data }))
-      .catch(err => dispatch({ type: 'FETCH_ERROR', payload: err.message }))
+      .catch((err: Error) => dispatch({ type: 'FETCH_ERROR', payload: err.message }))
   }, [])
 
   const filteredEvents = useMemo(() =>
@@ -51,7 +72,7 @@ export function useEvents() {
   const groupedEvents = useMemo(() =>
     filteredEvents
       .filter(e => parseDate(e.date) >= today)
-      .reduce((groups, event) => {
+      .reduce<Record<string, Event[]>>((groups, event) => {
         if (!groups[event.date]) groups[event.date] = []
         groups[event.date].push(event)
         return groups
@@ -68,9 +89,9 @@ export function useEvents() {
     Object.values(
       state.events
         .filter(e => parseDate(e.date) >= today)
-        .reduce((acc, e) => {
+        .reduce<Record<string, Province>>((acc, e) => {
           const { province, province_name } = e.location
-          if (!acc[province]) acc[province] = { code: province, name: province_name || province }
+          if (!acc[province]) acc[province] = { code: province, name: province_name ?? province }
           return acc
         }, {})
     ).sort((a, b) => a.name.localeCompare(b.name)),
@@ -84,6 +105,6 @@ export function useEvents() {
     sortedDates,
     provinces,
     selectedProvince: state.selectedProvince,
-    setProvince: (p) => dispatch({ type: 'SET_PROVINCE', payload: p }),
+    setProvince: (p: string) => dispatch({ type: 'SET_PROVINCE', payload: p }),
   }
 }

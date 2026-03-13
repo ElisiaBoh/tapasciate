@@ -1,6 +1,13 @@
 import { formatDate } from '../../utils/formatDate'
 import EventCard from '../EventCard/EventCard'
+import type { Event, Status } from '../../types'
 import './EventList.css'
+
+interface Props {
+  status: Status
+  sortedDates: string[]
+  groupedEvents: Record<string, Event[]>
+}
 
 function SkeletonList() {
   return (
@@ -35,7 +42,7 @@ function SkeletonList() {
   )
 }
 
-export default function EventList({ status, sortedDates, groupedEvents }) {
+export default function EventList({ status, sortedDates, groupedEvents }: Props) {
   if (status === 'loading') {
     return (
       <main className="events-container">
