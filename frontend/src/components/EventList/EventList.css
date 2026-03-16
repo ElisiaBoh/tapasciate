@@ -65,7 +65,7 @@
 .date-header {
   background: var(--color-pink);
   width: 100%;
-  padding: 1.5rem 0;
+  padding: 1rem 0;
 }
 
 .date-header-content {
@@ -79,7 +79,7 @@
 
 .date-title {
   color: var(--color-text-dark);
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: 900;
   line-height: 1.2;
   text-transform: uppercase;
@@ -113,20 +113,12 @@
     align-items: center;
   }
 
-  .date-title {
-    font-size: 1.25rem;
-  }
-
   .date-count {
     font-size: 0.9rem;
   }
 }
 
 @media (max-width: 480px) {
-  .date-title {
-    font-size: 1.1rem;
-  }
-
   .date-count {
     font-size: 0.85rem;
   }
