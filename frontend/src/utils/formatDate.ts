@@ -1,6 +1,6 @@
 const GIORNI = ['Domenica', 'Lunedì', 'Martedì', 'Mercoledì', 'Giovedì', 'Venerdì', 'Sabato']
-const MESI = ['gennaio', 'febbraio', 'marzo', 'aprile', 'maggio', 'giugno',
-              'luglio', 'agosto', 'settembre', 'ottobre', 'novembre', 'dicembre']
+const MESI = ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno',
+              'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre']
 
 export function formatDate(dateString: string): string {
   const [year, month, day] = dateString.split('-').map(Number)

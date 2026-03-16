@@ -38,28 +38,16 @@
   margin: 0;
   color: var(--color-text-dark);
   font-size: 1rem;
-  font-weight: 400;
   line-height: 1.4;
 }
 
 .event-date,
-.event-location,
 .event-distances {
-  color: var(--color-text-dark);
   font-weight: 400;
 }
 
-.event-source {
-  color: var(--color-cyan);
-  font-size: 1.25rem;
+.event-location {
   font-weight: 700;
-  display: block;
-  background: transparent;
-  padding: 0;
-  border-radius: 0;
-  margin: 0;
-  text-transform: uppercase;
-  text-align: right;
 }
 
 .event-actions {
@@ -81,7 +69,7 @@
   background: white;
   color: var(--color-text-dark);
   border: 4px solid var(--color-yellow);
-  padding: 0.75rem 1.5rem;
+  padding: 0.7rem 1.5rem;
   border-radius: 0;
   cursor: pointer;
   font-weight: 700;
@@ -95,12 +83,6 @@
 
 .poster-button:hover {
   background: var(--color-yellow);
-}
-
-@media (max-width: 1024px) {
-  .event-source {
-    text-align: left;
-  }
 }
 
 @media (max-width: 768px) {
