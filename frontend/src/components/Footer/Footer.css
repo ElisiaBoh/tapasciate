@@ -1,119 +1,60 @@
 .footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 99;
   background: var(--color-cyan);
-  color: var(--color-text-dark);
-  padding: 2rem 0;
 }
 
 .footer-content {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0.6rem 2rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   gap: 2rem;
 }
 
-.footer-branding {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-}
-
-.footer-logo {
-  max-width: 180px;
-  height: auto;
-}
-
-.footer-partners {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.footer-partner-cor {
-  display: inline-block;
-  text-decoration: none;
-}
-
-.footer-cor-logo {
-  height: 2.5rem;
-  width: auto;
-  display: block;
-}
-
-.footer-partner-cor:hover .footer-cor-logo {
-  opacity: 0.75;
-}
-
-.footer-partner-nuovadot {
-  font-size: 1rem;
+.footer-credits {
+  font-size: 0.85rem;
   font-weight: 400;
   color: var(--color-text-dark);
+}
+
+.footer-credits a {
+  color: var(--color-text-dark);
+  font-weight: 700;
   text-decoration: none;
 }
 
-.footer-partner-nuovadot:hover {
+.footer-credits a:hover {
   text-decoration: underline;
 }
 
-.footer-info {
-  text-align: right;
+.footer-links {
   display: flex;
-  flex-direction: column;
   gap: 0.75rem;
+  flex-shrink: 0;
 }
 
-.footer-info p {
-  margin: 0;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5;
-}
-
-.footer-bottom {
-  max-width: 1400px;
-  margin: 1.5rem auto 0;
-  padding: 1rem 2rem 0;
-  border-top: 1px solid rgba(0, 0, 0, 0.2);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-.footer-sources {
-  margin: 0;
-  font-size: 0.85rem;
-  font-weight: 400;
-  color: var(--color-text-dark);
-}
-
-.footer-sources a {
-  color: var(--color-text-dark);
-  font-weight: 700;
-}
-
-.footer-sources a:hover {
-  text-decoration: none;
-}
-
-.footer-privacy {
+.footer-links a {
   font-size: 0.85rem;
   font-weight: 700;
   color: var(--color-text-dark);
+  text-decoration: underline;
   white-space: nowrap;
 }
 
-@media (max-width: 768px) {
-  .footer-content {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1.5rem;
-  }
+.footer-links a:hover {
+  text-decoration: none;
+}
 
-  .footer-info {
-    text-align: left;
+@media (max-width: 480px) {
+  .footer-content {
+    padding: 0.6rem 1rem;
+    justify-content: space-between;
+    gap: 1rem;
   }
 }

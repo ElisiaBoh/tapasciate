@@ -1,6 +1,7 @@
 .app {
   min-height: 100vh;
   background: #FFFFFF;
+  padding-bottom: 2rem;
 }
 
 .sticky-wrapper {
