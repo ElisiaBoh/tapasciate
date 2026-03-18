@@ -11,6 +11,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: padding 0.6s cubic-bezier(0, 0, 0.2, 1);
 }
 
 .logo {
@@ -19,6 +20,16 @@
   object-fit: contain;
   position: relative;
   z-index: 1;
+  transition: max-height 0.6s cubic-bezier(0, 0, 0.2, 1);
+}
+
+/* Versione compatta (on scroll) */
+.header--scrolled .header-content {
+  padding: 0.3rem 0;
+}
+
+.header--scrolled .logo {
+  max-height: 50px;
 }
 
 @media (max-width: 768px) {
@@ -28,6 +39,10 @@
 
   .header-content {
     padding: 1rem 1rem;
+  }
+
+  .header--scrolled .header-content {
+    padding: 0.05rem 1rem;
   }
 }
 

@@ -2,3 +2,9 @@
   min-height: 100vh;
   background: #FFFFFF;
 }
+
+.sticky-wrapper {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
