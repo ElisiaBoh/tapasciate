@@ -27,16 +27,22 @@
 .skeleton-filter {
   width: 260px;
   height: 56px;
+  background: linear-gradient(90deg, #2E9AA0 25%, #4BBFC6 50%, #2E9AA0 75%);
+  background-size: 1200px 100%;
 }
 
 .skeleton-date-title {
   width: 200px;
   height: 1.5rem;
+  background: linear-gradient(90deg, #E0395C 25%, #F76A84 50%, #E0395C 75%);
+  background-size: 1200px 100%;
 }
 
 .skeleton-date-count {
   width: 120px;
   height: 1.5rem;
+  background: linear-gradient(90deg, #E0395C 25%, #F76A84 50%, #E0395C 75%);
+  background-size: 1200px 100%;
 }
 
 .skeleton-event-title {
