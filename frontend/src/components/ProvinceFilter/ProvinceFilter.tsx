@@ -19,6 +19,7 @@ export default function ProvinceFilter({ status, provinces, selectedProvince, on
             value={selectedProvince}
             onChange={(e) => onChange(e.target.value)}
             className="province-filter"
+            aria-label="Filtra per provincia"
           >
             <option value="">Tutte le province</option>
             {provinces.map(province => (
