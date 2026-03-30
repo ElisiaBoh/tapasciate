@@ -125,15 +125,30 @@ class CSIScraper(BaseScraper):
         if not imgs:
             return None
 
+        MAX_IMAGE_BYTES = 10 * 1024 * 1024  # 10 MB per immagine
+
         image_bytes_list = []
         for img in imgs:
             src = img.get("src")
             if not src:
                 continue
-            url = f"{BASE_CSI_BERGAMO}{src}" if src.startswith("/") else src
+            if src.startswith("/"):
+                url = f"{BASE_CSI_BERGAMO}{src}"
+            elif src.startswith("https://"):
+                url = src
+            else:
+                print(f"⚠️ Skipped poster image with unsafe URL scheme: {src!r}")
+                continue
             try:
                 resp = requests.get(url, timeout=REQUEST_TIMEOUT)
                 resp.raise_for_status()
+                content_type = resp.headers.get("Content-Type", "")
+                if not content_type.startswith("image/"):
+                    print(f"⚠️ Skipped poster image with unexpected Content-Type {content_type!r}: {url}")
+                    continue
+                if len(resp.content) > MAX_IMAGE_BYTES:
+                    print(f"⚠️ Skipped poster image exceeding size limit ({len(resp.content)} bytes): {url}")
+                    continue
                 image_bytes_list.append(resp.content)
             except Exception as e:
                 print(f"⚠️ Failed to download poster image {url}: {e}")
