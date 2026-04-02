@@ -16,7 +16,8 @@ cd frontend
 npm install          # Install dependencies
 npm start            # Dev server at http://localhost:3000
 npm run build        # Production build → frontend/build/
-npm test             # Run tests (Jest + React Testing Library)
+npm test             # Run unit/integration tests (Jest + React Testing Library)
+npm run test:e2e     # Run E2E tests (Playwright, richiede dev server o lo avvia in automatico)
 ```
 
 ### Scraper (Python)
@@ -74,7 +75,8 @@ App
 | Backend | Python 3.11, BeautifulSoup4, Pydantic |
 | Database | Supabase (PostgreSQL) |
 | Hosting | Netlify (frontend), GitHub Actions (scraper) |
-| Testing | Jest + React Testing Library |
+| Unit/Integration Testing | Jest + React Testing Library |
+| E2E Testing | Playwright (Chromium) |
 | Analytics | Google Tag Manager (GTM-W694RKFF) |
 
 ## Convenzioni
@@ -83,4 +85,5 @@ App
 - **Componenti**: ogni componente ha la sua cartella in `components/` con file `.tsx` e `.css` dedicati
 - **Niente routing library**: l'app è single-page senza React Router. Non introdurlo senza discussione
 - **CSS**: nessun CSS-in-JS, nessun framework UI. Solo CSS modules o file `.css` plain
-- **Test**: tutti i file relativi ai test (setup e `*.test.ts/tsx`) si trovano in `frontend/src/test/`
+- **Test unitari/integrazione**: file `*.test.ts/tsx` in `frontend/src/test/` (Jest + RTL)
+- **Test E2E**: file `*.spec.ts` in `frontend/tests/` (Playwright); le chiamate Supabase vengono intercettate con mock, nessun backend necessario
