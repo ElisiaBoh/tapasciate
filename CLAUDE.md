@@ -4,8 +4,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-**tapasciate.it** is a website listing orienteering races in Italy. It has two independent components:
-- **Frontend**: React SPA displaying events fetched from Supabase
+**tapasciate.it** is a website listing non-competitive walking races (tapasciate) in Italy. It has two independent components:
+- **Frontend**: React SPA (TypeScript) displaying events fetched from Supabase
 - **Scraper**: Python backend that scrapes race data from external sources and saves it to Supabase
 
 ## Commands
@@ -16,7 +16,8 @@ cd frontend
 npm install          # Install dependencies
 npm start            # Dev server at http://localhost:3000
 npm run build        # Production build → frontend/build/
-npm test             # Run tests
+npm test             # Run unit/integration tests (Jest + React Testing Library)
+npm run test:e2e     # Run E2E tests (Playwright, richiede dev server o lo avvia in automatico)
 ```
 
 ### Scraper (Python)
@@ -35,30 +36,54 @@ pytest tests/        # Run tests
 3. Frontend reads events from Supabase and displays them filtered by province
 
 ### Frontend (`frontend/src/`)
-- **Single component app**: `App.js` handles all state, filtering, and rendering — no routing library
-- **`eventsService.js`**: Only data layer — fetches events from Supabase with location JOIN, converts dates from `YYYY-MM-DD` to `DD/MM/YYYY`
-- **`supabaseClient.js`**: Supabase client instance (URL and anon key are public/safe to commit)
-- Netlify handles deployment; `netlify.toml` configures build and SPA catch-all redirect
+
+**Component tree:**
+```
+App
+├── Header          — logo e titolo; aggiunge classe CSS quando la pagina è scrollata
+├── ProvinceFilter  — dropdown/pill per filtrare per provincia; disabilitato durante il caricamento
+├── EventList       — lista eventi raggruppati per data
+└── Footer
+```
+
+**Hooks e servizi:**
+- **`hooks/useEvents.ts`**: gestisce tutto lo stato — fetching, filtraggio per provincia, raggruppamento per data. Espone: `status`, `groupedEvents`, `sortedDates`, `provinces`, `selectedProvince`, `setProvince`
+- **`eventsService.ts`**: unico layer dati — chiama Supabase con JOIN su `locations`, mappa i campi al tipo `Event`
+- **`supabaseClient.ts`**: istanza Supabase (URL e anon key sono pubbliche, ok commitarle)
+- **`types/`**: tipi TypeScript condivisi (incluso `Event`)
+
+**`status`** è un discriminated union con almeno tre stati: `loading`, `success`, `error`.
 
 ### Scraper (`scraper/`)
-- `BaseScraper` abstract class in `scrapers/base.py` — all scrapers extend this
-- Each scraper returns `list[Event]` (Pydantic model from `models/event.py`)
-- `db/supabase_client.py` handles upsert logic using the event URL as unique key
-- `models/provinces.py` and `utils/region_mapper.py` normalize location data
+- `BaseScraper` abstract class in `scrapers/base.py` — tutti gli scraper la estendono
+- Ogni scraper restituisce `list[Event]` (Pydantic model da `models/event.py`)
+- `db/supabase_client.py` gestisce la logica di upsert usando l'URL dell'evento come chiave univoca
+- `models/provinces.py` e `utils/region_mapper.py` normalizzano i dati di localizzazione
 
 ### Database Schema (Supabase/PostgreSQL)
-- `locations`: id, city, province, region, created_at
+- `locations`: id, city, province, province_name, region, created_at
 - `events`: id, name, date, location_id, organizer, url, poster, distances, created_at, updated_at
 
 ### Deployment
-- **Frontend**: Netlify, auto-deploys from `main` branch (`base = "frontend"`)
-- **Scraper**: GitHub Actions (`.github/workflows/scraper.yml`), uses `SUPABASE_URL` and `SUPABASE_KEY` secrets
+- **Frontend**: Netlify, auto-deploy dal branch `main` (`base = "frontend"`)
+- **Scraper**: GitHub Actions (`.github/workflows/scraper.yml`), usa i secret `SUPABASE_URL` e `SUPABASE_KEY`
 
 ## Tech Stack
 | Layer | Technology |
 |-------|-----------|
-| Frontend | React 19, CSS3, Create React App |
+| Frontend | React 19, TypeScript, CSS3, Create React App |
 | Backend | Python 3.11, BeautifulSoup4, Pydantic |
 | Database | Supabase (PostgreSQL) |
 | Hosting | Netlify (frontend), GitHub Actions (scraper) |
+| Unit/Integration Testing | Jest + React Testing Library |
+| E2E Testing | Playwright (Chromium) |
 | Analytics | Google Tag Manager (GTM-W694RKFF) |
+
+## Convenzioni
+
+- **TypeScript**: tutto il frontend è in TypeScript. Non aggiungere file `.js` in `frontend/src/`
+- **Componenti**: ogni componente ha la sua cartella in `components/` con file `.tsx` e `.css` dedicati
+- **Niente routing library**: l'app è single-page senza React Router. Non introdurlo senza discussione
+- **CSS**: nessun CSS-in-JS, nessun framework UI. Solo CSS modules o file `.css` plain
+- **Test unitari/integrazione**: file `*.test.ts/tsx` in `frontend/src/test/` (Jest + RTL)
+- **Test E2E**: file `*.spec.ts` in `frontend/tests/` (Playwright); le chiamate Supabase vengono intercettate con mock, nessun backend necessario
