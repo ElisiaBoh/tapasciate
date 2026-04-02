@@ -35,8 +35,7 @@
 }
 
 .province-filter:focus {
-  outline: 3px solid var(--color-text-dark);
-  outline-offset: 3px;
+  outline: none;
   border-color: var(--color-text-dark);
 }
 

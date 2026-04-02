@@ -85,11 +85,6 @@
   background: var(--color-yellow);
 }
 
-.poster-button:focus {
-  outline: 3px solid var(--color-text-dark);
-  outline-offset: 3px;
-}
-
 @media (max-width: 768px) {
   .event-content {
     padding: 1.5rem 1rem;

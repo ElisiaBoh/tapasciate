@@ -1,8 +1,6 @@
 {
   "short_name": "Tapasciate.it",
-  "name": "Tapasciate.it — Manifestazioni podistiche non competitive",
-  "description": "Il calendario delle tapasciate in Italia: manifestazioni podistiche non competitive. Cerca per provincia e data.",
-  "lang": "it",
+  "name": "Create React App Sample",
   "icons": [
     {
       "src": "favicon.ico",
