@@ -1,6 +1,7 @@
 """
 Base scraper class defining the interface for all scrapers.
 """
+from __future__ import annotations
 from abc import ABC, abstractmethod
 from typing import Tuple
 from scraper.models.event import Event

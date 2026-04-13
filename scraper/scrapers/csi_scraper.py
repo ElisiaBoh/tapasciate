@@ -1,6 +1,7 @@
 """
 Scraper for CSI Bergamo events.
 """
+from __future__ import annotations
 import requests
 import img2pdf
 import re

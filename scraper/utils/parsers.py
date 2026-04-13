@@ -1,6 +1,7 @@
 """
 Parsing utilities for event data.
 """
+from __future__ import annotations
 import re
 from typing import List
 from scraper.models.event import Location

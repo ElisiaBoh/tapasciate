@@ -1,6 +1,7 @@
 """
 Scraper for FIASP events.
 """
+from __future__ import annotations
 import requests
 from bs4 import BeautifulSoup
 from scraper.scrapers.base import BaseScraper
