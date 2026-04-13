@@ -3,37 +3,22 @@ Scraper for FIASP events.
 """
 import requests
 from bs4 import BeautifulSoup
-from typing import Tuple
 from scraper.scrapers.base import BaseScraper
 from scraper.models.event import Event
-from scraper.models.operation import Operation
 from scraper.utils.parsers import parse_location, parse_distances
 from scraper.config import FIASP_URL, REQUEST_TIMEOUT
-from scraper.db.supabase_client import SupabaseManager
 
 
 class FIASPScraper(BaseScraper):
     """Scraper for FIASP walking events."""
-    
+
     @property
     def source_name(self) -> str:
         return "FIASP Italia"
-    
-    def run(self) -> Tuple[int, int]:
-        """Esegue lo scraping e salva su Supabase"""
-        events = self._fetch_events()
-        
-        inserted = 0
-        updated = 0
-        
-        for event in events:
-            result = self._save_to_supabase(event)
-            if result == Operation.INSERTED:
-                inserted += 1
-            elif result == Operation.UPDATED:
-                updated += 1
-        
-        return (inserted, updated)
+
+    @property
+    def organizer(self) -> str:
+        return "FIASP Italia"
     
     def _fetch_events(self) -> list[Event]:
         """Scarica eventi dal sito FIASP"""
@@ -106,32 +91,3 @@ class FIASPScraper(BaseScraper):
         
         return a_tag["href"].strip()
     
-    def _save_to_supabase(self, event: Event) -> Operation:
-        """Salva evento su Supabase"""
-        try:
-            location_id = SupabaseManager.upsert_location(
-                city=event.location.city,
-                province=event.location.province,
-                province_name=event.location.province_name,
-                region=event.location.region
-            )
-            
-            operation = SupabaseManager.upsert_event(
-                name=event.title,
-                date=event.date,
-                location_id=location_id,
-                organizer="FIASP Italia",
-                url=None,
-                poster=event.poster,
-                distances=event.distances
-            )
-            
-            if operation == Operation.INSERTED:
-                print(f"✅ Inserted: {event.title}")
-            else:
-                print(f"🔄 Updated: {event.title}")
-            
-            return operation
-        except Exception as e:
-            print(f"❌ Failed: {event.title} - {e}")
-            return Operation.FAILED
