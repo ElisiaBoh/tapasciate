@@ -3,8 +3,6 @@ Scraper for CSI Bergamo events.
 """
 from __future__ import annotations
 import requests
-import img2pdf
-import re
 import time
 import datetime
 from typing import Optional
@@ -128,25 +126,12 @@ class CSIScraper(BaseScraper):
         if not image_bytes_list:
             return None
 
-        # Converti le immagini in un unico PDF in memoria
-        try:
-            pdf_bytes = img2pdf.convert(image_bytes_list)
-        except Exception as e:
-            print(f"⚠️ Failed to convert poster images to PDF: {e}")
+        pdf_bytes = self._images_to_pdf(image_bytes_list)
+        if not pdf_bytes:
             return None
 
-        # Genera filename dal titolo e dalla data (es. "csi-bottanuco-2026-03-15.pdf")
-        safe_title = re.sub(r"[^a-z0-9]+", "-", title.lower()).strip("-")[:50]
-        safe_date = date.replace("/", "-") if date else "unknown"
-        # Converti DD-MM-YYYY → YYYY-MM-DD per ordinamento leggibile
-        parts = safe_date.split("-")
-        if len(parts) == 3 and len(parts[2]) == 4:
-            safe_date = f"{parts[2]}-{parts[1]}-{parts[0]}"
-        filename = f"csi-{safe_title}-{safe_date}.pdf"
-
-        # Carica su Supabase Storage
-        poster_url = SupabaseManager.upload_poster(filename, pdf_bytes)
-        return poster_url
+        filename = self._make_poster_filename("csi", title, date)
+        return SupabaseManager.upload_poster(filename, pdf_bytes)
 
     def _extract_poster(self, content) -> Optional[str]:
         """
