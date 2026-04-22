@@ -159,9 +159,6 @@ class FIASPScraper(BaseScraper):
             file_bytes = self._images_to_pdf([file_bytes])
             if not file_bytes:
                 return None
-        elif 'application/pdf' not in content_type:
-            print(f"⚠️ Unsupported poster content type '{content_type}' for {raw_url}")
-            return None
 
         filename = self._make_poster_filename("fiasp", title, date)
         return SupabaseManager.upload_poster(filename, file_bytes)

@@ -315,18 +315,21 @@ class TestFIASPPosterUpload:
         assert result is None
 
     @patch('scraper.scrapers.fiasp_scraper.requests.get')
-    def test_download_and_upload_poster_returns_none_for_unsupported_type(self, mock_get):
-        """Ritorna None per content type non supportato."""
+    @patch('scraper.db.supabase_client.SupabaseManager.upload_poster',
+           return_value="https://xyz.supabase.co/storage/v1/object/public/posters/fiasp-test-event-2026-03-01.pdf")
+    def test_download_and_upload_poster_accepts_octet_stream(self, mock_upload, mock_get):
+        """Accetta application/octet-stream (Google Drive restituisce questo per i PDF)."""
         mock_resp = MagicMock()
-        mock_resp.content = b"some binary"
-        mock_resp.headers = {'Content-Type': 'application/zip'}
+        mock_resp.content = b"%PDF-1.4 fake content"
+        mock_resp.headers = {'Content-Type': 'application/octet-stream'}
         mock_resp.raise_for_status = MagicMock()
         mock_get.return_value = mock_resp
 
         scraper = FIASPScraper()
         result = scraper._download_and_upload_poster(
-            "https://example.com/poster.zip",
+            "https://drive.google.com/file/d/1abc123XYZ/view",
             "Test Event",
             "01/03/2026"
         )
-        assert result is None
+        assert result is not None
+        mock_upload.assert_called_once()
