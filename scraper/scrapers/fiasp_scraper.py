@@ -6,7 +6,6 @@ import re
 import requests
 from typing import Optional
 from urllib.parse import urlparse, parse_qs
-import img2pdf
 from bs4 import BeautifulSoup
 from scraper.scrapers.base import BaseScraper
 from scraper.models.event import Event
@@ -157,19 +156,12 @@ class FIASPScraper(BaseScraper):
         file_bytes, content_type = result
 
         if 'image/' in content_type:
-            try:
-                file_bytes = img2pdf.convert(file_bytes)
-            except Exception as e:
-                print(f"⚠️ Failed to convert poster image to PDF: {e}")
+            file_bytes = self._images_to_pdf([file_bytes])
+            if not file_bytes:
                 return None
         elif 'application/pdf' not in content_type:
             print(f"⚠️ Unsupported poster content type '{content_type}' for {raw_url}")
             return None
 
-        # Genera filename: fiasp-{titolo}-{YYYY-MM-DD}.pdf
-        safe_title = re.sub(r"[^a-z0-9]+", "-", title.lower()).strip("-")[:50]
-        parts = date.split("/")
-        safe_date = f"{parts[2]}-{parts[1]}-{parts[0]}" if len(parts) == 3 else date.replace("/", "-")
-        filename = f"fiasp-{safe_title}-{safe_date}.pdf"
-
+        filename = self._make_poster_filename("fiasp", title, date)
         return SupabaseManager.upload_poster(filename, file_bytes)
