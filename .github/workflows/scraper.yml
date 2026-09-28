@@ -7,6 +7,9 @@ on:
 jobs:
   scrape:
     runs-on: ubuntu-latest
+    env:
+      # A livello di job perché i secret non sono leggibili direttamente negli `if` degli step
+      NETLIFY_BUILD_HOOK: ${{ secrets.NETLIFY_BUILD_HOOK }}
     
     steps:
       - uses: actions/checkout@v3
@@ -28,3 +31,9 @@ jobs:
         run: |
           cd scraper
           python main.py
+
+      # Ricostruisce il sito su Netlify così la sitemap include gli eventi appena aggiornati.
+      # Richiede il secret NETLIFY_BUILD_HOOK (Netlify → Site configuration → Build hooks); se manca lo step è saltato.
+      - name: Trigger Netlify build
+        if: ${{ env.NETLIFY_BUILD_HOOK != '' }}
+        run: curl -fsS -X POST -d '{}' "$NETLIFY_BUILD_HOOK"

@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react'
 import type { TouchEvent } from 'react'
 import { formatDate } from '../../utils/formatDate'
+import { applyEventSeo, applyNoIndex } from '../../utils/eventSeo'
 import type { Event, Status } from '../../types'
 import DateHeader from '../DateHeader/DateHeader'
 import Divider from '../Divider/Divider'
@@ -81,11 +82,9 @@ export default function EventDetail({ status, event, events, selectedProvince, o
   }, [prev, next, onSelect])
 
   useEffect(() => {
-    if (!event) return
-    const previousTitle = document.title
-    document.title = `${event.title} — Tapasciate.it`
-    return () => { document.title = previousTitle }
-  }, [event])
+    if (event) return applyEventSeo(event)
+    if (status === 'success') return applyNoIndex()
+  }, [event, status])
 
   const touchStartX = useRef<number | null>(null)
   const onTouchStart = (e: TouchEvent) => { touchStartX.current = e.touches[0].clientX }

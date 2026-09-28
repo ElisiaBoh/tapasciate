@@ -23,7 +23,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && node scripts/generate-sitemap.js",
     "test": "react-scripts test",
     "test:e2e": "playwright test",
     "eject": "react-scripts eject"
