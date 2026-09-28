@@ -8,7 +8,6 @@ const mockEvents = [
     name: 'Tapasciata dei Colli',
     date: '2030-06-15',
     location: { city: 'Bergamo', province: 'BG', province_name: 'Bergamo', region: 'Lombardia' },
-    poster: null,
     poster_pages: [
       { url: 'https://example.com/poster-p1.webp', width: 1200, height: 1697 },
       { url: 'https://example.com/poster-p2.webp', width: 1200, height: 1697 },
@@ -25,7 +24,6 @@ const mockEvents = [
     name: 'Tapasciata del Lago',
     date: '2030-07-20',
     location: { city: 'Milano', province: 'MI', province_name: 'Milano', region: 'Lombardia' },
-    poster: null,
     poster_pages: [],
     organizer: 'NuovaDot',
     distances: [],
@@ -167,7 +165,6 @@ test.describe('Pagina evento', () => {
     await expect(page).toHaveURL(/\/evento\/1-tapasciata-dei-colli$/)
     await expect(page.locator('.ev-poster img')).toHaveCount(2)
     await expect(page.locator('.ev-poster img').first()).toHaveAttribute('src', 'https://example.com/poster-p1.webp')
-    await expect(page.locator('.ev-poster object')).toHaveCount(0)
     await expect(page.locator('.ev-info a')).toHaveCount(0)
   })
 

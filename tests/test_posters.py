@@ -76,13 +76,13 @@ def mock_client(event_rows):
 
 class TestDeleteOrphanPosters:
     ROWS = [
-        {"poster": None, "poster_pages": [{"url": BASE_URL + "a-p1.webp"}, {"url": BASE_URL + "a-p2.webp"}]},
-        {"poster": BASE_URL + "legacy.pdf", "poster_pages": []},
-        {"poster": None, "poster_pages": []},
+        {"poster_pages": [{"url": BASE_URL + "a-p1.webp"}, {"url": BASE_URL + "a-p2.webp"}]},
+        {"poster_pages": [{"url": BASE_URL + "b-p1.webp"}]},
+        {"poster_pages": []},
     ]
 
     def test_cancella_solo_i_file_non_referenziati(self):
-        stored = ["a-p1.webp", "a-p2.webp", "legacy.pdf", "vecchio.pdf", "a-old-p1.webp"]
+        stored = ["a-p1.webp", "a-p2.webp", "b-p1.webp", "vecchio.pdf", "a-old-p1.webp"]
         with patch.object(SupabaseManager, "get_client", return_value=mock_client(self.ROWS)), \
              patch.object(SupabaseManager, "_list_storage_files", return_value=stored), \
              patch.object(SupabaseManager, "delete_poster_files") as mock_delete:
@@ -99,6 +99,6 @@ class TestDeleteOrphanPosters:
 
         mock_delete.assert_not_called()
 
-    def test_poster_filenames_include_pdf_legacy_e_pagine(self):
-        row = {"poster": BASE_URL + "legacy.pdf", "poster_pages": [{"url": BASE_URL + "x-p1.webp?"}]}
-        assert SupabaseManager._poster_filenames(row) == ["x-p1.webp", "legacy.pdf"]
+    def test_poster_filenames_estrae_i_nomi_delle_pagine(self):
+        row = {"poster_pages": [{"url": BASE_URL + "x-p1.webp?"}, {"url": BASE_URL + "x-p2.webp"}]}
+        assert SupabaseManager._poster_filenames(row) == ["x-p1.webp", "x-p2.webp"]

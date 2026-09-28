@@ -68,7 +68,7 @@ Componenti condivisi tra lista e dettaglio (ognuno porta il suo CSS, non usare l
 
 ### Database Schema (Supabase/PostgreSQL)
 - `locations`: id, city, province, province_name, region, created_at
-- `events`: id, name, date, location_id, organizer, url, poster (PDF legacy, non più scritto), poster_pages (jsonb `[{url, width, height}]`), distances, created_at, updated_at
+- `events`: id, name, date, location_id, organizer, url, poster_pages (jsonb `[{url, width, height}]`), distances, created_at, updated_at
 - Migrazioni SQL in `supabase/migrations/`, applicate a mano dall'SQL Editor di Supabase
 
 ### Deployment

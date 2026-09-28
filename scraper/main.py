@@ -55,7 +55,7 @@ def main():
     
     print(f"\n✅ Total: {total_inserted} inserted, {total_updated} updated")
 
-    # Rimuovi da Storage i file dei poster non più referenziati (PDF legacy, pagine sostituite)
+    # Rimuovi da Storage i file dei poster non più referenziati (pagine sostituite, residui)
     print("\n🧹 Deleting orphan poster files...")
     try:
         deleted = SupabaseManager.delete_orphan_posters()
