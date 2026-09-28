@@ -4,6 +4,7 @@ import { formatDate } from '../../utils/formatDate'
 import type { Event, Status } from '../../types'
 import DateHeader from '../DateHeader/DateHeader'
 import Divider from '../Divider/Divider'
+import EventInfo from '../EventInfo/EventInfo'
 import Skeleton from '../Skeleton/Skeleton'
 import StatusMessage from '../StatusMessage/StatusMessage'
 import './EventDetail.css'
@@ -126,8 +127,6 @@ export default function EventDetail({ status, event, events, selectedProvince, o
     )
   }
 
-  const distances = event.distances.join(' - ')
-
   return (
     <main className="ev-page" onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
       <DateHeader
@@ -150,22 +149,7 @@ export default function EventDetail({ status, event, events, selectedProvince, o
       <Divider />
 
       <section className="ev-body">
-        <div className="ev-info">
-          <div className="ev-group">
-            <span className="ev-label">Dove</span>
-            <p className="ev-location">{event.location.city} ({event.location.province})</p>
-          </div>
-          <div className="ev-group">
-            <span className="ev-label">Quando</span>
-            <p>{formatDate(event.date)}</p>
-          </div>
-          {distances && (
-            <div className="ev-group">
-              <span className="ev-label">Percorso</span>
-              <p>km: {distances}</p>
-            </div>
-          )}
-        </div>
+        <EventInfo event={event} layout="stacked" />
 
         <figure className="ev-poster">
           <Poster event={event} />

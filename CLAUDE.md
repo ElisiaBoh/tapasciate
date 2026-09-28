@@ -47,7 +47,7 @@ App                 — sceglie la vista in base al path: `/` → lista, `/event
 └── Footer
 ```
 
-Componenti condivisi tra lista e dettaglio (ognuno porta il suo CSS, non usare le loro classi senza importarli): `DateHeader` (striscia rosa), `DetailsButton` (pulsante "dettagli" nella card), `Divider`, `Skeleton`, `StatusMessage` (messaggi di errore/vuoto).
+Componenti condivisi tra lista e dettaglio (ognuno porta il suo CSS, non usare le loro classi senza importarli): `DateHeader` (striscia rosa), `EventInfo` (Dove/Quando/Percorso, layout `stacked` nel dettaglio e `inline` nella card), `DetailsButton` (pulsante "dettagli" nella card), `Divider`, `Skeleton`, `StatusMessage` (messaggi di errore/vuoto).
 
 **Hooks e servizi:**
 - **`hooks/useEvents.ts`**: gestisce tutto lo stato — fetching, filtraggio per provincia, raggruppamento per data. Espone: `status`, `events`, `upcomingEvents`, `groupedEvents`, `sortedDates`, `provinces`, `selectedProvince`, `setProvince`

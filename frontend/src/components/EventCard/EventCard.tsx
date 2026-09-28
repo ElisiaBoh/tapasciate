@@ -1,6 +1,6 @@
-import { formatDate } from '../../utils/formatDate'
 import DetailsButton from '../DetailsButton/DetailsButton'
 import Divider from '../Divider/Divider'
+import EventInfo from '../EventInfo/EventInfo'
 import type { Event } from '../../types'
 import './EventCard.css'
 
@@ -16,17 +16,7 @@ export default function EventCard({ event }: Props) {
           <h3 className="event-title">{event.title}</h3>
 
           <div className="event-details">
-            <p className="event-location">
-              {event.location.city} ({event.location.province})
-            </p>
-            <p className="event-date">
-              {formatDate(event.date)}
-            </p>
-            {event.distances.length > 0 && (
-              <p className="event-distances">
-                km: {event.distances.join(' - ')}
-              </p>
-            )}
+            <EventInfo event={event} layout="inline" />
           </div>
 
           <div className="event-actions">
