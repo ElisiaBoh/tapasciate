@@ -45,7 +45,9 @@ class FIASPScraper(BaseScraper):
             return []
 
         events = []
-        for row in table.find_all("tr")[1:]:  # Skip header
+        # La tabella FIASP non ha sempre una riga d'intestazione: le righe senza <td>
+        # (intestazioni con <th>) vengono comunque scartate da _parse_row
+        for row in table.find_all("tr"):
             event = self._parse_row(row)
             if event:
                 events.append(event)

@@ -45,6 +45,20 @@ class TestFIASPScraperParsing:
         assert events[0].location.province == Province.BG
         assert events[0].source == "FIASP"
 
+    def test_parse_html_without_header_keeps_first_row(self):
+        """Senza riga d'intestazione il primo evento non deve essere scartato."""
+        html = """
+        <html><body>
+            <table>
+                <tr><td>03/10/2026</td><td>CAMMINATA DEL SORRISO</td><td>ALZATE BRIANZA (CO)</td></tr>
+                <tr><td>04/10/2026</td><td>Secondo Evento</td><td>Bergamo (BG)</td></tr>
+            </table>
+        </body></html>
+        """
+        events = FIASPScraper()._parse_html(html)
+
+        assert [e.title for e in events] == ["CAMMINATA DEL SORRISO", "Secondo Evento"]
+
     def test_parse_html_empty_table(self):
         """Test parsing HTML with no table."""
         html = "<html><body><p>No events</p></body></html>"
