@@ -39,15 +39,20 @@ pytest tests/        # Run tests
 
 **Component tree:**
 ```
-App
-├── Header          — logo e titolo; aggiunge classe CSS quando la pagina è scrollata
-├── ProvinceFilter  — dropdown/pill per filtrare per provincia; disabilitato durante il caricamento
-├── EventList       — lista eventi raggruppati per data
+App                 — sceglie la vista in base al path: `/` → lista, `/evento/<id>-<slug>` → dettaglio
+├── Header          — logo (link alla home); aggiunge classe CSS quando la pagina è scrollata
+├── ProvinceFilter  — dropdown per filtrare per provincia; nel dettaglio contiene anche BackButton ("← lista")
+├── EventList       — lista eventi raggruppati per data (il pulsante "dettagli" di EventCard apre il dettaglio)
+├── EventDetail     — dettaglio evento; frecce/tasti/swipe scorrono gli eventi filtrati per provincia
 └── Footer
 ```
 
+Componenti condivisi tra lista e dettaglio (ognuno porta il suo CSS, non usare le loro classi senza importarli): `DateHeader` (striscia rosa), `DetailsButton` (pulsante "dettagli" nella card), `Divider`, `Skeleton`, `StatusMessage` (messaggi di errore/vuoto).
+
 **Hooks e servizi:**
-- **`hooks/useEvents.ts`**: gestisce tutto lo stato — fetching, filtraggio per provincia, raggruppamento per data. Espone: `status`, `groupedEvents`, `sortedDates`, `provinces`, `selectedProvince`, `setProvince`
+- **`hooks/useEvents.ts`**: gestisce tutto lo stato — fetching, filtraggio per provincia, raggruppamento per data. Espone: `status`, `events`, `upcomingEvents`, `groupedEvents`, `sortedDates`, `provinces`, `selectedProvince`, `setProvince`
+- **`hooks/useRoute.ts`**: router minimale senza librerie (`usePathname`, `navigate`, `linkClickHandler`) basato su History API; Netlify reindirizza già `/*` su `index.html`
+- **`utils/eventPath.ts`**: costruisce/parsa gli URL `/evento/<id>-<slug>` (l'id è quello della tabella `events`)
 - **`eventsService.ts`**: unico layer dati — chiama Supabase con JOIN su `locations`, mappa i campi al tipo `Event`
 - **`supabaseClient.ts`**: istanza Supabase (URL e anon key sono pubbliche, ok commitarle)
 - **`types/`**: tipi TypeScript condivisi (incluso `Event`)

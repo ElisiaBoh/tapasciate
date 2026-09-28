@@ -1,12 +1,14 @@
 import '@testing-library/jest-dom'
-import { render, screen, fireEvent } from '@testing-library/react'
+import { render, screen } from '@testing-library/react'
 import EventCard from '../components/EventCard/EventCard'
 import type { Event } from '../types'
 
 const baseEvent: Event = {
+  id: 1,
   title: 'Tapasciata dei Colli',
   date: '2026-06-15',
   location: { city: 'Bergamo', province: 'BG', province_name: 'Bergamo', region: 'Lombardia' },
+  posterPages: [],
   poster: null,
   source: null,
   distances: [],
@@ -23,24 +25,23 @@ describe('EventCard', () => {
     expect(screen.getByText('Bergamo (BG)')).toBeInTheDocument()
   })
 
-  it('non mostra il pulsante poster se poster è null', () => {
+  it('mostra il pulsante dettagli anche senza locandina', () => {
     render(<EventCard event={baseEvent} />)
-    expect(screen.queryByRole('button', { name: /poster/i })).not.toBeInTheDocument()
+    expect(screen.getByRole('link', { name: 'dettagli' })).toBeInTheDocument()
   })
 
-  it('mostra il pulsante poster se poster è fornito', () => {
+  it('il pulsante dettagli porta alla pagina di dettaglio', () => {
     const event = { ...baseEvent, poster: 'https://example.com/poster.pdf' }
     render(<EventCard event={event} />)
-    expect(screen.getByRole('button', { name: /poster/i })).toBeInTheDocument()
+    const link = screen.getByRole('link', { name: 'dettagli' })
+    expect(link).toHaveAttribute('href', '/evento/1-tapasciata-dei-colli')
+    expect(link).not.toHaveAttribute('target')
   })
 
-  it('apre l\'url del poster in una nuova tab al click', () => {
-    const openSpy = jest.spyOn(window, 'open').mockImplementation(() => null)
-    const event = { ...baseEvent, poster: 'https://example.com/poster.pdf' }
-    render(<EventCard event={event} />)
-    fireEvent.click(screen.getByRole('button', { name: /poster/i }))
-    expect(openSpy).toHaveBeenCalledWith('https://example.com/poster.pdf', '_blank')
-    openSpy.mockRestore()
+  it('il titolo non è un link: il dettaglio si apre solo dal pulsante', () => {
+    render(<EventCard event={baseEvent} />)
+    expect(screen.queryByRole('link', { name: 'Tapasciata dei Colli' })).not.toBeInTheDocument()
+    expect(screen.getAllByRole('link')).toHaveLength(1)
   })
 
   it('mostra le distanze quando presenti', () => {

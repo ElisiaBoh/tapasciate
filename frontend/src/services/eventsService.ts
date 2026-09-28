@@ -18,6 +18,7 @@ export async function fetchEvents(): Promise<Event[]> {
   if (error) throw error
 
   return data.map(event => ({
+    id: event.id,
     title: event.name,
     date: event.date,
     location: {
@@ -26,6 +27,7 @@ export async function fetchEvents(): Promise<Event[]> {
       province_name: event.location.province_name,
       region: event.location.region,
     },
+    posterPages: event.poster_pages ?? [],
     poster: event.poster ?? null,
     source: event.organizer ?? null,
     distances: event.distances ?? [],

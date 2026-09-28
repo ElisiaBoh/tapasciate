@@ -1,4 +1,6 @@
+import type { ReactNode } from 'react'
 import type { Province, Status } from '../../types'
+import Skeleton from '../Skeleton/Skeleton'
 import './ProvinceFilter.css'
 
 interface Props {
@@ -6,19 +8,22 @@ interface Props {
   provinces: Province[]
   selectedProvince: string
   onChange: (province: string) => void
+  children?: ReactNode
 }
 
-export default function ProvinceFilter({ status, provinces, selectedProvince, onChange }: Props) {
+export default function ProvinceFilter({ status, provinces, selectedProvince, onChange, children }: Props) {
   return (
     <div className="filters">
       <div className="filters-content">
+        {children}
         {status === 'loading' ? (
-          <div className="skeleton skeleton-filter" />
+          <Skeleton className="skeleton-filter" />
         ) : (
           <select
             value={selectedProvince}
             onChange={(e) => onChange(e.target.value)}
             className="province-filter"
+            aria-label="Filtra per provincia"
           >
             <option value="">Tutte le province</option>
             {provinces.map(province => (

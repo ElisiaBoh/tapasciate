@@ -1,4 +1,6 @@
 import { formatDate } from '../../utils/formatDate'
+import DetailsButton from '../DetailsButton/DetailsButton'
+import Divider from '../Divider/Divider'
 import type { Event } from '../../types'
 import './EventCard.css'
 
@@ -28,18 +30,11 @@ export default function EventCard({ event }: Props) {
           </div>
 
           <div className="event-actions">
-            {event.poster && (
-              <button
-                className="poster-button"
-                onClick={() => window.open(event.poster!, '_blank')}
-              >
-                poster
-              </button>
-            )}
+            <DetailsButton event={event} />
           </div>
         </div>
       </div>
-      <div className="event-divider" />
+      <Divider />
     </>
   )
 }
