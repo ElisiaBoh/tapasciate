@@ -42,18 +42,20 @@ def main():
     
     total_inserted = 0
     total_updated = 0
+    total_removed = 0
     
     for scraper in scrapers:
         print(f"\n🔄 Running {scraper.source_name}...")
         try:
-            inserted, updated = scraper.run()
-            print(f"✅ {scraper.source_name}: {inserted} inserted, {updated} updated")
+            inserted, updated, removed = scraper.run()
+            print(f"✅ {scraper.source_name}: {inserted} inserted, {updated} updated, {removed} removed")
             total_inserted += inserted
             total_updated += updated
+            total_removed += removed
         except Exception as e:
             print(f"❌ {scraper.source_name} failed: {e}")
     
-    print(f"\n✅ Total: {total_inserted} inserted, {total_updated} updated")
+    print(f"\n✅ Total: {total_inserted} inserted, {total_updated} updated, {total_removed} removed")
 
     # Rimuovi da Storage i file dei poster non più referenziati (pagine sostituite, residui)
     print("\n🧹 Deleting orphan poster files...")

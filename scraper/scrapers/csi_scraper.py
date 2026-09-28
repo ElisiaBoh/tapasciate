@@ -2,6 +2,7 @@
 Scraper for CSI Bergamo events.
 """
 from __future__ import annotations
+import re
 import requests
 import time
 import datetime
@@ -16,6 +17,10 @@ from scraper.config import BASE_CSI_BERGAMO, CSI_LIST, REQUEST_DELAY, REQUEST_TI
 
 class CSIScraper(BaseScraper):
     """Scraper for CSI Bergamo walking events."""
+
+    @property
+    def source(self) -> str:
+        return "CSI"
 
     @property
     def source_name(self) -> str:
@@ -57,7 +62,14 @@ class CSIScraper(BaseScraper):
             return None
         
         detail_url = BASE_CSI_BERGAMO + a["href"]
-        
+
+        source_id = self._extract_source_id(a["href"])
+        if not source_id:
+            print(f"⚠️ Skipped CSI event without article id: {detail_url}")
+            return None
+        # Segnato prima di scaricare il dettaglio: un errore di rete non deve far rimuovere l'evento
+        self._mark_seen(source_id)
+
         try:
             r = requests.get(detail_url, timeout=REQUEST_TIMEOUT)
             r.raise_for_status()
@@ -89,12 +101,20 @@ class CSIScraper(BaseScraper):
                 date=date,
                 location=location,
                 poster_pages=poster_pages,
-                source="CSI",
+                source=self.source,
+                source_id=source_id,
+                url=detail_url,
                 distances=[]
             )
         except Exception as e:
             print(f"⚠️ Skipped invalid CSI event: {e}")
             return None
+
+    @staticmethod
+    def _extract_source_id(href: str) -> str | None:
+        """Estrae l'id dell'articolo CSI dall'URL (es. ".../5952-titolo-evento.html" → "5952")."""
+        match = re.search(r"/(\d+)-[^/]*\.html$", href)
+        return match.group(1) if match else None
 
     def _extract_and_upload_poster(self, content, title: str, date: str) -> List[PosterPage]:
         """

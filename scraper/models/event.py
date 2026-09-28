@@ -28,4 +28,6 @@ class Event(BaseModel):
     location: Location
     poster_pages: List[PosterPage] = []
     source: Literal["CSI", "FIASP"]
+    source_id: str  # ID dell'evento sulla fonte: chiave stabile anche se cambiano nome o data
+    url: str  # pagina dell'evento sulla fonte
     distances: List[str]

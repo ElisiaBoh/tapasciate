@@ -32,7 +32,7 @@ pytest tests/        # Run tests
 
 ### Data Flow
 1. GitHub Actions triggers `scraper/main.py` every Wednesday at 06:00 CEST
-2. Scraper deletes past events from Supabase, then scrapes new ones from CSI Bergamo and FIASP Italia
+2. Scraper deletes past events from Supabase, then scrapes new ones from CSI Bergamo and FIASP Italia; events no longer listed by a source are marked `removed_at` (hidden, not deleted)
 3. Frontend reads events from Supabase and displays them filtered by province
 
 ### Frontend (`frontend/src/`)
@@ -62,13 +62,14 @@ Componenti condivisi tra lista e dettaglio (ognuno porta il suo CSS, non usare l
 ### Scraper (`scraper/`)
 - `BaseScraper` abstract class in `scrapers/base.py` — tutti gli scraper la estendono
 - Ogni scraper restituisce `list[Event]` (Pydantic model da `models/event.py`)
-- `db/supabase_client.py` gestisce la logica di upsert usando l'URL dell'evento come chiave univoca
+- `db/supabase_client.py` gestisce la logica di upsert usando `(source, source_id)` come chiave univoca: `source_id` è l'ID dell'evento sulla fonte (FIASP `idMan`, id articolo CSI dall'URL), quindi cambi di nome/data aggiornano la stessa riga
+- **Eventi rimossi**: ogni scraper registra gli ID elencati dalla fonte (`_mark_seen`, anche se il parsing dell'evento fallisce); a fine run gli eventi non visti ricevono `removed_at` e il frontend li nasconde. Se una fonte restituisce meno del 50% degli eventi attivi la rimozione viene saltata (`MIN_SEEN_RATIO` in `scrapers/base.py`)
 - `models/provinces.py` e `utils/region_mapper.py` normalizzano i dati di localizzazione
 - **Poster**: ogni scraper ottiene un PDF (CSI unisce le immagini con `img2pdf`, FIASP scarica il volantino), `utils/poster_renderer.py` lo converte in WebP 1200px (una per pagina, con pypdfium2) e `BaseScraper._upload_poster_pages` le carica su Storage (`posters/<nome>-<hash>-pN.webp`). A fine run `SupabaseManager.delete_orphan_posters()` cancella i file non più referenziati
 
 ### Database Schema (Supabase/PostgreSQL)
 - `locations`: id, city, province, province_name, region, created_at
-- `events`: id, name, date, location_id, organizer, url, poster_pages (jsonb `[{url, width, height}]`), distances, created_at, updated_at
+- `events`: id, name, date, location_id, organizer, url (pagina sulla fonte), source (`FIASP`/`CSI`), source_id, last_seen_at, removed_at, poster_pages (jsonb `[{url, width, height}]`), distances, created_at, updated_at — unique `(source, source_id)`
 - Migrazioni SQL in `supabase/migrations/`, applicate a mano dall'SQL Editor di Supabase
 
 ### Deployment

@@ -29,7 +29,7 @@ class TestFIASPScraperParsing:
                 <tr><th>Data</th><th>Titolo</th><th>Località</th></tr>
                 <tr>
                     <td>10/02/2026</td>
-                    <td>Test Event</td>
+                    <td><a href="www_eventi.php?idMan=101">Test Event</a></td>
                     <td>Bergamo (BG)</td>
                 </tr>
             </table>
@@ -50,8 +50,8 @@ class TestFIASPScraperParsing:
         html = """
         <html><body>
             <table>
-                <tr><td>03/10/2026</td><td>CAMMINATA DEL SORRISO</td><td>ALZATE BRIANZA (CO)</td></tr>
-                <tr><td>04/10/2026</td><td>Secondo Evento</td><td>Bergamo (BG)</td></tr>
+                <tr><td>03/10/2026</td><td><a href="www_eventi.php?idMan=102">CAMMINATA DEL SORRISO</a></td><td>ALZATE BRIANZA (CO)</td></tr>
+                <tr><td>04/10/2026</td><td><a href="www_eventi.php?idMan=103">Secondo Evento</a></td><td>Bergamo (BG)</td></tr>
             </table>
         </body></html>
         """
@@ -74,7 +74,7 @@ class TestFIASPScraperParsing:
             <table>
                 <tr><th>Data</th><th>Titolo</th><th>Località</th></tr>
                 <tr><td>01/01/2024</td></tr>
-                <tr><td>02/02/2026</td><td>Valid Event</td><td>Milano (MI)</td></tr>
+                <tr><td>02/02/2026</td><td><a href="www_eventi.php?idMan=104">Valid Event</a></td><td>Milano (MI)</td></tr>
             </table>
         </body></html>
         """
@@ -93,7 +93,7 @@ class TestFIASPScraperParsing:
                 <tr><th>Data</th><th>Titolo</th><th>Località</th><th>Distanze</th></tr>
                 <tr>
                     <td>01/03/2026</td>
-                    <td>Test Event</td>
+                    <td><a href="www_eventi.php?idMan=105">Test Event</a></td>
                     <td>Bergamo (BG)</td>
                     <td>5 - 10 - 15</td>
                 </tr>
@@ -115,7 +115,7 @@ class TestFIASPScraperParsing:
                 <tr><th>Data</th><th>Titolo</th><th>Località</th><th>D1</th><th>D2</th><th>D3</th><th>Volantino</th></tr>
                 <tr>
                     <td>01/03/2026</td>
-                    <td>Test Event</td>
+                    <td><a href="www_eventi.php?idMan=106">Test Event</a></td>
                     <td>Bergamo (BG)</td>
                     <td></td>
                     <td></td>
@@ -142,7 +142,7 @@ class TestFIASPScraperParsing:
                 <tr><th>Data</th><th>Titolo</th><th>Località</th></tr>
                 <tr>
                     <td>01/03/2026</td>
-                    <td>Test Event</td>
+                    <td><a href="www_eventi.php?idMan=107">Test Event</a></td>
                     <td>Bergamo (BG)</td>
                 </tr>
             </table>
@@ -170,7 +170,7 @@ class TestFIASPScraperParsing:
                     <tr><th>Data</th><th>Titolo</th><th>Località</th></tr>
                     <tr>
                         <td>01/03/2026</td>
-                        <td>Test Event</td>
+                        <td><a href="www_eventi.php?idMan=108">Test Event</a></td>
                         <td>{location_str}</td>
                     </tr>
                 </table>
@@ -229,9 +229,9 @@ class TestFIASPScraperParsing:
         <html><body>
             <table>
                 <tr><th>Data</th><th>Titolo</th><th>Località</th></tr>
-                <tr><td>01/03/2026</td><td>Event 1</td><td>Bergamo (BG)</td></tr>
-                <tr><td>02/03/2026</td><td>Event 2</td><td>Milano (MI)</td></tr>
-                <tr><td>03/03/2026</td><td>Event 3</td><td>Roma (RM)</td></tr>
+                <tr><td>01/03/2026</td><td><a href="www_eventi.php?idMan=109">Event 1</a></td><td>Bergamo (BG)</td></tr>
+                <tr><td>02/03/2026</td><td><a href="www_eventi.php?idMan=110">Event 2</a></td><td>Milano (MI)</td></tr>
+                <tr><td>03/03/2026</td><td><a href="www_eventi.php?idMan=111">Event 3</a></td><td>Roma (RM)</td></tr>
             </table>
         </body></html>
         """
@@ -347,3 +347,44 @@ class TestFIASPPosterUpload:
         )
         assert result == UPLOADED_PAGES
         mock_upload.assert_called_once()
+
+
+class TestFIASPSourceId:
+    """L'ID FIASP (idMan) identifica l'evento anche se cambiano nome o data."""
+
+    def test_estrae_id_e_url_della_fonte(self):
+        html = """
+        <table>
+            <tr><td>04/10/2026</td><td><a href="www_eventi.php?idMan=19171">19ª MARCIA</a></td><td>Tapogliano (UD)</td></tr>
+        </table>
+        """
+        scraper = FIASPScraper()
+        events = scraper._parse_html(html)
+
+        assert events[0].source_id == "19171"
+        assert events[0].url == "https://servizi.fiaspitalia.it/www_eventi.php?idMan=19171"
+        assert scraper._seen_ids == {"19171"}
+
+    def test_scarta_le_righe_senza_id(self):
+        html = """
+        <table>
+            <tr><td>04/10/2026</td><td>Senza link</td><td>Bergamo (BG)</td></tr>
+        </table>
+        """
+        scraper = FIASPScraper()
+
+        assert scraper._parse_html(html) == []
+        assert scraper._seen_ids == set()
+
+    @patch("scraper.scrapers.fiasp_scraper.Event", side_effect=ValueError("evento non valido"))
+    def test_riga_non_valida_resta_comunque_vista(self, mock_event):
+        """Un errore di parsing non deve far rimuovere un evento ancora presente sulla fonte."""
+        html = """
+        <table>
+            <tr><td>04/10/2026</td><td><a href="www_eventi.php?idMan=42">Evento</a></td><td>Bergamo (BG)</td></tr>
+        </table>
+        """
+        scraper = FIASPScraper()
+
+        assert scraper._parse_html(html) == []
+        assert scraper._seen_ids == {"42"}

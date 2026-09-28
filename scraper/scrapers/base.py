@@ -6,6 +6,7 @@ import re
 import hashlib
 import img2pdf
 from abc import ABC, abstractmethod
+from datetime import datetime, timezone
 from typing import Optional, Tuple, List
 from scraper.models.event import Event, PosterPage
 from scraper.models.operation import Operation
@@ -13,8 +14,23 @@ from scraper.db.supabase_client import SupabaseManager
 from scraper.utils.poster_renderer import render_pdf_pages
 
 
+# Sotto questa quota di eventi visti rispetto a quelli attivi la fonte è considerata
+# incompleta (sito rotto, pagina cambiata) e non si rimuove nulla
+MIN_SEEN_RATIO = 0.5
+
+
 class BaseScraper(ABC):
     """Abstract base class for event scrapers."""
+
+    def __init__(self):
+        # ID degli eventi elencati dalla fonte nel run corrente, anche se il parsing è fallito
+        self._seen_ids: set[str] = set()
+
+    @property
+    @abstractmethod
+    def source(self) -> str:
+        """Codice della sorgente salvato in events.source (es. 'FIASP')"""
+        pass
 
     @property
     @abstractmethod
@@ -33,8 +49,20 @@ class BaseScraper(ABC):
         """Scarica e parsa gli eventi dalla sorgente. Implementato da ogni scraper."""
         pass
 
-    def run(self) -> Tuple[int, int]:
-        """Esegue lo scraping e salva su Supabase. Comune a tutti gli scraper."""
+    def _mark_seen(self, source_id: str):
+        """Registra un evento elencato dalla fonte: non verrà marcato come rimosso."""
+        self._seen_ids.add(source_id)
+
+    def run(self) -> Tuple[int, int, int]:
+        """
+        Esegue lo scraping, salva su Supabase e marca come rimossi gli eventi spariti dalla fonte.
+        Comune a tutti gli scraper.
+
+        Returns:
+            (inseriti, aggiornati, rimossi)
+        """
+        self._seen_ids = set()
+        seen_at = datetime.now(timezone.utc).isoformat()
         events = self._fetch_events()
 
         inserted = 0
@@ -47,7 +75,21 @@ class BaseScraper(ABC):
             elif result == Operation.UPDATED:
                 updated += 1
 
-        return (inserted, updated)
+        removed = self._remove_unseen_events(seen_at)
+        return (inserted, updated, removed)
+
+    def _remove_unseen_events(self, seen_at: str) -> int:
+        """Marca come rimossi gli eventi non più elencati, se la fonte sembra letta per intero."""
+        active = SupabaseManager.count_active_events(self.source)
+        if not self._seen_ids or len(self._seen_ids) < active * MIN_SEEN_RATIO:
+            print(
+                f"⚠️ {self.source_name}: {len(self._seen_ids)} events seen out of {active} active, "
+                "skipping removal as a precaution"
+            )
+            return 0
+
+        SupabaseManager.mark_events_seen(self.source, self._seen_ids, seen_at)
+        return SupabaseManager.remove_unseen_events(self.source, seen_at)
 
     @staticmethod
     def _make_poster_basename(prefix: str, title: str, date: str) -> str:
@@ -122,11 +164,13 @@ class BaseScraper(ABC):
             )
 
             operation = SupabaseManager.upsert_event(
+                source=event.source,
+                source_id=event.source_id,
                 name=event.title,
                 date=event.date,
                 location_id=location_id,
                 organizer=self.organizer,
-                url=None,
+                url=event.url,
                 poster_pages=[page.model_dump(mode="json") for page in event.poster_pages],
                 distances=event.distances
             )
