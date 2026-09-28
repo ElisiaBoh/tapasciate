@@ -9,6 +9,7 @@ function makeEvent(overrides: Partial<Event> = {}): Event {
     title: 'Test Event',
     date: '2026-06-15',
     location: { city: 'Bergamo', province: 'BG', province_name: 'Bergamo', region: 'Lombardia' },
+    posterPages: [],
     poster: null,
     source: null,
     distances: [],

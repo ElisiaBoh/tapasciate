@@ -115,6 +115,10 @@
   height: auto;
 }
 
+.ev-poster img + img {
+  border-top: 4px solid var(--color-text-dark);
+}
+
 .ev-poster object {
   display: block;
   width: 100%;

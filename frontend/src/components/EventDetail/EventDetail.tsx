@@ -29,15 +29,27 @@ function ArrowIcon({ direction }: { direction: 'prev' | 'next' }) {
 }
 
 function Poster({ event }: { event: Event }) {
-  if (!event.poster) {
+  const pages = event.posterPages
+  if (pages.length > 0) {
     return (
-      <div className="ev-poster-placeholder">
-        <strong>Locandina</strong>
-        <span>non disponibile</span>
-      </div>
+      <>
+        {pages.map((page, i) => (
+          <img
+            key={page.url}
+            src={page.url}
+            width={page.width}
+            height={page.height}
+            loading={i === 0 ? 'eager' : 'lazy'}
+            decoding="async"
+            alt={pages.length > 1 ? `Locandina ${event.title}, pagina ${i + 1} di ${pages.length}` : `Locandina ${event.title}`}
+          />
+        ))}
+      </>
     )
   }
-  if (/\.pdf($|\?)/i.test(event.poster)) {
+
+  // Ripiego per le locandine non ancora convertite in immagini dallo scraper
+  if (event.poster) {
     return (
       <object data={event.poster} type="application/pdf" aria-label={`Locandina ${event.title}`}>
         <div className="ev-poster-placeholder">
@@ -47,7 +59,13 @@ function Poster({ event }: { event: Event }) {
       </object>
     )
   }
-  return <img src={event.poster} alt={`Locandina ${event.title}`} />
+
+  return (
+    <div className="ev-poster-placeholder">
+      <strong>Locandina</strong>
+      <span>non disponibile</span>
+    </div>
+  )
 }
 
 export default function EventDetail({ status, event, events, selectedProvince, onSelect }: Props) {

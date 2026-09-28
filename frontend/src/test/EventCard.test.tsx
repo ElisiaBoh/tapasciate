@@ -8,6 +8,7 @@ const baseEvent: Event = {
   title: 'Tapasciata dei Colli',
   date: '2026-06-15',
   location: { city: 'Bergamo', province: 'BG', province_name: 'Bergamo', region: 'Lombardia' },
+  posterPages: [],
   poster: null,
   source: null,
   distances: [],

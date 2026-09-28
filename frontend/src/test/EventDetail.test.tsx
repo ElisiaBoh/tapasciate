@@ -9,6 +9,7 @@ function makeEvent(overrides: Partial<Event> = {}): Event {
     title: 'Tapasciata dei Colli',
     date: '2030-06-15',
     location: { city: 'Bergamo', province: 'BG', province_name: 'Bergamo', region: 'Lombardia' },
+    posterPages: [],
     poster: null,
     source: null,
     distances: [],
@@ -38,10 +39,38 @@ describe('EventDetail', () => {
     expect(screen.getByText('2 / 3')).toBeInTheDocument()
   })
 
-  it('mostra le distanze e incorpora la locandina in pagina', () => {
+  it('mostra le distanze', () => {
     renderDetail()
     expect(screen.getByText('km: 6 - 12')).toBeInTheDocument()
+  })
+
+  it('mostra le pagine della locandina come immagini', () => {
+    const withPages = makeEvent({
+      id: 2,
+      title: 'Secondo',
+      posterPages: [
+        { url: 'https://example.com/p1.webp', width: 1200, height: 1697 },
+        { url: 'https://example.com/p2.webp', width: 1200, height: 1697 },
+      ],
+    })
+    renderDetail({ event: withPages })
+    const images = screen.getAllByRole('img', { name: /Locandina Secondo/ })
+    expect(images).toHaveLength(2)
+    expect(images[0]).toHaveAttribute('src', 'https://example.com/p1.webp')
+    expect(images[0]).toHaveAttribute('loading', 'eager')
+    expect(images[1]).toHaveAttribute('loading', 'lazy')
+    expect(images[1]).toHaveAccessibleName('Locandina Secondo, pagina 2 di 2')
+    expect(document.querySelector('object')).not.toBeInTheDocument()
+  })
+
+  it('senza immagini usa il PDF come ripiego', () => {
+    renderDetail()
     expect(document.querySelector('object')).toHaveAttribute('data', 'https://example.com/p.pdf')
+  })
+
+  it('senza locandina mostra il segnaposto', () => {
+    renderDetail({ event: first })
+    expect(screen.getByText('non disponibile')).toBeInTheDocument()
   })
 
   it('non offre link per aprire o scaricare la locandina', () => {
