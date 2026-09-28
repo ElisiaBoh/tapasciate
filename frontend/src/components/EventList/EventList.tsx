@@ -1,5 +1,9 @@
 import { formatDate } from '../../utils/formatDate'
 import EventCard from '../EventCard/EventCard'
+import DateHeader from '../DateHeader/DateHeader'
+import Divider from '../Divider/Divider'
+import Skeleton from '../Skeleton/Skeleton'
+import StatusMessage from '../StatusMessage/StatusMessage'
 import type { Event, Status } from '../../types'
 import './EventList.css'
 
@@ -14,25 +18,20 @@ function SkeletonList() {
     <>
       {[0, 1, 2].map(i => (
         <div key={i} className="date-section">
-          <div className="date-header">
-            <div className="date-header-content">
-              <div className="skeleton skeleton-date-title" />
-              <div className="skeleton skeleton-date-count" />
-            </div>
-          </div>
+          <DateHeader loading />
           <div className="events-grid">
             {[0, 1].map(j => (
               <div key={j}>
                 <div className="event-card">
                   <div className="event-content">
-                    <div className="skeleton skeleton-event-title" />
+                    <Skeleton className="skeleton-event-title" />
                     <div className="event-details">
-                      <div className="skeleton skeleton-event-line" />
-                      <div className="skeleton skeleton-event-line skeleton-event-line--short" />
+                      <Skeleton className="skeleton-event-line" />
+                      <Skeleton className="skeleton-event-line skeleton-event-line--short" />
                     </div>
                   </div>
                 </div>
-                <div className="event-divider" />
+                <Divider />
               </div>
             ))}
           </div>
@@ -54,9 +53,7 @@ export default function EventList({ status, sortedDates, groupedEvents }: Props)
   if (status === 'error') {
     return (
       <main className="events-container">
-        <div className="no-events">
-          <p>Errore nel caricamento degli eventi. Riprova più tardi.</p>
-        </div>
+        <StatusMessage>Errore nel caricamento degli eventi. Riprova più tardi.</StatusMessage>
       </main>
     )
   }
@@ -66,23 +63,16 @@ export default function EventList({ status, sortedDates, groupedEvents }: Props)
       {sortedDates.length > 0 ? (
         sortedDates.map((date, index) => (
           <div key={date} className={`date-section pattern-${index % 3}`}>
-            <div className="date-header">
-              <div className="date-header-content">
-                <h2 className="date-title">{formatDate(date)}</h2>
-                <span className="date-count">{groupedEvents[date].length} tapasciate</span>
-              </div>
-            </div>
+            <DateHeader title={formatDate(date)} count={`${groupedEvents[date].length} tapasciate`} />
             <div className="events-grid">
-              {groupedEvents[date].map((event, i) => (
-                <EventCard key={i} event={event} />
+              {groupedEvents[date].map(event => (
+                <EventCard key={event.id} event={event} />
               ))}
             </div>
           </div>
         ))
       ) : (
-        <div className="no-events">
-          <p>Nessun evento trovato per questa provincia.</p>
-        </div>
+        <StatusMessage>Nessun evento trovato per questa provincia.</StatusMessage>
       )}
     </main>
   )

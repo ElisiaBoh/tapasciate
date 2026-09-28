@@ -12,6 +12,7 @@ const PAST_DATE = '2020-01-01'
 
 function makeEvent(overrides: Partial<Event> = {}): Event {
   return {
+    id: 1,
     title: 'Test Event',
     date: FUTURE_DATE,
     location: { city: 'Bergamo', province: 'BG', province_name: 'Bergamo', region: 'Lombardia' },

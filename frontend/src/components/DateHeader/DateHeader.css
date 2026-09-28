@@ -1,0 +1,61 @@
+.date-header {
+  background: var(--color-pink);
+  width: 100%;
+  padding: 1rem 0;
+}
+
+.date-header-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.date-title {
+  color: var(--color-text-dark);
+  font-size: 1rem;
+  font-weight: 900;
+  line-height: 1.2;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.date-count {
+  color: var(--color-text-dark);
+  font-size: 1rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.skeleton.skeleton-date-title,
+.skeleton.skeleton-date-count {
+  height: 1.5rem;
+  background: linear-gradient(90deg, #E0395C 25%, #F76A84 50%, #E0395C 75%);
+  background-size: 1200px 100%;
+}
+
+.skeleton-date-title {
+  width: 200px;
+}
+
+.skeleton.skeleton-date-count {
+  width: 120px;
+}
+
+@media (max-width: 768px) {
+  .date-header-content {
+    padding: 0 1rem;
+  }
+
+  .date-count {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .date-count {
+    font-size: 0.85rem;
+  }
+}

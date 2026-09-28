@@ -1,4 +1,8 @@
 import { formatDate } from '../../utils/formatDate'
+import { eventPath } from '../../utils/eventPath'
+import { linkClickHandler } from '../../hooks/useRoute'
+import PosterButton from '../PosterButton/PosterButton'
+import Divider from '../Divider/Divider'
 import type { Event } from '../../types'
 import './EventCard.css'
 
@@ -7,11 +11,16 @@ interface Props {
 }
 
 export default function EventCard({ event }: Props) {
+  const path = eventPath(event)
   return (
     <>
       <div className="event-card">
         <div className="event-content">
-          <h3 className="event-title">{event.title}</h3>
+          <h3 className="event-title">
+            <a href={path} onClick={linkClickHandler(path, { state: { fromList: true } })}>
+              {event.title}
+            </a>
+          </h3>
 
           <div className="event-details">
             <p className="event-location">
@@ -28,18 +37,11 @@ export default function EventCard({ event }: Props) {
           </div>
 
           <div className="event-actions">
-            {event.poster && (
-              <button
-                className="poster-button"
-                onClick={() => window.open(event.poster!, '_blank')}
-              >
-                poster
-              </button>
-            )}
+            {event.poster && <PosterButton url={event.poster} />}
           </div>
         </div>
       </div>
-      <div className="event-divider" />
+      <Divider />
     </>
   )
 }

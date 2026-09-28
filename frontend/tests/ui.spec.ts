@@ -120,7 +120,7 @@ test.describe('Scheda evento', () => {
   test('mostra il pulsante poster se presente', async ({ page }) => {
     await mockSupabase(page, mockEvents)
     await page.goto('/')
-    await expect(page.getByRole('button', { name: /poster/i })).toBeVisible()
+    await expect(page.getByRole('link', { name: /poster/i })).toBeVisible()
   })
 
   test('non mostra il pulsante poster se assente', async ({ page }) => {
@@ -129,7 +129,7 @@ test.describe('Scheda evento', () => {
     // Solo l'evento con MI non ha poster: dopo aver filtrato per MI non deve esserci il bottone
     await page.waitForSelector('.province-filter')
     await page.selectOption('.province-filter', 'MI')
-    await expect(page.getByRole('button', { name: /poster/i })).not.toBeVisible()
+    await expect(page.getByRole('link', { name: /poster/i })).not.toBeVisible()
   })
 })
 
@@ -150,5 +150,50 @@ test.describe('Header', () => {
       window.scrollBy(0, 300)
     })
     await expect(page.locator('header')).toHaveClass(/header--scrolled/)
+  })
+})
+
+test.describe('Pagina evento', () => {
+  test('cliccando il titolo si apre il dettaglio', async ({ page }) => {
+    await mockSupabase(page, mockEvents)
+    await page.goto('/')
+    await page.getByRole('link', { name: 'Tapasciata dei Colli' }).click()
+    await expect(page).toHaveURL(/\/evento\/1-tapasciata-dei-colli$/)
+    await expect(page.getByRole('heading', { level: 1 })).toHaveText('Tapasciata dei Colli')
+    await expect(page.getByText('Bergamo (BG)')).toBeVisible()
+    await expect(page.getByText('1 / 2')).toBeVisible()
+  })
+
+  test('le frecce scorrono gli eventi e "← lista" riporta alla home', async ({ page }) => {
+    await mockSupabase(page, mockEvents)
+    await page.goto('/')
+    await page.getByRole('link', { name: 'Tapasciata dei Colli' }).click()
+    await page.getByRole('button', { name: /successiva/i }).click()
+    await expect(page).toHaveURL(/\/evento\/2-tapasciata-del-lago$/)
+    await expect(page.getByRole('heading', { level: 1 })).toHaveText('Tapasciata del Lago')
+    await page.getByRole('link', { name: '← lista' }).click()
+    await expect(page).toHaveURL(/\/$/)
+    await expect(page.getByText('Tapasciata del Lago')).toBeVisible()
+  })
+
+  test('apertura diretta da URL', async ({ page }) => {
+    await mockSupabase(page, mockEvents)
+    await page.goto('/evento/2-tapasciata-del-lago')
+    await expect(page.getByRole('heading', { level: 1 })).toHaveText('Tapasciata del Lago')
+    await expect(page.getByRole('button', { name: /successiva/i })).toBeDisabled()
+  })
+
+  test('cambiando provincia passa al primo evento di quella provincia', async ({ page }) => {
+    await mockSupabase(page, mockEvents)
+    await page.goto('/evento/1-tapasciata-dei-colli')
+    await page.waitForSelector('.province-filter')
+    await page.selectOption('.province-filter', 'MI')
+    await expect(page).toHaveURL(/\/evento\/2-tapasciata-del-lago$/)
+  })
+
+  test('evento inesistente mostra un messaggio', async ({ page }) => {
+    await mockSupabase(page, mockEvents)
+    await page.goto('/evento/999-non-esiste')
+    await expect(page.getByText(/Tapasciata non trovata/)).toBeVisible()
   })
 })

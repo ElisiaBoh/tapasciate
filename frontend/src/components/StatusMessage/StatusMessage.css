@@ -1,0 +1,6 @@
+.status-message {
+  text-align: center;
+  color: var(--color-text-dark);
+  font-size: 1rem;
+  padding: 3rem;
+}

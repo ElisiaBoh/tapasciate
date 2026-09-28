@@ -5,6 +5,7 @@ import type { Event } from '../types'
 
 function makeEvent(overrides: Partial<Event> = {}): Event {
   return {
+    id: 1,
     title: 'Test Event',
     date: '2026-06-15',
     location: { city: 'Bergamo', province: 'BG', province_name: 'Bergamo', region: 'Lombardia' },
@@ -46,7 +47,7 @@ describe('EventList', () => {
 
   it('mostra il conteggio degli eventi per data', () => {
     const groupedEvents = {
-      '2026-06-15': [makeEvent(), makeEvent({ title: 'Secondo Evento' })],
+      '2026-06-15': [makeEvent(), makeEvent({ id: 2, title: 'Secondo Evento' })],
     }
     render(
       <EventList status="success" sortedDates={['2026-06-15']} groupedEvents={groupedEvents} />
@@ -57,7 +58,7 @@ describe('EventList', () => {
   it('mostra più sezioni data', () => {
     const groupedEvents = {
       '2026-06-15': [makeEvent()],
-      '2026-07-01': [makeEvent({ title: 'Evento di Luglio' })],
+      '2026-07-01': [makeEvent({ id: 3, title: 'Evento di Luglio' })],
     }
     render(
       <EventList

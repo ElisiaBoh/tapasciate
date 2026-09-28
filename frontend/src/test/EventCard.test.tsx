@@ -1,9 +1,10 @@
 import '@testing-library/jest-dom'
-import { render, screen, fireEvent } from '@testing-library/react'
+import { render, screen } from '@testing-library/react'
 import EventCard from '../components/EventCard/EventCard'
 import type { Event } from '../types'
 
 const baseEvent: Event = {
+  id: 1,
   title: 'Tapasciata dei Colli',
   date: '2026-06-15',
   location: { city: 'Bergamo', province: 'BG', province_name: 'Bergamo', region: 'Lombardia' },
@@ -25,22 +26,26 @@ describe('EventCard', () => {
 
   it('non mostra il pulsante poster se poster è null', () => {
     render(<EventCard event={baseEvent} />)
-    expect(screen.queryByRole('button', { name: /poster/i })).not.toBeInTheDocument()
+    expect(screen.queryByRole('link', { name: /poster/i })).not.toBeInTheDocument()
   })
 
   it('mostra il pulsante poster se poster è fornito', () => {
     const event = { ...baseEvent, poster: 'https://example.com/poster.pdf' }
     render(<EventCard event={event} />)
-    expect(screen.getByRole('button', { name: /poster/i })).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: /poster/i })).toBeInTheDocument()
   })
 
-  it('apre l\'url del poster in una nuova tab al click', () => {
-    const openSpy = jest.spyOn(window, 'open').mockImplementation(() => null)
+  it('il link poster apre l\'url in una nuova tab', () => {
     const event = { ...baseEvent, poster: 'https://example.com/poster.pdf' }
     render(<EventCard event={event} />)
-    fireEvent.click(screen.getByRole('button', { name: /poster/i }))
-    expect(openSpy).toHaveBeenCalledWith('https://example.com/poster.pdf', '_blank')
-    openSpy.mockRestore()
+    const link = screen.getByRole('link', { name: /poster/i })
+    expect(link).toHaveAttribute('href', 'https://example.com/poster.pdf')
+    expect(link).toHaveAttribute('target', '_blank')
+  })
+
+  it('il titolo è un link alla pagina di dettaglio', () => {
+    render(<EventCard event={baseEvent} />)
+    expect(screen.getByRole('link', { name: 'Tapasciata dei Colli' })).toHaveAttribute('href', '/evento/1-tapasciata-dei-colli')
   })
 
   it('mostra le distanze quando presenti', () => {

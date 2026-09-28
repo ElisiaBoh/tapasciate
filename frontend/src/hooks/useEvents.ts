@@ -40,6 +40,8 @@ function parseDate(dateStr: string): Date {
 export interface UseEventsResult {
   status: Status
   error: string | null
+  events: Event[]
+  upcomingEvents: Event[]
   groupedEvents: Record<string, Event[]>
   sortedDates: string[]
   provinces: Province[]
@@ -69,15 +71,20 @@ export function useEvents(): UseEventsResult {
     [state.events, state.selectedProvince]
   )
 
-  const groupedEvents = useMemo(() =>
+  const upcomingEvents = useMemo(() =>
     filteredEvents
       .filter(e => parseDate(e.date) >= today)
-      .reduce<Record<string, Event[]>>((groups, event) => {
-        if (!groups[event.date]) groups[event.date] = []
-        groups[event.date].push(event)
-        return groups
-      }, {}),
+      .sort((a, b) => a.date.localeCompare(b.date)),
     [filteredEvents, today]
+  )
+
+  const groupedEvents = useMemo(() =>
+    upcomingEvents.reduce<Record<string, Event[]>>((groups, event) => {
+      if (!groups[event.date]) groups[event.date] = []
+      groups[event.date].push(event)
+      return groups
+    }, {}),
+    [upcomingEvents]
   )
 
   const sortedDates = useMemo(() =>
@@ -101,6 +108,8 @@ export function useEvents(): UseEventsResult {
   return {
     status: state.status,
     error: state.error,
+    events: state.events,
+    upcomingEvents,
     groupedEvents,
     sortedDates,
     provinces,

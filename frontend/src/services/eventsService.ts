@@ -18,6 +18,7 @@ export async function fetchEvents(): Promise<Event[]> {
   if (error) throw error
 
   return data.map(event => ({
+    id: event.id,
     title: event.name,
     date: event.date,
     location: {

@@ -6,6 +6,7 @@ export interface Location {
 }
 
 export interface Event {
+  id: number
   title: string
   date: string // YYYY-MM-DD
   location: Location
