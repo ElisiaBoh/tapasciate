@@ -9,7 +9,6 @@ const baseEvent: Event = {
   date: '2026-06-15',
   location: { city: 'Bergamo', province: 'BG', province_name: 'Bergamo', region: 'Lombardia' },
   posterPages: [],
-  poster: null,
   source: null,
   distances: [],
 }
@@ -31,8 +30,7 @@ describe('EventCard', () => {
   })
 
   it('il pulsante dettagli porta alla pagina di dettaglio', () => {
-    const event = { ...baseEvent, poster: 'https://example.com/poster.pdf' }
-    render(<EventCard event={event} />)
+    render(<EventCard event={baseEvent} />)
     const link = screen.getByRole('link', { name: 'dettagli' })
     expect(link).toHaveAttribute('href', '/evento/1-tapasciata-dei-colli')
     expect(link).not.toHaveAttribute('target')

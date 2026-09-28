@@ -89,8 +89,6 @@ class SupabaseManager:
             "organizer": organizer,
             "url": url,
             "poster_pages": poster_pages or [],
-            # Il PDF non si salva più: le locandine sono servite come immagini (poster_pages)
-            "poster": None,
             "distances": distances or []
         }
         
@@ -142,11 +140,8 @@ class SupabaseManager:
 
     @classmethod
     def _poster_filenames(cls, row: dict) -> List[str]:
-        """Nomi dei file su Storage referenziati da una riga di events (PDF legacy + pagine)."""
-        urls = [page["url"] for page in row.get("poster_pages") or [] if page.get("url")]
-        if row.get("poster"):
-            urls.append(row["poster"])
-        return [cls._storage_filename(url) for url in urls]
+        """Nomi dei file su Storage referenziati da una riga di events (pagine del poster)."""
+        return [cls._storage_filename(page["url"]) for page in row.get("poster_pages") or [] if page.get("url")]
 
     @classmethod
     def delete_poster_files(cls, filenames: Iterable[str]):
@@ -168,7 +163,7 @@ class SupabaseManager:
         today = date.today().isoformat()
 
         # Prima recupera i poster degli eventi da cancellare
-        result = client.table("events").select("poster, poster_pages").lt("date", today).execute()
+        result = client.table("events").select("poster_pages").lt("date", today).execute()
 
         # Cancella i file da Storage
         filenames = [name for row in result.data for name in cls._poster_filenames(row)]
@@ -196,14 +191,14 @@ class SupabaseManager:
     def delete_orphan_posters(cls) -> int:
         """
         Cancella da Storage i file che nessun evento referenzia più:
-        PDF legacy sostituiti dalle immagini, pagine di locandine aggiornate, residui di upload falliti.
+        pagine di locandine aggiornate, residui di upload falliti.
 
         Returns:
             Numero di file cancellati.
         """
         client = cls.get_client()
         # Se la query fallisce solleva un'eccezione: meglio non cancellare nulla che cancellare tutto
-        result = client.table("events").select("poster, poster_pages").execute()
+        result = client.table("events").select("poster_pages").execute()
         referenced = {name for row in result.data for name in cls._poster_filenames(row)}
 
         stored = cls._list_storage_files()

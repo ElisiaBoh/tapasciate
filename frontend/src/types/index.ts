@@ -18,8 +18,6 @@ export interface Event {
   location: Location
   // Pagine della locandina come immagini (generate dallo scraper)
   posterPages: PosterPage[]
-  // PDF legacy: usato solo finché lo scraper non ha convertito la locandina in immagini
-  poster: string | null
   source: string | null
   distances: string[]
 }

@@ -48,18 +48,6 @@ function Poster({ event }: { event: Event }) {
     )
   }
 
-  // Ripiego per le locandine non ancora convertite in immagini dallo scraper
-  if (event.poster) {
-    return (
-      <object data={event.poster} type="application/pdf" aria-label={`Locandina ${event.title}`}>
-        <div className="ev-poster-placeholder">
-          <strong>Locandina</strong>
-          <span>non visualizzabile su questo dispositivo</span>
-        </div>
-      </object>
-    )
-  }
-
   return (
     <div className="ev-poster-placeholder">
       <strong>Locandina</strong>

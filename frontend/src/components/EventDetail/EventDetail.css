@@ -119,12 +119,6 @@
   border-top: 4px solid var(--color-text-dark);
 }
 
-.ev-poster object {
-  display: block;
-  width: 100%;
-  aspect-ratio: 1 / 1.414;
-}
-
 .ev-poster-placeholder {
   aspect-ratio: 1 / 1.414;
   display: flex;
