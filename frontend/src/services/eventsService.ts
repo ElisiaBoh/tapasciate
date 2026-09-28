@@ -13,6 +13,8 @@ export async function fetchEvents(): Promise<Event[]> {
         region
       )
     `)
+    // Eventi non più elencati dalla fonte: restano nel DB ma non si mostrano
+    .is('removed_at', null)
     .order('date', { ascending: true })
 
   if (error) throw error

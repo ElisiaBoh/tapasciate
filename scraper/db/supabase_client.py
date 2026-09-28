@@ -59,49 +59,114 @@ class SupabaseManager:
     
     @classmethod
     def upsert_event(
-        cls, 
-        name: str, 
-        date: str, 
-        location_id: int, 
-        organizer: str, 
+        cls,
+        source: str,
+        source_id: str,
+        name: str,
+        date: str,
+        location_id: int,
+        organizer: str,
         url: Optional[str] = None,
         poster_pages: Optional[List[dict]] = None,
         distances: Optional[List[str]] = None
     ) -> Operation:
         """
-        Inserisce o aggiorna un evento (UPSERT basato su name + date)
-        
+        Inserisce o aggiorna un evento identificandolo con (source, source_id):
+        se sulla fonte cambiano nome o data si aggiorna la stessa riga, con lo stesso id.
+
         Returns:
             Operation.INSERTED se nuovo evento, Operation.UPDATED se aggiornato
         """
         client = cls.get_client()
-        
+
         # Converti data da DD/MM/YYYY a YYYY-MM-DD
         parsed_date = cls._parse_date(date)
-        
-        # Cerca evento esistente (solo name + date)
-        result = client.table("events").select("id").eq("name", name).eq("date", parsed_date).execute()
-        
+
         event_data = {
+            "source": source,
+            "source_id": source_id,
             "name": name,
             "date": parsed_date,
             "location_id": location_id,
             "organizer": organizer,
             "url": url,
             "poster_pages": poster_pages or [],
-            "distances": distances or []
+            "distances": distances or [],
+            # Un evento rimosso che ricompare sulla fonte torna visibile
+            "removed_at": None
         }
-        
-        if result.data:
-            # UPDATE
-            event_id = result.data[0]["id"]
+
+        event_id = cls._find_event_id(source, source_id, name, parsed_date)
+
+        if event_id is not None:
             event_data["updated_at"] = datetime.now().isoformat()
             client.table("events").update(event_data).eq("id", event_id).execute()
             return Operation.UPDATED
-        else:
-            # INSERT
-            client.table("events").insert(event_data).execute()
-            return Operation.INSERTED
+
+        client.table("events").insert(event_data).execute()
+        return Operation.INSERTED
+
+    @classmethod
+    def _find_event_id(cls, source: str, source_id: str, name: str, parsed_date: str) -> Optional[int]:
+        """Cerca l'evento per ID della fonte, poi tra le righe create prima degli ID (per nome + data)."""
+        client = cls.get_client()
+
+        result = client.table("events").select("id").eq("source", source).eq("source_id", source_id).execute()
+        if result.data:
+            return result.data[0]["id"]
+
+        # Righe pre-migrazione senza source_id: riusarle mantiene id e link di dettaglio
+        result = (
+            client.table("events").select("id")
+            .eq("source", source).is_("source_id", "null")
+            .eq("name", name).eq("date", parsed_date)
+            .limit(1).execute()
+        )
+        return result.data[0]["id"] if result.data else None
+
+    @classmethod
+    def count_active_events(cls, source: str) -> int:
+        """Numero di eventi di una fonte non marcati come rimossi."""
+        client = cls.get_client()
+        result = (
+            client.table("events").select("id", count="exact")
+            .eq("source", source).is_("removed_at", "null")
+            .execute()
+        )
+        return result.count or 0
+
+    @classmethod
+    def mark_events_seen(cls, source: str, source_ids: Iterable[str], seen_at: str):
+        """Segna come presenti sulla fonte gli eventi elencati (e ripristina quelli rimossi che ricompaiono)."""
+        client = cls.get_client()
+        source_ids = list(source_ids)
+
+        for start in range(0, len(source_ids), 100):
+            batch = source_ids[start:start + 100]
+            (
+                client.table("events")
+                .update({"last_seen_at": seen_at, "removed_at": None})
+                .eq("source", source).in_("source_id", batch)
+                .execute()
+            )
+
+    @classmethod
+    def remove_unseen_events(cls, source: str, seen_at: str) -> int:
+        """
+        Marca come rimossi gli eventi di una fonte non visti nel run corrente
+        (last_seen_at precedente a seen_at). Non cancella le righe: il frontend le nasconde.
+
+        Returns:
+            Numero di eventi marcati come rimossi.
+        """
+        client = cls.get_client()
+        result = (
+            client.table("events")
+            .update({"removed_at": seen_at})
+            .eq("source", source).is_("removed_at", "null").lt("last_seen_at", seen_at)
+            .execute()
+        )
+        return len(result.data)
 
     @classmethod
     def upload_poster(cls, filename: str, file_bytes: bytes, content_type: str = "image/webp") -> Optional[str]:

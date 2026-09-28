@@ -10,11 +10,15 @@ from bs4 import BeautifulSoup
 from scraper.scrapers.base import BaseScraper
 from scraper.models.event import Event, PosterPage
 from scraper.utils.parsers import parse_location, parse_distances
-from scraper.config import FIASP_URL, REQUEST_TIMEOUT
+from scraper.config import FIASP_URL, FIASP_EVENT_URL, REQUEST_TIMEOUT
 
 
 class FIASPScraper(BaseScraper):
     """Scraper for FIASP walking events."""
+
+    @property
+    def source(self) -> str:
+        return "FIASP"
 
     @property
     def source_name(self) -> str:
@@ -61,6 +65,12 @@ class FIASPScraper(BaseScraper):
         if len(cols) < 3:
             return None
 
+        source_id = self._extract_source_id(cols)
+        if not source_id:
+            print(f"⚠️ Skipped FIASP row without idMan: {cols[1].get_text(strip=True)}")
+            return None
+        self._mark_seen(source_id)
+
         date = cols[0].get_text(strip=True)
         title = cols[1].get_text(strip=True)
         location_raw = cols[2].get_text(strip=True)
@@ -80,12 +90,23 @@ class FIASPScraper(BaseScraper):
                 date=date,
                 location=location,
                 poster_pages=poster_pages,
-                source="FIASP",
+                source=self.source,
+                source_id=source_id,
+                url=FIASP_EVENT_URL.format(source_id),
                 distances=distances
             )
         except Exception as e:
             print(f"⚠️ Skipped invalid FIASP event: {e}")
             return None
+
+    def _extract_source_id(self, cols) -> str | None:
+        """Estrae l'ID FIASP dell'evento (idMan) dal link nel titolo."""
+        a_tag = cols[1].find("a", href=True)
+        if not a_tag:
+            return None
+
+        match = re.search(r"idMan=(\d+)", a_tag["href"])
+        return match.group(1) if match else None
 
     def _extract_poster(self, cols) -> str | None:
         """Estrae link grezzo al poster/flyer dalla colonna 7."""

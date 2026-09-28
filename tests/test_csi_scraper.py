@@ -3,10 +3,33 @@ Tests for CSI scraper parsing logic.
 Tests only the parsing methods, not HTTP requests or database operations.
 """
 import pytest
+from unittest.mock import patch
 from bs4 import BeautifulSoup
 from datetime import datetime
 from scraper.scrapers.csi_scraper import CSIScraper
 from scraper.models.provinces import Province
+
+
+class TestCSISourceId:
+    """L'id dell'articolo CSI identifica l'evento anche se cambiano titolo o data."""
+
+    def test_estrae_id_articolo_dall_url(self):
+        href = "/avvisi/prossime-marce/218-marce/non-competitive/5952-2026-quater-salcc-e-öna-biida.html"
+        assert CSIScraper._extract_source_id(href) == "5952"
+
+    def test_url_senza_id_restituisce_none(self):
+        assert CSIScraper._extract_source_id("/avvisi/prossime-marce.html") is None
+
+    @patch("scraper.scrapers.csi_scraper.requests.get", side_effect=Exception("timeout"))
+    def test_evento_visto_anche_se_il_dettaglio_non_si_scarica(self, mock_get):
+        li = BeautifulSoup(
+            '<li><a href="/avvisi/prossime-marce/218-marce/non-competitive/6086-panoramica.html">Mapello</a></li>',
+            "html.parser",
+        ).li
+        scraper = CSIScraper()
+
+        assert scraper._parse_event_item(li) is None
+        assert scraper._seen_ids == {"6086"}
 
 
 class TestCSIScraperParsing:
