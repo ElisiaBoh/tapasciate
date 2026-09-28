@@ -37,9 +37,10 @@ describe('EventCard', () => {
     expect(link).not.toHaveAttribute('target')
   })
 
-  it('il titolo è un link alla pagina di dettaglio', () => {
+  it('il titolo non è un link: il dettaglio si apre solo dal pulsante', () => {
     render(<EventCard event={baseEvent} />)
-    expect(screen.getByRole('link', { name: 'Tapasciata dei Colli' })).toHaveAttribute('href', '/evento/1-tapasciata-dei-colli')
+    expect(screen.queryByRole('link', { name: 'Tapasciata dei Colli' })).not.toBeInTheDocument()
+    expect(screen.getAllByRole('link')).toHaveLength(1)
   })
 
   it('mostra le distanze quando presenti', () => {

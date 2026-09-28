@@ -27,11 +27,6 @@
   text-transform: uppercase;
 }
 
-.event-title a {
-  color: inherit;
-  text-decoration: none;
-}
-
 .event-details {
   grid-area: details;
   display: flex;

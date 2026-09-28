@@ -42,7 +42,7 @@ pytest tests/        # Run tests
 App                 — sceglie la vista in base al path: `/` → lista, `/evento/<id>-<slug>` → dettaglio
 ├── Header          — logo (link alla home); aggiunge classe CSS quando la pagina è scrollata
 ├── ProvinceFilter  — dropdown per filtrare per provincia; nel dettaglio contiene anche BackButton ("← lista")
-├── EventList       — lista eventi raggruppati per data (il titolo di EventCard apre il dettaglio)
+├── EventList       — lista eventi raggruppati per data (il pulsante "dettagli" di EventCard apre il dettaglio)
 ├── EventDetail     — dettaglio evento; frecce/tasti/swipe scorrono gli eventi filtrati per provincia
 └── Footer
 ```

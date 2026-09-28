@@ -145,10 +145,10 @@ test.describe('Header', () => {
 })
 
 test.describe('Pagina evento', () => {
-  test('cliccando il titolo si apre il dettaglio', async ({ page }) => {
+  test('cliccando "dettagli" si apre il dettaglio', async ({ page }) => {
     await mockSupabase(page, mockEvents)
     await page.goto('/')
-    await page.getByRole('link', { name: 'Tapasciata dei Colli' }).click()
+    await page.getByRole('link', { name: 'dettagli' }).first().click()
     await expect(page).toHaveURL(/\/evento\/1-tapasciata-dei-colli$/)
     await expect(page.getByRole('heading', { level: 1 })).toHaveText('Tapasciata dei Colli')
     await expect(page.getByText('Bergamo (BG)')).toBeVisible()
@@ -167,7 +167,7 @@ test.describe('Pagina evento', () => {
   test('le frecce scorrono gli eventi e "← lista" riporta alla home', async ({ page }) => {
     await mockSupabase(page, mockEvents)
     await page.goto('/')
-    await page.getByRole('link', { name: 'Tapasciata dei Colli' }).click()
+    await page.getByRole('link', { name: 'dettagli' }).first().click()
     await page.getByRole('button', { name: /successiva/i }).click()
     await expect(page).toHaveURL(/\/evento\/2-tapasciata-del-lago$/)
     await expect(page.getByRole('heading', { level: 1 })).toHaveText('Tapasciata del Lago')
