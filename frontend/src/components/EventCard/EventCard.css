@@ -32,13 +32,6 @@
   text-decoration: none;
 }
 
-.event-title a:hover {
-  text-decoration: underline;
-  text-decoration-thickness: 4px;
-  text-decoration-color: var(--color-yellow);
-  text-underline-offset: 4px;
-}
-
 .event-details {
   grid-area: details;
   display: flex;

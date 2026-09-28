@@ -24,23 +24,17 @@ describe('EventCard', () => {
     expect(screen.getByText('Bergamo (BG)')).toBeInTheDocument()
   })
 
-  it('non mostra il pulsante poster se poster è null', () => {
+  it('mostra il pulsante dettagli anche senza locandina', () => {
     render(<EventCard event={baseEvent} />)
-    expect(screen.queryByRole('link', { name: /poster/i })).not.toBeInTheDocument()
+    expect(screen.getByRole('link', { name: 'dettagli' })).toBeInTheDocument()
   })
 
-  it('mostra il pulsante poster se poster è fornito', () => {
+  it('il pulsante dettagli porta alla pagina di dettaglio', () => {
     const event = { ...baseEvent, poster: 'https://example.com/poster.pdf' }
     render(<EventCard event={event} />)
-    expect(screen.getByRole('link', { name: /poster/i })).toBeInTheDocument()
-  })
-
-  it('il link poster apre l\'url in una nuova tab', () => {
-    const event = { ...baseEvent, poster: 'https://example.com/poster.pdf' }
-    render(<EventCard event={event} />)
-    const link = screen.getByRole('link', { name: /poster/i })
-    expect(link).toHaveAttribute('href', 'https://example.com/poster.pdf')
-    expect(link).toHaveAttribute('target', '_blank')
+    const link = screen.getByRole('link', { name: 'dettagli' })
+    expect(link).toHaveAttribute('href', '/evento/1-tapasciata-dei-colli')
+    expect(link).not.toHaveAttribute('target')
   })
 
   it('il titolo è un link alla pagina di dettaglio', () => {

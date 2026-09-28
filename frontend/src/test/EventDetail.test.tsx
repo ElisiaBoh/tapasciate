@@ -38,16 +38,20 @@ describe('EventDetail', () => {
     expect(screen.getByText('2 / 3')).toBeInTheDocument()
   })
 
-  it('mostra distanze e link alla locandina quando presenti', () => {
+  it('mostra le distanze e incorpora la locandina in pagina', () => {
     renderDetail()
     expect(screen.getByText('km: 6 - 12')).toBeInTheDocument()
-    expect(screen.getAllByRole('link', { name: /poster/i })[0]).toHaveAttribute('href', 'https://example.com/p.pdf')
+    expect(document.querySelector('object')).toHaveAttribute('data', 'https://example.com/p.pdf')
   })
 
-  it('nasconde distanze e link locandina quando assenti', () => {
+  it('non offre link per aprire o scaricare la locandina', () => {
+    renderDetail()
+    expect(screen.queryByRole('link')).not.toBeInTheDocument()
+  })
+
+  it('nasconde le distanze quando assenti', () => {
     renderDetail({ event: first })
     expect(screen.queryByText(/^km:/)).not.toBeInTheDocument()
-    expect(screen.queryByRole('link', { name: /poster/i })).not.toBeInTheDocument()
   })
 
   it('le frecce selezionano l\'evento precedente e successivo', () => {

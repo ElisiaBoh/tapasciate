@@ -1,7 +1,7 @@
 import { formatDate } from '../../utils/formatDate'
 import { eventPath } from '../../utils/eventPath'
 import { linkClickHandler } from '../../hooks/useRoute'
-import PosterButton from '../PosterButton/PosterButton'
+import DetailsButton from '../DetailsButton/DetailsButton'
 import Divider from '../Divider/Divider'
 import type { Event } from '../../types'
 import './EventCard.css'
@@ -37,7 +37,7 @@ export default function EventCard({ event }: Props) {
           </div>
 
           <div className="event-actions">
-            {event.poster && <PosterButton url={event.poster} />}
+            <DetailsButton event={event} />
           </div>
         </div>
       </div>

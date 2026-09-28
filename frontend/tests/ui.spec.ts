@@ -117,19 +117,10 @@ test.describe('Scheda evento', () => {
     await expect(page.getByText('km: 10 - 21')).toBeVisible()
   })
 
-  test('mostra il pulsante poster se presente', async ({ page }) => {
+  test('mostra il pulsante dettagli su ogni evento', async ({ page }) => {
     await mockSupabase(page, mockEvents)
     await page.goto('/')
-    await expect(page.getByRole('link', { name: /poster/i })).toBeVisible()
-  })
-
-  test('non mostra il pulsante poster se assente', async ({ page }) => {
-    await mockSupabase(page, mockEvents)
-    await page.goto('/')
-    // Solo l'evento con MI non ha poster: dopo aver filtrato per MI non deve esserci il bottone
-    await page.waitForSelector('.province-filter')
-    await page.selectOption('.province-filter', 'MI')
-    await expect(page.getByRole('link', { name: /poster/i })).not.toBeVisible()
+    await expect(page.getByRole('link', { name: 'dettagli' })).toHaveCount(2)
   })
 })
 
@@ -162,6 +153,15 @@ test.describe('Pagina evento', () => {
     await expect(page.getByRole('heading', { level: 1 })).toHaveText('Tapasciata dei Colli')
     await expect(page.getByText('Bergamo (BG)')).toBeVisible()
     await expect(page.getByText('1 / 2')).toBeVisible()
+  })
+
+  test('il pulsante dettagli apre il dettaglio con la locandina in pagina', async ({ page }) => {
+    await mockSupabase(page, mockEvents)
+    await page.goto('/')
+    await page.getByRole('link', { name: 'dettagli' }).first().click()
+    await expect(page).toHaveURL(/\/evento\/1-tapasciata-dei-colli$/)
+    await expect(page.locator('.ev-poster object')).toHaveAttribute('data', 'https://example.com/poster.pdf')
+    await expect(page.locator('.ev-info a')).toHaveCount(0)
   })
 
   test('le frecce scorrono gli eventi e "← lista" riporta alla home', async ({ page }) => {

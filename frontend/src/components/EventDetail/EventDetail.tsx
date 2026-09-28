@@ -4,7 +4,6 @@ import { formatDate } from '../../utils/formatDate'
 import type { Event, Status } from '../../types'
 import DateHeader from '../DateHeader/DateHeader'
 import Divider from '../Divider/Divider'
-import PosterButton from '../PosterButton/PosterButton'
 import Skeleton from '../Skeleton/Skeleton'
 import StatusMessage from '../StatusMessage/StatusMessage'
 import './EventDetail.css'
@@ -43,7 +42,7 @@ function Poster({ event }: { event: Event }) {
       <object data={event.poster} type="application/pdf" aria-label={`Locandina ${event.title}`}>
         <div className="ev-poster-placeholder">
           <strong>Locandina</strong>
-          <PosterButton url={event.poster} />
+          <span>non visualizzabile su questo dispositivo</span>
         </div>
       </object>
     )
@@ -164,11 +163,6 @@ export default function EventDetail({ status, event, events, selectedProvince, o
             <div className="ev-group">
               <span className="ev-label">Percorso</span>
               <p>km: {distances}</p>
-            </div>
-          )}
-          {event.poster && (
-            <div className="ev-actions">
-              <PosterButton url={event.poster} />
             </div>
           )}
         </div>
