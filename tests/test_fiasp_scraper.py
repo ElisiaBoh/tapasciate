@@ -7,6 +7,10 @@ from unittest.mock import patch, MagicMock
 from bs4 import BeautifulSoup
 from scraper.scrapers.fiasp_scraper import FIASPScraper
 from scraper.models.provinces import Province
+from scraper.models.event import PosterPage
+
+PAGE_URL = "https://xyz.supabase.co/storage/v1/object/public/posters/fiasp-test-event-2026-03-01-1a2b3c4d-p1.webp"
+UPLOADED_PAGES = [PosterPage(url=PAGE_URL, width=1200, height=1697)]
 
 
 class TestFIASPScraperParsing:
@@ -88,8 +92,7 @@ class TestFIASPScraperParsing:
         assert len(events) == 1
         assert len(events[0].distances) >= 2
 
-    @patch.object(FIASPScraper, '_download_and_upload_poster',
-                  return_value="https://xyz.supabase.co/storage/v1/object/public/posters/fiasp-test-event-2026-03-01.pdf")
+    @patch.object(FIASPScraper, '_download_and_upload_poster', return_value=UPLOADED_PAGES)
     def test_parse_html_with_poster_link(self, mock_upload):
         """Test parsing HTML with poster/flyer link in 7th column."""
         html = """
@@ -112,8 +115,7 @@ class TestFIASPScraperParsing:
         events = scraper._parse_html(html)
 
         assert len(events) == 1
-        assert events[0].poster is not None
-        assert "supabase.co" in str(events[0].poster)
+        assert events[0].poster_pages == UPLOADED_PAGES
         mock_upload.assert_called_once_with(
             "https://drive.google.com/file/d/1abc123/view", "Test Event", "01/03/2026"
         )
@@ -136,7 +138,7 @@ class TestFIASPScraperParsing:
         events = scraper._parse_html(html)
 
         assert len(events) == 1
-        assert events[0].poster is None
+        assert events[0].poster_pages == []
 
     def test_parse_row_with_various_provinces(self):
         """Test parsing rows with different province codes."""
@@ -262,10 +264,9 @@ class TestFIASPPosterUpload:
         assert fid is None
 
     @patch('scraper.scrapers.fiasp_scraper.requests.get')
-    @patch('scraper.db.supabase_client.SupabaseManager.upload_poster',
-           return_value="https://xyz.supabase.co/storage/v1/object/public/posters/fiasp-test-event-2026-03-01.pdf")
+    @patch.object(FIASPScraper, '_upload_poster_pages', return_value=UPLOADED_PAGES)
     def test_download_and_upload_poster_gdrive_pdf(self, mock_upload, mock_get):
-        """Scarica un PDF da Google Drive e lo carica su Supabase."""
+        """Scarica un PDF da Google Drive e ne carica le pagine su Supabase."""
         mock_resp = MagicMock()
         mock_resp.content = b"%PDF-1.4 fake content"
         mock_resp.headers = {'Content-Type': 'application/pdf'}
@@ -279,16 +280,16 @@ class TestFIASPPosterUpload:
             "01/03/2026"
         )
 
-        assert result == "https://xyz.supabase.co/storage/v1/object/public/posters/fiasp-test-event-2026-03-01.pdf"
+        assert result == UPLOADED_PAGES
         # Deve usare l'URL di download diretto di Google Drive
         called_url = mock_get.call_args[0][0]
         assert "drive.usercontent.google.com" in called_url
         assert "1abc123XYZ" in called_url
-        mock_upload.assert_called_once_with("fiasp-test-event-2026-03-01.pdf", b"%PDF-1.4 fake content")
+        mock_upload.assert_called_once_with("fiasp", "Test Event", "01/03/2026", b"%PDF-1.4 fake content")
 
     @patch('scraper.scrapers.fiasp_scraper.requests.get')
     def test_download_and_upload_poster_returns_none_on_html_response(self, mock_get):
-        """Ritorna None se il server risponde con HTML (es. pagina di virus scan)."""
+        """Ritorna lista vuota se il server risponde con HTML (es. pagina di virus scan)."""
         mock_resp = MagicMock()
         mock_resp.content = b"<html>Virus scan warning</html>"
         mock_resp.headers = {'Content-Type': 'text/html; charset=utf-8'}
@@ -301,22 +302,21 @@ class TestFIASPPosterUpload:
             "Test Event",
             "01/03/2026"
         )
-        assert result is None
+        assert result == []
 
     @patch('scraper.scrapers.fiasp_scraper.requests.get', side_effect=Exception("connection error"))
     def test_download_and_upload_poster_returns_none_on_network_error(self, mock_get):
-        """Ritorna None in caso di errore di rete."""
+        """Ritorna lista vuota in caso di errore di rete."""
         scraper = FIASPScraper()
         result = scraper._download_and_upload_poster(
             "https://drive.google.com/file/d/1abc123XYZ/view",
             "Test Event",
             "01/03/2026"
         )
-        assert result is None
+        assert result == []
 
     @patch('scraper.scrapers.fiasp_scraper.requests.get')
-    @patch('scraper.db.supabase_client.SupabaseManager.upload_poster',
-           return_value="https://xyz.supabase.co/storage/v1/object/public/posters/fiasp-test-event-2026-03-01.pdf")
+    @patch.object(FIASPScraper, '_upload_poster_pages', return_value=UPLOADED_PAGES)
     def test_download_and_upload_poster_accepts_octet_stream(self, mock_upload, mock_get):
         """Accetta application/octet-stream (Google Drive restituisce questo per i PDF)."""
         mock_resp = MagicMock()
@@ -331,5 +331,5 @@ class TestFIASPPosterUpload:
             "Test Event",
             "01/03/2026"
         )
-        assert result is not None
+        assert result == UPLOADED_PAGES
         mock_upload.assert_called_once()

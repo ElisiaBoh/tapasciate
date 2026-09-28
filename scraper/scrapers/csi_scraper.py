@@ -5,14 +5,13 @@ from __future__ import annotations
 import requests
 import time
 import datetime
-from typing import Optional
+from typing import List, Optional
 from bs4 import BeautifulSoup
 from scraper.scrapers.base import BaseScraper
-from scraper.models.event import Event
+from scraper.models.event import Event, PosterPage
 from scraper.models.provinces import Province
 from scraper.utils.parsers import parse_location
 from scraper.config import BASE_CSI_BERGAMO, CSI_LIST, REQUEST_DELAY, REQUEST_TIMEOUT
-from scraper.db.supabase_client import SupabaseManager
 
 
 class CSIScraper(BaseScraper):
@@ -81,15 +80,15 @@ class CSIScraper(BaseScraper):
         # Parse date
         date = self._parse_date(soup)
         
-        # Parse poster: scarica tutte le immagini, crea PDF, carica su Storage
-        poster_url = self._extract_and_upload_poster(content, title, date)
+        # Parse poster: scarica tutte le immagini, le unisce in un PDF e ne carica le pagine su Storage
+        poster_pages = self._extract_and_upload_poster(content, title, date)
         
         try:
             return Event(
                 title=title,
                 date=date,
                 location=location,
-                poster=poster_url,
+                poster_pages=poster_pages,
                 source="CSI",
                 distances=[]
             )
@@ -97,18 +96,18 @@ class CSIScraper(BaseScraper):
             print(f"⚠️ Skipped invalid CSI event: {e}")
             return None
 
-    def _extract_and_upload_poster(self, content, title: str, date: str) -> Optional[str]:
+    def _extract_and_upload_poster(self, content, title: str, date: str) -> List[PosterPage]:
         """
         Raccoglie tutte le immagini del poster, le unisce in un PDF
-        e lo carica su Supabase Storage. Ritorna l'URL pubblico.
+        e ne carica le pagine come immagini su Supabase Storage.
         """
         if not content:
-            return None
+            return []
 
         # Raccogli tutti i src delle immagini nel contenuto
         imgs = content.find_all("img")
         if not imgs:
-            return None
+            return []
 
         image_bytes_list = []
         for img in imgs:
@@ -124,14 +123,13 @@ class CSIScraper(BaseScraper):
                 print(f"⚠️ Failed to download poster image {url}: {e}")
 
         if not image_bytes_list:
-            return None
+            return []
 
         pdf_bytes = self._images_to_pdf(image_bytes_list)
         if not pdf_bytes:
-            return None
+            return []
 
-        filename = self._make_poster_filename("csi", title, date)
-        return SupabaseManager.upload_poster(filename, pdf_bytes)
+        return self._upload_poster_pages("csi", title, date, pdf_bytes)
 
     def _extract_poster(self, content) -> Optional[str]:
         """

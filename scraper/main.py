@@ -54,6 +54,14 @@ def main():
             print(f"❌ {scraper.source_name} failed: {e}")
     
     print(f"\n✅ Total: {total_inserted} inserted, {total_updated} updated")
+
+    # Rimuovi da Storage i file dei poster non più referenziati (PDF legacy, pagine sostituite)
+    print("\n🧹 Deleting orphan poster files...")
+    try:
+        deleted = SupabaseManager.delete_orphan_posters()
+        print(f"✅ {deleted} orphan poster files deleted")
+    except Exception as e:
+        print(f"⚠️  Failed to delete orphan posters: {e}")
     print("✨ Scraping complete!")
 
 

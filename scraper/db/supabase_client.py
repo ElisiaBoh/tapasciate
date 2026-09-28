@@ -1,6 +1,6 @@
 import os
 from supabase import create_client, Client
-from typing import Optional, List
+from typing import Optional, List, Iterable
 from datetime import datetime, date
 from scraper.models.operation import Operation
 from scraper.config import SUPABASE_STORAGE_BUCKET
@@ -65,7 +65,7 @@ class SupabaseManager:
         location_id: int, 
         organizer: str, 
         url: Optional[str] = None,
-        poster: Optional[str] = None,
+        poster_pages: Optional[List[dict]] = None,
         distances: Optional[List[str]] = None
     ) -> Operation:
         """
@@ -79,9 +79,6 @@ class SupabaseManager:
         # Converti data da DD/MM/YYYY a YYYY-MM-DD
         parsed_date = cls._parse_date(date)
         
-        # Converti HttpUrl in stringa se necessario
-        poster_str = str(poster) if poster else None
-        
         # Cerca evento esistente (solo name + date)
         result = client.table("events").select("id").eq("name", name).eq("date", parsed_date).execute()
         
@@ -91,7 +88,9 @@ class SupabaseManager:
             "location_id": location_id,
             "organizer": organizer,
             "url": url,
-            "poster": poster_str,
+            "poster_pages": poster_pages or [],
+            # Il PDF non si salva più: le locandine sono servite come immagini (poster_pages)
+            "poster": None,
             "distances": distances or []
         }
         
@@ -107,67 +106,114 @@ class SupabaseManager:
             return Operation.INSERTED
 
     @classmethod
-    def upload_poster(cls, filename: str, pdf_bytes: bytes) -> Optional[str]:
+    def upload_poster(cls, filename: str, file_bytes: bytes, content_type: str = "image/webp") -> Optional[str]:
         """
-        Carica un PDF su Supabase Storage e ritorna l'URL pubblico.
+        Carica un file del poster su Supabase Storage e ritorna l'URL pubblico.
         Se un file con lo stesso nome esiste già, lo sovrascrive.
-        
+
         Args:
-            filename: nome del file (es. "csi-bottanuco-2026-03-15.pdf")
-            pdf_bytes: contenuto del PDF in memoria
-            
+            filename: nome del file (es. "csi-bottanuco-2026-03-15-1a2b3c4d-p1.webp")
+            file_bytes: contenuto del file in memoria
+            content_type: MIME type del file
+
         Returns:
             URL pubblico del file, o None in caso di errore
         """
         client = cls.get_client()
-        
+
         try:
             # upsert=True sovrascrive se il file esiste già
             client.storage.from_(SUPABASE_STORAGE_BUCKET).upload(
                 path=filename,
-                file=pdf_bytes,
-                file_options={"content-type": "application/pdf", "upsert": "true"}
+                file=file_bytes,
+                file_options={"content-type": content_type, "upsert": "true"}
             )
-            
+
             url = client.storage.from_(SUPABASE_STORAGE_BUCKET).get_public_url(filename)
-            return url
+            return url.rstrip("?")
         except Exception as e:
             print(f"❌ Failed to upload poster {filename}: {e}")
             return None
 
     @classmethod
-    def delete_poster(cls, poster_url: str):
-        """
-        Cancella un file da Supabase Storage dato il suo URL pubblico.
-        
-        Args:
-            poster_url: URL pubblico del poster (es. https://xxx.supabase.co/storage/v1/object/public/posters/file.pdf)
-        """
+    def _storage_filename(cls, public_url: str) -> str:
+        """Estrae il nome del file dall'URL pubblico di Storage."""
+        return public_url.split(f"/{SUPABASE_STORAGE_BUCKET}/")[-1].split("?")[0]
+
+    @classmethod
+    def _poster_filenames(cls, row: dict) -> List[str]:
+        """Nomi dei file su Storage referenziati da una riga di events (PDF legacy + pagine)."""
+        urls = [page["url"] for page in row.get("poster_pages") or [] if page.get("url")]
+        if row.get("poster"):
+            urls.append(row["poster"])
+        return [cls._storage_filename(url) for url in urls]
+
+    @classmethod
+    def delete_poster_files(cls, filenames: Iterable[str]):
+        """Cancella file da Supabase Storage, a blocchi."""
         client = cls.get_client()
-        
-        try:
-            # Estrai il filename dall'URL (ultima parte del path)
-            filename = poster_url.split(f"/{SUPABASE_STORAGE_BUCKET}/")[-1]
-            client.storage.from_(SUPABASE_STORAGE_BUCKET).remove([filename])
-        except Exception as e:
-            print(f"⚠️ Failed to delete poster {poster_url}: {e}")
+        filenames = list(filenames)
+
+        for start in range(0, len(filenames), 100):
+            batch = filenames[start:start + 100]
+            try:
+                client.storage.from_(SUPABASE_STORAGE_BUCKET).remove(batch)
+            except Exception as e:
+                print(f"⚠️ Failed to delete posters {batch}: {e}")
 
     @classmethod
     def delete_past_events(cls):
         """Cancella eventi con data passata, inclusi i poster su Storage"""
         client = cls.get_client()
         today = date.today().isoformat()
-        
-        # Prima recupera i poster URL degli eventi da cancellare
-        result = client.table("events").select("poster").lt("date", today).execute()
-        
+
+        # Prima recupera i poster degli eventi da cancellare
+        result = client.table("events").select("poster, poster_pages").lt("date", today).execute()
+
         # Cancella i file da Storage
-        for row in result.data:
-            if row.get("poster"):
-                cls.delete_poster(row["poster"])
-        
+        filenames = [name for row in result.data for name in cls._poster_filenames(row)]
+        cls.delete_poster_files(filenames)
+
         # Poi cancella i record dal DB
         client.table("events").delete().lt("date", today).execute()
+
+    @classmethod
+    def _list_storage_files(cls) -> List[str]:
+        """Elenca tutti i file del bucket dei poster."""
+        client = cls.get_client()
+        bucket = client.storage.from_(SUPABASE_STORAGE_BUCKET)
+        names: List[str] = []
+        offset = 0
+
+        while True:
+            batch = bucket.list("", {"limit": 1000, "offset": offset})
+            names.extend(item["name"] for item in batch if item.get("id"))  # le cartelle non hanno id
+            if len(batch) < 1000:
+                return names
+            offset += 1000
+
+    @classmethod
+    def delete_orphan_posters(cls) -> int:
+        """
+        Cancella da Storage i file che nessun evento referenzia più:
+        PDF legacy sostituiti dalle immagini, pagine di locandine aggiornate, residui di upload falliti.
+
+        Returns:
+            Numero di file cancellati.
+        """
+        client = cls.get_client()
+        # Se la query fallisce solleva un'eccezione: meglio non cancellare nulla che cancellare tutto
+        result = client.table("events").select("poster, poster_pages").execute()
+        referenced = {name for row in result.data for name in cls._poster_filenames(row)}
+
+        stored = cls._list_storage_files()
+        if not referenced and stored:
+            print("⚠️ No poster referenced by any event: skipping orphan cleanup as a precaution")
+            return 0
+
+        orphans = [name for name in stored if name not in referenced]
+        cls.delete_poster_files(orphans)
+        return len(orphans)
 
     @classmethod
     def _parse_date(cls, date_str: str) -> str:

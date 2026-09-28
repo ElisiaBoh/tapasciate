@@ -3,12 +3,14 @@ Base scraper class defining the interface for all scrapers.
 """
 from __future__ import annotations
 import re
+import hashlib
 import img2pdf
 from abc import ABC, abstractmethod
 from typing import Optional, Tuple, List
-from scraper.models.event import Event
+from scraper.models.event import Event, PosterPage
 from scraper.models.operation import Operation
 from scraper.db.supabase_client import SupabaseManager
+from scraper.utils.poster_renderer import render_pdf_pages
 
 
 class BaseScraper(ABC):
@@ -48,9 +50,9 @@ class BaseScraper(ABC):
         return (inserted, updated)
 
     @staticmethod
-    def _make_poster_filename(prefix: str, title: str, date: str) -> str:
+    def _make_poster_basename(prefix: str, title: str, date: str) -> str:
         """
-        Genera il filename per un poster su Supabase Storage.
+        Genera la base del nome file per le pagine di un poster su Supabase Storage.
 
         Args:
             prefix: Prefisso identificativo della sorgente (es. "csi", "fiasp")
@@ -58,7 +60,7 @@ class BaseScraper(ABC):
             date:   Data in formato DD/MM/YYYY o DD-MM-YYYY
 
         Returns:
-            Filename in formato "{prefix}-{titolo}-{YYYY-MM-DD}.pdf"
+            Base in formato "{prefix}-{titolo}-{YYYY-MM-DD}" (senza estensione)
         """
         safe_title = re.sub(r"[^a-z0-9]+", "-", title.lower()).strip("-")[:50]
         parts = date.replace("-", "/").split("/")
@@ -66,7 +68,34 @@ class BaseScraper(ABC):
             safe_date = f"{parts[2]}-{parts[1]}-{parts[0]}"
         else:
             safe_date = date.replace("/", "-") or "unknown"
-        return f"{prefix}-{safe_title}-{safe_date}.pdf"
+        return f"{prefix}-{safe_title}-{safe_date}"
+
+    @classmethod
+    def _upload_poster_pages(cls, prefix: str, title: str, date: str, pdf_bytes: bytes) -> List[PosterPage]:
+        """
+        Converte il PDF del poster in immagini WebP (una per pagina) e le carica su Storage.
+
+        Il nome contiene un hash del PDF: se la locandina cambia cambia anche l'URL,
+        così browser e CDN non servono la versione vecchia. Le pagine sostituite
+        vengono rimosse a fine run da SupabaseManager.delete_orphan_posters().
+
+        Returns:
+            Pagine caricate, oppure lista vuota se il rendering o un upload fallisce.
+        """
+        rendered = render_pdf_pages(pdf_bytes)
+        if not rendered:
+            return []
+
+        basename = cls._make_poster_basename(prefix, title, date)
+        digest = hashlib.sha1(pdf_bytes).hexdigest()[:8]
+
+        pages: List[PosterPage] = []
+        for number, page in enumerate(rendered, start=1):
+            url = SupabaseManager.upload_poster(f"{basename}-{digest}-p{number}.webp", page.data)
+            if not url:
+                return []
+            pages.append(PosterPage(url=url, width=page.width, height=page.height))
+        return pages
 
     @staticmethod
     def _images_to_pdf(image_bytes_list: List[bytes]) -> Optional[bytes]:
@@ -98,7 +127,7 @@ class BaseScraper(ABC):
                 location_id=location_id,
                 organizer=self.organizer,
                 url=None,
-                poster=event.poster,
+                poster_pages=[page.model_dump(mode="json") for page in event.poster_pages],
                 distances=event.distances
             )
 

@@ -4,14 +4,13 @@ Scraper for FIASP events.
 from __future__ import annotations
 import re
 import requests
-from typing import Optional
+from typing import List, Optional
 from urllib.parse import urlparse, parse_qs
 from bs4 import BeautifulSoup
 from scraper.scrapers.base import BaseScraper
-from scraper.models.event import Event
+from scraper.models.event import Event, PosterPage
 from scraper.utils.parsers import parse_location, parse_distances
 from scraper.config import FIASP_URL, REQUEST_TIMEOUT
-from scraper.db.supabase_client import SupabaseManager
 
 
 class FIASPScraper(BaseScraper):
@@ -65,9 +64,9 @@ class FIASPScraper(BaseScraper):
         location_raw = cols[2].get_text(strip=True)
         location = parse_location(location_raw)
 
-        # Parse poster link: scarica e carica su Supabase Storage
+        # Parse poster link: scarica e carica le pagine come immagini su Supabase Storage
         raw_poster = self._extract_poster(cols)
-        poster = self._download_and_upload_poster(raw_poster, title, date) if raw_poster else None
+        poster_pages = self._download_and_upload_poster(raw_poster, title, date) if raw_poster else []
 
         # Parse distances
         distances_raw = cols[3].get_text(strip=True) if len(cols) > 3 else ""
@@ -78,7 +77,7 @@ class FIASPScraper(BaseScraper):
                 title=title,
                 date=date,
                 location=location,
-                poster=poster,
+                poster_pages=poster_pages,
                 source="FIASP",
                 distances=distances
             )
@@ -144,21 +143,20 @@ class FIASPScraper(BaseScraper):
             print(f"⚠️ Failed to download poster {url}: {e}")
             return None
 
-    def _download_and_upload_poster(self, raw_url: str, title: str, date: str) -> Optional[str]:
+    def _download_and_upload_poster(self, raw_url: str, title: str, date: str) -> List[PosterPage]:
         """
-        Scarica il poster da raw_url, lo carica su Supabase Storage
-        e ritorna l'URL pubblico stabile. Ritorna None in caso di errore.
+        Scarica il poster da raw_url e ne carica le pagine come immagini su Supabase Storage.
+        Ritorna una lista vuota in caso di errore.
         """
         result = self._download_poster_bytes(raw_url)
         if not result:
-            return None
+            return []
 
         file_bytes, content_type = result
 
         if 'image/' in content_type:
             file_bytes = self._images_to_pdf([file_bytes])
             if not file_bytes:
-                return None
+                return []
 
-        filename = self._make_poster_filename("fiasp", title, date)
-        return SupabaseManager.upload_poster(filename, file_bytes)
+        return self._upload_poster_pages("fiasp", title, date, file_bytes)

@@ -59,10 +59,12 @@ App
 - Ogni scraper restituisce `list[Event]` (Pydantic model da `models/event.py`)
 - `db/supabase_client.py` gestisce la logica di upsert usando l'URL dell'evento come chiave univoca
 - `models/provinces.py` e `utils/region_mapper.py` normalizzano i dati di localizzazione
+- **Poster**: ogni scraper ottiene un PDF (CSI unisce le immagini con `img2pdf`, FIASP scarica il volantino), `utils/poster_renderer.py` lo converte in WebP 1200px (una per pagina, con pypdfium2) e `BaseScraper._upload_poster_pages` le carica su Storage (`posters/<nome>-<hash>-pN.webp`). A fine run `SupabaseManager.delete_orphan_posters()` cancella i file non più referenziati
 
 ### Database Schema (Supabase/PostgreSQL)
 - `locations`: id, city, province, province_name, region, created_at
-- `events`: id, name, date, location_id, organizer, url, poster, distances, created_at, updated_at
+- `events`: id, name, date, location_id, organizer, url, poster (PDF legacy, non più scritto), poster_pages (jsonb `[{url, width, height}]`), distances, created_at, updated_at
+- Migrazioni SQL in `supabase/migrations/`, applicate a mano dall'SQL Editor di Supabase
 
 ### Deployment
 - **Frontend**: Netlify, auto-deploy dal branch `main` (`base = "frontend"`)
