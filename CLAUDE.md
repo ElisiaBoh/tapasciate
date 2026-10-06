@@ -33,29 +33,40 @@ pytest tests/        # Run tests
 ### Data Flow
 1. GitHub Actions triggers `scraper/main.py` every Wednesday at 06:00 CEST
 2. Scraper deletes past events from Supabase, then scrapes new ones from CSI Bergamo and FIASP Italia; events no longer listed by a source are marked `removed_at` (hidden, not deleted)
-3. Frontend reads events from Supabase and displays them filtered by province
+3. Frontend reads events from Supabase and displays them by zone (Italy, region or province) and period
 
 ### Frontend (`frontend/src/`)
 
 **Component tree:**
 ```
-App                 — sceglie la vista in base al path: `/` → lista, `/evento/<id>-<slug>` → dettaglio
-├── Header          — logo (link alla home); aggiunge classe CSS quando la pagina è scrollata
-├── ProvinceFilter  — dropdown per filtrare per provincia; nel dettaglio contiene anche BackButton ("← lista")
-├── EventList       — lista eventi raggruppati per data (il pulsante "dettagli" di EventCard apre il dettaglio)
-├── EventDetail     — dettaglio evento; frecce/tasti/swipe scorrono gli eventi filtrati per provincia
+App                 — sceglie la vista dall'URL: `/` (Italia), `/<regione>`, `/<regione>/<provincia>` → lista; `/evento/<id>-<slug>` → dettaglio
+├── Header          — logo (link alla zona ricordata o a `/`); aggiunge classe CSS quando la pagina è scrollata
+├── ZoneBar         — lista: pulsante zona (apre ZonePicker), periodo (Tutte / Questa settimana / Prossima settimana), titolo h1 con conteggi
+├── ZonePicker      — finestra modale "Scegli la zona": regioni a fisarmonica e province con i conteggi
+├── EventList       — lista eventi raggruppati per data (EventCard: tutta la card è il link al dettaglio)
+├── BackButton      — dettaglio: barra "Torna a <zona>"
+├── EventDetail     — dettaglio evento; frecce/tasti/swipe scorrono gli eventi della stessa zona e data; Calendario/Mappa/Condividi; PosterViewer
 └── Footer
 ```
 
-Componenti condivisi tra lista e dettaglio (ognuno porta il suo CSS, non usare le loro classi senza importarli): `DateHeader` (striscia rosa), `DetailsButton` (pulsante "dettagli" nella card), `Divider`, `Skeleton`, `StatusMessage` (messaggi di errore/vuoto).
+Componenti condivisi (ognuno porta il suo CSS, non usare le loro classi senza importarli): `DateHeader` (striscia rosa), `Icon` (icone a tratto), `Tile` (quadrato giallo con icona), `Skeleton`, `StatusMessage` (messaggi di errore).
+
+**Zone e navigazione:**
+- Una zona (`Zone` in `types/`) è Italia, regione o provincia; gli slug degli URL vengono da `region` e `province_name` dei dati (`utils/zonePath.ts`: `zonePath`, `parseRoute`, `resolveZone`). Una zona senza eventi futuri risulta "non trovata" (noindex)
+- `utils/zones.ts`: catalogo regioni/province con conteggi (`buildCatalog`), filtri e testi ("Tapasciate in provincia di Bergamo", articoli delle regioni)
+- `utils/period.ts`: "questa settimana" = da oggi a domenica, "prossima" = lunedì–domenica successivi; il periodo non va nell'URL
+- La zona scelta in ZonePicker è ricordata nel localStorage (`utils/savedZone.ts`): aprendo `/` si viene reindirizzati lì e il logo punta lì. Aprire un link a una zona non la cambia
+- Il dettaglio prende la zona dalla lista di provenienza (`zonePath` nello stato della history, messo da EventCard) o, se aperto da link, dalla provincia dell'evento
 
 **Hooks e servizi:**
-- **`hooks/useEvents.ts`**: gestisce tutto lo stato — fetching, filtraggio per provincia, raggruppamento per data. Espone: `status`, `events`, `upcomingEvents`, `groupedEvents`, `sortedDates`, `provinces`, `selectedProvince`, `setProvince`
-- **`hooks/useRoute.ts`**: router minimale senza librerie (`usePathname`, `navigate`, `linkClickHandler`) basato su History API; Netlify reindirizza già `/*` su `index.html`
+- **`hooks/useEvents.ts`**: `useEvents` gestisce il fetching ed espone `status`, `events`, `upcomingEvents`, `catalog`, `today`; `useZoneEvents` filtra per zona e periodo e raggruppa per data
+- **`hooks/useRoute.ts`**: router minimale senza librerie (`usePathname`, `useHistoryState`, `navigate`, `linkClickHandler`) basato su History API; Netlify reindirizza già `/*` su `index.html`
+- **`hooks/useModal.ts`**: focus, Esc, Tab e blocco scroll comuni alle finestre modali
 - **`utils/eventPath.ts`**: costruisce/parsa gli URL `/evento/<id>-<slug>` (l'id è quello della tabella `events`)
+- **`utils/eventSeo.ts`** / **`utils/zoneSeo.ts`**: title, canonical e meta delle pagine evento e zona; `scripts/sitemap.js` duplica `eventPath`/`zonePaths` (verificato dai test)
 - **`eventsService.ts`**: unico layer dati — chiama Supabase con JOIN su `locations`, mappa i campi al tipo `Event`
 - **`supabaseClient.ts`**: istanza Supabase (URL e anon key sono pubbliche, ok commitarle)
-- **`types/`**: tipi TypeScript condivisi (incluso `Event`)
+- **`types/`**: tipi TypeScript condivisi (incluso `Event`, `Zone`, `Period`)
 
 **`status`** è un discriminated union con almeno tre stati: `loading`, `success`, `error`.
 
