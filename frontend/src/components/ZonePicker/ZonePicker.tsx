@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import { useState } from 'react'
 import type { MouseEvent } from 'react'
 import { useModal } from '../../hooks/useModal'
 import { ITALY, regionAll, sameZone } from '../../utils/zones'
@@ -41,31 +41,24 @@ function ZoneOption({ zone, label, count, current, className, onSelect }: {
 }
 
 export default function ZonePicker({ catalog, current, onSelect, onClose }: Props) {
-  const closeRef = useRef<HTMLButtonElement>(null)
   const currentRegion = current && current.kind !== 'italy' ? current.region : null
   const [openRegion, setOpenRegion] = useState<string | null>(currentRegion)
   const total = catalog.reduce((sum, r) => sum + r.count, 0)
 
-  const { containerRef, onKeyDown } = useModal(closeRef, onClose)
+  const { containerRef, onKeyDown } = useModal(onClose)
 
   return (
     <div className="zp-backdrop" onClick={e => { if (e.target === e.currentTarget) onClose() }}>
       <div className="zp-dialog" role="dialog" aria-modal="true" aria-labelledby="zp-title"
-        ref={containerRef} onKeyDown={onKeyDown}>
+        tabIndex={-1} ref={containerRef} onKeyDown={onKeyDown}>
         <div className="zp-head">
           <h2 id="zp-title">Scegli la zona</h2>
-          <button type="button" className="zp-close" aria-label="Chiudi" ref={closeRef} onClick={onClose}>
+          <button type="button" className="zp-close" aria-label="Chiudi" onClick={onClose}>
             <Tile icon="close" />
           </button>
         </div>
 
         <div className="zp-list">
-          <div className="zp-row zp-near" aria-disabled="true">
-            <Icon name="pin" size={20} />
-            <span className="zp-label">Vicino a me</span>
-            <span className="zp-soon">presto</span>
-          </div>
-
           <ZoneOption zone={ITALY} label="Tutta Italia" count={total} current={current}
             className="zp-row" onSelect={onSelect} />
 

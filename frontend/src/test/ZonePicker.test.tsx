@@ -17,10 +17,9 @@ function renderPicker(current: Zone | null = { kind: 'italy' }) {
 }
 
 describe('ZonePicker', () => {
-  it('è una finestra modale con il focus sul pulsante di chiusura', () => {
+  it('è una finestra modale che riceve il focus', () => {
     renderPicker()
-    expect(screen.getByRole('dialog', { name: 'Scegli la zona' })).toBeInTheDocument()
-    expect(screen.getByRole('button', { name: 'Chiudi' })).toHaveFocus()
+    expect(screen.getByRole('dialog', { name: 'Scegli la zona' })).toHaveFocus()
   })
 
   it('mostra Tutta Italia con il totale e le regioni con i conteggi', () => {
@@ -28,12 +27,6 @@ describe('ZonePicker', () => {
     expect(screen.getByRole('link', { name: /Tutta Italia/ })).toHaveTextContent('Tutta Italia4')
     expect(screen.getByRole('button', { name: /Lombardia/ })).toHaveTextContent('3')
     expect(screen.getByRole('button', { name: /Veneto/ })).toHaveAttribute('aria-expanded', 'false')
-  })
-
-  it('"Vicino a me" non è ancora disponibile', () => {
-    renderPicker()
-    expect(screen.getByText('Vicino a me').closest('[aria-disabled="true"]')).toBeInTheDocument()
-    expect(screen.getByText('presto')).toBeInTheDocument()
   })
 
   it('apre la regione della zona attuale ed evidenzia la provincia scelta', () => {

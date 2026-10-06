@@ -116,20 +116,18 @@ a.zp-row:hover,
   font-variant-numeric: tabular-nums;
 }
 
-.zp-near {
-  color: #5C5C5C;
-  border-bottom: 1px solid #D6D6D6;
+.zp-dialog:focus {
+  outline: none;
 }
 
-.zp-soon {
-  border: 2px dashed #5C5C5C;
-  padding: 1px 8px;
-  font-size: 0.875rem;
-  font-weight: 700;
-  text-transform: lowercase;
+.zp-close:focus-visible {
+  outline: none;
 }
 
-.zp-close:focus-visible,
+.zp-close:focus-visible > .tile {
+  background: var(--color-yellow-dark);
+}
+
 .zp-row:focus-visible,
 .zp-region:focus-visible,
 .zp-opt:focus-visible {

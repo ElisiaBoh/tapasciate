@@ -18,9 +18,13 @@
   cursor: pointer;
 }
 
+.pv:focus,
 .pv-close:focus-visible {
-  outline: 4px solid var(--color-pink);
-  outline-offset: 2px;
+  outline: none;
+}
+
+.pv-close:focus-visible > .tile {
+  background: var(--color-yellow-dark);
 }
 
 .pv-pages {

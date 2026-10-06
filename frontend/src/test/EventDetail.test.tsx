@@ -71,7 +71,7 @@ describe('EventDetail', () => {
     renderDetail()
     fireEvent.click(screen.getByRole('button', { name: 'Apri la locandina a schermo intero' }))
     const viewer = screen.getByRole('dialog', { name: 'Locandina Secondo' })
-    expect(screen.getByRole('button', { name: 'Chiudi la locandina' })).toHaveFocus()
+    expect(viewer).toHaveFocus()
     fireEvent.keyDown(viewer, { key: 'Escape' })
     expect(screen.queryByRole('dialog')).not.toBeInTheDocument()
   })
