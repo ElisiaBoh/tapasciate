@@ -30,7 +30,6 @@ export default function ZoneBar({ loading, zone, period, onPeriodChange, onOpenP
         <div className="zone-bar-controls">
           <button type="button" className="zone-button" onClick={onOpenPicker} disabled={loading}
             aria-haspopup="dialog" aria-label={zone ? `Cambia zona, attuale: ${name}` : 'Scegli la zona'}>
-            <img src={process.env.PUBLIC_URL + '/zona.svg'} alt="" width="31" height="21" />
             {loading ? <Skeleton className="skeleton-zone-name" /> : <span className="zone-button-label">{name}</span>}
             <Tile icon="chevron-down" />
           </button>

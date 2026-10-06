@@ -39,11 +39,6 @@
   cursor: default;
 }
 
-.zone-button img {
-  display: block;
-  flex-shrink: 0;
-}
-
 .zone-button-label {
   flex-grow: 1;
 }
