@@ -59,11 +59,27 @@ export function zoneName(zone: Zone): string {
   }
 }
 
+// Regioni di genere maschile (le altre sono femminili; "Marche" è plurale)
+const MALE_REGIONS = new Set(['Abruzzo', 'Friuli-Venezia Giulia', 'Lazio', 'Molise', 'Piemonte', 'Trentino-Alto Adige', 'Veneto'])
+
+// "Tutta la Lombardia" / "Tutto il Veneto" / "Tutta l'Emilia-Romagna" / "Tutte le Marche"
+export function regionAll(region: string): string {
+  if (region === 'Marche') return 'Tutte le Marche'
+  const male = MALE_REGIONS.has(region)
+  const article = /^[AEIOU]/.test(region) ? "l'" : male ? 'il ' : 'la '
+  return `${male ? 'Tutto' : 'Tutta'} ${article}${region}`
+}
+
+// "in Lombardia" / "nelle Marche"
+function inRegion(region: string): string {
+  return region === 'Marche' ? 'nelle Marche' : `in ${region}`
+}
+
 // "in Italia" / "in Lombardia" / "in provincia di Bergamo"
 export function zoneArea(zone: Zone): string {
   switch (zone.kind) {
     case 'italy': return 'in Italia'
-    case 'region': return `in ${zone.region}`
+    case 'region': return inRegion(zone.region)
     case 'province': return `in provincia di ${zone.provinceName}`
   }
 }
@@ -77,7 +93,7 @@ export function zoneTitle(zone: Zone): string {
 export function zonePlace(zone: Zone): string {
   switch (zone.kind) {
     case 'italy': return 'in Italia'
-    case 'region': return `in ${zone.region}`
+    case 'region': return inRegion(zone.region)
     case 'province': return `a ${zone.provinceName}`
   }
 }

@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react'
 import type { MouseEvent } from 'react'
 import { useModal } from '../../hooks/useModal'
-import { ITALY, sameZone } from '../../utils/zones'
+import { ITALY, regionAll, sameZone } from '../../utils/zones'
 import { zonePath } from '../../utils/zonePath'
 import Icon from '../Icon/Icon'
 import Tile from '../Tile/Tile'
@@ -83,7 +83,7 @@ export default function ZonePicker({ catalog, current, onSelect, onClose }: Prop
                 </button>
                 {open && (
                   <div id={panelId} className="zp-provinces">
-                    <ZoneOption zone={{ kind: 'region', region: region.name }} label={`Tutta la ${region.name}`}
+                    <ZoneOption zone={{ kind: 'region', region: region.name }} label={regionAll(region.name)}
                       count={region.count} current={current} className="zp-opt" onSelect={onSelect} />
                     {region.provinces.map(p => (
                       <ZoneOption key={p.code}

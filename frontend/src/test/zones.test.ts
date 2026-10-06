@@ -1,4 +1,4 @@
-import { buildCatalog, inZone, provinceZoneOf, sameZone, zoneName, zonePlace, zoneTitle, ITALY } from '../utils/zones'
+import { buildCatalog, regionAll, zoneArea, inZone, provinceZoneOf, sameZone, zoneName, zonePlace, zoneTitle, ITALY } from '../utils/zones'
 import type { Event, Zone } from '../types'
 
 function makeEvent(city: string, province: string, provinceName: string | null, region: string): Event {
@@ -73,5 +73,22 @@ describe('testi della zona', () => {
     expect(zoneTitle(lombardia)).toBe('Tapasciate in Lombardia')
     expect(zoneTitle(provBG)).toBe('Tapasciate in provincia di Bergamo')
     expect([zonePlace(ITALY), zonePlace(lombardia), zonePlace(provBG)]).toEqual(['in Italia', 'in Lombardia', 'a Bergamo'])
+  })
+})
+
+describe('regionAll / zoneArea', () => {
+  it('usa l\'articolo giusto per ogni regione', () => {
+    expect(regionAll('Lombardia')).toBe('Tutta la Lombardia')
+    expect(regionAll('Veneto')).toBe('Tutto il Veneto')
+    expect(regionAll('Emilia-Romagna')).toBe("Tutta l'Emilia-Romagna")
+    expect(regionAll('Abruzzo')).toBe("Tutto l'Abruzzo")
+    expect(regionAll('Marche')).toBe('Tutte le Marche')
+    expect(regionAll("Valle d'Aosta")).toBe("Tutta la Valle d'Aosta")
+  })
+
+  it('le Marche vogliono "nelle"', () => {
+    expect(zoneArea({ kind: 'region', region: 'Marche' })).toBe('nelle Marche')
+    expect(zonePlace({ kind: 'region', region: 'Marche' })).toBe('nelle Marche')
+    expect(zoneArea({ kind: 'province', region: 'Lombardia', province: 'BG', provinceName: 'Bergamo' })).toBe('in provincia di Bergamo')
   })
 })
