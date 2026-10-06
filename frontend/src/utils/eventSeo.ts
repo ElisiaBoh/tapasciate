@@ -63,7 +63,7 @@ function setHeadTag(selector: string, create: () => HTMLElement, attr: string, v
   }
 }
 
-function setMeta(key: 'name' | 'property', name: string, content: string): () => void {
+export function setMeta(key: 'name' | 'property', name: string, content: string): () => void {
   return setHeadTag(`meta[${key}="${name}"]`, () => {
     const meta = document.createElement('meta')
     meta.setAttribute(key, name)
@@ -71,7 +71,7 @@ function setMeta(key: 'name' | 'property', name: string, content: string): () =>
   }, 'content', content)
 }
 
-function setCanonical(href: string): () => void {
+export function setCanonical(href: string): () => void {
   return setHeadTag('link[rel="canonical"]', () => {
     const link = document.createElement('link')
     link.rel = 'canonical'

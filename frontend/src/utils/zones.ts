@@ -59,13 +59,18 @@ export function zoneName(zone: Zone): string {
   }
 }
 
+// "in Italia" / "in Lombardia" / "in provincia di Bergamo"
+export function zoneArea(zone: Zone): string {
+  switch (zone.kind) {
+    case 'italy': return 'in Italia'
+    case 'region': return `in ${zone.region}`
+    case 'province': return `in provincia di ${zone.provinceName}`
+  }
+}
+
 // Titolo della pagina lista
 export function zoneTitle(zone: Zone): string {
-  switch (zone.kind) {
-    case 'italy': return 'Tapasciate in Italia'
-    case 'region': return `Tapasciate in ${zone.region}`
-    case 'province': return `Tapasciate in provincia di ${zone.provinceName}`
-  }
+  return `Tapasciate ${zoneArea(zone)}`
 }
 
 // Complemento di luogo per le frasi: "in Italia" / "in Lombardia" / "a Bergamo"

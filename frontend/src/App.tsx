@@ -7,6 +7,7 @@ import { inZone, provinceZoneOf, zoneName, zonePlace, ITALY } from './utils/zone
 import { periodPhrase } from './utils/period'
 import { clearSavedZonePath, getSavedZonePath, saveZonePath } from './utils/savedZone'
 import { applyNoIndex } from './utils/eventSeo'
+import { applyZoneSeo } from './utils/zoneSeo'
 import Header from './components/Header/Header'
 import ZoneBar from './components/ZoneBar/ZoneBar'
 import ZonePicker from './components/ZonePicker/ZonePicker'
@@ -89,6 +90,13 @@ function App() {
     }
     return applyNoIndex()
   }, [zoneNotFound, pathname, savedPath])
+
+  // Pagine di regione e provincia: title, descrizione e canonical propri (la home usa quelli di index.html)
+  const listZone = route.kind === 'zone' && status === 'success' && zone && zone.kind !== 'italy' ? zone : null
+  const listZoneCount = zoneEvents.length
+  useEffect(() => {
+    if (listZone) return applyZoneSeo(listZone, listZoneCount)
+  }, [listZone, listZoneCount])
 
   const selectZone = useCallback((selected: Zone) => {
     const path = zonePath(selected)
