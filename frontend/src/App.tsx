@@ -57,6 +57,8 @@ function App() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
+  useEffect(() => setPickerOpen(false), [pathname])
+
   const eventId = route.kind === 'event' ? route.id : null
   useEffect(() => {
     if (eventId !== null) window.scrollTo(0, 0)
