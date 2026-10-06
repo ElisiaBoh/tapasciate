@@ -8,8 +8,6 @@ export function zoneDescription(zone: Zone, count: number): string {
   return `Il calendario delle tapasciate ${zoneArea(zone)}: ${events} in programma, con date, percorsi e locandine.`
 }
 
-// Title, descrizione, canonical e anteprime social della pagina di una regione o provincia.
-// Restituisce il cleanup che rimette i valori della home (definiti in public/index.html).
 export function applyZoneSeo(zone: Zone, count: number): () => void {
   const url = SITE_URL + zonePath(zone)
   const title = `${zoneTitle(zone)} — Tapasciate.it`

@@ -32,11 +32,8 @@ function eventsReducer(state: EventsState, action: EventsAction): EventsState {
 export interface UseEventsResult {
   status: Status
   error: string | null
-  // Tutti gli eventi (anche passati: il dettaglio di un evento appena passato resta raggiungibile)
   events: Event[]
-  // Eventi da oggi in poi, in ordine di data
   upcomingEvents: Event[]
-  // Regioni e province con eventi futuri
   catalog: RegionEntry[]
   today: Date
 }
@@ -76,9 +73,7 @@ export function useEvents(): UseEventsResult {
 }
 
 export interface ZoneEvents {
-  // Eventi futuri della zona (per "N in calendario")
   zoneEvents: Event[]
-  // Eventi della zona nel periodo, raggruppati per data
   periodCount: number
   groupedEvents: Record<string, Event[]>
   sortedDates: string[]

@@ -10,7 +10,6 @@ import './ZonePicker.css'
 
 interface Props {
   catalog: RegionEntry[]
-  // Zona attuale (evidenziata); null se l'URL non corrisponde a nessuna zona
   current: Zone | null
   onSelect: (zone: Zone) => void
   onClose: () => void

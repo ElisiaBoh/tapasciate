@@ -1,6 +1,5 @@
 import { inPeriod, periodRange } from '../utils/period'
 
-// 2026-10-07 è un mercoledì, 2026-10-11 una domenica
 const wednesday = new Date(2026, 9, 7)
 const sunday = new Date(2026, 9, 11)
 

@@ -30,7 +30,6 @@
   width: 25%;
 }
 
-/* ---- GRIGLIA: una colonna su mobile, due su desktop ---- */
 .events-grid {
   display: flex;
   flex-direction: column;

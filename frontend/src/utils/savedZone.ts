@@ -1,28 +1,22 @@
-// Zona scelta dall'utente nel selettore, ricordata nel browser come URL della lista (es. "/lombardia/bergamo").
-// localStorage può mancare o lanciare eccezioni (navigazione privata, cookie bloccati): in quel caso
-// semplicemente non si ricorda nulla.
 const KEY = 'tapasciate:zona'
 
-export function getSavedZonePath(): string | null {
+// localStorage throws in private browsing or when storage is blocked: the zone is then simply not remembered
+function withStorage<T>(action: (storage: Storage) => T, fallback: T): T {
   try {
-    return window.localStorage.getItem(KEY)
+    return action(window.localStorage)
   } catch {
-    return null
+    return fallback
   }
+}
+
+export function getSavedZonePath(): string | null {
+  return withStorage(storage => storage.getItem(KEY), null)
 }
 
 export function saveZonePath(path: string): void {
-  try {
-    window.localStorage.setItem(KEY, path)
-  } catch {
-    // ignora
-  }
+  withStorage(storage => storage.setItem(KEY, path), undefined)
 }
 
 export function clearSavedZonePath(): void {
-  try {
-    window.localStorage.removeItem(KEY)
-  } catch {
-    // ignora
-  }
+  withStorage(storage => storage.removeItem(KEY), undefined)
 }

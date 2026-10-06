@@ -4,7 +4,6 @@ import Tile from '../Tile/Tile'
 import './BackButton.css'
 
 interface Props {
-  // Lista a cui tornare (es. "/lombardia/bergamo") e suo nome ("Bergamo")
   href: string
   label: string
 }

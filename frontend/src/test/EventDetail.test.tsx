@@ -29,7 +29,7 @@ const events = [first, second, third]
 function renderDetail(props: Partial<Parameters<typeof EventDetail>[0]> = {}) {
   const onSelect = jest.fn()
   render(
-    <EventDetail status="success" event={second} siblings={events} zoneName="Bergamo" onSelect={onSelect} {...props} />
+    <EventDetail status="success" event={second} sameDayEvents={events} zoneName="Bergamo" onSelect={onSelect} {...props} />
   )
   return onSelect
 }
@@ -103,7 +103,7 @@ describe('EventDetail', () => {
   })
 
   it('fuori dalla lista della zona non mostra la posizione e disabilita le frecce', () => {
-    renderDetail({ siblings: [] })
+    renderDetail({ sameDayEvents: [] })
     expect(screen.queryByText(/di \d/)).not.toBeInTheDocument()
     expect(screen.getByRole('button', { name: /precedente/i })).toBeDisabled()
     expect(screen.getByRole('button', { name: /successiva/i })).toBeDisabled()

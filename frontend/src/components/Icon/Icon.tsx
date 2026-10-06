@@ -1,5 +1,3 @@
-// Icone a tratto (viewBox 24×24) dal design "nuova navigazione". Decorative: il testo accessibile
-// sta sempre nell'elemento che le contiene.
 const ICONS = {
   'chevron-down': { strokeWidth: 3.5, body: <path d="m6 9 6 6 6-6" /> },
   'chevron-up': { strokeWidth: 3.5, body: <path d="m6 15 6-6 6 6" /> },

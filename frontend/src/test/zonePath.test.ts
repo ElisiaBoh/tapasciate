@@ -1,5 +1,5 @@
-import { parseRoute, resolveZone, zonePath } from '../utils/zonePath'
-import type { RegionEntry } from '../types'
+import { parseRoute, resolvePageZone, resolveZone, zonePath } from '../utils/zonePath'
+import type { Event, RegionEntry } from '../types'
 
 const catalog: RegionEntry[] = [
   {
@@ -61,5 +61,42 @@ describe('resolveZone', () => {
       const zone = { kind: 'region' as const, region: region.name }
       expect(resolveZone(catalog, (parseRoute(zonePath(zone)) as { slugs: string[] }).slugs)).toEqual(zone)
     }
+  })
+})
+
+describe('resolvePageZone', () => {
+  const event: Event = {
+    id: 1,
+    title: 'Evento',
+    date: '2030-06-15',
+    location: { city: 'Bergamo', province: 'BG', province_name: 'Bergamo', region: 'Lombardia' },
+    posterPages: [],
+    source: null,
+    distances: [],
+  }
+  const base = { status: 'success' as const, catalog, event: undefined, fromListPath: undefined }
+
+  it('l\'Italia è nota anche durante il caricamento', () => {
+    expect(resolvePageZone({ ...base, status: 'loading', route: parseRoute('/') })).toEqual({ state: 'found', zone: { kind: 'italy' } })
+  })
+
+  it('una zona dall\'URL si risolve solo a dati caricati', () => {
+    expect(resolvePageZone({ ...base, status: 'loading', route: parseRoute('/lombardia') })).toEqual({ state: 'loading' })
+    expect(resolvePageZone({ ...base, route: parseRoute('/lombardia') })).toEqual({ state: 'found', zone: { kind: 'region', region: 'Lombardia' } })
+    expect(resolvePageZone({ ...base, route: parseRoute('/sardegna') })).toEqual({ state: 'notFound' })
+    expect(resolvePageZone({ ...base, route: parseRoute('/a/b/c') })).toEqual({ state: 'notFound' })
+  })
+
+  it('il dettaglio usa la lista di provenienza se contiene l\'evento', () => {
+    const route = parseRoute('/evento/1-evento')
+    expect(resolvePageZone({ ...base, route, event, fromListPath: '/lombardia' }))
+      .toEqual({ state: 'found', zone: { kind: 'region', region: 'Lombardia' } })
+  })
+
+  it('altrimenti la provincia dell\'evento', () => {
+    const route = parseRoute('/evento/1-evento')
+    const bergamo = { kind: 'province', region: 'Lombardia', province: 'BG', provinceName: 'Bergamo' }
+    expect(resolvePageZone({ ...base, route, event })).toEqual({ state: 'found', zone: bergamo })
+    expect(resolvePageZone({ ...base, route, event, fromListPath: '/friuli-venezia-giulia' })).toEqual({ state: 'found', zone: bergamo })
   })
 })

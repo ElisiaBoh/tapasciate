@@ -1,4 +1,5 @@
-import type { Event, RegionEntry, Zone } from '../types'
+import { periodPhrase } from './period'
+import type { Event, Period, RegionEntry, Zone } from '../types'
 
 export const ITALY: Zone = { kind: 'italy' }
 
@@ -6,7 +7,6 @@ function provinceName(event: Event): string {
   return event.location.province_name ?? event.location.province
 }
 
-// Regioni ordinate per numero di eventi (a parità, per nome), province in ordine alfabetico
 export function buildCatalog(events: Event[]): RegionEntry[] {
   const regions = new Map<string, RegionEntry>()
   for (const event of events) {
@@ -50,7 +50,6 @@ export function sameZone(a: Zone, b: Zone): boolean {
   return true
 }
 
-// "Tutta Italia" / "Lombardia" / "Bergamo"
 export function zoneName(zone: Zone): string {
   switch (zone.kind) {
     case 'italy': return 'Tutta Italia'
@@ -59,10 +58,8 @@ export function zoneName(zone: Zone): string {
   }
 }
 
-// Regioni di genere maschile (le altre sono femminili; "Marche" è plurale)
 const MALE_REGIONS = new Set(['Abruzzo', 'Friuli-Venezia Giulia', 'Lazio', 'Molise', 'Piemonte', 'Trentino-Alto Adige', 'Veneto'])
 
-// "Tutta la Lombardia" / "Tutto il Veneto" / "Tutta l'Emilia-Romagna" / "Tutte le Marche"
 export function regionAll(region: string): string {
   if (region === 'Marche') return 'Tutte le Marche'
   const male = MALE_REGIONS.has(region)
@@ -70,12 +67,10 @@ export function regionAll(region: string): string {
   return `${male ? 'Tutto' : 'Tutta'} ${article}${region}`
 }
 
-// "in Lombardia" / "nelle Marche"
 function inRegion(region: string): string {
   return region === 'Marche' ? 'nelle Marche' : `in ${region}`
 }
 
-// "in Italia" / "in Lombardia" / "in provincia di Bergamo"
 export function zoneArea(zone: Zone): string {
   switch (zone.kind) {
     case 'italy': return 'in Italia'
@@ -84,16 +79,21 @@ export function zoneArea(zone: Zone): string {
   }
 }
 
-// Titolo della pagina lista
 export function zoneTitle(zone: Zone): string {
   return `Tapasciate ${zoneArea(zone)}`
 }
 
-// Complemento di luogo per le frasi: "in Italia" / "in Lombardia" / "a Bergamo"
 export function zonePlace(zone: Zone): string {
   switch (zone.kind) {
     case 'italy': return 'in Italia'
     case 'region': return inRegion(zone.region)
     case 'province': return `a ${zone.provinceName}`
   }
+}
+
+export function noEventsMessage(zone: Zone, period: Period): string {
+  const phrase = periodPhrase(period)
+  return phrase
+    ? `Nessuna tapasciata ${zonePlace(zone)} ${phrase}`
+    : `Nessuna tapasciata in calendario ${zonePlace(zone)}`
 }

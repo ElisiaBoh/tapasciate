@@ -32,7 +32,7 @@ describe('EventCard', () => {
     render(<EventCard event={baseEvent} listPath="/lombardia" />)
     fireEvent.click(screen.getByRole('link'))
     expect(window.location.pathname).toBe('/evento/1-tapasciata-dei-colli')
-    expect(window.history.state).toEqual({ fromList: true, zonePath: '/lombardia' })
+    expect(window.history.state).toEqual({ fromList: true, listPath: '/lombardia' })
   })
 
   it('mostra le distanze quando presenti', () => {

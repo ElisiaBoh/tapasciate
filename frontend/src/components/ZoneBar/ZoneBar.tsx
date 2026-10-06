@@ -7,12 +7,10 @@ import './ZoneBar.css'
 
 interface Props {
   loading: boolean
-  // null: l'URL non corrisponde a nessuna zona
   zone: Zone | null
   period: Period
   onPeriodChange: (period: Period) => void
   onOpenPicker: () => void
-  // Eventi futuri nella zona e, tra questi, quelli nel periodo scelto
   total: number
   periodCount: number
 }

@@ -41,7 +41,6 @@
   height: 1.5rem;
 }
 
-/* ---- CORPO: info e azioni, poi locandina (affiancate su desktop) ---- */
 .ev-body {
   max-width: var(--content-width);
   margin: 0 auto;
@@ -91,7 +90,6 @@
   font-weight: 700;
 }
 
-/* ---- AZIONI: calendario, mappa, condividi ---- */
 .ev-actions {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));

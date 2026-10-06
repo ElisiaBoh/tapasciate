@@ -3,8 +3,7 @@ import type { MouseEvent } from 'react'
 
 export interface RouteState {
   fromList?: boolean
-  // Lista da cui si è aperto il dettaglio (es. "/lombardia"): dà il contesto a frecce e "Torna a …"
-  zonePath?: string
+  listPath?: string
 }
 
 function subscribe(callback: () => void) {
@@ -16,7 +15,6 @@ export function usePathname(): string {
   return useSyncExternalStore(subscribe, () => window.location.pathname)
 }
 
-// Stato della voce di history corrente (impostato da navigate)
 export function useHistoryState(): RouteState {
   return useSyncExternalStore(subscribe, () => window.history.state as RouteState | null) ?? {}
 }

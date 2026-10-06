@@ -1,5 +1,4 @@
-// Eseguito dopo `react-scripts build`: sovrascrive build/sitemap.xml aggiungendo le pagine evento
-// e quelle di regioni e province con eventi in calendario.
+// Eseguito dopo `react-scripts build`: sovrascrive build/sitemap.xml aggiungendo le pagine evento.
 // Se Supabase non risponde la build non fallisce: resta la sitemap statica di public/.
 
 const fs = require('fs')

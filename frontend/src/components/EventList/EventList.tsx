@@ -10,9 +10,7 @@ interface Props {
   status: Status
   sortedDates: string[]
   groupedEvents: Record<string, Event[]>
-  // URL della lista mostrata (passato alle card)
   listPath: string
-  // Messaggio quando non ci sono eventi (es. "Nessuna tapasciata a Gorizia questa settimana")
   emptyMessage: string
 }
 

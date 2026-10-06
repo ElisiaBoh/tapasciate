@@ -1,4 +1,4 @@
-import { buildCatalog, regionAll, zoneArea, inZone, provinceZoneOf, sameZone, zoneName, zonePlace, zoneTitle, ITALY } from '../utils/zones'
+import { buildCatalog, noEventsMessage, regionAll, zoneArea, inZone, provinceZoneOf, sameZone, zoneName, zonePlace, zoneTitle, ITALY } from '../utils/zones'
 import type { Event, Zone } from '../types'
 
 function makeEvent(city: string, province: string, provinceName: string | null, region: string): Event {
@@ -90,5 +90,13 @@ describe('regionAll / zoneArea', () => {
     expect(zoneArea({ kind: 'region', region: 'Marche' })).toBe('nelle Marche')
     expect(zonePlace({ kind: 'region', region: 'Marche' })).toBe('nelle Marche')
     expect(zoneArea({ kind: 'province', region: 'Lombardia', province: 'BG', provinceName: 'Bergamo' })).toBe('in provincia di Bergamo')
+  })
+})
+
+describe('noEventsMessage', () => {
+  it('cita zona e periodo', () => {
+    expect(noEventsMessage(provBG, 'this-week')).toBe('Nessuna tapasciata a Bergamo questa settimana')
+    expect(noEventsMessage(lombardia, 'next-week')).toBe('Nessuna tapasciata in Lombardia la prossima settimana')
+    expect(noEventsMessage(ITALY, 'all')).toBe('Nessuna tapasciata in calendario in Italia')
   })
 })

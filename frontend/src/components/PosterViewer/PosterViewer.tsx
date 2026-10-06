@@ -11,13 +11,12 @@ interface Props {
 
 const stop = (e: SyntheticEvent) => e.stopPropagation()
 
-// Locandina a schermo intero: pagine a larghezza piena, scorrevoli e ingrandibili con le dita
 export default function PosterViewer({ event, onClose }: Props) {
   const { containerRef, onKeyDown } = useModal(onClose)
   const pages = event.posterPages
 
   return (
-    // Swipe e tasti restano qui: nel dettaglio sotto cambierebbero evento
+    // Keeps swipes and arrow keys from reaching the event detail underneath
     <div className="pv" role="dialog" aria-modal="true" aria-label={`Locandina ${event.title}`}
       tabIndex={-1} ref={containerRef} onKeyDown={onKeyDown} onTouchStart={stop} onTouchEnd={stop}>
       <button type="button" className="pv-close" aria-label="Chiudi la locandina" onClick={onClose}>

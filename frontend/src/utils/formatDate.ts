@@ -8,7 +8,6 @@ export function formatDate(dateString: string): string {
   return `${GIORNI[date.getDay()]} ${day} ${MESI[month - 1]}`
 }
 
-// "Domenica 4 ottobre 2026"
 export function formatLongDate(dateString: string): string {
   const [year, month] = dateString.split('-').map(Number)
   const [weekday, day] = formatDate(dateString).split(' ')

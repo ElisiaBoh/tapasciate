@@ -10,7 +10,6 @@ function icsDate(date: Date): string {
   return date.toISOString().replace(/[-:]/g, '').replace(/\.\d{3}/, '')
 }
 
-// Evento di un giorno intero in formato iCalendar (RFC 5545), da aggiungere al calendario
 export function eventIcs(event: Event, now: Date = new Date()): string {
   const [y, m, d] = event.date.split('-').map(Number)
   const nextDay = new Date(Date.UTC(y, m - 1, d + 1)).toISOString().slice(0, 10)
@@ -48,8 +47,6 @@ export function eventMapsUrl(event: Event): string {
   return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`
 }
 
-// Condivisione nativa (telefono) o, se non disponibile, link copiato negli appunti.
-// Restituisce 'copied' quando ha copiato il link, così la UI può confermarlo.
 export async function shareEvent(event: Event): Promise<'shared' | 'copied' | 'failed'> {
   const url = eventUrl(event)
   if (typeof navigator.share === 'function') {
@@ -57,7 +54,6 @@ export async function shareEvent(event: Event): Promise<'shared' | 'copied' | 'f
       await navigator.share({ title: event.title, text: eventDescription(event), url })
       return 'shared'
     } catch {
-      // Condivisione annullata dall'utente
       return 'failed'
     }
   }

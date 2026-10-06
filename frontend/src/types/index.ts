@@ -22,7 +22,6 @@ export interface Event {
   distances: string[]
 }
 
-// Zona geografica scelta dall'utente: corrisponde a una pagina lista (/, /lombardia, /lombardia/bergamo)
 export type Zone =
   | { kind: 'italy' }
   | { kind: 'region'; region: string }
@@ -30,7 +29,6 @@ export type Zone =
 
 export type Period = 'all' | 'this-week' | 'next-week'
 
-// Regioni e province con eventi futuri, con il numero di eventi (per il selettore della zona)
 export interface ProvinceEntry {
   code: string
   name: string

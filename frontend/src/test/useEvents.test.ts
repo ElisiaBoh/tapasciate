@@ -76,8 +76,7 @@ describe('useEvents', () => {
 })
 
 describe('useZoneEvents', () => {
-  // Mercoledì 7 ottobre 2026: "questa settimana" fino a domenica 11
-  const today = new Date(2026, 9, 7)
+  const wednesday = new Date(2026, 9, 7)
   const events = [
     makeEvent({ id: 1, date: '2026-10-10' }),
     makeEvent({ id: 2, date: '2026-10-11', location: milano }),
@@ -88,26 +87,26 @@ describe('useZoneEvents', () => {
   const bergamo: Zone = { kind: 'province', region: 'Lombardia', province: 'BG', provinceName: 'Bergamo' }
 
   it('filtra per zona e raggruppa per data', () => {
-    const { result } = renderHook(() => useZoneEvents(events, lombardia, 'all', today))
+    const { result } = renderHook(() => useZoneEvents(events, lombardia, 'all', wednesday))
     expect(result.current.zoneEvents.map(e => e.id)).toEqual([1, 2, 3])
     expect(result.current.sortedDates).toEqual(['2026-10-10', '2026-10-11'])
     expect(result.current.groupedEvents['2026-10-11'].map(e => e.id)).toEqual([2, 3])
   })
 
   it('filtra per provincia', () => {
-    const { result } = renderHook(() => useZoneEvents(events, bergamo, 'all', today))
+    const { result } = renderHook(() => useZoneEvents(events, bergamo, 'all', wednesday))
     expect(result.current.zoneEvents.map(e => e.id)).toEqual([1, 3])
   })
 
   it('filtra per periodo mantenendo il totale della zona', () => {
-    const { result } = renderHook(() => useZoneEvents(events, { kind: 'italy' }, 'next-week', today))
+    const { result } = renderHook(() => useZoneEvents(events, { kind: 'italy' }, 'next-week', wednesday))
     expect(result.current.zoneEvents).toHaveLength(4)
     expect(result.current.periodCount).toBe(1)
     expect(result.current.sortedDates).toEqual(['2026-10-18'])
   })
 
   it('senza zona non restituisce eventi', () => {
-    const { result } = renderHook(() => useZoneEvents(events, null, 'all', today))
+    const { result } = renderHook(() => useZoneEvents(events, null, 'all', wednesday))
     expect(result.current.zoneEvents).toEqual([])
     expect(result.current.sortedDates).toEqual([])
   })

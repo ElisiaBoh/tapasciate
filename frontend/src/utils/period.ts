@@ -6,7 +6,6 @@ export const PERIODS: { value: Period; label: string }[] = [
   { value: 'next-week', label: 'Prossima settimana' },
 ]
 
-// "questa settimana" / "la prossima settimana" per le frasi; null per "tutte"
 export function periodPhrase(period: Period): string | null {
   switch (period) {
     case 'all': return null
@@ -25,8 +24,6 @@ function addDays(date: Date, days: number): Date {
   return new Date(date.getFullYear(), date.getMonth(), date.getDate() + days)
 }
 
-// Intervallo di date (YYYY-MM-DD, estremi inclusi) del periodo. "Questa settimana" va da oggi
-// a domenica, "prossima settimana" da lunedì a domenica successivi.
 export function periodRange(period: Period, today: Date): { from: string; to: string | null } {
   const daysToSunday = (7 - today.getDay()) % 7
   switch (period) {

@@ -8,7 +8,6 @@
   --color-text-dark: #000;
   --color-text-light: #FFFFFF;
 
-  /* Larghezza massima dei contenuti (liste, filtri, intestazioni) */
   --content-width: calc(1040px + 2rem);
 }
 

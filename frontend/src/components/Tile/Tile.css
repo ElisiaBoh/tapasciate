@@ -14,7 +14,7 @@ button:hover:not(:disabled) > .tile {
   background: var(--color-yellow-dark);
 }
 
-.tile--off {
+.tile--disabled {
   background: #ECECEC;
   color: #9A9A9A;
 }
