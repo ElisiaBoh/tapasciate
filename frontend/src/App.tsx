@@ -118,8 +118,8 @@ function App() {
           <EventDetail
             status={status}
             event={event}
-            events={zoneEvents}
-            selectedProvince=""
+            siblings={event ? zoneEvents.filter(e => e.date === event.date) : []}
+            zoneName={zone ? zoneName(zone) : ''}
             onSelect={selectEvent}
           />
         </>
