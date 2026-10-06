@@ -16,31 +16,34 @@ function makeEvent(overrides: Partial<Event> = {}): Event {
   }
 }
 
+const listProps = { listPath: '/', emptyMessage: 'Nessuna tapasciata a Gorizia questa settimana' }
+
 describe('EventList', () => {
   it('mostra gli skeleton durante il caricamento', () => {
-    render(<EventList status="loading" sortedDates={[]} groupedEvents={{}} />)
+    render(<EventList status="loading" sortedDates={[]} groupedEvents={{}} {...listProps} />)
     expect(document.querySelector('.skeleton')).toBeInTheDocument()
   })
 
   it('non mostra la lista eventi durante il caricamento', () => {
-    render(<EventList status="loading" sortedDates={[]} groupedEvents={{}} />)
+    render(<EventList status="loading" sortedDates={[]} groupedEvents={{}} {...listProps} />)
     expect(screen.queryByRole('heading')).not.toBeInTheDocument()
   })
 
   it('mostra il messaggio di errore quando status è error', () => {
-    render(<EventList status="error" sortedDates={[]} groupedEvents={{}} />)
+    render(<EventList status="error" sortedDates={[]} groupedEvents={{}} {...listProps} />)
     expect(screen.getByText(/Errore nel caricamento degli eventi/)).toBeInTheDocument()
   })
 
   it('mostra il messaggio di stato vuoto quando non ci sono eventi', () => {
-    render(<EventList status="success" sortedDates={[]} groupedEvents={{}} />)
-    expect(screen.getByText(/Nessun evento trovato per questa provincia/)).toBeInTheDocument()
+    render(<EventList status="success" sortedDates={[]} groupedEvents={{}} {...listProps} />)
+    expect(screen.getByText('Nessuna tapasciata a Gorizia questa settimana')).toBeInTheDocument()
+    expect(screen.queryByRole('link')).not.toBeInTheDocument()
   })
 
   it('mostra gli eventi raggruppati per data', () => {
     const groupedEvents = { '2026-06-15': [makeEvent()] }
     render(
-      <EventList status="success" sortedDates={['2026-06-15']} groupedEvents={groupedEvents} />
+      <EventList status="success" sortedDates={['2026-06-15']} groupedEvents={groupedEvents} {...listProps} />
     )
     expect(screen.getByText('Test Event')).toBeInTheDocument()
   })
@@ -50,9 +53,16 @@ describe('EventList', () => {
       '2026-06-15': [makeEvent(), makeEvent({ id: 2, title: 'Secondo Evento' })],
     }
     render(
-      <EventList status="success" sortedDates={['2026-06-15']} groupedEvents={groupedEvents} />
+      <EventList status="success" sortedDates={['2026-06-15']} groupedEvents={groupedEvents} {...listProps} />
     )
     expect(screen.getByText(/2 tapasciate/)).toBeInTheDocument()
+  })
+
+  it('al singolare con un solo evento', () => {
+    render(
+      <EventList status="success" sortedDates={['2026-06-15']} groupedEvents={{ '2026-06-15': [makeEvent()] }} {...listProps} />
+    )
+    expect(screen.getByText('1 tapasciata')).toBeInTheDocument()
   })
 
   it('mostra più sezioni data', () => {
@@ -65,6 +75,7 @@ describe('EventList', () => {
         status="success"
         sortedDates={['2026-06-15', '2026-07-01']}
         groupedEvents={groupedEvents}
+        {...listProps}
       />
     )
     expect(screen.getByText('Test Event')).toBeInTheDocument()
@@ -74,7 +85,7 @@ describe('EventList', () => {
   it('mostra l\'intestazione della data in italiano', () => {
     const groupedEvents = { '2026-04-01': [makeEvent()] }
     render(
-      <EventList status="success" sortedDates={['2026-04-01']} groupedEvents={groupedEvents} />
+      <EventList status="success" sortedDates={['2026-04-01']} groupedEvents={groupedEvents} {...listProps} />
     )
     expect(screen.getByText('Mercoledì 1 Aprile')).toBeInTheDocument()
   })

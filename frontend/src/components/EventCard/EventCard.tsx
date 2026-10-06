@@ -1,40 +1,29 @@
-import { formatDate } from '../../utils/formatDate'
-import DetailsButton from '../DetailsButton/DetailsButton'
-import Divider from '../Divider/Divider'
+import { eventPath } from '../../utils/eventPath'
+import { linkClickHandler } from '../../hooks/useRoute'
+import Tile from '../Tile/Tile'
 import type { Event } from '../../types'
 import './EventCard.css'
 
 interface Props {
   event: Event
+  // URL della lista che contiene la card: il dettaglio lo usa per frecce e "Torna a …"
+  listPath: string
 }
 
-export default function EventCard({ event }: Props) {
+// Tutta la card è il link al dettaglio
+export default function EventCard({ event, listPath }: Props) {
+  const path = eventPath(event)
   return (
-    <>
-      <div className="event-card">
-        <div className="event-content">
-          <h3 className="event-title">{event.title}</h3>
-
-          <div className="event-details">
-            <p className="event-location">
-              {event.location.city} ({event.location.province})
-            </p>
-            <p className="event-date">
-              {formatDate(event.date)}
-            </p>
-            {event.distances.length > 0 && (
-              <p className="event-distances">
-                km: {event.distances.join(' - ')}
-              </p>
-            )}
-          </div>
-
-          <div className="event-actions">
-            <DetailsButton event={event} />
-          </div>
-        </div>
-      </div>
-      <Divider />
-    </>
+    <a className="event-card" href={path}
+      onClick={linkClickHandler(path, { state: { fromList: true, zonePath: listPath } })}>
+      <span className="event-card-body">
+        <h3 className="event-title">{event.title}</h3>
+        <span className="event-location">{event.location.city} ({event.location.province})</span>
+        {event.distances.length > 0 && (
+          <span className="event-distances">{event.distances.join(' - ')} km</span>
+        )}
+      </span>
+      <Tile icon="chevron-right" />
+    </a>
   )
 }

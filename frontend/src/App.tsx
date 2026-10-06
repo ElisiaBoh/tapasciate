@@ -60,6 +60,8 @@ function App() {
           status={status}
           sortedDates={sortedDates}
           groupedEvents={groupedEvents}
+          listPath="/"
+          emptyMessage="Nessuna tapasciata in calendario"
         />
       ) : (
         <EventDetail

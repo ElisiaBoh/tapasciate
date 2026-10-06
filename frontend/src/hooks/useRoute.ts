@@ -3,6 +3,8 @@ import type { MouseEvent } from 'react'
 
 export interface RouteState {
   fromList?: boolean
+  // Lista da cui si è aperto il dettaglio (es. "/lombardia"): dà il contesto a frecce e "Torna a …"
+  zonePath?: string
 }
 
 function subscribe(callback: () => void) {
