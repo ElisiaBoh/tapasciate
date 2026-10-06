@@ -7,3 +7,9 @@ export function formatDate(dateString: string): string {
   const date = new Date(year, month - 1, day)
   return `${GIORNI[date.getDay()]} ${day} ${MESI[month - 1]}`
 }
+
+export function formatLongDate(dateString: string): string {
+  const [year, month] = dateString.split('-').map(Number)
+  const [weekday, day] = formatDate(dateString).split(' ')
+  return `${weekday} ${day} ${MESI[month - 1].toLowerCase()} ${year}`
+}

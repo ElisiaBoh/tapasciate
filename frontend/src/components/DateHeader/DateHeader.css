@@ -5,9 +5,10 @@
 }
 
 .date-header-content {
-  max-width: 1400px;
+  max-width: var(--content-width);
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 1rem;
+  gap: 12px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -45,10 +46,6 @@
 }
 
 @media (max-width: 768px) {
-  .date-header-content {
-    padding: 0 1rem;
-  }
-
   .date-count {
     font-size: 0.9rem;
   }

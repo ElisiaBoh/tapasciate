@@ -1,5 +1,5 @@
 import '@testing-library/jest-dom'
-import { render, screen } from '@testing-library/react'
+import { render, screen, fireEvent } from '@testing-library/react'
 import EventCard from '../components/EventCard/EventCard'
 import type { Event } from '../types'
 
@@ -14,42 +14,34 @@ const baseEvent: Event = {
 }
 
 describe('EventCard', () => {
-  it('mostra il titolo dell\'evento', () => {
-    render(<EventCard event={baseEvent} />)
-    expect(screen.getByText('Tapasciata dei Colli')).toBeInTheDocument()
-  })
-
-  it('mostra città e provincia', () => {
-    render(<EventCard event={baseEvent} />)
+  it('mostra titolo, città e provincia', () => {
+    render(<EventCard event={baseEvent} listPath="/lombardia/bergamo" />)
+    expect(screen.getByRole('heading', { level: 3 })).toHaveTextContent('Tapasciata dei Colli')
     expect(screen.getByText('Bergamo (BG)')).toBeInTheDocument()
   })
 
-  it('mostra il pulsante dettagli anche senza locandina', () => {
-    render(<EventCard event={baseEvent} />)
-    expect(screen.getByRole('link', { name: 'dettagli' })).toBeInTheDocument()
-  })
-
-  it('il pulsante dettagli porta alla pagina di dettaglio', () => {
-    render(<EventCard event={baseEvent} />)
-    const link = screen.getByRole('link', { name: 'dettagli' })
+  it('tutta la card è il link al dettaglio', () => {
+    render(<EventCard event={baseEvent} listPath="/" />)
+    const link = screen.getByRole('link')
     expect(link).toHaveAttribute('href', '/evento/1-tapasciata-dei-colli')
+    expect(link).toHaveTextContent('Tapasciata dei Colli')
     expect(link).not.toHaveAttribute('target')
   })
 
-  it('il titolo non è un link: il dettaglio si apre solo dal pulsante', () => {
-    render(<EventCard event={baseEvent} />)
-    expect(screen.queryByRole('link', { name: 'Tapasciata dei Colli' })).not.toBeInTheDocument()
-    expect(screen.getAllByRole('link')).toHaveLength(1)
+  it('aprendo il dettaglio ricorda la lista di provenienza', () => {
+    render(<EventCard event={baseEvent} listPath="/lombardia" />)
+    fireEvent.click(screen.getByRole('link'))
+    expect(window.location.pathname).toBe('/evento/1-tapasciata-dei-colli')
+    expect(window.history.state).toEqual({ fromList: true, listPath: '/lombardia' })
   })
 
   it('mostra le distanze quando presenti', () => {
-    const event = { ...baseEvent, distances: ['10', '21'] }
-    render(<EventCard event={event} />)
-    expect(screen.getByText('km: 10 - 21')).toBeInTheDocument()
+    render(<EventCard event={{ ...baseEvent, distances: ['10', '21'] }} listPath="/" />)
+    expect(screen.getByText('10 - 21 km')).toBeInTheDocument()
   })
 
-  it('non mostra la sezione distanze se l\'array è vuoto', () => {
-    render(<EventCard event={baseEvent} />)
-    expect(screen.queryByText(/^km:/)).not.toBeInTheDocument()
+  it('non mostra le distanze se assenti', () => {
+    render(<EventCard event={baseEvent} listPath="/" />)
+    expect(screen.queryByText(/km$/)).not.toBeInTheDocument()
   })
 })

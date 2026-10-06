@@ -3,6 +3,7 @@ import type { MouseEvent } from 'react'
 
 export interface RouteState {
   fromList?: boolean
+  listPath?: string
 }
 
 function subscribe(callback: () => void) {
@@ -12,6 +13,10 @@ function subscribe(callback: () => void) {
 
 export function usePathname(): string {
   return useSyncExternalStore(subscribe, () => window.location.pathname)
+}
+
+export function useHistoryState(): RouteState {
+  return useSyncExternalStore(subscribe, () => window.history.state as RouteState | null) ?? {}
 }
 
 export function navigate(path: string, { replace = false, state = {} as RouteState } = {}) {

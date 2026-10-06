@@ -1,33 +1,26 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import type { TouchEvent } from 'react'
-import { formatDate } from '../../utils/formatDate'
+import { formatDate, formatLongDate } from '../../utils/formatDate'
 import { applyEventSeo, applyNoIndex } from '../../utils/eventSeo'
+import { eventIcsFilename, eventIcsHref, eventMapsUrl, shareEvent } from '../../utils/eventActions'
 import type { Event, Status } from '../../types'
 import DateHeader from '../DateHeader/DateHeader'
-import Divider from '../Divider/Divider'
+import Icon from '../Icon/Icon'
+import PosterViewer from '../PosterViewer/PosterViewer'
 import Skeleton from '../Skeleton/Skeleton'
 import StatusMessage from '../StatusMessage/StatusMessage'
+import Tile from '../Tile/Tile'
 import './EventDetail.css'
 
 interface Props {
   status: Status
   event: Event | undefined
-  // Eventi futuri filtrati per provincia, nell'ordine della lista: le frecce scorrono questi
-  events: Event[]
-  selectedProvince: string
+  sameDayEvents: Event[]
+  zoneName: string
   onSelect: (event: Event) => void
 }
 
 const SWIPE_THRESHOLD = 60
-
-function ArrowIcon({ direction }: { direction: 'prev' | 'next' }) {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4"
-      strokeLinecap="square" strokeLinejoin="miter" aria-hidden="true">
-      <path d={direction === 'prev' ? 'm15 5-7 7 7 7' : 'm9 5 7 7-7 7'} />
-    </svg>
-  )
-}
 
 function Poster({ event }: { event: Event }) {
   const pages = event.posterPages
@@ -57,18 +50,32 @@ function Poster({ event }: { event: Event }) {
   )
 }
 
-export default function EventDetail({ status, event, events, selectedProvince, onSelect }: Props) {
-  const index = event ? events.findIndex(e => e.id === event.id) : -1
-  const prev = index > 0 ? events[index - 1] : undefined
-  const next = index >= 0 && index < events.length - 1 ? events[index + 1] : undefined
-
-  // Cambiando provincia, se l'evento corrente non è tra i risultati si passa al primo disponibile
-  const prevProvinceRef = useRef(selectedProvince)
+function ShareButton({ event }: { event: Event }) {
+  const [copied, setCopied] = useState(false)
   useEffect(() => {
-    if (prevProvinceRef.current === selectedProvince) return
-    prevProvinceRef.current = selectedProvince
-    if (index === -1 && events.length > 0) onSelect(events[0])
-  }, [selectedProvince, index, events, onSelect])
+    if (!copied) return
+    const timer = setTimeout(() => setCopied(false), 2000)
+    return () => clearTimeout(timer)
+  }, [copied])
+
+  const onClick = async () => {
+    if (await shareEvent(event) === 'copied') setCopied(true)
+  }
+
+  return (
+    <button type="button" className="ev-action" onClick={onClick}>
+      <Icon name="share" />
+      <span aria-live="polite">{copied ? 'Link copiato' : 'Condividi'}</span>
+    </button>
+  )
+}
+
+export default function EventDetail({ status, event, sameDayEvents, zoneName, onSelect }: Props) {
+  const [viewerOpen, setViewerOpen] = useState(false)
+  useEffect(() => setViewerOpen(false), [event?.id])
+  const index = event ? sameDayEvents.findIndex(e => e.id === event.id) : -1
+  const prev = index > 0 ? sameDayEvents[index - 1] : undefined
+  const next = index >= 0 && index < sameDayEvents.length - 1 ? sameDayEvents[index + 1] : undefined
 
   useEffect(() => {
     const onKeyDown = (e: KeyboardEvent) => {
@@ -123,14 +130,6 @@ export default function EventDetail({ status, event, events, selectedProvince, o
     )
   }
 
-  if (index === -1 && selectedProvince && events.length === 0) {
-    return (
-      <main className="ev-page">
-        <StatusMessage>Nessuna tapasciata in questa provincia.</StatusMessage>
-      </main>
-    )
-  }
-
   const distances = event.distances.join(' - ')
 
   return (
@@ -138,44 +137,68 @@ export default function EventDetail({ status, event, events, selectedProvince, o
       <DateHeader
         titleAs="span"
         title={formatDate(event.date)}
-        count={index >= 0 ? `${index + 1} / ${events.length}` : undefined}
+        count={index >= 0 ? `${zoneName} · ${index + 1} di ${sameDayEvents.length}` : undefined}
       />
 
-      <section className="ev-switcher" aria-label="Scorri le tapasciate">
-        <button className="ev-arrow" aria-label="Tapasciata precedente"
+      <section className="ev-switcher" aria-label={`Scorri le tapasciate di questa data (${zoneName})`}>
+        <button type="button" className="ev-arrow" aria-label="Tapasciata precedente"
           disabled={!prev} onClick={() => prev && onSelect(prev)}>
-          <ArrowIcon direction="prev" />
+          <Tile icon="chevron-left" disabled={!prev} />
         </button>
         <h1 className="ev-title" aria-live="polite">{event.title}</h1>
-        <button className="ev-arrow" aria-label="Tapasciata successiva"
+        <button type="button" className="ev-arrow" aria-label="Tapasciata successiva"
           disabled={!next} onClick={() => next && onSelect(next)}>
-          <ArrowIcon direction="next" />
+          <Tile icon="chevron-right" disabled={!next} />
         </button>
       </section>
-      <Divider />
 
       <section className="ev-body">
-        <div className="ev-info">
-          <div className="ev-group">
-            <span className="ev-label">Dove</span>
-            <p className="ev-location">{event.location.city} ({event.location.province})</p>
-          </div>
-          <div className="ev-group">
-            <span className="ev-label">Quando</span>
-            <p>{formatDate(event.date)}</p>
-          </div>
-          {distances && (
+        <div className="ev-side">
+          <div className="ev-info">
             <div className="ev-group">
-              <span className="ev-label">Percorso</span>
-              <p>km: {distances}</p>
+              <span className="ev-label">Dove</span>
+              <p className="ev-location">{event.location.city} ({event.location.province})</p>
             </div>
-          )}
+            <div className="ev-group">
+              <span className="ev-label">Quando</span>
+              <p>{formatLongDate(event.date)}</p>
+            </div>
+            {distances && (
+              <div className="ev-group">
+                <span className="ev-label">Percorsi</span>
+                <p>{distances} km</p>
+              </div>
+            )}
+          </div>
+
+          <div className="ev-actions">
+            <a className="ev-action" href={eventIcsHref(event)} download={eventIcsFilename(event)}>
+              <Icon name="calendar" />
+              <span>Calendario</span>
+            </a>
+            <a className="ev-action" href={eventMapsUrl(event)} target="_blank" rel="noopener noreferrer">
+              <Icon name="pin" />
+              <span>Mappa</span>
+            </a>
+            <ShareButton event={event} />
+          </div>
         </div>
 
-        <figure className="ev-poster">
-          <Poster event={event} />
-        </figure>
+        {event.posterPages.length > 0 ? (
+          <figure className="ev-poster">
+            <button type="button" className="ev-poster-open" aria-label="Apri la locandina a schermo intero"
+              onClick={() => setViewerOpen(true)}>
+              <Poster event={event} />
+              <span className="ev-poster-hint" aria-hidden="true">tocca per ingrandire</span>
+            </button>
+          </figure>
+        ) : (
+          <figure className="ev-poster">
+            <Poster event={event} />
+          </figure>
+        )}
       </section>
+      {viewerOpen && <PosterViewer event={event} onClose={() => setViewerOpen(false)} />}
     </main>
   )
 }

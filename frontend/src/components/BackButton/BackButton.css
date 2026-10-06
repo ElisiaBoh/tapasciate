@@ -1,25 +1,34 @@
+.back-bar {
+  background: var(--color-cyan);
+  width: 100%;
+  padding: 2.25rem 0 8px;
+}
+
+.back-bar-content {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
 .back-button {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  padding: 0.7rem 1.5rem;
-  background: white;
+  gap: 12px;
+  min-height: 44px;
   color: var(--color-text-dark);
-  border: 4px solid var(--color-text-dark);
-  border-radius: 0;
-  font-size: 1.5rem;
+  font-size: 1.05rem;
   font-weight: 900;
   text-decoration: none;
-  text-transform: lowercase;
-  white-space: nowrap;
+  text-transform: uppercase;
 }
 
-.back-button:hover {
-  background: var(--color-yellow);
+.back-button:focus-visible {
+  outline: 4px solid var(--color-pink);
+  outline-offset: 2px;
 }
 
-@media (max-width: 768px) {
-  .back-button {
-    font-size: 1.25rem;
+@media (min-width: 768px) {
+  .back-bar {
+    padding-top: 2.75rem;
   }
 }

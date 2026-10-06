@@ -1,10 +1,14 @@
 /* ---- VARIABILI COLORE ---- */
 :root {
   --color-yellow: #FDDE74;
+  --color-yellow-dark: #F7C934;
+  --color-yellow-light: #FEF0B8;
   --color-cyan: #38ACB3;
   --color-pink: #F54C70;
   --color-text-dark: #000;
   --color-text-light: #FFFFFF;
+
+  --content-width: calc(1040px + 2rem);
 }
 
 /* ---- RESET GENERALE ---- */
@@ -16,6 +20,7 @@
 
 html {
   background: var(--color-yellow);
+  scrollbar-gutter: stable;
 }
 
 body {

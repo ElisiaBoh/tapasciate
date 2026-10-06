@@ -1,7 +1,6 @@
 import { formatDate } from '../../utils/formatDate'
 import EventCard from '../EventCard/EventCard'
 import DateHeader from '../DateHeader/DateHeader'
-import Divider from '../Divider/Divider'
 import Skeleton from '../Skeleton/Skeleton'
 import StatusMessage from '../StatusMessage/StatusMessage'
 import type { Event, Status } from '../../types'
@@ -11,37 +10,38 @@ interface Props {
   status: Status
   sortedDates: string[]
   groupedEvents: Record<string, Event[]>
+  listPath: string
+  emptyMessage: string
+}
+
+export function countLabel(count: number): string {
+  return count === 1 ? '1 tapasciata' : `${count} tapasciate`
 }
 
 function SkeletonList() {
   return (
     <>
       {[0, 1, 2].map(i => (
-        <div key={i} className="date-section">
+        <section key={i} className="date-section">
           <DateHeader loading />
           <div className="events-grid">
             {[0, 1].map(j => (
-              <div key={j}>
-                <div className="event-card">
-                  <div className="event-content">
-                    <Skeleton className="skeleton-event-title" />
-                    <div className="event-details">
-                      <Skeleton className="skeleton-event-line" />
-                      <Skeleton className="skeleton-event-line skeleton-event-line--short" />
-                    </div>
-                  </div>
+              <div key={j} className="event-card">
+                <div className="event-card-body">
+                  <Skeleton className="skeleton-event-title" />
+                  <Skeleton className="skeleton-event-line" />
+                  <Skeleton className="skeleton-event-line skeleton-event-line--short" />
                 </div>
-                <Divider />
               </div>
             ))}
           </div>
-        </div>
+        </section>
       ))}
     </>
   )
 }
 
-export default function EventList({ status, sortedDates, groupedEvents }: Props) {
+export default function EventList({ status, sortedDates, groupedEvents, listPath, emptyMessage }: Props) {
   if (status === 'loading') {
     return (
       <main className="events-container">
@@ -61,18 +61,18 @@ export default function EventList({ status, sortedDates, groupedEvents }: Props)
   return (
     <main className="events-container">
       {sortedDates.length > 0 ? (
-        sortedDates.map((date, index) => (
-          <div key={date} className={`date-section pattern-${index % 3}`}>
-            <DateHeader title={formatDate(date)} count={`${groupedEvents[date].length} tapasciate`} />
+        sortedDates.map(date => (
+          <section key={date} className="date-section">
+            <DateHeader title={formatDate(date)} count={countLabel(groupedEvents[date].length)} />
             <div className="events-grid">
               {groupedEvents[date].map(event => (
-                <EventCard key={event.id} event={event} />
+                <EventCard key={event.id} event={event} listPath={listPath} />
               ))}
             </div>
-          </div>
+          </section>
         ))
       ) : (
-        <StatusMessage>Nessun evento trovato per questa provincia.</StatusMessage>
+        <p className="events-empty">{emptyMessage}</p>
       )}
     </main>
   )

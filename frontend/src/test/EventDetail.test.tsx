@@ -29,7 +29,7 @@ const events = [first, second, third]
 function renderDetail(props: Partial<Parameters<typeof EventDetail>[0]> = {}) {
   const onSelect = jest.fn()
   render(
-    <EventDetail status="success" event={second} events={events} selectedProvince="" onSelect={onSelect} {...props} />
+    <EventDetail status="success" event={second} sameDayEvents={events} zoneName="Bergamo" onSelect={onSelect} {...props} />
   )
   return onSelect
 }
@@ -39,13 +39,14 @@ describe('EventDetail', () => {
     renderDetail()
     expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent('Secondo')
     expect(screen.getByText('Bergamo (BG)')).toBeInTheDocument()
-    expect(screen.getAllByText('Sabato 15 Giugno')).toHaveLength(2)
-    expect(screen.getByText('2 / 3')).toBeInTheDocument()
+    expect(screen.getByText('Sabato 15 Giugno')).toBeInTheDocument()
+    expect(screen.getByText('Sabato 15 giugno 2030')).toBeInTheDocument()
+    expect(screen.getByText('Bergamo · 2 di 3')).toBeInTheDocument()
   })
 
   it('mostra le distanze', () => {
     renderDetail()
-    expect(screen.getByText('km: 6 - 12')).toBeInTheDocument()
+    expect(screen.getByText('6 - 12 km')).toBeInTheDocument()
   })
 
   it('mostra le pagine della locandina come immagini', () => {
@@ -66,6 +67,22 @@ describe('EventDetail', () => {
     expect(images[1]).toHaveAccessibleName('Locandina Secondo, pagina 2 di 2')
   })
 
+  it('la locandina si apre a schermo intero e si chiude con Esc', () => {
+    renderDetail()
+    fireEvent.click(screen.getByRole('button', { name: 'Apri la locandina a schermo intero' }))
+    const viewer = screen.getByRole('dialog', { name: 'Locandina Secondo' })
+    expect(viewer).toHaveFocus()
+    fireEvent.keyDown(viewer, { key: 'Escape' })
+    expect(screen.queryByRole('dialog')).not.toBeInTheDocument()
+  })
+
+  it('con la locandina aperta le frecce da tastiera non cambiano evento', () => {
+    const onSelect = renderDetail()
+    fireEvent.click(screen.getByRole('button', { name: 'Apri la locandina a schermo intero' }))
+    fireEvent.keyDown(screen.getByRole('button', { name: 'Chiudi la locandina' }), { key: 'ArrowRight' })
+    expect(onSelect).not.toHaveBeenCalled()
+  })
+
   it('senza locandina mostra il segnaposto', () => {
     renderDetail({ event: first })
     expect(screen.getByText('non disponibile')).toBeInTheDocument()
@@ -73,12 +90,28 @@ describe('EventDetail', () => {
 
   it('non offre link per aprire o scaricare la locandina', () => {
     renderDetail()
-    expect(screen.queryByRole('link')).not.toBeInTheDocument()
+    expect(screen.queryByRole('link', { name: /locandina/i })).not.toBeInTheDocument()
+  })
+
+  it('offre calendario, mappa e condivisione', () => {
+    renderDetail()
+    const calendar = screen.getByRole('link', { name: 'Calendario' })
+    expect(calendar).toHaveAttribute('download', 'secondo.ics')
+    expect(calendar.getAttribute('href')).toMatch(/^data:text\/calendar/)
+    expect(screen.getByRole('link', { name: 'Mappa' })).toHaveAttribute('href', expect.stringContaining('google.com/maps'))
+    expect(screen.getByRole('button', { name: 'Condividi' })).toBeInTheDocument()
+  })
+
+  it('fuori dalla lista della zona non mostra la posizione e disabilita le frecce', () => {
+    renderDetail({ sameDayEvents: [] })
+    expect(screen.queryByText(/di \d/)).not.toBeInTheDocument()
+    expect(screen.getByRole('button', { name: /precedente/i })).toBeDisabled()
+    expect(screen.getByRole('button', { name: /successiva/i })).toBeDisabled()
   })
 
   it('nasconde le distanze quando assenti', () => {
     renderDetail({ event: first })
-    expect(screen.queryByText(/^km:/)).not.toBeInTheDocument()
+    expect(screen.queryByText(/km$/)).not.toBeInTheDocument()
   })
 
   it('le frecce selezionano l\'evento precedente e successivo', () => {
@@ -104,15 +137,5 @@ describe('EventDetail', () => {
   it('mostra un messaggio se l\'evento non esiste', () => {
     renderDetail({ event: undefined })
     expect(screen.getByText(/Tapasciata non trovata/)).toBeInTheDocument()
-  })
-
-  it('passa al primo evento della nuova provincia se quello corrente non è incluso', () => {
-    const onSelect = jest.fn()
-    const milano = makeEvent({ id: 9, title: 'Milano', location: { city: 'Milano', province: 'MI', province_name: 'Milano', region: 'Lombardia' } })
-    const { rerender } = render(
-      <EventDetail status="success" event={second} events={events} selectedProvince="" onSelect={onSelect} />
-    )
-    rerender(<EventDetail status="success" event={second} events={[milano]} selectedProvince="MI" onSelect={onSelect} />)
-    expect(onSelect).toHaveBeenCalledWith(milano)
   })
 })
