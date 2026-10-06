@@ -22,7 +22,7 @@ describe('eventIcs', () => {
   })
 
   it('fa l\'escape di virgole e punti e virgola', () => {
-    expect(ics).toContain('SUMMARY:Marcia\\, della Valle\; 2026\r\n')
+    expect(ics).toContain('SUMMARY:Marcia\\, della Valle\\; 2026\r\n')
     expect(ics).toContain('LOCATION:Soncino (CR)\r\n')
     expect(ics).toContain('URL:https://tapasciate.it/evento/7-marcia-della-valle-2026\r\n')
   })
