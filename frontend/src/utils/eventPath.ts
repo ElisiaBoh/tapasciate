@@ -1,11 +1,4 @@
-function slugify(text: string): string {
-  return text
-    .normalize('NFD')
-    .replace(/[̀-ͯ]/g, '')
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-+|-+$/g, '')
-}
+import { slugify } from './slugify'
 
 export function eventPath(event: { id: number; title: string }): string {
   const slug = slugify(event.title)
