@@ -21,6 +21,7 @@
 
 html {
   background: var(--color-yellow);
+  scrollbar-gutter: stable;
 }
 
 body {
