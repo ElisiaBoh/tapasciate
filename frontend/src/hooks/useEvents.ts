@@ -1,24 +1,23 @@
 import { useReducer, useEffect, useMemo } from 'react'
 import { fetchEvents } from '../services/eventsService'
-import type { Event, Province, Status } from '../types'
+import { buildCatalog, inZone } from '../utils/zones'
+import { inPeriod, toIsoDate } from '../utils/period'
+import type { Event, Period, RegionEntry, Status, Zone } from '../types'
 
 interface EventsState {
   status: Status
   events: Event[]
   error: string | null
-  selectedProvince: string
 }
 
 type EventsAction =
   | { type: 'FETCH_SUCCESS'; payload: Event[] }
   | { type: 'FETCH_ERROR'; payload: string }
-  | { type: 'SET_PROVINCE'; payload: string }
 
 const INITIAL_STATE: EventsState = {
   status: 'loading',
   events: [],
   error: null,
-  selectedProvince: '',
 }
 
 function eventsReducer(state: EventsState, action: EventsAction): EventsState {
@@ -27,26 +26,19 @@ function eventsReducer(state: EventsState, action: EventsAction): EventsState {
       return { ...state, status: 'success', events: action.payload, error: null }
     case 'FETCH_ERROR':
       return { ...state, status: 'error', error: action.payload }
-    case 'SET_PROVINCE':
-      return { ...state, selectedProvince: action.payload }
   }
-}
-
-function parseDate(dateStr: string): Date {
-  const [y, m, d] = dateStr.split('-').map(Number)
-  return new Date(y, m - 1, d)
 }
 
 export interface UseEventsResult {
   status: Status
   error: string | null
+  // Tutti gli eventi (anche passati: il dettaglio di un evento appena passato resta raggiungibile)
   events: Event[]
+  // Eventi da oggi in poi, in ordine di data
   upcomingEvents: Event[]
-  groupedEvents: Record<string, Event[]>
-  sortedDates: string[]
-  provinces: Province[]
-  selectedProvince: string
-  setProvince: (province: string) => void
+  // Regioni e province con eventi futuri
+  catalog: RegionEntry[]
+  today: Date
 }
 
 export function useEvents(): UseEventsResult {
@@ -64,56 +56,52 @@ export function useEvents(): UseEventsResult {
       .catch((err: Error) => dispatch({ type: 'FETCH_ERROR', payload: err.message }))
   }, [])
 
-  const filteredEvents = useMemo(() =>
-    state.selectedProvince
-      ? state.events.filter(e => e.location.province === state.selectedProvince)
-      : state.events,
-    [state.events, state.selectedProvince]
-  )
+  const upcomingEvents = useMemo(() => {
+    const from = toIsoDate(today)
+    return state.events
+      .filter(e => e.date >= from)
+      .sort((a, b) => a.date.localeCompare(b.date))
+  }, [state.events, today])
 
-  const upcomingEvents = useMemo(() =>
-    filteredEvents
-      .filter(e => parseDate(e.date) >= today)
-      .sort((a, b) => a.date.localeCompare(b.date)),
-    [filteredEvents, today]
-  )
-
-  const groupedEvents = useMemo(() =>
-    upcomingEvents.reduce<Record<string, Event[]>>((groups, event) => {
-      if (!groups[event.date]) groups[event.date] = []
-      groups[event.date].push(event)
-      return groups
-    }, {}),
-    [upcomingEvents]
-  )
-
-  const sortedDates = useMemo(() =>
-    Object.keys(groupedEvents).sort(),
-    [groupedEvents]
-  )
-
-  const provinces = useMemo(() =>
-    Object.values(
-      state.events
-        .filter(e => parseDate(e.date) >= today)
-        .reduce<Record<string, Province>>((acc, e) => {
-          const { province, province_name } = e.location
-          if (!acc[province]) acc[province] = { code: province, name: province_name ?? province }
-          return acc
-        }, {})
-    ).sort((a, b) => a.name.localeCompare(b.name)),
-    [state.events, today]
-  )
+  const catalog = useMemo(() => buildCatalog(upcomingEvents), [upcomingEvents])
 
   return {
     status: state.status,
     error: state.error,
     events: state.events,
     upcomingEvents,
-    groupedEvents,
-    sortedDates,
-    provinces,
-    selectedProvince: state.selectedProvince,
-    setProvince: (p: string) => dispatch({ type: 'SET_PROVINCE', payload: p }),
+    catalog,
+    today,
   }
+}
+
+export interface ZoneEvents {
+  // Eventi futuri della zona (per "N in calendario")
+  zoneEvents: Event[]
+  // Eventi della zona nel periodo, raggruppati per data
+  periodCount: number
+  groupedEvents: Record<string, Event[]>
+  sortedDates: string[]
+}
+
+export function useZoneEvents(upcomingEvents: Event[], zone: Zone | null, period: Period, today: Date): ZoneEvents {
+  const zoneEvents = useMemo(
+    () => (zone ? upcomingEvents.filter(e => inZone(e, zone)) : []),
+    [upcomingEvents, zone]
+  )
+
+  return useMemo(() => {
+    const periodEvents = zoneEvents.filter(e => inPeriod(e.date, period, today))
+    const groupedEvents = periodEvents.reduce<Record<string, Event[]>>((groups, event) => {
+      if (!groups[event.date]) groups[event.date] = []
+      groups[event.date].push(event)
+      return groups
+    }, {})
+    return {
+      zoneEvents,
+      periodCount: periodEvents.length,
+      groupedEvents,
+      sortedDates: Object.keys(groupedEvents).sort(),
+    }
+  }, [zoneEvents, period, today])
 }

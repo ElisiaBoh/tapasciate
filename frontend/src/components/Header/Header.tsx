@@ -3,20 +3,18 @@ import './Header.css'
 
 interface Props {
   scrolled?: boolean
-  // Nella home il logo è l'h1 della pagina; nel dettaglio l'h1 è il titolo dell'evento
-  isHome?: boolean
+  // Dove porta il logo: la zona ricordata dell'utente, o "/" (tutta Italia)
+  homePath?: string
 }
 
-export default function Header({ scrolled = false, isHome = true }: Props) {
-  const TitleTag = isHome ? 'h1' : 'div'
+// L'h1 della pagina è il titolo della lista o dell'evento: il logo è solo un link
+export default function Header({ scrolled = false, homePath = '/' }: Props) {
   return (
     <header className={`header${scrolled ? ' header--scrolled' : ''}`}>
       <div className="header-content">
-        <TitleTag className="site-title">
-          <a href="/" className="logo-link" onClick={linkClickHandler('/')}>
-            <img src={process.env.PUBLIC_URL + '/header.svg'} alt="Tapasciate" className="logo" />
-          </a>
-        </TitleTag>
+        <a href={homePath} className="logo-link" onClick={linkClickHandler(homePath)} aria-label="Tapasciate.it, home">
+          <img src={process.env.PUBLIC_URL + '/header.svg'} alt="Tapasciate" className="logo" />
+        </a>
       </div>
     </header>
   )

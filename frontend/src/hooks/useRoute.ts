@@ -16,6 +16,11 @@ export function usePathname(): string {
   return useSyncExternalStore(subscribe, () => window.location.pathname)
 }
 
+// Stato della voce di history corrente (impostato da navigate)
+export function useHistoryState(): RouteState {
+  return useSyncExternalStore(subscribe, () => window.history.state as RouteState | null) ?? {}
+}
+
 export function navigate(path: string, { replace = false, state = {} as RouteState } = {}) {
   if (replace) window.history.replaceState(state, '', path)
   else window.history.pushState(state, '', path)

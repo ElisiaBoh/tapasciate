@@ -22,11 +22,6 @@ export interface Event {
   distances: string[]
 }
 
-export interface Province {
-  code: string
-  name: string
-}
-
 // Zona geografica scelta dall'utente: corrisponde a una pagina lista (/, /lombardia, /lombardia/bergamo)
 export type Zone =
   | { kind: 'italy' }
