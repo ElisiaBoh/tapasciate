@@ -1,0 +1,39 @@
+.pv {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  overflow: auto;
+  overscroll-behavior: contain;
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.pv-close {
+  position: fixed;
+  top: 12px;
+  right: 12px;
+  z-index: 1;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+.pv-close:focus-visible {
+  outline: 4px solid var(--color-pink);
+  outline-offset: 2px;
+}
+
+.pv-pages {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 68px 0 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.pv-pages img {
+  display: block;
+  width: 100%;
+  height: auto;
+}

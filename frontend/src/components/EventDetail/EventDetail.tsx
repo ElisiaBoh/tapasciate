@@ -6,6 +6,7 @@ import { eventIcsFilename, eventIcsHref, eventMapsUrl, shareEvent } from '../../
 import type { Event, Status } from '../../types'
 import DateHeader from '../DateHeader/DateHeader'
 import Icon from '../Icon/Icon'
+import PosterViewer from '../PosterViewer/PosterViewer'
 import Skeleton from '../Skeleton/Skeleton'
 import StatusMessage from '../StatusMessage/StatusMessage'
 import Tile from '../Tile/Tile'
@@ -72,6 +73,8 @@ function ShareButton({ event }: { event: Event }) {
 }
 
 export default function EventDetail({ status, event, siblings, zoneName, onSelect }: Props) {
+  const [viewerOpen, setViewerOpen] = useState(false)
+  useEffect(() => setViewerOpen(false), [event?.id])
   const index = event ? siblings.findIndex(e => e.id === event.id) : -1
   const prev = index > 0 ? siblings[index - 1] : undefined
   const next = index >= 0 && index < siblings.length - 1 ? siblings[index + 1] : undefined
@@ -183,10 +186,21 @@ export default function EventDetail({ status, event, siblings, zoneName, onSelec
           </div>
         </div>
 
-        <figure className="ev-poster">
-          <Poster event={event} />
-        </figure>
+        {event.posterPages.length > 0 ? (
+          <figure className="ev-poster">
+            <button type="button" className="ev-poster-open" aria-label="Apri la locandina a schermo intero"
+              onClick={() => setViewerOpen(true)}>
+              <Poster event={event} />
+              <span className="ev-poster-hint" aria-hidden="true">tocca per ingrandire</span>
+            </button>
+          </figure>
+        ) : (
+          <figure className="ev-poster">
+            <Poster event={event} />
+          </figure>
+        )}
       </section>
+      {viewerOpen && <PosterViewer event={event} onClose={() => setViewerOpen(false)} />}
     </main>
   )
 }

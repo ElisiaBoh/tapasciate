@@ -67,6 +67,22 @@ describe('EventDetail', () => {
     expect(images[1]).toHaveAccessibleName('Locandina Secondo, pagina 2 di 2')
   })
 
+  it('la locandina si apre a schermo intero e si chiude con Esc', () => {
+    renderDetail()
+    fireEvent.click(screen.getByRole('button', { name: 'Apri la locandina a schermo intero' }))
+    const viewer = screen.getByRole('dialog', { name: 'Locandina Secondo' })
+    expect(screen.getByRole('button', { name: 'Chiudi la locandina' })).toHaveFocus()
+    fireEvent.keyDown(viewer, { key: 'Escape' })
+    expect(screen.queryByRole('dialog')).not.toBeInTheDocument()
+  })
+
+  it('con la locandina aperta le frecce da tastiera non cambiano evento', () => {
+    const onSelect = renderDetail()
+    fireEvent.click(screen.getByRole('button', { name: 'Apri la locandina a schermo intero' }))
+    fireEvent.keyDown(screen.getByRole('button', { name: 'Chiudi la locandina' }), { key: 'ArrowRight' })
+    expect(onSelect).not.toHaveBeenCalled()
+  })
+
   it('senza locandina mostra il segnaposto', () => {
     renderDetail({ event: first })
     expect(screen.getByText('non disponibile')).toBeInTheDocument()

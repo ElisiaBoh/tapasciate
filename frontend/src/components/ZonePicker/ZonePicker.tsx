@@ -1,5 +1,6 @@
-import { useEffect, useRef, useState } from 'react'
-import type { KeyboardEvent, MouseEvent } from 'react'
+import { useRef, useState } from 'react'
+import type { MouseEvent } from 'react'
+import { useModal } from '../../hooks/useModal'
 import { ITALY, sameZone } from '../../utils/zones'
 import { zonePath } from '../../utils/zonePath'
 import Icon from '../Icon/Icon'
@@ -40,48 +41,17 @@ function ZoneOption({ zone, label, count, current, className, onSelect }: {
 }
 
 export default function ZonePicker({ catalog, current, onSelect, onClose }: Props) {
-  const dialogRef = useRef<HTMLDivElement>(null)
   const closeRef = useRef<HTMLButtonElement>(null)
   const currentRegion = current && current.kind !== 'italy' ? current.region : null
   const [openRegion, setOpenRegion] = useState<string | null>(currentRegion)
   const total = catalog.reduce((sum, r) => sum + r.count, 0)
 
-  // Focus sul pulsante di chiusura all'apertura, restituito a chi ha aperto alla chiusura; pagina sotto bloccata
-  useEffect(() => {
-    const opener = document.activeElement as HTMLElement | null
-    closeRef.current?.focus()
-    const overflow = document.body.style.overflow
-    document.body.style.overflow = 'hidden'
-    return () => {
-      document.body.style.overflow = overflow
-      opener?.focus()
-    }
-  }, [])
-
-  const onKeyDown = (e: KeyboardEvent) => {
-    if (e.key === 'Escape') {
-      e.stopPropagation()
-      onClose()
-      return
-    }
-    if (e.key !== 'Tab' || !dialogRef.current) return
-    // Il Tab resta dentro la finestra
-    const focusable = dialogRef.current.querySelectorAll<HTMLElement>('a[href], button:not(:disabled)')
-    const first = focusable[0]
-    const last = focusable[focusable.length - 1]
-    if (e.shiftKey && document.activeElement === first) {
-      e.preventDefault()
-      last.focus()
-    } else if (!e.shiftKey && document.activeElement === last) {
-      e.preventDefault()
-      first.focus()
-    }
-  }
+  const { containerRef, onKeyDown } = useModal(closeRef, onClose)
 
   return (
     <div className="zp-backdrop" onClick={e => { if (e.target === e.currentTarget) onClose() }}>
       <div className="zp-dialog" role="dialog" aria-modal="true" aria-labelledby="zp-title"
-        ref={dialogRef} onKeyDown={onKeyDown}>
+        ref={containerRef} onKeyDown={onKeyDown}>
         <div className="zp-head">
           <h2 id="zp-title">Scegli la zona</h2>
           <button type="button" className="zp-close" aria-label="Chiudi" ref={closeRef} onClick={onClose}>
