@@ -93,13 +93,11 @@ describe('EventDetail', () => {
     expect(screen.queryByRole('link', { name: /locandina/i })).not.toBeInTheDocument()
   })
 
-  it('offre calendario, mappa e condivisione', () => {
+  it('offre solo la condivisione', () => {
     renderDetail()
-    const calendar = screen.getByRole('link', { name: 'Calendario' })
-    expect(calendar).toHaveAttribute('download', 'secondo.ics')
-    expect(calendar.getAttribute('href')).toMatch(/^data:text\/calendar/)
-    expect(screen.getByRole('link', { name: 'Mappa' })).toHaveAttribute('href', expect.stringContaining('google.com/maps'))
     expect(screen.getByRole('button', { name: 'Condividi' })).toBeInTheDocument()
+    expect(screen.queryByText('Calendario')).not.toBeInTheDocument()
+    expect(screen.queryByText('Mappa')).not.toBeInTheDocument()
   })
 
   it('fuori dalla lista della zona non mostra la posizione e disabilita le frecce', () => {

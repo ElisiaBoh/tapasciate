@@ -45,7 +45,7 @@ App                 — picks the view from the URL: `/` (Italy), `/<region>`, `
 ├── ZonePicker      — "Scegli la zona" modal: regions as an accordion, provinces with event counts
 ├── EventList       — events grouped by date (EventCard: the whole card links to the detail)
 ├── BackButton      — detail: "Torna a <zone>" bar
-├── EventDetail     — event detail; arrows/keys/swipe move through same-zone, same-day events; Calendar/Map/Share; PosterViewer
+├── EventDetail     — event detail; arrows/keys/swipe move through same-zone, same-day events; Share button; PosterViewer
 └── Footer
 ```
 

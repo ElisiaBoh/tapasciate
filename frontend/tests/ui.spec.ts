@@ -262,11 +262,10 @@ test.describe('Pagina evento', () => {
     await expect(page.getByRole('dialog')).toHaveCount(0)
   })
 
-  test('offre calendario e mappa', async ({ page }) => {
+  test('offre la condivisione', async ({ page }) => {
     await mockSupabase(page, mockEvents)
     await page.goto('/evento/1-tapasciata-dei-colli')
-    await expect(page.getByRole('link', { name: 'Calendario' })).toHaveAttribute('download', 'tapasciata-dei-colli.ics')
-    await expect(page.getByRole('link', { name: 'Mappa' })).toHaveAttribute('href', /google\.com\/maps/)
+    await expect(page.getByRole('button', { name: 'Condividi' })).toBeVisible()
   })
 
   test('evento inesistente mostra un messaggio', async ({ page }) => {

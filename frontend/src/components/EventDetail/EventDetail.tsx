@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import type { TouchEvent } from 'react'
 import { formatDate, formatLongDate } from '../../utils/formatDate'
 import { applyEventSeo, applyNoIndex } from '../../utils/eventSeo'
-import { eventIcsFilename, eventIcsHref, eventMapsUrl, shareEvent } from '../../utils/eventActions'
+import { shareEvent } from '../../utils/eventActions'
 import type { Event, Status } from '../../types'
 import DateHeader from '../DateHeader/DateHeader'
 import Icon from '../Icon/Icon'
@@ -171,17 +171,7 @@ export default function EventDetail({ status, event, sameDayEvents, zoneName, on
             )}
           </div>
 
-          <div className="ev-actions">
-            <a className="ev-action" href={eventIcsHref(event)} download={eventIcsFilename(event)}>
-              <Icon name="calendar" />
-              <span>Calendario</span>
-            </a>
-            <a className="ev-action" href={eventMapsUrl(event)} target="_blank" rel="noopener noreferrer">
-              <Icon name="pin" />
-              <span>Mappa</span>
-            </a>
-            <ShareButton event={event} />
-          </div>
+          <ShareButton event={event} />
         </div>
 
         {event.posterPages.length > 0 ? (
