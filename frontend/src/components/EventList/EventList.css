@@ -1,43 +1,47 @@
 .events-container {
-  padding: 0;
-  max-width: none;
-  margin: 0;
+  background: white;
+}
+
+.events-empty {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 36px 1rem 24px;
+  color: var(--color-text-dark);
+  font-size: 1.25rem;
+  font-weight: 900;
+  line-height: 1.2;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 /* ---- SKELETON LOADING ---- */
 .skeleton-event-title {
   width: 60%;
   height: 1.5rem;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
 }
 
 .skeleton-event-line {
   width: 40%;
   height: 1rem;
-  margin-bottom: 0.4rem;
 }
 
 .skeleton-event-line--short {
   width: 25%;
 }
 
-/* ---- DATE SECTION ---- */
-.date-section {
-  width: 100%;
-  margin-bottom: 0;
-  padding: 0;
-}
-
-/* ---- EVENTS GRID ---- */
 .events-grid {
-  padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 0;
-  background: white;
-  width: 100%;
 }
 
-.date-section .events-grid {
-  background: white;
+@media (min-width: 768px) {
+  .events-grid {
+    max-width: var(--content-width);
+    margin: 0 auto;
+    padding: 20px 1rem 28px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
 }

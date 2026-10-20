@@ -17,13 +17,20 @@ async function main() {
   const today = new Date().toISOString().slice(0, 10)
   const { data, error } = await supabase
     .from('events')
-    .select('id, name, updated_at')
+    .select('id, name, updated_at, location:locations (region, province, province_name)')
     .is('removed_at', null)
     .gte('date', today)
     .order('date', { ascending: true })
   if (error) throw error
 
-  const events = data.map(e => ({ id: e.id, title: e.name, updatedAt: e.updated_at }))
+  const events = data.map(e => ({
+    id: e.id,
+    title: e.name,
+    updatedAt: e.updated_at,
+    region: e.location?.region,
+    province: e.location?.province,
+    provinceName: e.location?.province_name,
+  }))
   fs.writeFileSync(OUT, buildSitemap(events))
   console.log(`Sitemap: ${events.length} eventi → ${OUT}`)
 }

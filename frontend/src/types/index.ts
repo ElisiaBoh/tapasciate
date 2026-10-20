@@ -22,9 +22,23 @@ export interface Event {
   distances: string[]
 }
 
-export interface Province {
+export type Zone =
+  | { kind: 'italy' }
+  | { kind: 'region'; region: string }
+  | { kind: 'province'; region: string; province: string; provinceName: string }
+
+export type Period = 'all' | 'this-week' | 'next-week'
+
+export interface ProvinceEntry {
   code: string
   name: string
+  count: number
+}
+
+export interface RegionEntry {
+  name: string
+  count: number
+  provinces: ProvinceEntry[]
 }
 
 export type Status = 'loading' | 'success' | 'error'
