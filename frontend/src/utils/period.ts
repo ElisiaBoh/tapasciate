@@ -14,6 +14,11 @@ export function periodPhrase(period: Period): string | null {
   }
 }
 
+export function periodSummary(period: Period, total: number, periodCount: number): string {
+  const phrase = periodPhrase(period)
+  return phrase ? `${periodCount} ${phrase} · ${total} in calendario` : `${total} in calendario`
+}
+
 export function toIsoDate(date: Date): string {
   const m = String(date.getMonth() + 1).padStart(2, '0')
   const d = String(date.getDate()).padStart(2, '0')

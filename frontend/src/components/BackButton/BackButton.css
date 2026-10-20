@@ -2,6 +2,11 @@
   background: var(--color-cyan);
   width: 100%;
   padding: 2.25rem 0 8px;
+  transition: padding-top 0.6s cubic-bezier(0, 0, 0.2, 1);
+}
+
+.header--scrolled + .back-bar {
+  padding-top: calc(1.2rem + 8px);
 }
 
 .back-bar-content {
@@ -30,5 +35,9 @@
 @media (min-width: 768px) {
   .back-bar {
     padding-top: 2.75rem;
+  }
+
+  .header--scrolled + .back-bar {
+    padding-top: calc(1.5rem + 8px);
   }
 }

@@ -9,6 +9,7 @@ import { applyNoIndex } from './utils/eventSeo'
 import { applyZoneSeo } from './utils/zoneSeo'
 import Header from './components/Header/Header'
 import ZoneBar from './components/ZoneBar/ZoneBar'
+import ZoneTitle from './components/ZoneTitle/ZoneTitle'
 import ZonePicker from './components/ZonePicker/ZonePicker'
 import BackButton from './components/BackButton/BackButton'
 import EventList from './components/EventList/EventList'
@@ -97,31 +98,39 @@ function App() {
     navigate(eventPath(selected), { replace: true, state: window.history.state ?? {} })
   }, [])
 
+  const zoneLoading = status !== 'success' && !zoneNotFound
+
   return (
     <div className="app">
       <div className="sticky-wrapper">
         <Header scrolled={scrolled} homePath={savedPath ?? '/'} />
-      </div>
-
-      {route.kind === 'event' ? (
-        <>
-          {zone && <BackButton href={zonePath(zone)} label={zoneName(zone)} />}
-          <EventDetail
-            status={status}
-            event={event}
-            sameDayEvents={event ? zoneEvents.filter(e => e.date === event.date) : []}
-            zoneName={zone ? zoneName(zone) : ''}
-            onSelect={selectEvent}
-          />
-        </>
-      ) : (
-        <>
+        {route.kind === 'event' ? (
+          zone && <BackButton href={zonePath(zone)} label={zoneName(zone)} />
+        ) : (
           <ZoneBar
-            loading={status !== 'success' && !zoneNotFound}
+            loading={zoneLoading}
             zone={zone}
             period={period}
             onPeriodChange={setPeriod}
             onOpenPicker={() => setPickerOpen(true)}
+          />
+        )}
+      </div>
+
+      {route.kind === 'event' ? (
+        <EventDetail
+          status={status}
+          event={event}
+          sameDayEvents={event ? zoneEvents.filter(e => e.date === event.date) : []}
+          zoneName={zone ? zoneName(zone) : ''}
+          onSelect={selectEvent}
+        />
+      ) : (
+        <>
+          <ZoneTitle
+            loading={zoneLoading}
+            zone={zone}
+            period={period}
             total={zoneEvents.length}
             periodCount={periodCount}
           />

@@ -41,10 +41,11 @@ pytest tests/        # Run tests
 ```
 App                 — picks the view from the URL: `/` (Italy), `/<region>`, `/<region>/<province>` → list; `/evento/<id>-<slug>` → detail
 ├── Header          — logo (links to the saved zone or `/`); adds a CSS class when the page is scrolled
-├── ZoneBar         — list: zone button (opens ZonePicker), period (Tutte / Questa settimana / Prossima settimana), h1 title with counts
+├── ZoneBar         — list, sticky under the header: zone button (opens ZonePicker) and period (Tutte / Questa settimana / Prossima settimana)
+├── ZoneTitle       — list: h1 title with counts (scrolls away)
 ├── ZonePicker      — "Scegli la zona" modal: regions as an accordion, provinces with event counts
 ├── EventList       — events grouped by date (EventCard: the whole card links to the detail)
-├── BackButton      — detail: "Torna a <zone>" bar
+├── BackButton      — detail, sticky under the header: "Torna a <zone>" bar
 ├── EventDetail     — event detail; arrows/keys/swipe move through same-zone, same-day events; Share button; PosterViewer
 └── Footer
 ```

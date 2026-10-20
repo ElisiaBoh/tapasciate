@@ -209,6 +209,34 @@ test.describe('Header', () => {
   })
 })
 
+test.describe('Barre fisse', () => {
+  async function scrollDown(page: Page) {
+    // The sticky bars live inside .app, so .app (not the document) must be taller than the viewport
+    await page.evaluate(() => {
+      document.querySelector<HTMLElement>('.app')!.style.minHeight = '4000px'
+      window.scrollTo(0, 1500)
+    })
+  }
+
+  test('scorrendo la lista restano visibili zona e periodo, non il titolo', async ({ page }) => {
+    await mockSupabase(page, mockEvents)
+    await page.goto('/')
+    await page.waitForSelector('.event-card')
+    await scrollDown(page)
+    await expect(page.getByRole('button', { name: /Cambia zona/ })).toBeInViewport()
+    await expect(page.getByRole('button', { name: 'Questa settimana' })).toBeInViewport()
+    await expect(page.getByRole('heading', { level: 1 })).not.toBeInViewport()
+  })
+
+  test('scorrendo il dettaglio resta visibile "Torna a"', async ({ page }) => {
+    await mockSupabase(page, mockEvents)
+    await page.goto('/evento/1-tapasciata-dei-colli')
+    await page.waitForSelector('.ev-title')
+    await scrollDown(page)
+    await expect(page.getByRole('link', { name: 'Torna a Bergamo' })).toBeInViewport()
+  })
+})
+
 test.describe('Pagina evento', () => {
   test('cliccando la card si apre il dettaglio', async ({ page }) => {
     await mockSupabase(page, mockEvents)

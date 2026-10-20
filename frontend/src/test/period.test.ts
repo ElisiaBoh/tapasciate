@@ -1,4 +1,4 @@
-import { inPeriod, periodRange } from '../utils/period'
+import { inPeriod, periodRange, periodSummary } from '../utils/period'
 
 const wednesday = new Date(2026, 9, 7)
 const sunday = new Date(2026, 9, 11)
@@ -29,5 +29,12 @@ describe('inPeriod', () => {
     expect(inPeriod('2026-10-12', 'this-week', wednesday)).toBe(false)
     expect(inPeriod('2026-10-06', 'all', wednesday)).toBe(false)
     expect(inPeriod('2030-01-01', 'all', wednesday)).toBe(true)
+  })
+})
+
+describe('periodSummary', () => {
+  it('riassume i conteggi', () => {
+    expect(periodSummary('all', 27, 27)).toBe('27 in calendario')
+    expect(periodSummary('next-week', 27, 3)).toBe('3 la prossima settimana · 27 in calendario')
   })
 })
