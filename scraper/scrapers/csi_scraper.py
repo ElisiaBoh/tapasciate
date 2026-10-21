@@ -187,8 +187,11 @@ class CSIScraper(BaseScraper):
             "Ottobre": "10", "Novembre": "11", "Dicembre": "12"
         }
         
+        month_str = month_map.get(month.get_text(strip=True))
+        if not month_str:
+            return ""
+
         day_str = day.get_text(strip=True).zfill(2)
-        month_str = month_map.get(month.get_text(strip=True), "01")
         year_str = str(datetime.datetime.now().year)
         
         return f"{day_str}/{month_str}/{year_str}"

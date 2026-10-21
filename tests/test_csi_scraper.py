@@ -233,5 +233,4 @@ class TestCSIScraperParsing:
         scraper = CSIScraper()
         date = scraper._parse_date(soup)
         
-        year = datetime.now().year
-        assert date == f"15/00/{year}"  # Falls back to "00"
+        assert date == ""
