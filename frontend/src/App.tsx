@@ -1,12 +1,12 @@
-import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react'
+import { useCallback, useEffect, useMemo, useState } from 'react'
 import { useEvents, useZoneEvents } from './hooks/useEvents'
 import { navigate, useHistoryState, usePathname } from './hooks/useRoute'
+import { useSavedZone } from './hooks/useSavedZone'
+import { useScrolled } from './hooks/useScrolled'
+import { useZoneSeo } from './hooks/useZoneSeo'
 import { eventPath } from './utils/eventPath'
 import { parseRoute, resolvePageZone, zonePath } from './utils/zonePath'
 import { noEventsMessage, zoneName } from './utils/zones'
-import { clearSavedZonePath, getSavedZonePath, saveZonePath } from './utils/savedZone'
-import { applyNoIndex } from './utils/eventSeo'
-import { applyZoneSeo } from './utils/zoneSeo'
 import Header from './components/Header/Header'
 import ZoneBar from './components/ZoneBar/ZoneBar'
 import ZoneTitle from './components/ZoneTitle/ZoneTitle'
@@ -26,28 +26,7 @@ function App() {
   const route = useMemo(() => parseRoute(pathname), [pathname])
   const [period, setPeriod] = useState<Period>('all')
   const [pickerOpen, setPickerOpen] = useState(false)
-  const [savedPath, setSavedPath] = useState(getSavedZonePath)
-  const [scrolled, setScrolled] = useState(false)
-  const tickingRef = useRef(false)
-
-  const initialPathRef = useRef(pathname)
-  useLayoutEffect(() => {
-    if (initialPathRef.current === '/' && savedPath && savedPath !== '/') navigate(savedPath, { replace: true })
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
-
-  useEffect(() => {
-    const onScroll = () => {
-      if (tickingRef.current) return
-      tickingRef.current = true
-      requestAnimationFrame(() => {
-        setScrolled(window.scrollY > 1)
-        tickingRef.current = false
-      })
-    }
-    window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
+  const scrolled = useScrolled()
 
   useEffect(() => setPickerOpen(false), [pathname])
 
@@ -67,31 +46,18 @@ function App() {
 
   const { zoneEvents, periodCount, groupedEvents, sortedDates } = useZoneEvents(upcomingEvents, zone, period, today)
 
-  useEffect(() => {
-    if (!zoneNotFound) return
-    if (pathname === savedPath) {
-      clearSavedZonePath()
-      setSavedPath(null)
-    }
-    return applyNoIndex()
-  }, [zoneNotFound, pathname, savedPath])
-
-  const seoZone = route.kind === 'zone' && zone?.kind !== 'italy' ? zone : null
-  const seoZoneCount = zoneEvents.length
-  useEffect(() => {
-    if (seoZone) return applyZoneSeo(seoZone, seoZoneCount)
-  }, [seoZone, seoZoneCount])
+  const { savedPath, saveZone } = useSavedZone(pathname, zoneNotFound)
+  useZoneSeo(route.kind === 'zone' && zone?.kind !== 'italy' ? zone : null, zoneEvents.length, zoneNotFound)
 
   const selectZone = useCallback((selected: Zone) => {
     const path = zonePath(selected)
-    saveZonePath(path)
-    setSavedPath(path)
+    saveZone(path)
     setPickerOpen(false)
     if (path !== window.location.pathname) {
       navigate(path)
       window.scrollTo(0, 0)
     }
-  }, [])
+  }, [saveZone])
 
   // Replacing the history entry keeps "back" pointing at the list
   const selectEvent = useCallback((selected: Event) => {

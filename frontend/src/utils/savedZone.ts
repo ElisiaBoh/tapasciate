@@ -20,3 +20,7 @@ export function saveZonePath(path: string): void {
 export function clearSavedZonePath(): void {
   withStorage(storage => storage.removeItem(KEY), undefined)
 }
+
+export function initialRedirect(pathname: string, savedPath: string | null): string | null {
+  return pathname === '/' && savedPath && savedPath !== '/' ? savedPath : null
+}

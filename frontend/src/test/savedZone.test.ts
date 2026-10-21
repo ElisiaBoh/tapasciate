@@ -1,4 +1,4 @@
-import { clearSavedZonePath, getSavedZonePath, saveZonePath } from '../utils/savedZone'
+import { clearSavedZonePath, getSavedZonePath, initialRedirect, saveZonePath } from '../utils/savedZone'
 
 describe('savedZone', () => {
   afterEach(() => {
@@ -19,5 +19,21 @@ describe('savedZone', () => {
     jest.spyOn(Storage.prototype, 'setItem').mockImplementation(() => { throw new Error('blocked') })
     expect(() => saveZonePath('/veneto')).not.toThrow()
     expect(getSavedZonePath()).toBeNull()
+  })
+})
+
+describe('initialRedirect', () => {
+  it('dalla home porta alla zona salvata', () => {
+    expect(initialRedirect('/', '/lombardia/bergamo')).toBe('/lombardia/bergamo')
+  })
+
+  it('non reindirizza senza zona salvata o se la zona è tutta Italia', () => {
+    expect(initialRedirect('/', null)).toBeNull()
+    expect(initialRedirect('/', '/')).toBeNull()
+  })
+
+  it('non reindirizza chi apre un link a una zona o a un evento', () => {
+    expect(initialRedirect('/veneto', '/lombardia/bergamo')).toBeNull()
+    expect(initialRedirect('/evento/12-marcia', '/lombardia/bergamo')).toBeNull()
   })
 })
