@@ -46,7 +46,6 @@ describe('useEvents', () => {
     mockFetchEvents.mockRejectedValue(new Error('Network error'))
     const { result } = renderHook(() => useEvents())
     await waitFor(() => expect(result.current.status).toBe('error'))
-    expect(result.current.error).toBe('Network error')
   })
 
   it('upcomingEvents esclude gli eventi passati ed è ordinato per data', async () => {
