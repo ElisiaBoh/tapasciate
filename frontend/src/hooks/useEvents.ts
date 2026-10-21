@@ -7,31 +7,28 @@ import type { Event, Period, RegionEntry, Status, Zone } from '../types'
 interface EventsState {
   status: Status
   events: Event[]
-  error: string | null
 }
 
 type EventsAction =
   | { type: 'FETCH_SUCCESS'; payload: Event[] }
-  | { type: 'FETCH_ERROR'; payload: string }
+  | { type: 'FETCH_ERROR' }
 
 const INITIAL_STATE: EventsState = {
   status: 'loading',
   events: [],
-  error: null,
 }
 
 function eventsReducer(state: EventsState, action: EventsAction): EventsState {
   switch (action.type) {
     case 'FETCH_SUCCESS':
-      return { ...state, status: 'success', events: action.payload, error: null }
+      return { status: 'success', events: action.payload }
     case 'FETCH_ERROR':
-      return { ...state, status: 'error', error: action.payload }
+      return { ...state, status: 'error' }
   }
 }
 
 export interface UseEventsResult {
   status: Status
-  error: string | null
   events: Event[]
   upcomingEvents: Event[]
   catalog: RegionEntry[]
@@ -50,7 +47,7 @@ export function useEvents(): UseEventsResult {
   useEffect(() => {
     fetchEvents()
       .then(data => dispatch({ type: 'FETCH_SUCCESS', payload: data }))
-      .catch((err: Error) => dispatch({ type: 'FETCH_ERROR', payload: err.message }))
+      .catch(() => dispatch({ type: 'FETCH_ERROR' }))
   }, [])
 
   const upcomingEvents = useMemo(() => {
@@ -64,7 +61,6 @@ export function useEvents(): UseEventsResult {
 
   return {
     status: state.status,
-    error: state.error,
     events: state.events,
     upcomingEvents,
     catalog,

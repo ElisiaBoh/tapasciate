@@ -7,7 +7,7 @@ type Props =
       loading?: false
       title: string
       count?: string
-      // h2 nella lista (intestazione di sezione); nel dettaglio l'h1 è il titolo dell'evento
+      // h2 in the list (section heading); in the detail the h1 is the event title
       titleAs?: 'h2' | 'span'
     }
 

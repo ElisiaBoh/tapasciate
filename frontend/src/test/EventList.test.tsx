@@ -10,7 +10,7 @@ function makeEvent(overrides: Partial<Event> = {}): Event {
     date: '2026-06-15',
     location: { city: 'Bergamo', province: 'BG', province_name: 'Bergamo', region: 'Lombardia' },
     posterPages: [],
-    source: null,
+    organizer: null,
     distances: [],
     ...overrides,
   }
@@ -21,7 +21,7 @@ const listProps = { listPath: '/', emptyMessage: 'Nessuna tapasciata a Gorizia q
 describe('EventList', () => {
   it('mostra gli skeleton durante il caricamento', () => {
     render(<EventList status="loading" sortedDates={[]} groupedEvents={{}} {...listProps} />)
-    expect(document.querySelector('.skeleton')).toBeInTheDocument()
+    expect(screen.getAllByTestId('skeleton').length).toBeGreaterThan(0)
   })
 
   it('non mostra la lista eventi durante il caricamento', () => {

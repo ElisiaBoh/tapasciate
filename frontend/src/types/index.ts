@@ -16,9 +16,8 @@ export interface Event {
   title: string
   date: string // YYYY-MM-DD
   location: Location
-  // Pagine della locandina come immagini (generate dallo scraper)
   posterPages: PosterPage[]
-  source: string | null
+  organizer: string | null
   distances: string[]
 }
 

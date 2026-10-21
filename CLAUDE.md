@@ -63,6 +63,7 @@ Shared components (each ships its own CSS, don't use their classes without impor
 - **`hooks/useEvents.ts`**: `useEvents` fetches and exposes `status`, `events`, `upcomingEvents`, `catalog`, `today`; `useZoneEvents` filters by zone and period and groups by date
 - **`hooks/useRoute.ts`**: minimal library-free router (`usePathname`, `useHistoryState`, `navigate`, `linkClickHandler`) on the History API; Netlify already rewrites `/*` to `index.html`
 - **`hooks/useModal.ts`**: focus, Esc, Tab trapping and scroll lock shared by modals
+- **`hooks/useSavedZone.ts`** (redirect from `/` and saved zone), **`hooks/useZoneSeo.ts`** (zone meta tags, noindex), **`hooks/useScrolled.ts`** (header scroll state): keep `App` focused on routing and layout
 - **`utils/eventPath.ts`**: builds/parses `/evento/<id>-<slug>` URLs (the id is the `events` table id)
 - **`utils/eventSeo.ts`** / **`utils/zoneSeo.ts`**: title, canonical and meta tags for event and zone pages; `scripts/sitemap.js` duplicates `eventPath`/`zonePaths` (checked by tests)
 - **`eventsService.ts`**: the only data layer — queries Supabase with a JOIN on `locations` and maps fields to the `Event` type

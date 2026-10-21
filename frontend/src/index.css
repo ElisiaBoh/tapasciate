@@ -1,4 +1,4 @@
-/* ---- VARIABILI COLORE ---- */
+/* ---- COLOR VARIABLES ---- */
 :root {
   --color-yellow: #FDDE74;
   --color-yellow-dark: #F7C934;
@@ -11,7 +11,7 @@
   --content-width: calc(1040px + 2rem);
 }
 
-/* ---- RESET GENERALE ---- */
+/* ---- RESET ---- */
 * {
   box-sizing: border-box;
   margin: 0;

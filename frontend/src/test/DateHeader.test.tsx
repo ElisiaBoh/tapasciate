@@ -17,6 +17,6 @@ describe('DateHeader', () => {
 
   it('in caricamento mostra gli skeleton', () => {
     render(<DateHeader loading />)
-    expect(document.querySelectorAll('.skeleton')).toHaveLength(2)
+    expect(screen.getAllByTestId('skeleton')).toHaveLength(2)
   })
 })

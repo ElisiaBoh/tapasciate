@@ -1,6 +1,6 @@
-// Logica pura della sitemap, separata dall'I/O per poterla testare con Jest.
-// eventPath deve restare identico a src/utils/eventPath.ts (lo verifica src/test/sitemap.test.ts):
-// CRA non permette a src/ di importare file esterni, quindi la funzione è duplicata.
+// Pure sitemap logic, kept apart from I/O so Jest can test it.
+// eventPath must match src/utils/eventPath.ts (checked by src/test/sitemap.test.ts):
+// CRA doesn't let src/ import files outside it, so the function is duplicated.
 
 const SITE_URL = 'https://tapasciate.it'
 
@@ -39,7 +39,7 @@ function escapeXml(text) {
   return text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
 }
 
-// events: [{ id, title, updatedAt }] con updatedAt ISO (può mancare)
+// events: [{ id, title, updatedAt }], updatedAt is an ISO string (optional)
 function buildSitemap(events) {
   const urls = [
     ...STATIC_PAGES.map(p =>

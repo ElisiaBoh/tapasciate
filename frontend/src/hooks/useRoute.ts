@@ -25,8 +25,7 @@ export function navigate(path: string, { replace = false, state = {} as RouteSta
   window.dispatchEvent(new PopStateEvent('popstate', { state }))
 }
 
-// Intercetta il click su un <a> per navigare senza ricaricare la pagina,
-// lasciando al browser ctrl/cmd+click, click centrale, ecc.
+// Modified and middle clicks are left to the browser (new tab, new window)
 export function linkClickHandler(path: string, options?: Parameters<typeof navigate>[1]) {
   return (e: MouseEvent<HTMLAnchorElement>) => {
     if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return

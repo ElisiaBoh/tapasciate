@@ -47,7 +47,7 @@ export default function ZonePicker({ catalog, current, onSelect, onClose }: Prop
   const { containerRef, onKeyDown } = useModal(onClose)
 
   return (
-    <div className="zp-backdrop" onClick={e => { if (e.target === e.currentTarget) onClose() }}>
+    <div className="zp-backdrop" data-testid="zone-picker-backdrop" onClick={e => { if (e.target === e.currentTarget) onClose() }}>
       <div className="zp-dialog" role="dialog" aria-modal="true" aria-labelledby="zp-title"
         tabIndex={-1} ref={containerRef} onKeyDown={onKeyDown}>
         <div className="zp-head">

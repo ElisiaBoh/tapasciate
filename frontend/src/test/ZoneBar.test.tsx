@@ -33,7 +33,7 @@ describe('ZoneBar', () => {
 
   it('durante il caricamento mostra lo skeleton al posto del nome', () => {
     renderBar({ loading: true })
-    expect(document.querySelector('.skeleton')).toBeInTheDocument()
+    expect(screen.getAllByTestId('skeleton').length).toBeGreaterThan(0)
     expect(screen.getByRole('button', { name: /Cambia zona/ })).toBeDisabled()
   })
 

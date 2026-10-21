@@ -200,7 +200,7 @@ test.describe('Header', () => {
     await mockSupabase(page, mockEvents)
     await page.goto('/')
     await page.waitForSelector('.event-card')
-    // Rende la pagina abbastanza alta da poter scrollare, poi scrolla
+    // Make the page tall enough to scroll, then scroll
     await page.evaluate(() => {
       document.documentElement.style.minHeight = '3000px'
       window.scrollBy(0, 300)
