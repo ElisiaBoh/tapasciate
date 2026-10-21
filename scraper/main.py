@@ -17,15 +17,17 @@ from scraper.scrapers.fiasp_scraper import FIASPScraper
 from scraper.db.supabase_client import SupabaseManager
 
 
-def main():
-    """Esegue tutti gli scraper e salva su Supabase"""
+def main() -> int:
+    """Esegue tutti gli scraper e salva su Supabase; ritorna l'exit code"""
     
     print("🚀 Starting Tapasciate scraper...")
     
     # Verifica env variables
     if not os.getenv("SUPABASE_URL") or not os.getenv("SUPABASE_KEY"):
         print("❌ SUPABASE_URL and SUPABASE_KEY environment variables required")
-        return
+        return 1
+
+    failed = False
     
     # Pulisci eventi passati
     print("\n🗑️  Deleting past events...")
@@ -34,6 +36,7 @@ def main():
         print("✅ Past events deleted")
     except Exception as e:
         print(f"⚠️  Failed to delete past events: {e}")
+        failed = True
     
     scrapers = [
         CSIScraper(),
@@ -54,6 +57,7 @@ def main():
             total_removed += removed
         except Exception as e:
             print(f"❌ {scraper.source_name} failed: {e}")
+            failed = True
     
     print(f"\n✅ Total: {total_inserted} inserted, {total_updated} updated, {total_removed} removed")
 
@@ -64,8 +68,14 @@ def main():
         print(f"✅ {deleted} orphan poster files deleted")
     except Exception as e:
         print(f"⚠️  Failed to delete orphan posters: {e}")
+        failed = True
+
+    if failed:
+        print("❌ Scraping completed with errors")
+        return 1
     print("✨ Scraping complete!")
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())
