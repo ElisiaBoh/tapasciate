@@ -2,7 +2,6 @@
 Tests for FIASP scraper parsing logic.
 Tests only the HTML parsing methods, not HTTP requests or database operations.
 """
-import pytest
 from unittest.mock import patch, MagicMock
 from bs4 import BeautifulSoup
 from scraper.scrapers.fiasp_scraper import FIASPScraper

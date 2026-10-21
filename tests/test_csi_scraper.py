@@ -2,12 +2,10 @@
 Tests for CSI scraper parsing logic.
 Tests only the parsing methods, not HTTP requests or database operations.
 """
-import pytest
 from unittest.mock import patch
 from bs4 import BeautifulSoup
 from datetime import datetime
 from scraper.scrapers.csi_scraper import CSIScraper
-from scraper.models.provinces import Province
 
 
 class TestCSISourceId:
