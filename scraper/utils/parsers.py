@@ -11,18 +11,18 @@ from scraper.utils.region_mapper import get_name_from_province, get_region_from_
 
 def extract_province_str(text: str) -> tuple[str, str | None]:
     """
-    Estrae città e sigla provincia grezza da una stringa di location.
+    Split a location string into city and raw province code.
 
-    Supporta i formati:
-    - "Città (XX)"  — parentesi esplicite in coda (priorità)
-    - "Città XX"    — fallback posizionale, ultimo token
+    Supported formats:
+    - "City (XX)"  — trailing parentheses (takes precedence)
+    - "City XX"    — positional fallback, last token
 
     Args:
-        text: Stringa grezza, es. "Spinone al Lago (BG)" o "Varese VA"
+        text: Raw string, e.g. "Spinone al Lago (BG)" or "Varese VA"
 
     Returns:
-        Tupla (city, province_str) dove province_str è in uppercase
-        o None se non è stato trovato nessun candidato.
+        (city, province_str), with province_str uppercased,
+        or None when no candidate was found.
     """
     raw = text.strip()
 

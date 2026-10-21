@@ -15,7 +15,7 @@ class Location(BaseModel):
 
 
 class PosterPage(BaseModel):
-    """Una pagina della locandina, salvata come immagine su Supabase Storage."""
+    """A poster page, stored as an image on Supabase Storage."""
     url: HttpUrl
     width: int
     height: int
@@ -28,6 +28,6 @@ class Event(BaseModel):
     location: Location
     poster_pages: List[PosterPage] = []
     source: Literal["CSI", "FIASP"]
-    source_id: str  # ID dell'evento sulla fonte: chiave stabile anche se cambiano nome o data
-    url: str  # pagina dell'evento sulla fonte
+    source_id: str  # event id on the source: stable even when name or date change
+    url: str  # event page on the source
     distances: List[str]

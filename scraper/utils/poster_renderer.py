@@ -1,8 +1,8 @@
 """
-Converte le pagine di un PDF in immagini WebP da mostrare nel sito.
+Converts the pages of a PDF into WebP images shown on the site.
 
-Il frontend non mostra i PDF (non visualizzabili dentro la pagina su Chrome
-Android e nelle webview): ogni pagina diventa un'immagine, leggibile ovunque.
+The frontend doesn't show PDFs (they can't be displayed inline on Chrome
+Android and in webviews): every page becomes an image, readable everywhere.
 """
 from __future__ import annotations
 import io
@@ -11,9 +11,9 @@ from typing import List
 
 import pypdfium2 as pdfium
 
-POSTER_PAGE_WIDTH = 1200  # px: testo leggibile anche nei dettagli piccoli, ~200-500 KB a pagina
+POSTER_PAGE_WIDTH = 1200  # px: small print stays readable, ~200-500 KB per page
 WEBP_QUALITY = 80
-MAX_PAGES = 6  # le locandine hanno 1-5 pagine; oltre è quasi certamente un documento non pertinente
+MAX_PAGES = 6  # posters have 1-5 pages; more is almost certainly an unrelated document
 
 
 @dataclass
@@ -25,10 +25,10 @@ class RenderedPage:
 
 def render_pdf_pages(pdf_bytes: bytes) -> List[RenderedPage]:
     """
-    Renderizza le pagine del PDF come WebP larghe POSTER_PAGE_WIDTH px.
+    Render the PDF pages as WebP images POSTER_PAGE_WIDTH px wide.
 
     Returns:
-        Lista di pagine renderizzate, vuota in caso di errore.
+        Rendered pages, empty on error.
     """
     try:
         pdf = pdfium.PdfDocument(pdf_bytes)

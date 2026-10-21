@@ -1,5 +1,5 @@
 """
-Test per la conversione dei poster in immagini e la pulizia dei file su Storage.
+Tests for poster conversion to images and Storage file cleanup.
 """
 import io
 import pytest
@@ -13,7 +13,7 @@ BASE_URL = "https://xyz.supabase.co/storage/v1/object/public/posters/"
 
 
 def make_pdf(pages: int = 1, size=(595, 842)) -> bytes:
-    """PDF A4 con pagine bianche, generato con Pillow."""
+    """A4 PDF with blank pages, generated with Pillow."""
     images = [Image.new("RGB", size, "white") for _ in range(pages)]
     buffer = io.BytesIO()
     images[0].save(buffer, "PDF", save_all=True, append_images=images[1:])
@@ -21,7 +21,7 @@ def make_pdf(pages: int = 1, size=(595, 842)) -> bytes:
 
 
 class TestRenderPdfPages:
-    def test_renderizza_una_webp_per_pagina_alla_larghezza_fissa(self):
+    def test_renders_one_fixed_width_webp_per_page(self):
         pages = render_pdf_pages(make_pdf(pages=2))
 
         assert len(pages) == 2
@@ -30,16 +30,16 @@ class TestRenderPdfPages:
             assert page.height == pytest.approx(POSTER_PAGE_WIDTH * 842 / 595, abs=2)
             assert page.data[:4] == b"RIFF" and page.data[8:12] == b"WEBP"
 
-    def test_limita_il_numero_di_pagine(self):
+    def test_limits_the_number_of_pages(self):
         assert len(render_pdf_pages(make_pdf(pages=MAX_PAGES + 2))) == MAX_PAGES
 
-    def test_pdf_non_valido_restituisce_lista_vuota(self):
+    def test_invalid_pdf_returns_empty_list(self):
         assert render_pdf_pages(b"%PDF-1.4 fake content") == []
 
 
 class TestUploadPosterPages:
     @patch.object(SupabaseManager, "upload_poster", side_effect=lambda name, data: BASE_URL + name)
-    def test_carica_le_pagine_con_nome_hash_e_numero(self, mock_upload):
+    def test_uploads_pages_named_with_hash_and_number(self, mock_upload):
         pdf = make_pdf(pages=2)
         pages = BaseScraper._upload_poster_pages("fiasp", "Test Event", "01/03/2026", pdf)
 
@@ -51,7 +51,7 @@ class TestUploadPosterPages:
         assert str(pages[0].url) == BASE_URL + names[0]
 
     @patch.object(SupabaseManager, "upload_poster", side_effect=lambda name, data: BASE_URL + name)
-    def test_il_nome_cambia_se_cambia_il_pdf(self, mock_upload):
+    def test_name_changes_when_pdf_changes(self, mock_upload):
         BaseScraper._upload_poster_pages("csi", "Evento", "01/03/2026", make_pdf(pages=1))
         BaseScraper._upload_poster_pages("csi", "Evento", "01/03/2026", make_pdf(pages=1, size=(600, 800)))
 
@@ -59,10 +59,10 @@ class TestUploadPosterPages:
         assert first != second
 
     @patch.object(SupabaseManager, "upload_poster", return_value=None)
-    def test_upload_fallito_restituisce_lista_vuota(self, mock_upload):
+    def test_failed_upload_returns_empty_list(self, mock_upload):
         assert BaseScraper._upload_poster_pages("csi", "Evento", "01/03/2026", make_pdf()) == []
 
-    def test_pdf_non_valido_non_carica_nulla(self):
+    def test_invalid_pdf_uploads_nothing(self):
         with patch.object(SupabaseManager, "upload_poster") as mock_upload:
             assert BaseScraper._upload_poster_pages("csi", "Evento", "01/03/2026", b"not a pdf") == []
             mock_upload.assert_not_called()
@@ -81,7 +81,7 @@ class TestDeleteOrphanPosters:
         {"poster_pages": []},
     ]
 
-    def test_cancella_solo_i_file_non_referenziati(self):
+    def test_deletes_only_unreferenced_files(self):
         stored = ["a-p1.webp", "a-p2.webp", "b-p1.webp", "vecchio.pdf", "a-old-p1.webp"]
         with patch.object(SupabaseManager, "get_client", return_value=mock_client(self.ROWS)), \
              patch.object(SupabaseManager, "_list_storage_files", return_value=stored), \
@@ -91,7 +91,7 @@ class TestDeleteOrphanPosters:
         assert deleted == 2
         mock_delete.assert_called_once_with(["vecchio.pdf", "a-old-p1.webp"])
 
-    def test_non_cancella_nulla_se_nessun_evento_referenzia_file(self):
+    def test_deletes_nothing_when_no_event_references_files(self):
         with patch.object(SupabaseManager, "get_client", return_value=mock_client([])), \
              patch.object(SupabaseManager, "_list_storage_files", return_value=["a-p1.webp"]), \
              patch.object(SupabaseManager, "delete_poster_files") as mock_delete:
@@ -99,6 +99,6 @@ class TestDeleteOrphanPosters:
 
         mock_delete.assert_not_called()
 
-    def test_poster_filenames_estrae_i_nomi_delle_pagine(self):
+    def test_poster_filenames_extracts_page_names(self):
         row = {"poster_pages": [{"url": BASE_URL + "x-p1.webp?"}, {"url": BASE_URL + "x-p2.webp"}]}
         assert SupabaseManager._poster_filenames(row) == ["x-p1.webp", "x-p2.webp"]

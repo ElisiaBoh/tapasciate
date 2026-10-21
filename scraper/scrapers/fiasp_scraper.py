@@ -6,7 +6,7 @@ import re
 import requests
 from typing import List, Optional
 from urllib.parse import urlparse, parse_qs
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup, Tag
 from scraper.scrapers.base import BaseScraper
 from scraper.models.event import Event, PosterPage
 from scraper.utils.parsers import parse_location, parse_distances
@@ -29,7 +29,7 @@ class FIASPScraper(BaseScraper):
         return "FIASP Italia"
 
     def _fetch_events(self) -> list[Event]:
-        """Scarica eventi dal sito FIASP"""
+        """Download events from the FIASP site."""
         try:
             resp = requests.get(FIASP_URL, timeout=REQUEST_TIMEOUT)
             resp.raise_for_status()
@@ -40,7 +40,7 @@ class FIASPScraper(BaseScraper):
         return self._parse_html(resp.text)
 
     def _parse_html(self, html: str) -> list[Event]:
-        """Parse la tabella HTML di FIASP"""
+        """Parse the FIASP events table."""
         soup = BeautifulSoup(html, "html.parser")
         table = soup.find("table")
 
@@ -49,8 +49,8 @@ class FIASPScraper(BaseScraper):
             return []
 
         events = []
-        # La tabella FIASP non ha sempre una riga d'intestazione: le righe senza <td>
-        # (intestazioni con <th>) vengono comunque scartate da _parse_row
+        # The FIASP table doesn't always have a header row: rows without <td>
+        # (<th> headers) are skipped by _parse_row anyway
         for row in table.find_all("tr"):
             event = self._parse_row(row)
             if event:
@@ -58,8 +58,8 @@ class FIASPScraper(BaseScraper):
 
         return events
 
-    def _parse_row(self, row) -> Event | None:
-        """Parse singola riga della tabella"""
+    def _parse_row(self, row: Tag) -> Event | None:
+        """Parse one row of the table."""
         cols = row.find_all("td")
 
         if len(cols) < 3:
@@ -76,11 +76,9 @@ class FIASPScraper(BaseScraper):
         location_raw = cols[2].get_text(strip=True)
         location = parse_location(location_raw)
 
-        # Parse poster link: scarica e carica le pagine come immagini su Supabase Storage
         raw_poster = self._extract_poster(cols)
         poster_pages = self._download_and_upload_poster(raw_poster, title, date) if raw_poster else []
 
-        # Parse distances
         distances_raw = cols[3].get_text(strip=True) if len(cols) > 3 else ""
         distances = parse_distances(distances_raw)
 
@@ -99,8 +97,8 @@ class FIASPScraper(BaseScraper):
             print(f"⚠️ Skipped invalid FIASP event: {e}")
             return None
 
-    def _extract_source_id(self, cols) -> str | None:
-        """Estrae l'ID FIASP dell'evento (idMan) dal link nel titolo."""
+    def _extract_source_id(self, cols: List[Tag]) -> str | None:
+        """Extract the FIASP event id (idMan) from the title link."""
         a_tag = cols[1].find("a", href=True)
         if not a_tag:
             return None
@@ -108,8 +106,8 @@ class FIASPScraper(BaseScraper):
         match = re.search(r"idMan=(\d+)", a_tag["href"])
         return match.group(1) if match else None
 
-    def _extract_poster(self, cols) -> str | None:
-        """Estrae link grezzo al poster/flyer dalla colonna 7."""
+    def _extract_poster(self, cols: List[Tag]) -> str | None:
+        """Extract the raw poster/flyer link from column 7."""
         if len(cols) < 7:
             return None
 
@@ -121,9 +119,9 @@ class FIASPScraper(BaseScraper):
 
     def _extract_gdrive_file_id(self, url: str) -> Optional[str]:
         """
-        Estrae il file ID da un URL Google Drive.
+        Extract the file id from a Google Drive URL.
 
-        Supporta:
+        Supports:
           - https://drive.google.com/file/d/FILE_ID/view
           - https://drive.google.com/open?id=FILE_ID
           - https://drive.google.com/uc?id=FILE_ID
@@ -142,8 +140,8 @@ class FIASPScraper(BaseScraper):
 
     def _download_poster_bytes(self, url: str) -> Optional[tuple[bytes, str]]:
         """
-        Scarica il file da URL. Per Google Drive costruisce l'URL di download diretto.
-        Ritorna (bytes, content_type) o None in caso di errore.
+        Download the file, using the direct download URL for Google Drive.
+        Returns (bytes, content_type), or None on error.
         """
         file_id = self._extract_gdrive_file_id(url)
         if file_id:
@@ -168,8 +166,8 @@ class FIASPScraper(BaseScraper):
 
     def _download_and_upload_poster(self, raw_url: str, title: str, date: str) -> List[PosterPage]:
         """
-        Scarica il poster da raw_url e ne carica le pagine come immagini su Supabase Storage.
-        Ritorna una lista vuota in caso di errore.
+        Download the poster from raw_url and upload its pages as images to Supabase Storage.
+        Returns an empty list on error.
         """
         result = self._download_poster_bytes(raw_url)
         if not result:

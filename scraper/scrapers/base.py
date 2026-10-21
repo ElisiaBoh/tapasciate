@@ -14,52 +14,51 @@ from scraper.db.supabase_client import SupabaseManager
 from scraper.utils.poster_renderer import render_pdf_pages
 
 
-# Sotto questa quota di eventi visti rispetto a quelli attivi la fonte è considerata
-# incompleta (sito rotto, pagina cambiata) e non si rimuove nulla
+# Below this share of seen vs. active events the source is considered incomplete
+# (site down, page changed) and nothing is removed
 MIN_SEEN_RATIO = 0.5
 
 
 class BaseScraper(ABC):
     """Abstract base class for event scrapers."""
 
-    def __init__(self):
-        # ID degli eventi elencati dalla fonte nel run corrente, anche se il parsing è fallito
+    def __init__(self) -> None:
+        # ids listed by the source in this run, even when parsing the event failed
         self._seen_ids: set[str] = set()
 
     @property
     @abstractmethod
     def source(self) -> str:
-        """Codice della sorgente salvato in events.source (es. 'FIASP')"""
+        """Source code stored in events.source (e.g. 'FIASP')."""
         pass
 
     @property
     @abstractmethod
     def source_name(self) -> str:
-        """Nome della sorgente (es. 'CSI Bergamo')"""
+        """Source display name (e.g. 'CSI Bergamo')."""
         pass
 
     @property
     @abstractmethod
     def organizer(self) -> str:
-        """Nome dell'organizzatore da salvare su Supabase"""
+        """Organizer name saved to Supabase."""
         pass
 
     @abstractmethod
     def _fetch_events(self) -> list[Event]:
-        """Scarica e parsa gli eventi dalla sorgente. Implementato da ogni scraper."""
+        """Download and parse the events of the source."""
         pass
 
-    def _mark_seen(self, source_id: str):
-        """Registra un evento elencato dalla fonte: non verrà marcato come rimosso."""
+    def _mark_seen(self, source_id: str) -> None:
+        """Record an event listed by the source, so it won't be marked as removed."""
         self._seen_ids.add(source_id)
 
     def run(self) -> Tuple[int, int, int]:
         """
-        Esegue lo scraping, salva su Supabase e marca come rimossi gli eventi spariti dalla fonte.
-        Comune a tutti gli scraper.
+        Scrape, save to Supabase and mark as removed the events gone from the source.
 
         Returns:
-            (inseriti, aggiornati, rimossi)
+            (inserted, updated, removed)
         """
         self._seen_ids = set()
         seen_at = datetime.now(timezone.utc).isoformat()
@@ -79,7 +78,7 @@ class BaseScraper(ABC):
         return (inserted, updated, removed)
 
     def _remove_unseen_events(self, seen_at: str) -> int:
-        """Marca come rimossi gli eventi non più elencati, se la fonte sembra letta per intero."""
+        """Mark unlisted events as removed, if the source seems to have been read in full."""
         active = SupabaseManager.count_active_events(self.source)
         if not self._seen_ids or len(self._seen_ids) < active * MIN_SEEN_RATIO:
             print(
@@ -94,15 +93,15 @@ class BaseScraper(ABC):
     @staticmethod
     def _make_poster_basename(prefix: str, title: str, date: str) -> str:
         """
-        Genera la base del nome file per le pagine di un poster su Supabase Storage.
+        Build the base file name for the pages of a poster on Supabase Storage.
 
         Args:
-            prefix: Prefisso identificativo della sorgente (es. "csi", "fiasp")
-            title:  Titolo dell'evento
-            date:   Data in formato DD/MM/YYYY o DD-MM-YYYY
+            prefix: Source prefix (e.g. "csi", "fiasp")
+            title:  Event title
+            date:   Date as DD/MM/YYYY or DD-MM-YYYY
 
         Returns:
-            Base in formato "{prefix}-{titolo}-{YYYY-MM-DD}" (senza estensione)
+            "{prefix}-{title}-{YYYY-MM-DD}" (without extension)
         """
         safe_title = re.sub(r"[^a-z0-9]+", "-", title.lower()).strip("-")[:50]
         parts = date.replace("-", "/").split("/")
@@ -115,14 +114,14 @@ class BaseScraper(ABC):
     @classmethod
     def _upload_poster_pages(cls, prefix: str, title: str, date: str, pdf_bytes: bytes) -> List[PosterPage]:
         """
-        Converte il PDF del poster in immagini WebP (una per pagina) e le carica su Storage.
+        Convert the poster PDF into WebP images (one per page) and upload them to Storage.
 
-        Il nome contiene un hash del PDF: se la locandina cambia cambia anche l'URL,
-        così browser e CDN non servono la versione vecchia. Le pagine sostituite
-        vengono rimosse a fine run da SupabaseManager.delete_orphan_posters().
+        The name contains a hash of the PDF: when the poster changes so does the URL,
+        so browsers and CDN don't serve the old version. Replaced pages are deleted
+        at the end of the run by SupabaseManager.delete_orphan_posters().
 
         Returns:
-            Pagine caricate, oppure lista vuota se il rendering o un upload fallisce.
+            Uploaded pages, or an empty list if rendering or an upload fails.
         """
         rendered = render_pdf_pages(pdf_bytes)
         if not rendered:
@@ -142,10 +141,10 @@ class BaseScraper(ABC):
     @staticmethod
     def _images_to_pdf(image_bytes_list: List[bytes]) -> Optional[bytes]:
         """
-        Converte una lista di immagini in un unico PDF in memoria.
+        Merge a list of images into a single in-memory PDF.
 
         Returns:
-            Bytes del PDF, o None in caso di errore.
+            PDF bytes, or None on error.
         """
         try:
             return img2pdf.convert(image_bytes_list)
@@ -154,7 +153,7 @@ class BaseScraper(ABC):
             return None
 
     def _save_event(self, event: Event) -> Operation:
-        """Salva un evento su Supabase. Comune a tutti gli scraper."""
+        """Save an event to Supabase."""
         try:
             location_id = SupabaseManager.upsert_location(
                 city=event.location.city,

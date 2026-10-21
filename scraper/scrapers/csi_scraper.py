@@ -6,8 +6,8 @@ import re
 import requests
 import time
 import datetime
-from typing import List, Optional
-from bs4 import BeautifulSoup
+from typing import List
+from bs4 import BeautifulSoup, Tag
 from scraper.scrapers.base import BaseScraper
 from scraper.models.event import Event, PosterPage
 from scraper.models.provinces import Province
@@ -31,7 +31,7 @@ class CSIScraper(BaseScraper):
         return "CSI Bergamo"
     
     def _fetch_events(self) -> list[Event]:
-        """Scarica eventi dal sito CSI"""
+        """Download events from the CSI site."""
         try:
             resp = requests.get(CSI_LIST, timeout=REQUEST_TIMEOUT)
             resp.raise_for_status()
@@ -55,8 +55,8 @@ class CSIScraper(BaseScraper):
         
         return events
     
-    def _parse_event_item(self, li) -> Event | None:
-        """Parse singolo evento dalla lista"""
+    def _parse_event_item(self, li: Tag) -> Event | None:
+        """Parse one event of the list, downloading its detail page."""
         a = li.find("a", href=True)
         if not a:
             return None
@@ -67,7 +67,7 @@ class CSIScraper(BaseScraper):
         if not source_id:
             print(f"⚠️ Skipped CSI event without article id: {detail_url}")
             return None
-        # Segnato prima di scaricare il dettaglio: un errore di rete non deve far rimuovere l'evento
+        # Marked before downloading the detail: a network error must not get the event removed
         self._mark_seen(source_id)
 
         try:
@@ -79,20 +79,16 @@ class CSIScraper(BaseScraper):
         
         soup = BeautifulSoup(r.text, "html.parser")
         
-        # Parse location
         title_tag = soup.find("h2", class_="contentheading")
         location_raw = title_tag.get_text(strip=True) if title_tag else a.get_text(strip=True)
         location = parse_location(location_raw, default_province=Province.BG)
         
-        # Parse content and title
         content = soup.find("div", class_="jsn-article-content")
         raw = content.get_text(separator="\n", strip=True) if content else ""
         title = raw.split("\n")[0].strip() if raw else ""
         
-        # Parse date
         date = self._parse_date(soup)
         
-        # Parse poster: scarica tutte le immagini, le unisce in un PDF e ne carica le pagine su Storage
         poster_pages = self._extract_and_upload_poster(content, title, date)
         
         try:
@@ -112,19 +108,18 @@ class CSIScraper(BaseScraper):
 
     @staticmethod
     def _extract_source_id(href: str) -> str | None:
-        """Estrae l'id dell'articolo CSI dall'URL (es. ".../5952-titolo-evento.html" → "5952")."""
+        """Extract the CSI article id from the URL (e.g. ".../5952-event-title.html" → "5952")."""
         match = re.search(r"/(\d+)-[^/]*\.html$", href)
         return match.group(1) if match else None
 
-    def _extract_and_upload_poster(self, content, title: str, date: str) -> List[PosterPage]:
+    def _extract_and_upload_poster(self, content: Tag | None, title: str, date: str) -> List[PosterPage]:
         """
-        Raccoglie tutte le immagini del poster, le unisce in un PDF
-        e ne carica le pagine come immagini su Supabase Storage.
+        Download every poster image, merge them into a PDF
+        and upload its pages as images to Supabase Storage.
         """
         if not content:
             return []
 
-        # Raccogli tutti i src delle immagini nel contenuto
         imgs = content.find_all("img")
         if not imgs:
             return []
@@ -151,25 +146,8 @@ class CSIScraper(BaseScraper):
 
         return self._upload_poster_pages("csi", title, date, pdf_bytes)
 
-    def _extract_poster(self, content) -> Optional[str]:
-        """
-        Mantenuto per compatibilità con i test esistenti.
-        Ritorna solo la prima immagine come URL (comportamento originale).
-        """
-        if not content:
-            return None
-        
-        first_img = content.find("img")
-        if not first_img or not first_img.get("src"):
-            return None
-        
-        src = first_img["src"]
-        if src.startswith("/"):
-            return f"{BASE_CSI_BERGAMO}{src}"
-        return src
-
     def _parse_date(self, soup: BeautifulSoup) -> str:
-        """Estrae data dalla pagina"""
+        """Extract the event date from the page."""
         active_li = soup.select_one("ul.latestnews-items li.active")
         if not active_li:
             return ""
@@ -187,8 +165,11 @@ class CSIScraper(BaseScraper):
             "Ottobre": "10", "Novembre": "11", "Dicembre": "12"
         }
         
+        month_str = month_map.get(month.get_text(strip=True))
+        if not month_str:
+            return ""
+
         day_str = day.get_text(strip=True).zfill(2)
-        month_str = month_map.get(month.get_text(strip=True), "01")
         year_str = str(datetime.datetime.now().year)
         
         return f"{day_str}/{month_str}/{year_str}"

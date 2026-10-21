@@ -33,7 +33,7 @@ jobs:
           python main.py
 
       # Ricostruisce il sito su Netlify così la sitemap include gli eventi appena aggiornati.
-      # Richiede il secret NETLIFY_BUILD_HOOK (Netlify → Site configuration → Build hooks); se manca lo step è saltato.
+      # Richiede il secret NETLIFY_BUILD_HOOK (Netlify → Site configuration → Build hooks); se manca lo step è saltato. Gira anche se lo scraper fallisce: una fonte potrebbe aver aggiornato i dati.
       - name: Trigger Netlify build
-        if: ${{ env.NETLIFY_BUILD_HOOK != '' }}
+        if: ${{ !cancelled() && env.NETLIFY_BUILD_HOOK != '' }}
         run: curl -fsS -X POST -d '{}' "$NETLIFY_BUILD_HOOK"

@@ -2,7 +2,6 @@
 Tests for FIASP scraper parsing logic.
 Tests only the HTML parsing methods, not HTTP requests or database operations.
 """
-import pytest
 from unittest.mock import patch, MagicMock
 from bs4 import BeautifulSoup
 from scraper.scrapers.fiasp_scraper import FIASPScraper
@@ -46,7 +45,7 @@ class TestFIASPScraperParsing:
         assert events[0].source == "FIASP"
 
     def test_parse_html_without_header_keeps_first_row(self):
-        """Senza riga d'intestazione il primo evento non deve essere scartato."""
+        """Without a header row the first event must not be skipped."""
         html = """
         <html><body>
             <table>
@@ -272,7 +271,7 @@ class TestFIASPPosterUpload:
         assert fid == "1abc123XYZ"
 
     def test_extract_gdrive_file_id_non_gdrive(self):
-        """Ritorna None per URL non Google Drive."""
+        """Returns None for non Google Drive URLs."""
         scraper = FIASPScraper()
         fid = scraper._extract_gdrive_file_id("https://example.com/poster.pdf")
         assert fid is None
@@ -280,7 +279,7 @@ class TestFIASPPosterUpload:
     @patch('scraper.scrapers.fiasp_scraper.requests.get')
     @patch.object(FIASPScraper, '_upload_poster_pages', return_value=UPLOADED_PAGES)
     def test_download_and_upload_poster_gdrive_pdf(self, mock_upload, mock_get):
-        """Scarica un PDF da Google Drive e ne carica le pagine su Supabase."""
+        """Downloads a PDF from Google Drive and uploads its pages to Supabase."""
         mock_resp = MagicMock()
         mock_resp.content = b"%PDF-1.4 fake content"
         mock_resp.headers = {'Content-Type': 'application/pdf'}
@@ -295,7 +294,7 @@ class TestFIASPPosterUpload:
         )
 
         assert result == UPLOADED_PAGES
-        # Deve usare l'URL di download diretto di Google Drive
+        # Must use the Google Drive direct download URL
         called_url = mock_get.call_args[0][0]
         assert "drive.usercontent.google.com" in called_url
         assert "1abc123XYZ" in called_url
@@ -303,7 +302,7 @@ class TestFIASPPosterUpload:
 
     @patch('scraper.scrapers.fiasp_scraper.requests.get')
     def test_download_and_upload_poster_returns_none_on_html_response(self, mock_get):
-        """Ritorna lista vuota se il server risponde con HTML (es. pagina di virus scan)."""
+        """Returns an empty list when the server answers with HTML (e.g. a virus scan page)."""
         mock_resp = MagicMock()
         mock_resp.content = b"<html>Virus scan warning</html>"
         mock_resp.headers = {'Content-Type': 'text/html; charset=utf-8'}
@@ -320,7 +319,7 @@ class TestFIASPPosterUpload:
 
     @patch('scraper.scrapers.fiasp_scraper.requests.get', side_effect=Exception("connection error"))
     def test_download_and_upload_poster_returns_none_on_network_error(self, mock_get):
-        """Ritorna lista vuota in caso di errore di rete."""
+        """Returns an empty list on network errors."""
         scraper = FIASPScraper()
         result = scraper._download_and_upload_poster(
             "https://drive.google.com/file/d/1abc123XYZ/view",
@@ -332,7 +331,7 @@ class TestFIASPPosterUpload:
     @patch('scraper.scrapers.fiasp_scraper.requests.get')
     @patch.object(FIASPScraper, '_upload_poster_pages', return_value=UPLOADED_PAGES)
     def test_download_and_upload_poster_accepts_octet_stream(self, mock_upload, mock_get):
-        """Accetta application/octet-stream (Google Drive restituisce questo per i PDF)."""
+        """Accepts application/octet-stream (what Google Drive returns for PDFs)."""
         mock_resp = MagicMock()
         mock_resp.content = b"%PDF-1.4 fake content"
         mock_resp.headers = {'Content-Type': 'application/octet-stream'}
@@ -350,9 +349,9 @@ class TestFIASPPosterUpload:
 
 
 class TestFIASPSourceId:
-    """L'ID FIASP (idMan) identifica l'evento anche se cambiano nome o data."""
+    """The FIASP id (idMan) identifies the event even when its name or date change."""
 
-    def test_estrae_id_e_url_della_fonte(self):
+    def test_extracts_source_id_and_url(self):
         html = """
         <table>
             <tr><td>04/10/2026</td><td><a href="www_eventi.php?idMan=19171">19ª MARCIA</a></td><td>Tapogliano (UD)</td></tr>
@@ -365,7 +364,7 @@ class TestFIASPSourceId:
         assert events[0].url == "https://servizi.fiaspitalia.it/www_eventi.php?idMan=19171"
         assert scraper._seen_ids == {"19171"}
 
-    def test_scarta_le_righe_senza_id(self):
+    def test_skips_rows_without_id(self):
         html = """
         <table>
             <tr><td>04/10/2026</td><td>Senza link</td><td>Bergamo (BG)</td></tr>
@@ -376,9 +375,9 @@ class TestFIASPSourceId:
         assert scraper._parse_html(html) == []
         assert scraper._seen_ids == set()
 
-    @patch("scraper.scrapers.fiasp_scraper.Event", side_effect=ValueError("evento non valido"))
-    def test_riga_non_valida_resta_comunque_vista(self, mock_event):
-        """Un errore di parsing non deve far rimuovere un evento ancora presente sulla fonte."""
+    @patch("scraper.scrapers.fiasp_scraper.Event", side_effect=ValueError("invalid event"))
+    def test_invalid_row_is_still_seen(self, mock_event):
+        """A parsing error must not get an event still listed on the source removed."""
         html = """
         <table>
             <tr><td>04/10/2026</td><td><a href="www_eventi.php?idMan=42">Evento</a></td><td>Bergamo (BG)</td></tr>

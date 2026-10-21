@@ -7,9 +7,9 @@ from scraper.models.provinces import Province
 
 
 class TestExtractProvinceStr:
-    """Unit test per la funzione pura extract_province_str."""
+    """Unit tests for the pure function extract_province_str."""
 
-    # --- Formato con parentesi ---
+    # --- Format with parentheses ---
 
     def test_parentheses_standard(self):
         assert extract_province_str("Spinone al Lago (BG)") == ("Spinone al Lago", "BG")
@@ -43,7 +43,7 @@ class TestExtractProvinceStr:
         assert prov == "BG"
         assert city == ""
 
-    # --- Formato senza parentesi (fallback posizionale) ---
+    # --- Format without parentheses (positional fallback) ---
 
     def test_no_parens_standard(self):
         assert extract_province_str("Varese VA") == ("Varese", "VA")
@@ -80,16 +80,16 @@ class TestExtractProvinceStr:
         assert prov is None
         assert city == ""
 
-    # --- Provincia non valida (stringa presente ma non riconoscibile) ---
+    # --- Invalid province (present but not recognizable) ---
 
     def test_invalid_province_code_returned_as_is(self):
-        """extract_province_str non valida l'enum: ritorna la sigla grezza."""
+        """extract_province_str doesn't validate the enum: it returns the raw code."""
         city, prov = extract_province_str("Como XX")
         assert prov == "XX"
         assert city == "Como"
 
     def test_trailing_punctuation_stripped(self):
-        """Punteggiatura finale rimossa dal candidato provincia (es. 'BG.' da FIASP)."""
+        """Trailing punctuation is stripped from the province candidate (e.g. 'BG.' from FIASP)."""
         city, prov = extract_province_str("Bergamo BG.")
         assert prov == "BG"
         assert city == "Bergamo"
@@ -113,7 +113,7 @@ class TestExtractProvinceStr:
 
 
 class TestGORProvince:
-    """Verifica che il codice non-standard GOR (Gorizia) venga gestito correttamente."""
+    """The non-standard GOR code (Gorizia) is handled correctly."""
 
     def test_gor_parsed_from_fiasp_format(self):
         loc = parse_location("CORMONS (GOR)")

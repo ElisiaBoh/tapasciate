@@ -1,5 +1,5 @@
 """
-Mappa province italiane → regioni.
+Maps Italian provinces to regions and full names.
 """
 from scraper.models.provinces import Province
 
@@ -79,7 +79,7 @@ PROVINCE_TO_REGION = {
     
     # Friuli-Venezia Giulia
     Province.GO: "Friuli-Venezia Giulia",
-    Province.GOR: "Friuli-Venezia Giulia",  # codice non standard usato da FIASP per Gorizia
+    Province.GOR: "Friuli-Venezia Giulia",  # non-standard code FIASP uses for Gorizia
     Province.PN: "Friuli-Venezia Giulia",
     Province.TS: "Friuli-Venezia Giulia",
     Province.UD: "Friuli-Venezia Giulia",
@@ -266,25 +266,25 @@ PROVINCE_TO_NAME = {
 
 def get_region_from_province(province: Province) -> str:
     """
-    Ritorna la regione data una provincia.
+    Return the region of a province.
 
     Args:
-        province: Codice provincia (enum Province)
+        province: Province code
 
     Returns:
-        Nome della regione
+        Region name
     """
     return PROVINCE_TO_REGION.get(province, "Sconosciuta")
 
 
 def get_name_from_province(province: Province) -> str:
     """
-    Ritorna il nome esteso della provincia data la sua sigla.
+    Return the full name of a province.
 
     Args:
-        province: Codice provincia (enum Province)
+        province: Province code
 
     Returns:
-        Nome esteso (es. "Bergamo"), o la sigla stessa se non mappata
+        Full name (e.g. "Bergamo"), or the code itself when not mapped
     """
     return PROVINCE_TO_NAME.get(province, province.value)

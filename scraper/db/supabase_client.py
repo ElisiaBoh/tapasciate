@@ -24,16 +24,14 @@ class SupabaseManager:
 
     @classmethod
     def upsert_location(cls, city: str, province: str, province_name: str, region: str) -> int:
-        """Inserisce o recupera una location, ritorna l'ID"""
+        """Insert or fetch a location and return its id."""
         client = cls.get_client()
 
-        # Normalizza
         city = city.strip().title()
         province = province.strip().upper()
         province_name = province_name.strip()
         region = region.strip().title()
 
-        # Cerca esistente
         result = client.table("locations").select("id, province_name, region").eq("city", city).eq("province", province).execute()
 
         if result.data:
@@ -47,7 +45,6 @@ class SupabaseManager:
                 client.table("locations").update(updates).eq("id", location_id).execute()
             return location_id
 
-        # Inserisci nuovo
         result = client.table("locations").insert({
             "city": city,
             "province": province,
@@ -71,15 +68,14 @@ class SupabaseManager:
         distances: Optional[List[str]] = None
     ) -> Operation:
         """
-        Inserisce o aggiorna un evento identificandolo con (source, source_id):
-        se sulla fonte cambiano nome o data si aggiorna la stessa riga, con lo stesso id.
+        Insert or update an event identified by (source, source_id):
+        when its name or date change on the source, the same row (and id) is updated.
 
         Returns:
-            Operation.INSERTED se nuovo evento, Operation.UPDATED se aggiornato
+            Operation.INSERTED for a new event, Operation.UPDATED otherwise
         """
         client = cls.get_client()
 
-        # Converti data da DD/MM/YYYY a YYYY-MM-DD
         parsed_date = cls._parse_date(date)
 
         event_data = {
@@ -92,7 +88,7 @@ class SupabaseManager:
             "url": url,
             "poster_pages": poster_pages or [],
             "distances": distances or [],
-            # Un evento rimosso che ricompare sulla fonte torna visibile
+            # A removed event that reappears on the source becomes visible again
             "removed_at": None
         }
 
@@ -108,14 +104,14 @@ class SupabaseManager:
 
     @classmethod
     def _find_event_id(cls, source: str, source_id: str, name: str, parsed_date: str) -> Optional[int]:
-        """Cerca l'evento per ID della fonte, poi tra le righe create prima degli ID (per nome + data)."""
+        """Find the event by source id, then among rows created before source ids existed (by name + date)."""
         client = cls.get_client()
 
         result = client.table("events").select("id").eq("source", source).eq("source_id", source_id).execute()
         if result.data:
             return result.data[0]["id"]
 
-        # Righe pre-migrazione senza source_id: riusarle mantiene id e link di dettaglio
+        # Reusing pre-migration rows without source_id keeps their id and detail links
         result = (
             client.table("events").select("id")
             .eq("source", source).is_("source_id", "null")
@@ -126,7 +122,7 @@ class SupabaseManager:
 
     @classmethod
     def count_active_events(cls, source: str) -> int:
-        """Numero di eventi di una fonte non marcati come rimossi."""
+        """Number of events of a source not marked as removed."""
         client = cls.get_client()
         result = (
             client.table("events").select("id", count="exact")
@@ -136,8 +132,8 @@ class SupabaseManager:
         return result.count or 0
 
     @classmethod
-    def mark_events_seen(cls, source: str, source_ids: Iterable[str], seen_at: str):
-        """Segna come presenti sulla fonte gli eventi elencati (e ripristina quelli rimossi che ricompaiono)."""
+    def mark_events_seen(cls, source: str, source_ids: Iterable[str], seen_at: str) -> None:
+        """Mark the listed events as seen on the source (and restore removed ones that reappear)."""
         client = cls.get_client()
         source_ids = list(source_ids)
 
@@ -153,11 +149,11 @@ class SupabaseManager:
     @classmethod
     def remove_unseen_events(cls, source: str, seen_at: str) -> int:
         """
-        Marca come rimossi gli eventi di una fonte non visti nel run corrente
-        (last_seen_at precedente a seen_at). Non cancella le righe: il frontend le nasconde.
+        Mark as removed the events of a source not seen in this run
+        (last_seen_at before seen_at). Rows aren't deleted: the frontend hides them.
 
         Returns:
-            Numero di eventi marcati come rimossi.
+            Number of events marked as removed.
         """
         client = cls.get_client()
         result = (
@@ -171,21 +167,20 @@ class SupabaseManager:
     @classmethod
     def upload_poster(cls, filename: str, file_bytes: bytes, content_type: str = "image/webp") -> Optional[str]:
         """
-        Carica un file del poster su Supabase Storage e ritorna l'URL pubblico.
-        Se un file con lo stesso nome esiste già, lo sovrascrive.
+        Upload a poster file to Supabase Storage and return its public URL,
+        overwriting any file with the same name.
 
         Args:
-            filename: nome del file (es. "csi-bottanuco-2026-03-15-1a2b3c4d-p1.webp")
-            file_bytes: contenuto del file in memoria
-            content_type: MIME type del file
+            filename: file name (e.g. "csi-bottanuco-2026-03-15-1a2b3c4d-p1.webp")
+            file_bytes: file content
+            content_type: MIME type
 
         Returns:
-            URL pubblico del file, o None in caso di errore
+            Public URL of the file, or None on error
         """
         client = cls.get_client()
 
         try:
-            # upsert=True sovrascrive se il file esiste già
             client.storage.from_(SUPABASE_STORAGE_BUCKET).upload(
                 path=filename,
                 file=file_bytes,
@@ -200,17 +195,17 @@ class SupabaseManager:
 
     @classmethod
     def _storage_filename(cls, public_url: str) -> str:
-        """Estrae il nome del file dall'URL pubblico di Storage."""
+        """Extract the file name from a public Storage URL."""
         return public_url.split(f"/{SUPABASE_STORAGE_BUCKET}/")[-1].split("?")[0]
 
     @classmethod
     def _poster_filenames(cls, row: dict) -> List[str]:
-        """Nomi dei file su Storage referenziati da una riga di events (pagine del poster)."""
+        """Storage file names referenced by an events row (its poster pages)."""
         return [cls._storage_filename(page["url"]) for page in row.get("poster_pages") or [] if page.get("url")]
 
     @classmethod
-    def delete_poster_files(cls, filenames: Iterable[str]):
-        """Cancella file da Supabase Storage, a blocchi."""
+    def delete_poster_files(cls, filenames: Iterable[str]) -> None:
+        """Delete files from Supabase Storage in batches."""
         client = cls.get_client()
         filenames = list(filenames)
 
@@ -222,24 +217,21 @@ class SupabaseManager:
                 print(f"⚠️ Failed to delete posters {batch}: {e}")
 
     @classmethod
-    def delete_past_events(cls):
-        """Cancella eventi con data passata, inclusi i poster su Storage"""
+    def delete_past_events(cls) -> None:
+        """Delete past events, including their posters on Storage."""
         client = cls.get_client()
         today = date.today().isoformat()
 
-        # Prima recupera i poster degli eventi da cancellare
         result = client.table("events").select("poster_pages").lt("date", today).execute()
 
-        # Cancella i file da Storage
         filenames = [name for row in result.data for name in cls._poster_filenames(row)]
         cls.delete_poster_files(filenames)
 
-        # Poi cancella i record dal DB
         client.table("events").delete().lt("date", today).execute()
 
     @classmethod
     def _list_storage_files(cls) -> List[str]:
-        """Elenca tutti i file del bucket dei poster."""
+        """List every file in the posters bucket."""
         client = cls.get_client()
         bucket = client.storage.from_(SUPABASE_STORAGE_BUCKET)
         names: List[str] = []
@@ -247,7 +239,7 @@ class SupabaseManager:
 
         while True:
             batch = bucket.list("", {"limit": 1000, "offset": offset})
-            names.extend(item["name"] for item in batch if item.get("id"))  # le cartelle non hanno id
+            names.extend(item["name"] for item in batch if item.get("id"))  # folders have no id
             if len(batch) < 1000:
                 return names
             offset += 1000
@@ -255,14 +247,14 @@ class SupabaseManager:
     @classmethod
     def delete_orphan_posters(cls) -> int:
         """
-        Cancella da Storage i file che nessun evento referenzia più:
-        pagine di locandine aggiornate, residui di upload falliti.
+        Delete from Storage the files no event references anymore:
+        pages of updated posters, leftovers of failed uploads.
 
         Returns:
-            Numero di file cancellati.
+            Number of deleted files.
         """
         client = cls.get_client()
-        # Se la query fallisce solleva un'eccezione: meglio non cancellare nulla che cancellare tutto
+        # A failed query must raise: deleting nothing beats deleting everything
         result = client.table("events").select("poster_pages").execute()
         referenced = {name for row in result.data for name in cls._poster_filenames(row)}
 
@@ -277,10 +269,9 @@ class SupabaseManager:
 
     @classmethod
     def _parse_date(cls, date_str: str) -> str:
-        """Converte DD/MM/YYYY in YYYY-MM-DD"""
+        """Convert DD/MM/YYYY to YYYY-MM-DD."""
         try:
             dt = datetime.strptime(date_str, "%d/%m/%Y")
             return dt.strftime("%Y-%m-%d")
         except ValueError:
-            # Se già in formato corretto o altro formato, ritorna così
             return date_str
