@@ -9,17 +9,17 @@ from scraper.scrapers.csi_scraper import CSIScraper
 
 
 class TestCSISourceId:
-    """L'id dell'articolo CSI identifica l'evento anche se cambiano titolo o data."""
+    """The CSI article id identifies the event even when its title or date change."""
 
-    def test_estrae_id_articolo_dall_url(self):
+    def test_extracts_article_id_from_url(self):
         href = "/avvisi/prossime-marce/218-marce/non-competitive/5952-2026-quater-salcc-e-öna-biida.html"
         assert CSIScraper._extract_source_id(href) == "5952"
 
-    def test_url_senza_id_restituisce_none(self):
+    def test_url_without_id_returns_none(self):
         assert CSIScraper._extract_source_id("/avvisi/prossime-marce.html") is None
 
     @patch("scraper.scrapers.csi_scraper.requests.get", side_effect=Exception("timeout"))
-    def test_evento_visto_anche_se_il_dettaglio_non_si_scarica(self, mock_get):
+    def test_event_seen_even_if_detail_download_fails(self, mock_get):
         li = BeautifulSoup(
             '<li><a href="/avvisi/prossime-marce/218-marce/non-competitive/6086-panoramica.html">Mapello</a></li>',
             "html.parser",

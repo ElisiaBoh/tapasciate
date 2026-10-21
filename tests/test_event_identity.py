@@ -1,6 +1,6 @@
 """
-Test per l'identificazione stabile degli eventi (source + source_id)
-e per la rimozione di quelli non più elencati dalla fonte.
+Tests for stable event identity (source + source_id)
+and for the removal of events no longer listed by the source.
 """
 from unittest.mock import patch, MagicMock
 from scraper.scrapers.base import BaseScraper
@@ -9,7 +9,7 @@ from scraper.models.operation import Operation
 
 
 class FakeScraper(BaseScraper):
-    """Scraper finto: 'vede' gli ID indicati senza salvare eventi."""
+    """Fake scraper: 'sees' the given ids without saving events."""
 
     def __init__(self, seen_ids):
         super().__init__()
@@ -33,7 +33,7 @@ class TestRemoveUnseenEvents:
             result = FakeScraper(seen_ids).run()
         return result, mock_seen, mock_remove
 
-    def test_marca_visti_e_rimuove_gli_altri(self):
+    def test_marks_seen_and_removes_the_others(self):
         result, mock_seen, mock_remove = self.run(["1", "2"], active=3)
 
         assert result == (0, 0, 3)
@@ -41,14 +41,14 @@ class TestRemoveUnseenEvents:
         assert (source, ids) == ("FIASP", {"1", "2"})
         mock_remove.assert_called_once_with("FIASP", seen_at)
 
-    def test_non_rimuove_nulla_se_la_fonte_e_vuota(self):
+    def test_removes_nothing_when_source_is_empty(self):
         result, mock_seen, mock_remove = self.run([], active=10)
 
         assert result == (0, 0, 0)
         mock_seen.assert_not_called()
         mock_remove.assert_not_called()
 
-    def test_non_rimuove_nulla_se_la_fonte_sembra_incompleta(self):
+    def test_removes_nothing_when_source_looks_incomplete(self):
         result, _, mock_remove = self.run(["1", "2"], active=10)
 
         assert result == (0, 0, 0)
@@ -62,7 +62,7 @@ class TestRemoveUnseenEvents:
 
 
 def mock_select(*responses):
-    """Client finto: ogni select().…execute() restituisce la risposta successiva."""
+    """Fake client: each select().…execute() returns the next response."""
     client = MagicMock()
     query = client.table.return_value.select.return_value
     query.eq.return_value = query
@@ -76,7 +76,7 @@ class TestUpsertEvent:
     ARGS = dict(source="FIASP", source_id="19171", name="19ª MARCIA", date="04/10/2026",
                 location_id=1, organizer="FIASP Italia")
 
-    def test_aggiorna_per_source_id_anche_se_cambiano_nome_e_data(self):
+    def test_updates_by_source_id_even_if_name_and_date_change(self):
         client = mock_select([{"id": 7}])
         with patch.object(SupabaseManager, "get_client", return_value=client):
             assert SupabaseManager.upsert_event(**self.ARGS) == Operation.UPDATED
@@ -85,7 +85,7 @@ class TestUpsertEvent:
         data = client.table.return_value.update.call_args.args[0]
         assert data["source_id"] == "19171" and data["date"] == "2026-10-04"
 
-    def test_riusa_la_riga_pre_migrazione_con_stesso_nome_e_data(self):
+    def test_reuses_pre_migration_row_with_same_name_and_date(self):
         client = mock_select([], [{"id": 3}])
         with patch.object(SupabaseManager, "get_client", return_value=client):
             assert SupabaseManager.upsert_event(**self.ARGS) == Operation.UPDATED

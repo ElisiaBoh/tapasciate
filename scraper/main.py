@@ -6,10 +6,8 @@ import sys
 from pathlib import Path
 from dotenv import load_dotenv
 
-# Carica variabili d'ambiente dal file .env
 load_dotenv()
 
-# Aggiungi la root del progetto al PYTHONPATH
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from scraper.scrapers.csi_scraper import CSIScraper
@@ -18,18 +16,16 @@ from scraper.db.supabase_client import SupabaseManager
 
 
 def main() -> int:
-    """Esegue tutti gli scraper e salva su Supabase; ritorna l'exit code"""
+    """Runs every scraper and saves to Supabase; returns the process exit code."""
     
     print("🚀 Starting Tapasciate scraper...")
     
-    # Verifica env variables
     if not os.getenv("SUPABASE_URL") or not os.getenv("SUPABASE_KEY"):
         print("❌ SUPABASE_URL and SUPABASE_KEY environment variables required")
         return 1
 
     failed = False
     
-    # Pulisci eventi passati
     print("\n🗑️  Deleting past events...")
     try:
         SupabaseManager.delete_past_events()
@@ -61,7 +57,6 @@ def main() -> int:
     
     print(f"\n✅ Total: {total_inserted} inserted, {total_updated} updated, {total_removed} removed")
 
-    # Rimuovi da Storage i file dei poster non più referenziati (pagine sostituite, residui)
     print("\n🧹 Deleting orphan poster files...")
     try:
         deleted = SupabaseManager.delete_orphan_posters()

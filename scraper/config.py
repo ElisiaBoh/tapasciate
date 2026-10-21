@@ -8,8 +8,8 @@ FIASP_URL = "https://servizi.fiaspitalia.it/www_eventi.php"
 FIASP_EVENT_URL = f"{FIASP_URL}?idMan={{}}"
 
 # Scraping settings
-REQUEST_DELAY = 1  # secondi tra richieste
-REQUEST_TIMEOUT = 10  # timeout in secondi
+REQUEST_DELAY = 1  # seconds between requests
+REQUEST_TIMEOUT = 10  # seconds
 
 # Supabase Storage
 SUPABASE_STORAGE_BUCKET = "posters"
