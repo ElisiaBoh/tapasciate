@@ -6,7 +6,7 @@ import re
 import requests
 from typing import List, Optional
 from urllib.parse import urlparse, parse_qs
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup, Tag
 from scraper.scrapers.base import BaseScraper
 from scraper.models.event import Event, PosterPage
 from scraper.utils.parsers import parse_location, parse_distances
@@ -58,7 +58,7 @@ class FIASPScraper(BaseScraper):
 
         return events
 
-    def _parse_row(self, row) -> Event | None:
+    def _parse_row(self, row: Tag) -> Event | None:
         """Parse singola riga della tabella"""
         cols = row.find_all("td")
 
@@ -99,7 +99,7 @@ class FIASPScraper(BaseScraper):
             print(f"⚠️ Skipped invalid FIASP event: {e}")
             return None
 
-    def _extract_source_id(self, cols) -> str | None:
+    def _extract_source_id(self, cols: List[Tag]) -> str | None:
         """Estrae l'ID FIASP dell'evento (idMan) dal link nel titolo."""
         a_tag = cols[1].find("a", href=True)
         if not a_tag:
@@ -108,7 +108,7 @@ class FIASPScraper(BaseScraper):
         match = re.search(r"idMan=(\d+)", a_tag["href"])
         return match.group(1) if match else None
 
-    def _extract_poster(self, cols) -> str | None:
+    def _extract_poster(self, cols: List[Tag]) -> str | None:
         """Estrae link grezzo al poster/flyer dalla colonna 7."""
         if len(cols) < 7:
             return None

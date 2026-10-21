@@ -136,7 +136,7 @@ class SupabaseManager:
         return result.count or 0
 
     @classmethod
-    def mark_events_seen(cls, source: str, source_ids: Iterable[str], seen_at: str):
+    def mark_events_seen(cls, source: str, source_ids: Iterable[str], seen_at: str) -> None:
         """Segna come presenti sulla fonte gli eventi elencati (e ripristina quelli rimossi che ricompaiono)."""
         client = cls.get_client()
         source_ids = list(source_ids)
@@ -209,7 +209,7 @@ class SupabaseManager:
         return [cls._storage_filename(page["url"]) for page in row.get("poster_pages") or [] if page.get("url")]
 
     @classmethod
-    def delete_poster_files(cls, filenames: Iterable[str]):
+    def delete_poster_files(cls, filenames: Iterable[str]) -> None:
         """Cancella file da Supabase Storage, a blocchi."""
         client = cls.get_client()
         filenames = list(filenames)
@@ -222,7 +222,7 @@ class SupabaseManager:
                 print(f"⚠️ Failed to delete posters {batch}: {e}")
 
     @classmethod
-    def delete_past_events(cls):
+    def delete_past_events(cls) -> None:
         """Cancella eventi con data passata, inclusi i poster su Storage"""
         client = cls.get_client()
         today = date.today().isoformat()

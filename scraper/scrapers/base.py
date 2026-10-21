@@ -22,7 +22,7 @@ MIN_SEEN_RATIO = 0.5
 class BaseScraper(ABC):
     """Abstract base class for event scrapers."""
 
-    def __init__(self):
+    def __init__(self) -> None:
         # ID degli eventi elencati dalla fonte nel run corrente, anche se il parsing è fallito
         self._seen_ids: set[str] = set()
 
@@ -49,7 +49,7 @@ class BaseScraper(ABC):
         """Scarica e parsa gli eventi dalla sorgente. Implementato da ogni scraper."""
         pass
 
-    def _mark_seen(self, source_id: str):
+    def _mark_seen(self, source_id: str) -> None:
         """Registra un evento elencato dalla fonte: non verrà marcato come rimosso."""
         self._seen_ids.add(source_id)
 

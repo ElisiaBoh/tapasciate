@@ -7,7 +7,7 @@ import requests
 import time
 import datetime
 from typing import List
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup, Tag
 from scraper.scrapers.base import BaseScraper
 from scraper.models.event import Event, PosterPage
 from scraper.models.provinces import Province
@@ -55,7 +55,7 @@ class CSIScraper(BaseScraper):
         
         return events
     
-    def _parse_event_item(self, li) -> Event | None:
+    def _parse_event_item(self, li: Tag) -> Event | None:
         """Parse singolo evento dalla lista"""
         a = li.find("a", href=True)
         if not a:
@@ -116,7 +116,7 @@ class CSIScraper(BaseScraper):
         match = re.search(r"/(\d+)-[^/]*\.html$", href)
         return match.group(1) if match else None
 
-    def _extract_and_upload_poster(self, content, title: str, date: str) -> List[PosterPage]:
+    def _extract_and_upload_poster(self, content: Tag | None, title: str, date: str) -> List[PosterPage]:
         """
         Raccoglie tutte le immagini del poster, le unisce in un PDF
         e ne carica le pagine come immagini su Supabase Storage.
