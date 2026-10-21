@@ -26,7 +26,7 @@ const second = makeEvent({
 const third = makeEvent({ id: 3, title: 'Terzo' })
 const events = [first, second, third]
 
-function renderDetail(props: Partial<Parameters<typeof EventDetail>[0]> = {}) {
+function setupDetail(props: Partial<Parameters<typeof EventDetail>[0]> = {}) {
   const onSelect = jest.fn()
   render(
     <EventDetail status="success" event={second} sameDayEvents={events} zoneName="Bergamo" onSelect={onSelect} {...props} />
@@ -36,7 +36,7 @@ function renderDetail(props: Partial<Parameters<typeof EventDetail>[0]> = {}) {
 
 describe('EventDetail', () => {
   it('mostra titolo, luogo, data e posizione nella lista', () => {
-    renderDetail()
+    setupDetail()
     expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent('Secondo')
     expect(screen.getByText('Bergamo (BG)')).toBeInTheDocument()
     expect(screen.getByText('Sabato 15 Giugno')).toBeInTheDocument()
@@ -45,7 +45,7 @@ describe('EventDetail', () => {
   })
 
   it('mostra le distanze', () => {
-    renderDetail()
+    setupDetail()
     expect(screen.getByText('6 - 12 km')).toBeInTheDocument()
   })
 
@@ -58,7 +58,7 @@ describe('EventDetail', () => {
         { url: 'https://example.com/p2.webp', width: 1200, height: 1697 },
       ],
     })
-    renderDetail({ event: withPages })
+    setupDetail({ event: withPages })
     const images = screen.getAllByRole('img', { name: /Locandina Secondo/ })
     expect(images).toHaveLength(2)
     expect(images[0]).toHaveAttribute('src', 'https://example.com/p1.webp')
@@ -68,7 +68,7 @@ describe('EventDetail', () => {
   })
 
   it('la locandina si apre a schermo intero e si chiude con Esc', () => {
-    renderDetail()
+    setupDetail()
     fireEvent.click(screen.getByRole('button', { name: 'Apri la locandina a schermo intero' }))
     const viewer = screen.getByRole('dialog', { name: 'Locandina Secondo' })
     expect(viewer).toHaveFocus()
@@ -77,43 +77,43 @@ describe('EventDetail', () => {
   })
 
   it('con la locandina aperta le frecce da tastiera non cambiano evento', () => {
-    const onSelect = renderDetail()
+    const onSelect = setupDetail()
     fireEvent.click(screen.getByRole('button', { name: 'Apri la locandina a schermo intero' }))
     fireEvent.keyDown(screen.getByRole('button', { name: 'Chiudi la locandina' }), { key: 'ArrowRight' })
     expect(onSelect).not.toHaveBeenCalled()
   })
 
   it('senza locandina mostra il segnaposto', () => {
-    renderDetail({ event: first })
+    setupDetail({ event: first })
     expect(screen.getByText('non disponibile')).toBeInTheDocument()
   })
 
   it('non offre link per aprire o scaricare la locandina', () => {
-    renderDetail()
+    setupDetail()
     expect(screen.queryByRole('link', { name: /locandina/i })).not.toBeInTheDocument()
   })
 
   it('offre solo la condivisione', () => {
-    renderDetail()
+    setupDetail()
     expect(screen.getByRole('button', { name: 'Condividi' })).toBeInTheDocument()
     expect(screen.queryByText('Calendario')).not.toBeInTheDocument()
     expect(screen.queryByText('Mappa')).not.toBeInTheDocument()
   })
 
   it('fuori dalla lista della zona non mostra la posizione e disabilita le frecce', () => {
-    renderDetail({ sameDayEvents: [] })
+    setupDetail({ sameDayEvents: [] })
     expect(screen.queryByText(/di \d/)).not.toBeInTheDocument()
     expect(screen.getByRole('button', { name: /precedente/i })).toBeDisabled()
     expect(screen.getByRole('button', { name: /successiva/i })).toBeDisabled()
   })
 
   it('nasconde le distanze quando assenti', () => {
-    renderDetail({ event: first })
+    setupDetail({ event: first })
     expect(screen.queryByText(/km$/)).not.toBeInTheDocument()
   })
 
   it('le frecce selezionano l\'evento precedente e successivo', () => {
-    const onSelect = renderDetail()
+    const onSelect = setupDetail()
     fireEvent.click(screen.getByRole('button', { name: /precedente/i }))
     expect(onSelect).toHaveBeenLastCalledWith(first)
     fireEvent.click(screen.getByRole('button', { name: /successiva/i }))
@@ -121,19 +121,19 @@ describe('EventDetail', () => {
   })
 
   it('supporta i tasti freccia', () => {
-    const onSelect = renderDetail()
+    const onSelect = setupDetail()
     fireEvent.keyDown(document, { key: 'ArrowRight' })
     expect(onSelect).toHaveBeenLastCalledWith(third)
   })
 
   it('disabilita le frecce al primo e all\'ultimo evento', () => {
-    renderDetail({ event: first })
+    setupDetail({ event: first })
     expect(screen.getByRole('button', { name: /precedente/i })).toBeDisabled()
     expect(screen.getByRole('button', { name: /successiva/i })).toBeEnabled()
   })
 
   it('mostra un messaggio se l\'evento non esiste', () => {
-    renderDetail({ event: undefined })
+    setupDetail({ event: undefined })
     expect(screen.getByText(/Tapasciata non trovata/)).toBeInTheDocument()
   })
 })

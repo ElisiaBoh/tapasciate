@@ -23,7 +23,7 @@ describe('ZoneTitle', () => {
 
   it('durante il caricamento mostra gli skeleton', () => {
     renderTitle({ loading: true })
-    expect(document.querySelector('.skeleton')).toBeInTheDocument()
+    expect(screen.getAllByTestId('skeleton').length).toBeGreaterThan(0)
     expect(screen.queryByRole('heading')).not.toBeInTheDocument()
   })
 

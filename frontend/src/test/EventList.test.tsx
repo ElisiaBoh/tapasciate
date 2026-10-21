@@ -21,7 +21,7 @@ const listProps = { listPath: '/', emptyMessage: 'Nessuna tapasciata a Gorizia q
 describe('EventList', () => {
   it('mostra gli skeleton durante il caricamento', () => {
     render(<EventList status="loading" sortedDates={[]} groupedEvents={{}} {...listProps} />)
-    expect(document.querySelector('.skeleton')).toBeInTheDocument()
+    expect(screen.getAllByTestId('skeleton').length).toBeGreaterThan(0)
   })
 
   it('non mostra la lista eventi durante il caricamento', () => {

@@ -6,5 +6,5 @@ interface Props {
 }
 
 export default function Skeleton({ className = '' }: Props) {
-  return <div className={`skeleton ${className}`.trim()} />
+  return <div className={`skeleton ${className}`.trim()} data-testid="skeleton" />
 }

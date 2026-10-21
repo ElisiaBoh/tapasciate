@@ -57,7 +57,7 @@ describe('ZonePicker', () => {
     const { onClose } = renderPicker()
     fireEvent.keyDown(screen.getByRole('dialog'), { key: 'Escape' })
     fireEvent.click(screen.getByRole('button', { name: 'Chiudi' }))
-    fireEvent.click(document.querySelector('.zp-backdrop')!)
+    fireEvent.click(screen.getByTestId('zone-picker-backdrop'))
     expect(onClose).toHaveBeenCalledTimes(3)
   })
 })
