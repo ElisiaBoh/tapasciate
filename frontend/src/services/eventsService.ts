@@ -13,7 +13,7 @@ export async function fetchEvents(): Promise<Event[]> {
         region
       )
     `)
-    // Eventi non più elencati dalla fonte: restano nel DB ma non si mostrano
+    // Events no longer listed by their source stay in the database but are hidden
     .is('removed_at', null)
     .order('date', { ascending: true })
 

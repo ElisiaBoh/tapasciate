@@ -1,7 +1,7 @@
 import './Skeleton.css'
 
 interface Props {
-  // Classe che definisce dimensioni ed eventuali colori del blocco (nel CSS del componente che lo usa)
+  // Size and colors come from the CSS of the component using the skeleton
   className?: string
 }
 

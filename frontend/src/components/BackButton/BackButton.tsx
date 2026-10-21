@@ -12,7 +12,7 @@ export default function BackButton({ href, label }: Props) {
   const onClick = (e: MouseEvent<HTMLAnchorElement>) => {
     if (e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return
     e.preventDefault()
-    // Se si arriva dalla lista si torna indietro nella history, così il browser ripristina lo scroll
+    // Coming from the list, going back in history lets the browser restore the scroll position
     if ((window.history.state as RouteState | null)?.fromList) window.history.back()
     else navigate(href)
   }

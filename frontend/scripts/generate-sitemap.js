@@ -1,12 +1,12 @@
-// Eseguito dopo `react-scripts build`: sovrascrive build/sitemap.xml aggiungendo le pagine evento.
-// Se Supabase non risponde la build non fallisce: resta la sitemap statica di public/.
+// Runs after `react-scripts build`: overwrites build/sitemap.xml adding the event and zone pages.
+// If Supabase doesn't answer the build doesn't fail: the static sitemap from public/ stays.
 
 const fs = require('fs')
 const path = require('path')
 const { createClient } = require('@supabase/supabase-js')
 const { buildSitemap } = require('./sitemap')
 
-// Stessi valori pubblici di src/supabaseClient.ts
+// Same public values as src/supabaseClient.ts
 const SUPABASE_URL = 'https://zwypodzchumtuitkhkta.supabase.co'
 const SUPABASE_ANON_KEY = 'sb_publishable_Yeo_ij8JWe7fVfqUw3VIfA_lvb5DO3t'
 

@@ -17,7 +17,7 @@ export function eventDescription(event: Event): string {
   return `${event.title}: tapasciata non competitiva a ${city} (${province}) il ${day} ${MESI[month - 1]} ${year}.${distances}`
 }
 
-// Dati strutturati schema.org/Event: permettono a Google di mostrare l'evento nei risultati arricchiti
+// schema.org/Event structured data lets Google show the event as a rich result
 export function eventJsonLd(event: Event): Record<string, unknown> {
   const { city, province, province_name } = event.location
   return {
@@ -44,7 +44,6 @@ export function eventJsonLd(event: Event): Record<string, unknown> {
   }
 }
 
-// Imposta un attributo su un tag del <head> (creandolo se manca) e restituisce la funzione che lo ripristina
 function setHeadTag(selector: string, create: () => HTMLElement, attr: string, value: string): () => void {
   let el = document.head.querySelector<HTMLElement>(selector)
   if (!el) {
@@ -79,8 +78,7 @@ export function setCanonical(href: string): () => void {
   }, 'href', href)
 }
 
-// Title, canonical, anteprime social e JSON-LD della pagina evento. Restituisce il cleanup
-// che rimette i valori della home (definiti in public/index.html).
+// The returned cleanup restores the home page values (defined in public/index.html)
 export function applyEventSeo(event: Event): () => void {
   const url = eventUrl(event)
   const title = `${event.title} — Tapasciate.it`
@@ -116,7 +114,7 @@ export function applyEventSeo(event: Event): () => void {
   }
 }
 
-// Pagina evento inesistente (es. evento passato e cancellato): evita che Google indicizzi un "non trovato"
+// Missing event (e.g. past and deleted): keeps Google from indexing a "not found" page
 export function applyNoIndex(): () => void {
   return setMeta('name', 'robots', 'noindex')
 }
