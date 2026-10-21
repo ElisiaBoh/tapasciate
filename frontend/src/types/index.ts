@@ -18,7 +18,7 @@ export interface Event {
   location: Location
   // Pagine della locandina come immagini (generate dallo scraper)
   posterPages: PosterPage[]
-  source: string | null
+  organizer: string | null
   distances: string[]
 }
 

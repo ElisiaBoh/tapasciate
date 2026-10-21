@@ -71,7 +71,7 @@ describe('resolvePageZone', () => {
     date: '2030-06-15',
     location: { city: 'Bergamo', province: 'BG', province_name: 'Bergamo', region: 'Lombardia' },
     posterPages: [],
-    source: null,
+    organizer: null,
     distances: [],
   }
   const base = { status: 'success' as const, catalog, event: undefined, fromListPath: undefined }

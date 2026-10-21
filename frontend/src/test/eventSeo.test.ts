@@ -7,7 +7,7 @@ const event: Event = {
   date: '2030-10-12',
   location: { city: 'Roncola', province: 'BG', province_name: 'Bergamo', region: 'Lombardia' },
   posterPages: [{ url: 'https://example.com/p1.webp', width: 1200, height: 1697 }],
-  source: 'GS Roncola',
+  organizer: 'GS Roncola',
   distances: ['6', '12'],
 }
 
@@ -39,7 +39,7 @@ describe('eventJsonLd', () => {
   })
 
   it('omette organizzatore e immagine se mancano', () => {
-    const ld = eventJsonLd({ ...event, source: null, posterPages: [] })
+    const ld = eventJsonLd({ ...event, organizer: null, posterPages: [] })
     expect(ld).not.toHaveProperty('organizer')
     expect(ld).not.toHaveProperty('image')
   })

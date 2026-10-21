@@ -40,7 +40,7 @@ export function eventJsonLd(event: Event): Record<string, unknown> {
       },
     },
     ...(event.posterPages.length > 0 ? { image: event.posterPages.map(p => p.url) } : {}),
-    ...(event.source ? { organizer: { '@type': 'Organization', name: event.source } } : {}),
+    ...(event.organizer ? { organizer: { '@type': 'Organization', name: event.organizer } } : {}),
   }
 }
 

@@ -7,7 +7,7 @@ const event: Event = {
   date: '2026-10-31',
   location: { city: 'Soncino', province: 'CR', province_name: 'Cremona', region: 'Lombardia' },
   posterPages: [],
-  source: null,
+  organizer: null,
   distances: ['8', '14'],
 }
 

@@ -8,7 +8,7 @@ function makeEvent(city: string, province: string, provinceName: string | null, 
     date: '2030-06-15',
     location: { city, province, province_name: provinceName, region },
     posterPages: [],
-    source: null,
+    organizer: null,
     distances: [],
   }
 }

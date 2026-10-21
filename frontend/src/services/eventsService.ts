@@ -30,7 +30,7 @@ export async function fetchEvents(): Promise<Event[]> {
       region: event.location.region,
     },
     posterPages: event.poster_pages ?? [],
-    source: event.organizer ?? null,
+    organizer: event.organizer ?? null,
     distances: event.distances ?? [],
   }))
 }
