@@ -6,7 +6,7 @@ import re
 import requests
 import time
 import datetime
-from typing import List, Optional
+from typing import List
 from bs4 import BeautifulSoup
 from scraper.scrapers.base import BaseScraper
 from scraper.models.event import Event, PosterPage
@@ -150,23 +150,6 @@ class CSIScraper(BaseScraper):
             return []
 
         return self._upload_poster_pages("csi", title, date, pdf_bytes)
-
-    def _extract_poster(self, content) -> Optional[str]:
-        """
-        Mantenuto per compatibilità con i test esistenti.
-        Ritorna solo la prima immagine come URL (comportamento originale).
-        """
-        if not content:
-            return None
-        
-        first_img = content.find("img")
-        if not first_img or not first_img.get("src"):
-            return None
-        
-        src = first_img["src"]
-        if src.startswith("/"):
-            return f"{BASE_CSI_BERGAMO}{src}"
-        return src
 
     def _parse_date(self, soup: BeautifulSoup) -> str:
         """Estrae data dalla pagina"""

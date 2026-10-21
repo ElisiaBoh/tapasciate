@@ -40,59 +40,37 @@ class TestCSIScraperParsing:
         scraper = CSIScraper()
         assert scraper.source_name == "CSI Bergamo"
     
-    def test_extract_poster_with_absolute_url(self):
-        """Test _extract_poster with absolute URL."""
+    @patch.object(CSIScraper, "_upload_poster_pages", return_value=[])
+    @patch.object(CSIScraper, "_images_to_pdf", return_value=b"%PDF")
+    @patch("scraper.scrapers.csi_scraper.requests.get")
+    def test_extract_and_upload_poster_downloads_every_image(self, mock_get, _mock_pdf, mock_upload):
+        """Relative image URLs get the CSI Bergamo prefix, absolute ones are kept."""
         html = """
         <div class="jsn-article-content">
-            <img src="https://example.com/poster.jpg" alt="Poster">
+            <img src="/images/poster.jpg">
+            <img src="https://example.com/back.jpg">
         </div>
         """
-        soup = BeautifulSoup(html, "html.parser")
-        content = soup.find("div", class_="jsn-article-content")
-        
+        content = BeautifulSoup(html, "html.parser").find("div")
+        mock_get.return_value.content = b"img"
+
+        CSIScraper()._extract_and_upload_poster(content, "Title", "15/03/2026")
+
+        urls = [call.args[0] for call in mock_get.call_args_list]
+        assert urls == ["https://www.csibergamo.it/images/poster.jpg", "https://example.com/back.jpg"]
+        mock_upload.assert_called_once_with("csi", "Title", "15/03/2026", b"%PDF")
+
+    @patch("scraper.scrapers.csi_scraper.requests.get")
+    def test_extract_and_upload_poster_without_images(self, mock_get):
+        """No content or no images: nothing is downloaded."""
+        html = '<div class="jsn-article-content"><p>No images here</p></div>'
+        content = BeautifulSoup(html, "html.parser").find("div")
+
         scraper = CSIScraper()
-        poster = scraper._extract_poster(content)
-        
-        assert poster == "https://example.com/poster.jpg"
-    
-    def test_extract_poster_with_relative_url(self):
-        """Test _extract_poster with relative URL (gets BASE_CSI_BERGAMO prefix)."""
-        html = """
-        <div class="jsn-article-content">
-            <img src="/images/poster.jpg" alt="Poster">
-        </div>
-        """
-        soup = BeautifulSoup(html, "html.parser")
-        content = soup.find("div", class_="jsn-article-content")
-        
-        scraper = CSIScraper()
-        poster = scraper._extract_poster(content)
-        
-        assert poster.startswith("https://www.csibergamo.it")
-        assert poster.endswith("/images/poster.jpg")
-    
-    def test_extract_poster_no_image(self):
-        """Test _extract_poster with no image."""
-        html = """
-        <div class="jsn-article-content">
-            <p>No images here</p>
-        </div>
-        """
-        soup = BeautifulSoup(html, "html.parser")
-        content = soup.find("div", class_="jsn-article-content")
-        
-        scraper = CSIScraper()
-        poster = scraper._extract_poster(content)
-        
-        assert poster is None
-    
-    def test_extract_poster_no_content(self):
-        """Test _extract_poster with None content."""
-        scraper = CSIScraper()
-        poster = scraper._extract_poster(None)
-        
-        assert poster is None
-    
+        assert scraper._extract_and_upload_poster(content, "Title", "15/03/2026") == []
+        assert scraper._extract_and_upload_poster(None, "Title", "15/03/2026") == []
+        mock_get.assert_not_called()
+
     def test_parse_date_valid(self):
         """Test _parse_date with valid date structure."""
         html = """
