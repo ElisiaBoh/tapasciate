@@ -1,7 +1,45 @@
 import '@testing-library/jest-dom'
-import { render, screen, fireEvent } from '@testing-library/react'
+import { render, screen, fireEvent, act } from '@testing-library/react'
 import EventDetail from '../components/EventDetail/EventDetail'
 import type { Event } from '../types'
+
+jest.mock('photoswipe', () => {
+  class FakePhotoSwipe {
+    static instances: FakePhotoSwipe[] = []
+    options: Record<string, unknown>
+    element = globalThis.document.createElement('div')
+    handlers: Record<string, () => void> = {}
+    destroyed = false
+    constructor(options: Record<string, unknown>) {
+      this.options = options
+      FakePhotoSwipe.instances.push(this)
+    }
+    on(name: string, handler: () => void) { this.handlers[name] = handler }
+    init() {
+      this.element.setAttribute('role', 'dialog')
+      globalThis.document.body.appendChild(this.element)
+    }
+    close() { this.destroy() }
+    destroy() {
+      if (this.destroyed) return
+      this.destroyed = true
+      this.element.remove()
+      this.handlers.destroy?.()
+    }
+  }
+  return { __esModule: true, default: FakePhotoSwipe }
+})
+
+interface FakeViewer {
+  options: { index: number; dataSource: { src: string; element?: HTMLElement }[] }
+  close: () => void
+}
+const viewers = (): FakeViewer[] => jest.requireMock('photoswipe').default.instances
+
+beforeEach(() => {
+  viewers().length = 0
+  window.history.replaceState(null, '')
+})
 
 function makeEvent(overrides: Partial<Event> = {}): Event {
   return {
@@ -67,19 +105,58 @@ describe('EventDetail', () => {
     expect(images[1]).toHaveAccessibleName('Locandina Secondo, pagina 2 di 2')
   })
 
-  it('la locandina si apre a schermo intero e si chiude con Esc', () => {
+  it('non mostra più l\'invito a toccare la locandina', () => {
     setupDetail()
-    fireEvent.click(screen.getByRole('button', { name: 'Apri la locandina a schermo intero' }))
-    const viewer = screen.getByRole('dialog', { name: 'Locandina Secondo' })
-    expect(viewer).toHaveFocus()
-    fireEvent.keyDown(viewer, { key: 'Escape' })
-    expect(screen.queryByRole('dialog')).not.toBeInTheDocument()
+    expect(screen.queryByText(/tocca per ingrandire/i)).not.toBeInTheDocument()
   })
 
-  it('con la locandina aperta le frecce da tastiera non cambiano evento', () => {
+  it('la locandina si apre a schermo intero partendo dalla pagina toccata', async () => {
+    const withPages = makeEvent({
+      id: 2,
+      title: 'Secondo',
+      posterPages: [
+        { url: 'https://example.com/p1.webp', width: 1200, height: 1697 },
+        { url: 'https://example.com/p2.webp', width: 1200, height: 1697 },
+      ],
+    })
+    setupDetail({ event: withPages })
+    fireEvent.click(screen.getByRole('button', { name: 'Apri la locandina a schermo intero, pagina 2 di 2' }))
+    expect(await screen.findByRole('dialog', { name: 'Locandina Secondo' })).toBeInTheDocument()
+    const { options } = viewers()[0]
+    expect(options.index).toBe(1)
+    expect(options.dataSource.map(slide => slide.src)).toEqual(['https://example.com/p1.webp', 'https://example.com/p2.webp'])
+    expect(options.dataSource[1].element).toBe(screen.getByRole('img', { name: 'Locandina Secondo, pagina 2 di 2' }))
+  })
+
+  it('il tasto indietro chiude la locandina senza lasciare il dettaglio', async () => {
+    setupDetail()
+    fireEvent.click(screen.getByRole('button', { name: 'Apri la locandina a schermo intero' }))
+    await screen.findByRole('dialog')
+    expect(window.history.state).toEqual({ posterViewer: true })
+    act(() => {
+      window.history.replaceState(null, '')
+      window.dispatchEvent(new PopStateEvent('popstate'))
+    })
+    expect(screen.queryByRole('dialog')).not.toBeInTheDocument()
+    expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent('Secondo')
+  })
+
+  it('chiudendo la locandina toglie la voce aggiunta alla cronologia', async () => {
+    const back = jest.spyOn(window.history, 'back').mockImplementation(() => {})
+    setupDetail()
+    fireEvent.click(screen.getByRole('button', { name: 'Apri la locandina a schermo intero' }))
+    await screen.findByRole('dialog')
+    act(() => viewers()[0].close())
+    expect(back).toHaveBeenCalledTimes(1)
+    expect(screen.queryByRole('dialog')).not.toBeInTheDocument()
+    back.mockRestore()
+  })
+
+  it('con la locandina aperta le frecce da tastiera non cambiano evento', async () => {
     const onSelect = setupDetail()
     fireEvent.click(screen.getByRole('button', { name: 'Apri la locandina a schermo intero' }))
-    fireEvent.keyDown(screen.getByRole('button', { name: 'Chiudi la locandina' }), { key: 'ArrowRight' })
+    await screen.findByRole('dialog')
+    fireEvent.keyDown(document.body, { key: 'ArrowRight' })
     expect(onSelect).not.toHaveBeenCalled()
   })
 

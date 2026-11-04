@@ -45,7 +45,12 @@ const mockEvents = [
   mockEvent(4, 'Camminata di oggi', TODAY, lombardiaBG),
 ]
 
+const TINY_PNG = Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==', 'base64')
+
 async function mockSupabase(page: Page, data: unknown[]) {
+  await page.route('https://example.com/*.webp', route =>
+    route.fulfill({ status: 200, contentType: 'image/png', body: TINY_PNG })
+  )
   await page.route('**/rest/v1/events**', route =>
     route.fulfill({
       status: 200,
@@ -63,6 +68,15 @@ async function chooseZone(page: Page, region: string, option: string) {
 }
 
 const card = (page: Page, title: string) => page.getByRole('link', { name: new RegExp(title) })
+
+// PhotoSwipe ignores close and zoom gestures until its opening animation has finished
+async function openPoster(page: Page, name: string, how: 'click' | 'tap' = 'click') {
+  await page.getByRole('button', { name })[how]()
+  const viewer = page.getByRole('dialog', { name: 'Locandina Tapasciata dei Colli' })
+  await expect(viewer).toBeVisible()
+  await expect.poll(() => viewer.locator('.pswp__bg').evaluate(el => getComputedStyle(el).opacity)).toBe('1')
+  return viewer
+}
 
 // --- Tests ---
 
@@ -281,13 +295,43 @@ test.describe('Pagina evento', () => {
     await expect(page).toHaveURL(/\/lombardia\/milano$/)
   })
 
-  test('la locandina si apre a schermo intero', async ({ page }) => {
+  test('la locandina si apre a schermo intero dalla pagina toccata', async ({ page }) => {
     await mockSupabase(page, mockEvents)
     await page.goto('/evento/1-tapasciata-dei-colli')
-    await page.getByRole('button', { name: 'Apri la locandina a schermo intero' }).click()
-    await expect(page.getByRole('dialog', { name: 'Locandina Tapasciata dei Colli' })).toBeVisible()
+    await expect(page.getByText(/tocca per ingrandire/i)).toHaveCount(0)
+    const viewer = await openPoster(page, 'Apri la locandina a schermo intero, pagina 2 di 2')
+    await expect(viewer.locator('.pswp__counter')).toHaveText('2 / 2')
     await page.getByRole('button', { name: 'Chiudi la locandina' }).click()
     await expect(page.getByRole('dialog')).toHaveCount(0)
+    await expect(page).toHaveURL(/\/evento\/1-tapasciata-dei-colli$/)
+  })
+
+  test('il tasto indietro chiude la locandina e resta sul dettaglio', async ({ page }) => {
+    await mockSupabase(page, mockEvents)
+    await page.goto('/')
+    await card(page, 'Tapasciata dei Colli').click()
+    await openPoster(page, 'Apri la locandina a schermo intero, pagina 1 di 2')
+    await page.goBack()
+    await expect(page.getByRole('dialog')).toHaveCount(0)
+    await expect(page.getByRole('heading', { level: 1 })).toHaveText('Tapasciata dei Colli')
+    await page.goBack()
+    await expect(page).toHaveURL(/\/$/)
+  })
+
+  test.describe('su mobile', () => {
+    test.use({ viewport: { width: 393, height: 852 }, hasTouch: true, isMobile: true })
+
+    test('il doppio tap ingrandisce solo la locandina', async ({ page }) => {
+      await mockSupabase(page, mockEvents)
+      await page.goto('/evento/1-tapasciata-dei-colli')
+      const viewer = await openPoster(page, 'Apri la locandina a schermo intero, pagina 1 di 2', 'tap')
+      await page.touchscreen.tap(196, 400)
+      await page.waitForTimeout(50)
+      await page.touchscreen.tap(196, 400)
+      await expect(viewer).toHaveClass(/pswp--zoomed-in/)
+      expect(await page.evaluate(() => window.visualViewport?.scale)).toBe(1)
+      await expect(page.getByRole('button', { name: 'Chiudi la locandina' })).toBeInViewport()
+    })
   })
 
   test('offre la condivisione', async ({ page }) => {

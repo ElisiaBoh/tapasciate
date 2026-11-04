@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
-import type { TouchEvent } from 'react'
+import type { RefObject, TouchEvent } from 'react'
 import { formatDate, formatLongDate } from '../../utils/formatDate'
+import { posterAlt } from '../../utils/poster'
 import { applyEventSeo, applyNoIndex } from '../../utils/eventSeo'
 import { shareEvent } from '../../utils/eventActions'
 import type { Event, Status } from '../../types'
@@ -22,31 +23,41 @@ interface Props {
 
 const SWIPE_THRESHOLD = 60
 
-function Poster({ event }: { event: Event }) {
+interface PosterProps {
+  event: Event
+  figureRef: RefObject<HTMLElement | null>
+  onOpen: (index: number) => void
+}
+
+function Poster({ event, figureRef, onOpen }: PosterProps) {
   const pages = event.posterPages
-  if (pages.length > 0) {
+  if (pages.length === 0) {
     return (
-      <>
-        {pages.map((page, i) => (
+      <figure className="ev-poster">
+        <div className="ev-poster-placeholder">
+          <strong>Locandina</strong>
+          <span>non disponibile</span>
+        </div>
+      </figure>
+    )
+  }
+
+  return (
+    <figure className="ev-poster" ref={figureRef}>
+      {pages.map((page, i) => (
+        <button key={page.url} type="button" className="ev-poster-open" onClick={() => onOpen(i)}
+          aria-label={pages.length > 1 ? `Apri la locandina a schermo intero, pagina ${i + 1} di ${pages.length}` : 'Apri la locandina a schermo intero'}>
           <img
-            key={page.url}
             src={page.url}
             width={page.width}
             height={page.height}
             loading={i === 0 ? 'eager' : 'lazy'}
             decoding="async"
-            alt={pages.length > 1 ? `Locandina ${event.title}, pagina ${i + 1} di ${pages.length}` : `Locandina ${event.title}`}
+            alt={posterAlt(event.title, i, pages.length)}
           />
-        ))}
-      </>
-    )
-  }
-
-  return (
-    <div className="ev-poster-placeholder">
-      <strong>Locandina</strong>
-      <span>non disponibile</span>
-    </div>
+        </button>
+      ))}
+    </figure>
   )
 }
 
@@ -71,13 +82,16 @@ function ShareButton({ event }: { event: Event }) {
 }
 
 export default function EventDetail({ status, event, sameDayEvents, zoneName, onSelect }: Props) {
-  const [viewerOpen, setViewerOpen] = useState(false)
-  useEffect(() => setViewerOpen(false), [event?.id])
+  const [viewerIndex, setViewerIndex] = useState<number | null>(null)
+  const viewerOpen = viewerIndex !== null
+  const posterRef = useRef<HTMLElement>(null)
+  useEffect(() => setViewerIndex(null), [event?.id])
   const index = event ? sameDayEvents.findIndex(e => e.id === event.id) : -1
   const prev = index > 0 ? sameDayEvents[index - 1] : undefined
   const next = index >= 0 && index < sameDayEvents.length - 1 ? sameDayEvents[index + 1] : undefined
 
   useEffect(() => {
+    if (viewerOpen) return
     const onKeyDown = (e: KeyboardEvent) => {
       const target = e.target as HTMLElement
       if (['INPUT', 'SELECT', 'TEXTAREA'].includes(target.tagName)) return
@@ -86,7 +100,7 @@ export default function EventDetail({ status, event, sameDayEvents, zoneName, on
     }
     document.addEventListener('keydown', onKeyDown)
     return () => document.removeEventListener('keydown', onKeyDown)
-  }, [prev, next, onSelect])
+  }, [prev, next, onSelect, viewerOpen])
 
   useEffect(() => {
     if (event) return applyEventSeo(event)
@@ -174,21 +188,12 @@ export default function EventDetail({ status, event, sameDayEvents, zoneName, on
           <ShareButton event={event} />
         </div>
 
-        {event.posterPages.length > 0 ? (
-          <figure className="ev-poster">
-            <button type="button" className="ev-poster-open" aria-label="Apri la locandina a schermo intero"
-              onClick={() => setViewerOpen(true)}>
-              <Poster event={event} />
-              <span className="ev-poster-hint" aria-hidden="true">tocca per ingrandire</span>
-            </button>
-          </figure>
-        ) : (
-          <figure className="ev-poster">
-            <Poster event={event} />
-          </figure>
-        )}
+        <Poster event={event} figureRef={posterRef} onOpen={setViewerIndex} />
       </section>
-      {viewerOpen && <PosterViewer event={event} onClose={() => setViewerOpen(false)} />}
+      {viewerIndex !== null && (
+        <PosterViewer key={`${event.id}-${viewerIndex}`} event={event} index={viewerIndex} thumbnails={posterRef}
+          onClose={() => setViewerIndex(null)} />
+      )}
     </main>
   )
 }

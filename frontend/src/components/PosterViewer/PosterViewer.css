@@ -1,43 +1,48 @@
 .pv {
-  position: fixed;
-  inset: 0;
-  z-index: 300;
-  overflow: auto;
-  overscroll-behavior: contain;
-  background: rgba(0, 0, 0, 0.9);
+  --pswp-bg: #000;
+  --pswp-placeholder-bg: #000;
+  --pswp-root-z-index: 300;
+  --pswp-icon-color: var(--color-text-light);
+  --pswp-icon-stroke-color: transparent;
 }
 
-.pv-close {
-  position: fixed;
-  top: 12px;
-  right: 12px;
-  z-index: 1;
-  padding: 0;
-  border: 0;
-  background: none;
-  cursor: pointer;
+.pv .pswp__top-bar {
+  align-items: flex-start;
 }
 
-.pv:focus,
-.pv-close:focus-visible {
-  outline: none;
+.pv .pswp__counter {
+  height: 44px;
+  margin: 12px 0 0 16px;
+  line-height: 44px;
+  font-size: 0.9rem;
+  font-weight: 900;
+  opacity: 1;
 }
 
-.pv-close:focus-visible > .tile {
+.pv .pswp__button--close {
+  width: 44px;
+  height: 44px;
+  margin: 12px 12px 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-yellow);
+  opacity: 1;
+}
+
+.pv .pswp__button--close:hover,
+.pv .pswp__button--close:focus-visible {
   background: var(--color-yellow-dark);
 }
 
-.pv-pages {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 68px 0 24px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+.pv .pswp__button--close .pv-close-icon {
+  position: static;
+  fill: none;
+  stroke: var(--color-text-dark);
+  stroke-width: 3.5;
+  stroke-linecap: round;
 }
 
-.pv-pages img {
-  display: block;
-  width: 100%;
-  height: auto;
+.pv .pswp__button--zoom {
+  margin-top: 4px;
 }
